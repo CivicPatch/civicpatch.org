@@ -345,6 +345,6 @@ namespace :city_info do
     end
 
     File.write(city_info_file, city_info_yaml.to_yaml)
-    #FileUtils.rm_rf(cache_destination_dir)
+    FileUtils.rm_rf(cache_destination_dir)
   end
 end
