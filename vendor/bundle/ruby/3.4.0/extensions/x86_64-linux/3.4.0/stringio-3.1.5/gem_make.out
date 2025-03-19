@@ -1,0 +1,18 @@
+current directory: /home/runner/work/localimpact.report/localimpact.report/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.5/ext/stringio
+/opt/hostedtoolcache/Ruby/3.4.2/x64/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/runner/work/localimpact.report/localimpact.report/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.5/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250313-1773-siupqw sitelibdir\=./.gem.20250313-1773-siupqw clean
+
+current directory: /home/runner/work/localimpact.report/localimpact.report/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.5/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250313-1773-siupqw sitelibdir\=./.gem.20250313-1773-siupqw
+compiling stringio.c
+linking shared-object stringio.so
+
+current directory: /home/runner/work/localimpact.report/localimpact.report/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.5/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250313-1773-siupqw sitelibdir\=./.gem.20250313-1773-siupqw install
+/usr/bin/install -c -m 0755 stringio.so ./.gem.20250313-1773-siupqw
+
+current directory: /home/runner/work/localimpact.report/localimpact.report/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.5/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250313-1773-siupqw sitelibdir\=./.gem.20250313-1773-siupqw clean

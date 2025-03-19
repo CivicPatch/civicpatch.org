@@ -1,0 +1,495 @@
+current directory: /home/runner/work/localimpact.report/localimpact.report/vendor/bundle/ruby/3.4.0/gems/amatch-0.4.1/ext
+/opt/hostedtoolcache/Ruby/3.4.2/x64/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/runner/work/localimpact.report/localimpact.report/vendor/bundle/ruby/3.4.0/gems/amatch-0.4.1/ext
+make DESTDIR\= sitearchdir\=./.gem.20250317-1767-hddut7 sitelibdir\=./.gem.20250317-1767-hddut7 clean
+
+current directory: /home/runner/work/localimpact.report/localimpact.report/vendor/bundle/ruby/3.4.0/gems/amatch-0.4.1/ext
+make DESTDIR\= sitearchdir\=./.gem.20250317-1767-hddut7 sitelibdir\=./.gem.20250317-1767-hddut7
+compiling amatch_ext.c
+amatch_ext.c: In function ‘General_allocate’:
+amatch_ext.c:159:15: warning: old-style function definition [-Wold-style-definition]
+  159 | DEF_ALLOCATOR(General)
+      |               ^~~~~~~
+amatch_ext.c:18:14: note: in definition of macro ‘DEF_ALLOCATOR’
+   18 | static type *type##_allocate()                                          \
+      |              ^~~~
+amatch_ext.c: In function ‘rb_General_pattern’:
+amatch_ext.c:160:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  160 | DEF_PATTERN_ACCESSOR(General)
+      | ^~~~~~~~~~~~~~~~~~~~
+In file included from /opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core.h:27,
+                 from /opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/ruby.h:29,
+                 from /opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby.h:38,
+                 from amatch_ext.c:1:
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_General_pattern_set’:
+amatch_ext.c:160:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  160 | DEF_PATTERN_ACCESSOR(General)
+      | ^~~~~~~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘Sellers_allocate’:
+amatch_ext.c:171:15: warning: old-style function definition [-Wold-style-definition]
+  171 | DEF_ALLOCATOR(Sellers)
+      |               ^~~~~~~
+amatch_ext.c:18:14: note: in definition of macro ‘DEF_ALLOCATOR’
+   18 | static type *type##_allocate()                                          \
+      |              ^~~~
+amatch_ext.c: In function ‘rb_Sellers_pattern’:
+amatch_ext.c:172:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  172 | DEF_PATTERN_ACCESSOR(Sellers)
+      | ^~~~~~~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_pattern_set’:
+amatch_ext.c:172:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  172 | DEF_PATTERN_ACCESSOR(Sellers)
+      | ^~~~~~~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘PairDistance_allocate’:
+amatch_ext.c:188:15: warning: old-style function definition [-Wold-style-definition]
+  188 | DEF_ALLOCATOR(PairDistance)
+      |               ^~~~~~~~~~~~
+amatch_ext.c:18:14: note: in definition of macro ‘DEF_ALLOCATOR’
+   18 | static type *type##_allocate()                                          \
+      |              ^~~~
+amatch_ext.c: In function ‘rb_PairDistance_pattern’:
+amatch_ext.c:189:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  189 | DEF_PATTERN_ACCESSOR(PairDistance)
+      | ^~~~~~~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_PairDistance_pattern_set’:
+amatch_ext.c:189:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  189 | DEF_PATTERN_ACCESSOR(PairDistance)
+      | ^~~~~~~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘Jaro_allocate’:
+amatch_ext.c:197:15: warning: old-style function definition [-Wold-style-definition]
+  197 | DEF_ALLOCATOR(Jaro)
+      |               ^~~~
+amatch_ext.c:18:14: note: in definition of macro ‘DEF_ALLOCATOR’
+   18 | static type *type##_allocate()                                          \
+      |              ^~~~
+amatch_ext.c: In function ‘rb_Jaro_pattern’:
+amatch_ext.c:198:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  198 | DEF_PATTERN_ACCESSOR(Jaro)
+      | ^~~~~~~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Jaro_pattern_set’:
+amatch_ext.c:198:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  198 | DEF_PATTERN_ACCESSOR(Jaro)
+      | ^~~~~~~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘JaroWinkler_allocate’:
+amatch_ext.c:208:15: warning: old-style function definition [-Wold-style-definition]
+  208 | DEF_ALLOCATOR(JaroWinkler)
+      |               ^~~~~~~~~~~
+amatch_ext.c:18:14: note: in definition of macro ‘DEF_ALLOCATOR’
+   18 | static type *type##_allocate()                                          \
+      |              ^~~~
+amatch_ext.c: In function ‘rb_JaroWinkler_pattern’:
+amatch_ext.c:209:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  209 | DEF_PATTERN_ACCESSOR(JaroWinkler)
+      | ^~~~~~~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_JaroWinkler_pattern_set’:
+amatch_ext.c:209:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  209 | DEF_PATTERN_ACCESSOR(JaroWinkler)
+      | ^~~~~~~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Levenshtein_initialize’:
+amatch_ext.c:916:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  916 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Levenshtein_s_allocate’:
+amatch_ext.c:921:1: warning: ‘rb_data_object_wrap_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  921 | DEF_CONSTRUCTOR(Levenshtein, General)
+      | ^~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:293:1: note: declared here
+  293 | rb_data_object_wrap_warning(VALUE klass, void *ptr, RUBY_DATA_FUNC mark, RUBY_DATA_FUNC free)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Levenshtein_match’:
+amatch_ext.c:934:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  934 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Levenshtein_similar’:
+amatch_ext.c:950:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  950 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Levenshtein_search’:
+amatch_ext.c:981:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+  981 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_DamerauLevenshtein_initialize’:
+amatch_ext.c:1009:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1009 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_DamerauLevenshtein_s_allocate’:
+amatch_ext.c:1014:1: warning: ‘rb_data_object_wrap_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1014 | DEF_CONSTRUCTOR(DamerauLevenshtein, General)
+      | ^~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:293:1: note: declared here
+  293 | rb_data_object_wrap_warning(VALUE klass, void *ptr, RUBY_DATA_FUNC mark, RUBY_DATA_FUNC free)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_DamerauLevenshtein_match’:
+amatch_ext.c:1027:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1027 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_DamerauLevenshtein_similar’:
+amatch_ext.c:1043:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1043 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_DamerauLevenshtein_search’:
+amatch_ext.c:1074:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1074 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_substitution’:
+amatch_ext.c:1098:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1098 | DEF_RB_READER(Sellers, rb_Sellers_substitution, substitution,
+      | ^~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_deletion’:
+amatch_ext.c:1109:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1109 | DEF_RB_READER(Sellers, rb_Sellers_deletion, deletion,
+      | ^~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_insertion’:
+amatch_ext.c:1120:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1120 | DEF_RB_READER(Sellers, rb_Sellers_insertion, insertion,
+      | ^~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_substitution_set’:
+amatch_ext.c:1132:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1132 | DEF_RB_WRITER(Sellers, rb_Sellers_substitution_set, substitution,
+      | ^~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_deletion_set’:
+amatch_ext.c:1144:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1144 | DEF_RB_WRITER(Sellers, rb_Sellers_deletion_set, deletion,
+      | ^~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_insertion_set’:
+amatch_ext.c:1156:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1156 | DEF_RB_WRITER(Sellers, rb_Sellers_insertion_set, insertion,
+      | ^~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_reset_weights’:
+amatch_ext.c:1164:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1164 |     GET_STRUCT(Sellers)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_initialize’:
+amatch_ext.c:1177:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1177 |     GET_STRUCT(Sellers)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_s_allocate’:
+amatch_ext.c:1183:1: warning: ‘rb_data_object_wrap_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1183 | DEF_CONSTRUCTOR(Sellers, Sellers)
+      | ^~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:293:1: note: declared here
+  293 | rb_data_object_wrap_warning(VALUE klass, void *ptr, RUBY_DATA_FUNC mark, RUBY_DATA_FUNC free)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_match’:
+amatch_ext.c:1214:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1214 |     GET_STRUCT(Sellers)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_similar’:
+amatch_ext.c:1231:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1231 |     GET_STRUCT(Sellers)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Sellers_search’:
+amatch_ext.c:1246:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1246 |     GET_STRUCT(Sellers)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_PairDistance_initialize’:
+amatch_ext.c:1279:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1279 |     GET_STRUCT(PairDistance)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_PairDistance_s_allocate’:
+amatch_ext.c:1284:1: warning: ‘rb_data_object_wrap_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1284 | DEF_CONSTRUCTOR(PairDistance, PairDistance)
+      | ^~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:293:1: note: declared here
+  293 | rb_data_object_wrap_warning(VALUE klass, void *ptr, RUBY_DATA_FUNC mark, RUBY_DATA_FUNC free)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_PairDistance_match’:
+amatch_ext.c:1307:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1307 |     GET_STRUCT(PairDistance)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Hamming_initialize’:
+amatch_ext.c:1383:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1383 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Hamming_s_allocate’:
+amatch_ext.c:1388:1: warning: ‘rb_data_object_wrap_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1388 | DEF_CONSTRUCTOR(Hamming, General)
+      | ^~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:293:1: note: declared here
+  293 | rb_data_object_wrap_warning(VALUE klass, void *ptr, RUBY_DATA_FUNC mark, RUBY_DATA_FUNC free)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Hamming_match’:
+amatch_ext.c:1401:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1401 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Hamming_similar’:
+amatch_ext.c:1417:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1417 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_LongestSubsequence_initialize’:
+amatch_ext.c:1459:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1459 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_LongestSubsequence_s_allocate’:
+amatch_ext.c:1464:1: warning: ‘rb_data_object_wrap_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1464 | DEF_CONSTRUCTOR(LongestSubsequence, General)
+      | ^~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:293:1: note: declared here
+  293 | rb_data_object_wrap_warning(VALUE klass, void *ptr, RUBY_DATA_FUNC mark, RUBY_DATA_FUNC free)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_LongestSubsequence_match’:
+amatch_ext.c:1477:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1477 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_LongestSubsequence_similar’:
+amatch_ext.c:1493:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1493 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_LongestSubstring_initialize’:
+amatch_ext.c:1536:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1536 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_LongestSubstring_s_allocate’:
+amatch_ext.c:1541:1: warning: ‘rb_data_object_wrap_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1541 | DEF_CONSTRUCTOR(LongestSubstring, General)
+      | ^~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:293:1: note: declared here
+  293 | rb_data_object_wrap_warning(VALUE klass, void *ptr, RUBY_DATA_FUNC mark, RUBY_DATA_FUNC free)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_LongestSubstring_match’:
+amatch_ext.c:1554:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1554 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_LongestSubstring_similar’:
+amatch_ext.c:1571:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1571 |     GET_STRUCT(General)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Jaro_ignore_case’:
+amatch_ext.c:1607:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1607 | DEF_RB_READER(Jaro, rb_Jaro_ignore_case, ignore_case, C2BOOL)
+      | ^~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Jaro_ignore_case_set’:
+amatch_ext.c:1616:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1616 | DEF_RB_WRITER(Jaro, rb_Jaro_ignore_case_set, ignore_case,
+      | ^~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Jaro_initialize’:
+amatch_ext.c:1626:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1626 |     GET_STRUCT(Jaro)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Jaro_s_allocate’:
+amatch_ext.c:1632:1: warning: ‘rb_data_object_wrap_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1632 | DEF_CONSTRUCTOR(Jaro, Jaro)
+      | ^~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:293:1: note: declared here
+  293 | rb_data_object_wrap_warning(VALUE klass, void *ptr, RUBY_DATA_FUNC mark, RUBY_DATA_FUNC free)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_Jaro_match’:
+amatch_ext.c:1645:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1645 |     GET_STRUCT(Jaro)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_JaroWinkler_ignore_case’:
+amatch_ext.c:1685:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1685 | DEF_RB_READER(JaroWinkler, rb_JaroWinkler_ignore_case, ignore_case, C2BOOL)
+      | ^~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_JaroWinkler_scaling_factor’:
+amatch_ext.c:1695:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1695 | DEF_RB_READER(JaroWinkler, rb_JaroWinkler_scaling_factor, scaling_factor, rb_float_new)
+      | ^~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_JaroWinkler_ignore_case_set’:
+amatch_ext.c:1704:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1704 | DEF_RB_WRITER(JaroWinkler, rb_JaroWinkler_ignore_case_set, ignore_case,
+      | ^~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_JaroWinkler_scaling_factor_set’:
+amatch_ext.c:1714:1: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1714 | DEF_RB_WRITER(JaroWinkler, rb_JaroWinkler_scaling_factor_set, scaling_factor,
+      | ^~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_JaroWinkler_initialize’:
+amatch_ext.c:1724:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1724 |     GET_STRUCT(JaroWinkler)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_JaroWinkler_s_allocate’:
+amatch_ext.c:1731:1: warning: ‘rb_data_object_wrap_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1731 | DEF_CONSTRUCTOR(JaroWinkler, JaroWinkler)
+      | ^~~~~~~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:293:1: note: declared here
+  293 | rb_data_object_wrap_warning(VALUE klass, void *ptr, RUBY_DATA_FUNC mark, RUBY_DATA_FUNC free)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_JaroWinkler_match’:
+amatch_ext.c:1744:5: warning: ‘rb_data_object_get_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1744 |     GET_STRUCT(JaroWinkler)
+      |     ^~~~~~~~~~
+/opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘Init_amatch_ext’:
+amatch_ext.c:1769:6: warning: old-style function definition [-Wold-style-definition]
+ 1769 | void Init_amatch_ext()
+      |      ^~~~~~~~~~~~~~~
+amatch_ext.c: In function ‘rb_str_pair_distance_similar’:
+amatch_ext.c:1356:13: warning: array subscript ‘VALUE {aka long unsigned int}[0]’ is partly outside array bounds of ‘unsigned char[2]’ [-Warray-bounds=]
+ 1356 |         args[0] = string;
+      |         ~~~~^~~
+In file included from /usr/include/stdlib.h:706,
+                 from /opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/defines.h:27,
+                 from /opt/hostedtoolcache/Ruby/3.4.2/x64/include/ruby-3.4.0/ruby/ruby.h:25:
+amatch_ext.c:1355:23: note: object of size 2 allocated by ‘__builtin_alloca’
+ 1355 |         VALUE *args = alloca(2);
+      |                       ^~~~~~
+amatch_ext.c:1357:13: warning: array subscript 1 is outside array bounds of ‘VALUE[0]’ {aka ‘long unsigned int[]’} [-Warray-bounds=]
+ 1357 |         args[1] = regexp;
+      |         ~~~~^~~
+amatch_ext.c:1355:23: note: at offset 8 into object of size 2 allocated by ‘__builtin_alloca’
+ 1355 |         VALUE *args = alloca(2);
+      |                       ^~~~~~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-self-assign’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
+compiling pair.c
+linking shared-object amatch_ext.so
+
+current directory: /home/runner/work/localimpact.report/localimpact.report/vendor/bundle/ruby/3.4.0/gems/amatch-0.4.1/ext
+make DESTDIR\= sitearchdir\=./.gem.20250317-1767-hddut7 sitelibdir\=./.gem.20250317-1767-hddut7 install
+/usr/bin/install -c -m 0755 amatch_ext.so ./.gem.20250317-1767-hddut7
+
+current directory: /home/runner/work/localimpact.report/localimpact.report/vendor/bundle/ruby/3.4.0/gems/amatch-0.4.1/ext
+make DESTDIR\= sitearchdir\=./.gem.20250317-1767-hddut7 sitelibdir\=./.gem.20250317-1767-hddut7 clean

@@ -1,0 +1,37 @@
+---
+council_members:
+- name: Matthew Wilson
+  district: '1'
+  email: mwilson@tuscaloosa.com
+  phone: 205-248-5101
+  image: https://assets.caboosecms.com/media/9760339_dsc_5497wilson_large.jpg?1621448903
+- name: Raevan Howard
+  district: '2'
+  email: rhoward@tuscaloosa.com
+  phone: 205-248-5102
+  image: https://assets.caboosecms.com/media/9760320_dsc_5552howard_large.jpg?1621448876
+- name: Norman Crow
+  district: '3'
+  email: ncrow@tuscaloosa.com
+  phone: 205-248-5103
+  image: https://assets.caboosecms.com/media/9760336_dsc_5545crow_large.jpg?1621448896
+- name: Lee Busby
+  district: '4'
+  email: lbusby@tuscaloosa.com
+  phone: 205-248-5104
+  image: https://assets.caboosecms.com/media/9760326_dsc_5520busby_large.jpg?1621448883
+- name: Kip Tyner
+  district: '5'
+  email: ktyner@tuscaloosa.com
+  phone: 205-248-5105
+  image: https://assets.caboosecms.com/media/9760332_dsc_5572tyner_large.jpg?1621448890
+- name: John Faile
+  district: '6'
+  email: jfaile@tuscaloosa.com
+  phone: 205-248-5106
+  image: https://assets.caboosecms.com/media/9760378_dsc_5535faile_large.jpg?1621449998
+- name: Cassius Lanier
+  district: '7'
+  email: clanier@tuscaloosa.com
+  phone: 205-248-5107
+  image: https://assets.caboosecms.com/media/10681754_cassius-lanier_large.jpg?1631546439

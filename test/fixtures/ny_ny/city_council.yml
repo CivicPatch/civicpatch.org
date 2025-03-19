@@ -1,0 +1,206 @@
+---
+council_members:
+- name: Keith Powers
+  district: '1'
+  email: District1@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-1.jpg
+- name: Carlina Rivera
+  district: '2'
+  email: District2@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-2.jpg
+- name: Erik Bottcher
+  district: '3'
+  email: District3@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-3.jpg
+- name: Keith Powers
+  district: '4'
+  email: District4@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-4.jpg
+- name: Julie Menin
+  district: '5'
+  email: District5@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-5.jpg
+- name: Gale A. Brewer
+  district: '6'
+  email: District6@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-6.jpg
+- name: Shaun Abreu
+  district: '7'
+  email: District7@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-7.jpg
+- name: Diana Ayala
+  district: '8'
+  email: District8@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-8.jpg
+- name: Amanda Farías
+  district: '9'
+  email: District9@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-9.jpg
+- name: Carmen De La Rosa
+  district: '10'
+  email: District10@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-10.jpg
+- name: Eric Dinowitz
+  district: '11'
+  email: District11@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-11.jpg
+- name: Kevin C. Riley
+  district: '12'
+  email: District12@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-12.jpg
+- name: Marjorie Velázquez
+  district: '13'
+  email: District13@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-13.jpg
+- name: Pierina Ana Sanchez
+  district: '14'
+  email: District14@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-14.jpg
+- name: Oswald Feliz
+  district: '15'
+  email: District15@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-15.jpg
+- name: Althea Stevens
+  district: '16'
+  email: District16@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-16.jpg
+- name: Rafael Salamanca Jr.
+  district: '17'
+  email: District17@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-17.jpg
+- name: Amanda Farías
+  district: '18'
+  email: District18@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-18.jpg
+- name: Vickie Paladino
+  district: '19'
+  email: District19@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-19.jpg
+- name: Sandra Ung
+  district: '20'
+  email: District20@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-20.jpg
+- name: Francisco Moya
+  district: '21'
+  email: District21@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-21.jpg
+- name: Tiffany Cabán
+  district: '22'
+  email: District22@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-22.jpg
+- name: Linda Lee
+  district: '23'
+  email: District23@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-23.jpg
+- name: James F. Gennaro
+  district: '24'
+  email: District24@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-24.jpg
+- name: Shekar Krishnan
+  district: '25'
+  email: District25@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-25.jpg
+- name: Julie Won
+  district: '26'
+  email: District26@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-26.jpg
+- name: Lynn Schulman
+  district: '27'
+  email: District27@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-27.jpg
+- name: Adrienne E. Adams
+  district: '28'
+  email: District28@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-28.jpg
+- name: Nantasha Williams
+  district: '29'
+  email: District29@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-29.jpg
+- name: Robert F. Holden
+  district: '30'
+  email: District30@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-30.jpg
+- name: Selvena N. Brooks-Powers
+  district: '31'
+  email: District31@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-31.jpg
+- name: Joann Ariola
+  district: '32'
+  email: District32@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-32.jpg
+- name: Lincoln Restler
+  district: '33'
+  email: District33@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-33.jpg
+- name: Jennifer Gutiérrez
+  district: '34'
+  email: District34@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-34.jpg
+- name: Crystal Hudson
+  district: '35'
+  email: District35@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-35.jpg
+- name: Chi Ossé
+  district: '36'
+  email: District36@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-36.jpg
+- name: Sandy Nurse
+  district: '37'
+  email: District37@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-37.jpg
+- name: Alexa Avilés
+  district: '38'
+  email: District38@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-38.jpg
+- name: Shahana Hanif
+  district: '39'
+  email: District39@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-39.jpg
+- name: Rita Joseph
+  district: '40'
+  email: District40@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-40.jpg
+- name: Darlene Mealy
+  district: '41'
+  email: District41@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-41.jpg
+- name: Chris Banks
+  district: '42'
+  email: District42@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-42.jpg
+- name: Susan Zhuang
+  district: '43'
+  email: District43@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-43.jpg
+- name: Vacant
+  district: '44'
+  email: District44@council.nyc.gov
+  image: https://council.nyc.gov/wp-content/themes/wp-nycc/assets/images/nyc-seal-blue.png
+- name: Farah N. Louis
+  district: '45'
+  email: District45@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-45.jpg
+- name: Mercedes Narcisse
+  district: '46'
+  email: District46@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-46.jpg
+- name: Justin Brannan
+  district: '47'
+  email: District47@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-47.jpg
+- name: Inna Vernikov
+  district: '48'
+  email: District48@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-48.jpg
+- name: Kamillah Hanks
+  district: '49'
+  email: District49@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-49.jpg
+- name: David Carr
+  district: '50'
+  email: District50@council.nyc.gov
+  image: https://raw.githubusercontent.com/NewYorkCityCouncil/districts/master/thumbnails/district-50.jpg
+- name: Vacant
+  district: '51'
+  email: District51@council.nyc.gov
+  image: https://council.nyc.gov/wp-content/themes/wp-nycc/assets/images/nyc-seal-blue.png
