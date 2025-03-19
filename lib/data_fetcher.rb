@@ -100,6 +100,7 @@ class DataFetcher
   def download_images(base_url, nokogiri_html, destination_dir, using_browser, browser_session)
     nokogiri_html.css("img").each_with_index do |img, index|
       image_url = img["src"]
+      image_url = format_url(image_url)
 
       absolute_image_url = URI.join(base_url, image_url).to_s
 
@@ -138,7 +139,15 @@ class DataFetcher
         next
       end
 
-      link["href"] = URI.join(base_url, link["href"]).to_s
+      link["href"] = format_url(link["href"])
+
+      begin
+        link["href"] = URI.join(base_url, link["href"]).to_s
+      rescue => e
+        puts "Error updating link: #{e.message}"
+        puts "Link: #{link["href"]}"
+        link["href"] = nil
+      end
     end
   end
 
@@ -275,5 +284,10 @@ class DataFetcher
       end
 
     base_override_url || page_url
+  end
+
+  def format_url(url)
+    # handle spaces
+    url.gsub(" ", "%20")
   end
 end

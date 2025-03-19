@@ -112,7 +112,7 @@ namespace :city_info do
 
     destination_dir, cache_destination_dir = prepare_directories(state, city)
 
-    search_engines = [ "manual", "brave", "serp" ]
+    search_engines = [ "manual", "brave" ]
     search_result_urls = []
 
     search_engines.each do |engine|
@@ -296,8 +296,6 @@ namespace :city_info do
     case search_engine
     when "manual"
       SiteCrawler.get_urls(website, [ "city council members", "council members", "councilmembers", "city council", "council" ])
-    when "serp"
-      SearchService::Serp.get_search_result_urls("#{city} #{state} city council members", website)
     when "brave"
       SearchService::Brave.get_search_result_urls("#{city} #{state} city council members", website)
     else
