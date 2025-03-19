@@ -19,3 +19,12 @@ rest api: https://services.arcgis.com/ZOyb2t4B0UYuYNYH/arcgis/rest/services/Seat
 * Serp API (not in use)
   * https://serpapi.com/pricing
   * free tier - 100 queries/month
+
+# Software
+* GDAL
+  * Mac: `brew install gdal`
+
+# Rake Tasks
+* `rake maps:census_to_map[wa]`
+  * Converts the census shapefiles to a GeoJSON files
+  
