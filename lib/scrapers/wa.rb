@@ -3,7 +3,7 @@ require "open-uri"
 require "yaml"
 
 module Scrapers
-  class WA
+  class Wa
     def self.get_places
       url = "https://mrsc.org/research-tools/washington-city-and-town-profiles"
 

@@ -4,7 +4,6 @@
 # rake 'city_info:get_meta[wa,seattle]'
 # rake 'city_info:find_geojson[nm,albuquerque,district]'
 
-require_relative "../helpers"
 require_relative "../data_fetcher"
 require_relative "../services/openai"
 require_relative "../services/duck_duck_go"
@@ -54,7 +53,7 @@ namespace :city_info do
       exit 1
     end
 
-    new_places = Scrapers::WA.get_places
+    new_places = Scrapers::Wa.get_places
 
     update_state_info(state, new_places)
   end
@@ -295,7 +294,7 @@ namespace :city_info do
   def fetch_search_result_urls(search_engine, city, state, website)
     case search_engine
     when "manual"
-      SiteCrawler.get_urls(website, [ "city council members", "council members", "councilmembers", "city council", "council" ])
+      Scrapers::SiteCrawler.get_urls(website, [ "city council members", "council members", "councilmembers", "city council", "mayor", "council" ])
     when "brave"
       SearchService::Brave.get_search_result_urls("#{city} #{state} city council members", website)
     else
