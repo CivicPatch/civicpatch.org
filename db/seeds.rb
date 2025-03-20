@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+dummy_cd = CongressionalDistrict.create(
+  name: "Dummy CD",
+  boundaries: "POLYGON ((0 0, 0 1, 1 1, 1 0, 0 0))",
+  ocd_id: "ocd-division/country:dummy/state:test/cd:1"
+)

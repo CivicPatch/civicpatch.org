@@ -80,3 +80,6 @@ gem "email_address"
 gem "addressable"
 
 gem "amatch"
+
+gem "pg"
+gem "activerecord-postgis-adapter"

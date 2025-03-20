@@ -16,7 +16,7 @@ WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 && \
+    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 libyaml-dev libpq-dev && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment
@@ -27,6 +27,12 @@ ENV RAILS_ENV="production" \
 
 # Throw-away build stage to reduce size of final image
 FROM base AS build
+
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - && \
+      apt-get install -y nodejs build-essential
+
+COPY package.json package-lock.json ./
+RUN npm install
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \

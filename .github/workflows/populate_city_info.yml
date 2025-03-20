@@ -2,9 +2,8 @@ name: Populate City Info - Council Members
 
 # Number of cities to process in each workflow run
 env:
-  RAILS_PIPELINE_KEY: ${{ secrets.RAILS_PIPELINE_KEY }}
+  PIPELINE_RAILS_KEY: ${{ secrets.PIPELINE_RAILS_KEY }}
   RAILS_ENV: pipeline
-  SECRET_KEY_BASE: ${{ secrets.PIPELINE_SECRET_KEY_BASE }}
 
 on:
   workflow_dispatch:
@@ -40,7 +39,7 @@ jobs:
       - name: Decrypt Rails credentials
         run: |
           mkdir -p config/credentials
-          echo "$RAILS_PIPELINE_KEY" > config/credentials/pipeline.key
+          echo "$PIPELINE_RAILS_KEY" > config/credentials/pipeline.key
 
       - name: Read cities from queue
         id: set-cities

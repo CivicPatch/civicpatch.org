@@ -1,0 +1,38 @@
+name: Deploy to civicpatch.org
+
+concurrency:
+  group: "deploy"
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - main 
+
+env:
+  RAILS_ENV: production
+  PROD_RAILS_KEY: ${{ secrets.PROD_RAILS_KEY }}
+  PROD_DEPLOY_SSH_KEY: ${{ secrets.PROD_DEPLOY_SSH_KEY }}
+  DO_REGISTRY_TOKEN: ${{ secrets.DO_REGISTRY_TOKEN }}
+  KAMAL_SSH_KEY: "~/.ssh/deploy_key"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Checkout ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4.2
+
+      - run: gem install kamal
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.PROD_DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H civicpatch.org >> ~/.ssh/known_hosts

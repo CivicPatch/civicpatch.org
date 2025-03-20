@@ -46,3 +46,7 @@ node_modules
 /test/fixtures/tmp
 
 /config/credentials/pipeline.key
+
+/config/credentials/production.key
+
+/config/credentials/development.key
