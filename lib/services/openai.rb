@@ -1,5 +1,5 @@
-module Service
-  class OpenAIService
+module Services
+  class Openai
     @@MAX_TOKENS = 9400
 
     def initialize

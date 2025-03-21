@@ -6,7 +6,6 @@
 
 require_relative "../data_fetcher"
 require_relative "../services/openai"
-require_relative "../services/duck_duck_go"
 require_relative "../services/brave"
 require_relative "../scrapers/wa"
 require_relative "../scrapers/site_crawler"
@@ -69,7 +68,7 @@ namespace :city_info do
       raise "Error: #{e.message}"
     end
 
-    openai_service = Service::OpenAIService.new
+    openai_service = Services::Openai.new
     map_finder = MapFinder.new(state, city)
 
     candidate_urls = find_division_map_urls(map_finder, state, city, division_type)
@@ -105,7 +104,7 @@ namespace :city_info do
     state_city_entry = validate_search_and_extract_inputs(state, city)
 
     data_fetcher = DataFetcher.new
-    openai_service = Service::OpenAIService.new
+    openai_service = Services::Openai.new
 
     puts "Extracting city info for #{city.capitalize}, #{state.upcase}..."
 
@@ -177,7 +176,7 @@ namespace :city_info do
 
   def find_division_map_urls(map_finder, state, city, division_type)
     search_query = "#{city} #{state} city council #{division_type}s map"
-    search_result_urls = SearchService::Brave.get_search_result_urls(search_query, nil, [ "county" ])
+    search_result_urls = Services::Brave.get_search_result_urls(search_query, nil, [ "county" ])
 
     candidate_urls = []
     search_result_urls.each do |url|
@@ -296,7 +295,7 @@ namespace :city_info do
     when "manual"
       Scrapers::SiteCrawler.get_urls(website, [ "city council members", "council members", "councilmembers", "city council", "mayor", "council" ])
     when "brave"
-      SearchService::Brave.get_search_result_urls("#{city} #{state} city council members", website)
+      Services::Brave.get_search_result_urls("#{city} #{state} city council members", website)
     else
       raise "Invalid search engine: #{search_engine}"
     end

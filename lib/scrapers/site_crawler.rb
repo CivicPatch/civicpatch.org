@@ -1,9 +1,10 @@
 require "nokogiri"
 require "httparty"
 
-class SiteCrawler
-  def self.get_urls(base_url, keywords)
-    base_domain = URI(base_url).host  # Extract the base domain
+module Scrapers
+  class SiteCrawler
+    def self.get_urls(base_url, keywords)
+      base_domain = URI(base_url).host  # Extract the base domain
 
     sitemap_url = find_sitemap(base_url)
     url_text_pairs = if sitemap_url
@@ -89,10 +90,11 @@ class SiteCrawler
     score = 0
     keywords.each_with_index do |keyword, index|
       if text.downcase.include?(keyword.downcase)
-        # Multiply by (keywords.size - index) to prioritize earlier keywords
-        score += (keywords.size - index) * (keywords.size - index)
+          # Multiply by (keywords.size - index) to prioritize earlier keywords
+          score += (keywords.size - index) * (keywords.size - index)
       end
+      end
+      score
     end
-    score
   end
 end

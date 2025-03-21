@@ -62,6 +62,6 @@ namespace :map do
     # get the geojson file
     geojson_file = Rails.root.join("data", "maps", state, "census", "#{state}_#{type}.geojson")
 
-    # remove 
+    # remove
   end
 end

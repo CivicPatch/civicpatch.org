@@ -1,4 +1,4 @@
-module SearchService
+module Services 
   class Brave
     def self.get_search_result_urls(query, with_site = "", discard_urls_with_partial = [])
       formatted_query = URI.encode_www_form_component(query)

@@ -2,12 +2,14 @@
 service: civicpatch
 
 # Name of the container image.
-image: civicpatch
+image: shelltr/civicpatches
+
+#proxy:
+#  host: civicpatch.org
 
 # Deploy to these servers.
 servers:
-  web:
-    - civicpatch.org
+  - <%= ENV['DROPLET_IP'] %>
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -25,20 +27,21 @@ proxy:
 registry:
   # Specify the registry server, if you're not using Docker Hub
   # server: registry.digitalocean.com / ghcr.io / ...
-  server: registry.digitalocean.com/civicpatches
-  username: michelle@shelltr.me
+  username: shelltr
   # Always use an access token rather than real password when possible.
   password:
-    - DO_REGISTRY_TOKEN
+    - DOCKER_HUB_TOKEN
 
 # Inject ENV variables into containers (secrets come from .kamal/secrets).
 env:
   secret:
+    - POSTGRES_PASSWORD
     - RAILS_MASTER_KEY
   clear:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     # When you start using multiple servers, you should split out job processing to a dedicated machine.
     SOLID_QUEUE_IN_PUMA: true
+    DROPLET_IP: DROPLET_IP
 
     # Set number of processes dedicated to Solid Queue (default: 1)
     # JOB_CONCURRENCY: 3
@@ -95,27 +98,29 @@ ssh:
   user: shelltr
 
 # Use accessory services (secrets come from .kamal/secrets).
-#accessories:
-#  db:
-#    image: postgis/postgis:17-3.5
-#    host: db
-#    # Change to 3306 to expose port to the world instead of just local network.
-#    port: "127.0.0.1:5432:5432"
-#    env:
-#      clear:
-#        POSTGRES_USER: civic_patch
-#        POSTGRES_DB: civic_patch_production
-#        POSTGRES_PASSWORD: 
-#      secret:
-#        - MYSQL_ROOT_PASSWORD
-#    files:
-#      - config/mysql/production.cnf:/etc/mysql/my.cnf
-#      - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
-#    directories:
-#      - /mnt/volume_do:/var/lib/mysql
-#   redis:
-#     image: redis:7.0
-#     host: 192.168.0.2
-#     port: 6379
-#     directories:
-#       - data:/data
+accessories:
+  db:
+    image: postgis/postgis:17-3.5
+    # Change to 3306 to expose port to the world instead of just local network.
+    # commenting this out in favor of the network option
+    host: <%= ENV['DROPLET_IP'] %>
+    port: "127.0.0.1:5432:5432"
+    env:
+      clear:
+        POSTGRES_USER: civic_patch
+        POSTGRES_DB: civic_patch_production
+      secret:
+        - POSTGRES_PASSWORD
+    files:
+      - config/init.sql:/docker-entrypoint-initdb.d/setup.sql
+    directories:
+      - /mnt/volume_do/civicpatch_db:/var/lib/postgresql/data
+    #files:
+    #  - config/mysql/production.cnf:/etc/mysql/my.cnf
+    #  - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
+   #redis:
+   #  image: redis:7.0
+   #  host: 192.168.0.2
+   #  port: 6379
+   #  directories:
+   #    - data:/data

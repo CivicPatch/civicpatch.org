@@ -33,7 +33,7 @@ class SiteCrawlerTest < Minitest::Test
       </html>
     HTML
 
-    sorted_urls = SiteCrawler.get_urls(@base_url, @keywords)
+    sorted_urls = Scrapers::SiteCrawler.get_urls(@base_url, @keywords)
 
     expected_urls = [
       [ "#{@base_url}/city-council-members", "City Council Members" ],
@@ -65,7 +65,7 @@ class SiteCrawlerTest < Minitest::Test
 
     # This will raise an error if any request is made to a URL not stubbed
     assert_raises(WebMock::NetConnectNotAllowedError) do
-      SiteCrawler.get_urls(@base_url, @keywords)
+      Scrapers::SiteCrawler.get_urls(@base_url, @keywords)
     end
   end
 end
