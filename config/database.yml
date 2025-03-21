@@ -26,7 +26,10 @@ test:
 production:
   primary:
     <<: *default
-    database: storage/production.sqlite3
+    username: civicpatch
+    password: <%= ENV['POSTGRES_PASSWORD'] %>
+    database: civicpatch_production
+    host: civic_patch-db
   cache:
     <<: *default
     database: storage/production_cache.sqlite3

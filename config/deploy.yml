@@ -7,7 +7,8 @@ image: shelltr/civic_patch
 # Deploy to these servers.
 servers:
   web:
-    - civicpatch.org
+    hosts:
+      - civicpatch.org
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -42,6 +43,8 @@ env:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     # When you start using multiple servers, you should split out job processing to a dedicated machine.
     SOLID_QUEUE_IN_PUMA: true
+  secret:
+    - POSTGRES_PASSWORD
 
     # Set number of processes dedicated to Solid Queue (default: 1)
     # JOB_CONCURRENCY: 3
@@ -95,22 +98,22 @@ builder:
 #   user: app
 
 # Use accessory services (secrets come from .kamal/secrets).
-# accessories:
-#   db:
-#     image: mysql:8.0
-#     host: 192.168.0.2
-#     # Change to 3306 to expose port to the world instead of just local network.
-#     port: "127.0.0.1:3306:3306"
-#     env:
-#       clear:
-#         MYSQL_ROOT_HOST: '%'
-#       secret:
-#         - MYSQL_ROOT_PASSWORD
-#     files:
-#       - config/mysql/production.cnf:/etc/mysql/my.cnf
-#       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
-#     directories:
-#       - data:/var/lib/mysql
+accessories:
+  db:
+    image: postgis/postgis:17-3.5
+    host: civicpatch.org
+    # Change to 3306 to expose port to the world instead of just local network.
+    #port: "127.0.0.1:5432:5432"
+    env:
+      clear:
+        POSTGRES_USER: civicpatch
+        POSTGRES_DB: civicpatch_production
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+     - /mnt/volume_do/civicpatch_db:/var/lib/postgresql/data
+     #files:
+     #  - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
 #   redis:
 #     image: redis:7.0
 #     host: 192.168.0.2
