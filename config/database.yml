@@ -26,6 +26,8 @@ test:
 production:
   primary:
     <<: *default
+    adapter: postgis
+    schema_search_path: public
     username: civicpatch
     password: <%= ENV['POSTGRES_PASSWORD'] %>
     database: civicpatch_production
