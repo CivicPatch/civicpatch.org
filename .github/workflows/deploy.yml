@@ -36,4 +36,4 @@ jobs:
           POSTGRES_PASSWORD: ${{ secrets.PROD_POSTGRES_PASSWORD }}
           DOCKER_REGISTRY_PASSWORD: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
           RAILS_MASTER_KEY: ${{ secrets.PROD_RAILS_KEY }}
-        run: kamal deploy 
+        run: kamal deploy --verbose
