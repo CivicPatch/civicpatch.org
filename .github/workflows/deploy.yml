@@ -1,0 +1,39 @@
+name: Deploy to civicpatch.org
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4.2'  # Specify your Ruby version
+
+      - name: Setup ssh key
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/ed25519
+          chmod 600 ~/.ssh/ed25519
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/ed25519
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.PROD_DEPLOY_SSH_KEY }}
+
+      - name: Install Kamal
+        run: gem install kamal
+
+      - name: Deploy with Kamal
+        env:
+          POSTGRES_PASSWORD: ${{ secrets.PROD_POSTGRES_PASSWORD }}
+          DOCKER_REGISTRY_PASSWORD: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+          RAILS_MASTER_KEY: ${{ secrets.PROD_RAILS_KEY }}
+        run: kamal deploy 
