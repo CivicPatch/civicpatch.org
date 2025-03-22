@@ -21,12 +21,19 @@ jobs:
       - name: Setup ssh key
         run: |
           mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/ed25519
-          chmod 600 ~/.ssh/ed25519
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519  # Use Ed25519 key
+          chmod 600 ~/.ssh/id_ed25519
           eval "$(ssh-agent -s)"
-          ssh-add ~/.ssh/ed25519
+          ssh-add ~/.ssh/id_ed25519
+
+          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+          # Test SSH connection
+          ssh -v shelltr@civicpatch.org  # Test SSH connection
         env:
           SSH_PRIVATE_KEY: ${{ secrets.PROD_DEPLOY_SSH_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.PROD_DEPLOY_SSH_KNOWN_HOSTS }}
+
 
       - name: Install Kamal
         run: gem install kamal
