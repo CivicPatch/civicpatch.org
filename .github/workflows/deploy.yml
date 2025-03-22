@@ -27,13 +27,9 @@ jobs:
           ssh-add ~/.ssh/id_ed25519
 
           echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-
-          # Test SSH connection
-          ssh -v shelltr@civicpatch.org  # Test SSH connection
         env:
           SSH_PRIVATE_KEY: ${{ secrets.PROD_DEPLOY_SSH_KEY }}
-          SSH_KNOWN_HOSTS: ${{ secrets.PROD_DEPLOY_SSH_KNOWN_HOSTS }}
-
+          SSH_KNOWN_HOSTS: ${{ secrets.PROD_DEPLOY_SSH_KNOWN_HOSTS }} # This is the output of ssh-keyscan civicpatch.org
 
       - name: Install Kamal
         run: gem install kamal
