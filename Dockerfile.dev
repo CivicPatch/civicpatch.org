@@ -6,7 +6,10 @@ ENV RAILS_ENV="development"
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 libpq-dev && \
+    apt-get install --no-install-recommends -y curl \
+    libjemalloc2 libvips \
+    sqlite3 libpq-dev \
+    postgresql-client libgdal-dev gdal-bin && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install packages needed to build gems
@@ -16,7 +19,6 @@ RUN apt-get update -qq && \
 
 # Set the working directory
 WORKDIR /app
-
 
 COPY Gemfile Gemfile.lock ./
 

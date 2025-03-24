@@ -14,6 +14,10 @@ services:
       - db
     environment:
       DATABASE_URL: postgres://civicpatch:development-password@db:5432/civicpatch_development
+      POSTGRES_HOST: db
+      POSTGRES_USER: civicpatch
+      POSTGRES_PASSWORD: development-password
+      POSTGRES_DB: civicpatch_development
 
   db:
     image: postgis/postgis:17-3.5
