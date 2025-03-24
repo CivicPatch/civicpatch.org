@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 0) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_24_203944) do
   create_schema "tiger"
   create_schema "tiger_data"
   create_schema "topology"
@@ -425,6 +425,15 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.index ["state"], name: "place_lookup_state_idx"
   end
 
+  create_table "place_representatives", force: :cascade do |t|
+    t.string "place_name", null: false
+    t.bigint "representative_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_name", "representative_id"], name: "idx_on_place_name_representative_id_b000d5ba17", unique: true
+    t.index ["representative_id"], name: "index_place_representatives_on_representative_id"
+  end
+
   create_table "places", primary_key: "gid", id: :serial, force: :cascade do |t|
     t.string "statefp"
     t.string "placefp"
@@ -444,6 +453,16 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.string "intptlon"
     t.geometry "geom", limit: {srid: 4269, type: "multi_polygon"}
     t.index ["geom"], name: "places_geom_geom_idx", using: :gist
+  end
+
+  create_table "representatives", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "phone_number"
+    t.string "email"
+    t.string "website_url"
+    t.string "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "secondary_unit_lookup", primary_key: "name", id: { type: :string, limit: 20 }, force: :cascade do |t|
@@ -614,4 +633,6 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.string "statefp", limit: 2
     t.string "place", limit: 100, null: false
   end
+
+  add_foreign_key "place_representatives", "representatives"
 end
