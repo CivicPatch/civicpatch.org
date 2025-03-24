@@ -22,11 +22,6 @@ COPY Gemfile Gemfile.lock ./
 
 RUN bundle install
 
-COPY . .
-
-# Ensure the log directory is writable by the Rails user
-RUN chown -R 1000:1000 /app/log
-
 # Expose the application port
 EXPOSE 3000
 # Command to keep the container running
