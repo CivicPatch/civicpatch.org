@@ -1,11 +1,13 @@
 class PlaceRepresentative < ApplicationRecord
   belongs_to :place, foreign_key: :place_name, primary_key: :name
   belongs_to :representative 
+  before_validation :format_place_name
 
   after_destroy :destroy_representative_if_no_more_place_representatives
 
-  private
-
+  def self.format_place_name(place_name)
+    Place.format_place_name(place_name)
+  end
 
   def destroy_representative_if_no_more_place_representatives
     if PlaceRepresentative.where(representative_id: representative_id).count.zero?

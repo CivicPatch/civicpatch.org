@@ -27,8 +27,10 @@ namespace :sync_cities do
     puts "Creating #{cities.size} cities"
 
     cities.each do |city_name|
+      puts "Processing city: #{city_name}" # Debugging output
       # Remove existing representatives
       PlaceRepresentative.where(place_name: city_name).destroy_all
+      puts "Removed existing representatives for #{city_name}" # Debugging output
 
       # Create new representatives
       city_directory_file = Rails.root.join(
@@ -51,7 +53,7 @@ namespace :sync_cities do
           position: person["position"],
           website_url: person["website"],
         )
-        PlaceRepresentative.create(
+        place_rep = PlaceRepresentative.create(
           place_name: city_name,
           representative_id: representative.id,
         )
