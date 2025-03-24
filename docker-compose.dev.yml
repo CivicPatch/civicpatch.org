@@ -13,7 +13,6 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_URL: postgres://civicpatch:development-password@db:5432/civicpatch_development
       POSTGRES_HOST: db
       POSTGRES_USER: civicpatch
       POSTGRES_PASSWORD: development-password

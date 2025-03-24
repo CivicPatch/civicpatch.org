@@ -64,4 +64,5 @@ end
 
 gem "pg"
 gem "rgeo"
+gem "rgeo-activerecord"
 gem "activerecord-postgis-adapter"
