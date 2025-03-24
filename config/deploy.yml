@@ -9,6 +9,11 @@ servers:
   web:
     hosts:
       - civicpatch.org
+    health_check:
+      path: /health
+      interval: 3600s
+      timeout: 3600s
+      retries: 3
   # job:
   #   hosts:
   #     - 192.168.0.1
