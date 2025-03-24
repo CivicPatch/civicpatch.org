@@ -9,4 +9,8 @@ class Place < ApplicationRecord
   def place_type
     namelsad.split(" ").last
   end
+
+  def ocd_id
+    "ocd-division/country:us/state:#{state}/place:#{name}"
+  end
 end
