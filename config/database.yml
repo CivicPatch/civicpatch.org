@@ -36,10 +36,10 @@ production:
     <<: *default
     adapter: postgis
     schema_search_path: public
-    username: civicpatch
+    host: <%= ENV['POSTGRES_HOST'] %>
+    username: <%= ENV['POSTGRES_USER'] %>
     password: <%= ENV['POSTGRES_PASSWORD'] %>
-    database: civicpatch_production
-    host: civic_patch-db
+    database: <%= ENV['POSTGRES_DB'] %>
   cache:
     <<: *default
     database: storage/production_cache.sqlite3
