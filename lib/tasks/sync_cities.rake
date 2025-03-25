@@ -15,7 +15,7 @@ namespace :sync_cities do
   private
 
   def get_cities(state)
-    places_yaml = Rails.root.join("data", "open-data", "data", "us", state, "places.yml")
+    places_yaml = Rails.root.join("data", "open-data", "us", state, "places.yml")
     places = YAML.load_file(places_yaml)["places"]
     found_places = places.select { |place| place["last_city_scrape_run"].present? }.map{ |place| place["place"] }
     puts "Found cities: #{found_places}"
@@ -36,7 +36,6 @@ namespace :sync_cities do
       city_directory_file = Rails.root.join(
         "data", 
         "open-data", 
-        "data", 
         "us", 
         state, 
         city_name, 
