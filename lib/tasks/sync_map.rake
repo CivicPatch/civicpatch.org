@@ -12,7 +12,7 @@ namespace :sync_map do
     }
 
     shapefile_path = Rails.root.join(
-      "data", "open-data", "data", "us", 
+      "data", "open-data", "us", 
       "census", "#{type}_2024/tl_2024_#{state_map[state]}_#{type}.shp")
 
     puts "Importing for #{state} from #{shapefile_path}"
