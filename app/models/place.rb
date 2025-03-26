@@ -1,9 +1,10 @@
 class Place < ApplicationRecord
-  has_many :place_representatives
-  has_many :representatives, through: :place_representatives
+  has_many :representatives
 
   validates :name, presence: true
   validates :namelsad, presence: true
+
+  self.primary_key = "gid"
 
   # returns city, town, village, etc.
   def place_type

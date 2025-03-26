@@ -14,7 +14,7 @@ bundle exec rake 'update_open_data:sync'
 bundle exec rake 'sync_map:sync[place,wa]'
 
 # Add city people for state
-bundle exec rake 'sync_cities:sync[place,wa]'
+bundle exec rake 'sync_cities:sync[wa]'
 ```
 
 ### Deploying
