@@ -8,7 +8,7 @@
 
 ```bash
 #Update open data source
-bundle exec rake 'update_open_data:sync' 
+bundle exec rake 'od:sync' 
 
 # Set up "places" table if none exists; adds state places -- use only once per state
 bundle exec rake 'sync_map:sync[place,wa]'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_25_232636) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_02_211801) do
   create_schema "tiger"
   create_schema "tiger_data"
   create_schema "topology"
@@ -448,13 +448,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_232636) do
 
   create_table "representatives", force: :cascade do |t|
     t.string "name", null: false
-    t.string "phone_number"
-    t.string "email"
-    t.string "website_url"
-    t.string "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "place_id"
+    t.jsonb "data", default: {}, null: false
     t.index ["place_id"], name: "index_representatives_on_place_id"
   end
 
