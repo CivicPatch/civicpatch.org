@@ -6,7 +6,7 @@ namespace :od do
     destination = Rails.root.join("data", "open-data") # Where to copy the folder (replace with actual path)
 
     # Create a temporary directory for cloning
-    temp_dir = "temp_clone_dir"
+    temp_dir = "tmp/updated-data"
     FileUtils.mkdir_p(temp_dir)
 
     # Clone the repository
