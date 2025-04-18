@@ -11,7 +11,7 @@ class Representative < ApplicationRecord
     place = Place.find_by(name: format_name(place), statefp: state_to_state_code(state))
 
     # TODO: Handle county
-    place.representatives
+    place.representatives.map(&:data)
   end
 
   def self.get_ocd_id_parts(ocd_id)
@@ -21,18 +21,67 @@ class Representative < ApplicationRecord
       state = parts[2].split(":").last
       place = parts[3].split(":").last
       puts "State: #{state}, Place: #{place}"
-      [state, nil, place.capitalize]
+      [ state, nil, place.capitalize ]
     else
       state = parts[2].split(":").last
       county = parts[3].split(":").last
       place = parts[4].split(":").last
       puts "State: #{state}, County: #{county}, Place: #{place}"
-      [state, county.capitalize, place.capitalize]
+      [ state, county.capitalize, place.capitalize ]
     end
   end
 
   def self.format_name(name)
     name.gsub("_", " ").split(" ").map(&:capitalize).join(" ")
+  end
+
+  def self.to_person(open_data_person)
+    contact_details = []
+    links = []
+    sources = []
+
+    person = {
+      "name" => open_data_person["name"],
+      "image" => open_data_person["image"],
+      "links" => links
+    }
+
+    if open_data_person["email"].present?
+      contact_details << {
+        "type" => "email",
+        "value" => open_data_person["email"],
+        "label" => "Email"
+      }
+    end
+
+    if open_data_person["phone_number"].present?
+      contact_details << {
+        "type": "phone",
+        "value": open_data_person["phone_number"],
+        "label": "Phone"
+      }
+    end
+
+    if open_data_person["website"].present?
+      links << {
+        "note": "Website",
+        "url": open_data_person["website"]
+      }
+    end
+
+    if open_data_person["sources"].present?
+      open_data_person["sources"].each do |source|
+        sources << {
+          "url": source
+        }
+      end
+    end
+
+    person["contact_details"] = contact_details
+    person["links"] = links
+    person["sources"] = sources
+
+    person
   end
 
   def self.state_to_state_code(state)

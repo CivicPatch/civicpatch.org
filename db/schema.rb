@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_02_211801) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_18_011957) do
   create_schema "tiger"
   create_schema "tiger_data"
   create_schema "topology"
@@ -91,6 +91,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_02_211801) do
     t.check_constraint "geometrytype(the_geom) = 'MULTIPOLYGON'::text OR the_geom IS NULL", name: "enforce_geotype_geom"
     t.check_constraint "st_ndims(the_geom) = 2", name: "enforce_dims_geom"
     t.check_constraint "st_srid(the_geom) = 4269", name: "enforce_srid_geom"
+  end
+
+  create_table "city_syncs", force: :cascade do |t|
+    t.string "state"
+    t.string "city_name"
+    t.string "gnis"
+    t.string "meta_hash"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "county", primary_key: "cntyidfp", id: { type: :string, limit: 5 }, force: :cascade do |t|

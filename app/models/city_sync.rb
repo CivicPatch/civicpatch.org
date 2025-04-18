@@ -1,0 +1,2 @@
+class CitySync < ApplicationRecord
+end
