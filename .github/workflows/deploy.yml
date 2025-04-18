@@ -43,5 +43,4 @@ jobs:
 
       - name: Sync cities
         run: |
-          cd civicpatch
           kamal app exec "rake sync_cities:sync[wa]"
