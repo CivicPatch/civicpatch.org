@@ -1,36 +1,38 @@
 namespace :sync_cities do
   desc "Sync cities from the source to the database"
-  task :sync, [ :state ] => :environment do |t, args|
-    state = args[:state]
-
-    puts "Syncing cities for #{state}"
+  task sync: :environment do
     # Get the sync config for the state
     city_syncs = CitySync.all
 
     # Get the cities not present in the sync statuses
-    cities = get_cities(state, city_syncs)
-    create_cities(state, cities)
+    cities_to_sync = get_cities(city_syncs)
+    create_cities(cities_to_sync)
   end
 
   private
 
-  def get_cities(state, city_syncs)
-    places_yaml = Rails.root.join("data", "open-data", state, "places.json")
-    places = JSON.parse(File.read(places_yaml))["places"]
-    
-    found_places = places.select { |place|
-      place["gnis"].present? &&
-        place["meta_hash"].present? &&
-        place["fips"].present? &&
-        # meta_hash is not present in the sync statuses
-        !city_syncs.map(&:meta_hash).include?(place["meta_hash"])
-    }
-    puts "Found cities: #{found_places.count}"
+  def get_cities(city_syncs)
+    # Return array of hash of meta_hash => [state, place]
+    city_sync_hashes = city_syncs.map(&:meta_hash)
 
-    found_places
+    cities_to_sync = []
+    places_files = Dir.glob(Rails.root.join("data", "open-data", "**", "places.json"))
+    places_files.each do |places_file|
+      state = places_file.split("/").last(2).first
+      places = JSON.parse(File.read(places_file))["places"]
+      places.each do |place|
+        next if place["meta_hash"].blank? || city_sync_hashes.include?(place["meta_hash"])
+        cities_to_sync << {
+          "state" => state,
+          **place
+        }
+      end
+    end
+
+    cities_to_sync
   end
 
-  def create_cities(state, cities)
+  def create_cities(cities)
     puts "Creating #{cities.size} cities"
 
     cities.each do |city|
@@ -52,6 +54,7 @@ namespace :sync_cities do
       Representative.where(place: place).destroy_all
 
       ## Create new representatives
+      state = city["state"]
       city_directory_file = get_city_directory(state, city)
       puts "Loading city directory file: #{city_directory_file}"
       city_directory = YAML.load_file(city_directory_file)
@@ -70,7 +73,7 @@ namespace :sync_cities do
       end
 
       CitySync.create(
-        state: state,
+        state: state, # Filled out in get_cities
         city_name: city["name"],
         meta_hash: city["meta_hash"],
         gnis: city["gnis"],
@@ -81,6 +84,7 @@ namespace :sync_cities do
 
 
   def get_city_directory(state, city_entry)
+    puts "Getting city directory for #{city_entry} in #{state}"
     possible_city_directories = [
       Rails.root.join("data", "open-data", state, city_entry["name"], "people.yml"),
       Rails.root.join("data", "open-data", state, "#{city_entry["name"]}_#{city_entry["gnis"]}", "people.yml")
