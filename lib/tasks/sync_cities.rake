@@ -5,38 +5,25 @@ namespace :sync_cities do
 
     puts "Syncing cities for #{state}"
     # Get the sync config for the state
-    sync_statuses = {} # Object of hash key to gnis id, fips, and city name
-    sync_statuses_file_path = Rails.root.join("lib", "tasks", "syncs", "#{state}.yml")
-    sync_statuses = YAML.load_file(sync_statuses_file_path) if File.exist?(sync_statuses_file_path)
+    city_syncs = CitySync.all
 
     # Get the cities not present in the sync statuses
-    cities = get_cities(state, sync_statuses)
-
-    # Create the cities in the database
+    cities = get_cities(state, city_syncs)
     create_cities(state, cities)
-
-    # Update the sync statuses
-    cities.each do |city|
-      sync_statuses[city["gnis"]] = { 
-        "gnis" => city["gnis"], 
-        "fips" => city["fips"], 
-        "city_name" => city["name"], 
-        "meta_hash" => city["meta_hash"] }
-    end
-    File.write(sync_statuses_file_path, sync_statuses.to_yaml)
   end
 
   private
 
-  def get_cities(state, sync_statuses)
-    places_yaml = Rails.root.join("data", "open-data", state, "places.yml")
-    places = YAML.load_file(places_yaml)["places"]
+  def get_cities(state, city_syncs)
+    places_yaml = Rails.root.join("data", "open-data", state, "places.json")
+    places = JSON.parse(File.read(places_yaml))["places"]
+    
     found_places = places.select { |place|
-      place["gnis"].present? && 
-        place["meta_hash"].present? && 
+      place["gnis"].present? &&
+        place["meta_hash"].present? &&
         place["fips"].present? &&
         # meta_hash is not present in the sync statuses
-        !sync_statuses.values.map { |status| status["meta_hash"] }.include?(place["meta_hash"])
+        !city_syncs.map(&:meta_hash).include?(place["meta_hash"])
     }
     puts "Found cities: #{found_places.count}"
 
@@ -68,28 +55,35 @@ namespace :sync_cities do
       city_directory_file = get_city_directory(state, city)
       puts "Loading city directory file: #{city_directory_file}"
       city_directory = YAML.load_file(city_directory_file)
-      people = city_directory["people"]
+      people = city_directory
 
       puts "People: #{people.size}"
 
       people.each do |person|
-        #puts "Creating representative for #{person["name"]}"
-        #puts "Person: #{person}"
+        # puts "Creating representative for #{person["name"]}"
+        # puts "Person: #{person}"
         Representative.create(
           name: person["name"],
           data: person,
           place: place
         )
       end
+
+      CitySync.create(
+        state: state,
+        city_name: city["name"],
+        meta_hash: city["meta_hash"],
+        gnis: city["gnis"],
+      )
     end
   end
 
-    
+
 
   def get_city_directory(state, city_entry)
     possible_city_directories = [
-      Rails.root.join("data", "open-data", state, city_entry["name"], "directory.yml"),
-      Rails.root.join("data", "open-data", state, "#{city_entry["name"]}_#{city_entry["gnis"]}", "directory.yml")
+      Rails.root.join("data", "open-data", state, city_entry["name"], "people.yml"),
+      Rails.root.join("data", "open-data", state, "#{city_entry["name"]}_#{city_entry["gnis"]}", "people.yml")
     ]
 
     possible_city_directories.find { |file| File.exist?(file) }
