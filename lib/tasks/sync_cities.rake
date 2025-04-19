@@ -47,7 +47,7 @@ namespace :sync_cities do
       place = Place.find_by(statefp: state_code, placefp: place_fp)
 
       if place.nil?
-        puts "Place not found for #{city["name"]} in #{state} with fips #{fips}"
+        puts "Place not found for #{city["name"]} in #{state_code} and with fips #{fips}"
         next
       end
 
@@ -84,7 +84,6 @@ namespace :sync_cities do
 
 
   def get_city_directory(state, city_entry)
-    puts "Getting city directory for #{city_entry} in #{state}"
     possible_city_directories = [
       Rails.root.join("data", "open-data", state, city_entry["name"], "people.yml"),
       Rails.root.join("data", "open-data", state, "#{city_entry["name"]}_#{city_entry["gnis"]}", "people.yml")
