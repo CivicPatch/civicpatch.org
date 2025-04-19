@@ -36,7 +36,6 @@ namespace :sync_cities do
     puts "Creating #{cities.size} cities"
 
     cities.each do |city|
-      gnis_id = "0#{city["gnis"]}" # Weird -- there's a leading 0 for every gnis id
       puts "Processing city: #{city["name"]}" # Debugging output
       ## Remove existing representatives
       puts "Removing existing representatives for #{city["name"]}" # Debugging output
@@ -67,7 +66,7 @@ namespace :sync_cities do
         # puts "Person: #{person}"
         Representative.create(
           name: person["name"],
-          data: person,
+          data: Representative.to_person(person),
           place: place
         )
       end
