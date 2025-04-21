@@ -16,6 +16,7 @@ development:
   database: civicpatch_development
   username: civicpatch
   password: development-password
+  schema_search_path: public,postgis
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

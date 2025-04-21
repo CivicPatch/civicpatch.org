@@ -66,7 +66,4 @@ gem "pg"
 gem "rgeo"
 gem "rgeo-activerecord"
 gem "activerecord-postgis-adapter"
-
-gem "inertia_rails", "~> 3.8"
-
-gem "vite_rails", "~> 3.0"
+gem "ffi-geos"

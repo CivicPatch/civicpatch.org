@@ -14,6 +14,20 @@ class Representative < ApplicationRecord
     place.representatives.map(&:data)
   end
 
+  def self.get_representatives_by_lat_long(lat, long)
+    lat_float = lat.to_f
+    long_float = long.to_f
+    places = Place.find_by_lat_lon(lat_float, long_float)
+
+    if places.empty?
+      return []
+    end
+
+    places.map do |place|
+      place.representatives.map(&:data)
+    end.flatten
+  end
+
   def self.get_ocd_id_parts(ocd_id)
     parts = ocd_id.split("/")
 
@@ -45,6 +59,12 @@ class Representative < ApplicationRecord
       "image" => open_data_person["image"],
       "links" => links
     }
+
+    person["other_names"] = open_data_person["positions"].map do |position|
+      {
+        "name" => position
+      }
+    end
 
     if open_data_person["email"].present?
       contact_details << {

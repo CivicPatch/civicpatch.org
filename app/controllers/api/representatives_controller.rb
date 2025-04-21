@@ -7,6 +7,8 @@ class Api::RepresentativesController < ApplicationController
       validate_ocd_id
 
       representatives = Representative.get_representatives_by_ocd_id(ocd_id)
+    elsif params[:lat].present? && params[:long].present?
+      representatives = Representative.get_representatives_by_lat_long(params[:lat], params[:long])
     end
 
     render json: representatives
@@ -30,5 +32,4 @@ class Api::RepresentativesController < ApplicationController
     # Check if the OCD ID matches either pattern
     ocd_id.match?(state_place_pattern) || ocd_id.match?(county_place_pattern)
   end
-
 end
