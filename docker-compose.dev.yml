@@ -8,8 +8,10 @@ services:
     working_dir: /app
     volumes:
       - .:/app
+      - /app/node_modules
     ports:
       - "3000:3000"
+      - "3036:3036"
     depends_on:
       - db
     environment:
@@ -32,3 +34,4 @@ services:
 
 volumes:
   pgdata:
+  node_modules_volume: {}
