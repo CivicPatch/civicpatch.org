@@ -10,7 +10,8 @@ RUN apt-get update -qq && \
     libjemalloc2 libvips \
     sqlite3 libpq-dev \
     postgresql-client libgdal-dev gdal-bin \
-    procps && \
+    procps \
+    nodejs npm && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install packages needed to build gems
@@ -25,8 +26,13 @@ COPY Gemfile Gemfile.lock ./
 
 RUN bundle install
 
+COPY package.json package-lock.json* ./
+
+RUN npm install
+
 # Expose the application port
 EXPOSE 3000
+
 # Command to keep the container running
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["bin/dev"]
 
