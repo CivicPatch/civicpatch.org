@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   end
 
   root "map#index"
+  get "map/details" => "map#details"
 end
