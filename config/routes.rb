@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   namespace :api do
     resources :representatives, only: [ :index ]
   end
+
+  root "map#index"
 end
