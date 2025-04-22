@@ -11,7 +11,7 @@ RUN apt-get update -qq && \
     sqlite3 libpq-dev \
     postgresql-client libgdal-dev gdal-bin \
     procps \
-    nodejs npm && \
+    tmux nodejs npm && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install packages needed to build gems
@@ -23,6 +23,10 @@ RUN apt-get update -qq && \
 WORKDIR /app
 
 COPY Gemfile Gemfile.lock ./
+
+COPY package.json* package-lock.json* ./
+
+RUN gem install overmind
 
 RUN bundle install
 
