@@ -9,10 +9,7 @@ class Place < ApplicationRecord
   FACTORY = RGeo::Geos.factory(srid: 4269)
 
   def self.find_by_lat_lon(latitude, longitude)
-    point = FACTORY.point(longitude, latitude)
-
-    # https://mentin.medium.com/which-predicate-cb608b470471
-    where("ST_Intersects(geom, ?)", point)
+    where("ST_Intersects(geom, ST_SetSRID(ST_MakePoint(?, ?), 4269))", longitude, latitude)
   end
 
   def place_type
