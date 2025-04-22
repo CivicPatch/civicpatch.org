@@ -1,0 +1,108 @@
+/* app/assets/stylesheets/representatives.css */
+
+.representatives-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.representative-item {
+  display: flex;
+  margin-bottom: 1.5rem;
+  /* Increased spacing */
+  gap: 1rem;
+  /* Spacing between image and text */
+  align-items: flex-start;
+  padding: 1rem;
+  /* Add padding around the item */
+  border: 1px solid #e0e0e0;
+  /* Subtle border */
+  border-radius: 8px;
+  /* Rounded corners */
+  background-color: #fff;
+  /* White background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  /* Subtle shadow */
+}
+
+.representative-image {
+  width: 80px;
+  /* Slightly smaller image */
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  /* Circular image */
+  flex-shrink: 0;
+  /* Prevent image shrinking */
+  border: 2px solid #f0f0f0;
+  /* Light border around image */
+}
+
+.representative-placeholder {
+  width: 80px;
+  height: 80px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid #e0e0e0;
+}
+
+.representative-placeholder-initial {
+  font-size: 32px;
+  /* Slightly smaller initial */
+  color: #999;
+  font-weight: bold;
+}
+
+.representative-details {
+  flex-grow: 1;
+  /* Allow details to take remaining space */
+}
+
+.representative-name {
+  margin-top: 0;
+  /* Remove default h3 margin */
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  /* Larger name */
+  color: #333;
+}
+
+.representative-info-list {
+  list-style-type: none;
+  /* Remove bullets from inner list */
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  /* Slightly smaller detail text */
+  color: #555;
+}
+
+.representative-info-list li {
+  margin-bottom: 0.3rem;
+  /* Spacing between details */
+}
+
+.representative-info-list a {
+  color: #007bff;
+  /* Standard link color */
+  text-decoration: none;
+  /* Remove underline */
+}
+
+.representative-info-list a:hover {
+  text-decoration: underline;
+  /* Underline on hover */
+}
+
+.no-representatives-message {
+  padding: 1rem;
+  text-align: center;
+  color: #777;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
