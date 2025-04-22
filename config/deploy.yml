@@ -45,7 +45,6 @@ env:
     POSTGRES_HOST: civic_patch-db
     POSTGRES_USER: civicpatch
     POSTGRES_DB: civicpatch_production
-    RAILS_LOG_LEVEL: debug
   secret:
     - POSTGRES_PASSWORD
     - RAILS_MASTER_KEY
