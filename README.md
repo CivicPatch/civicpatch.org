@@ -2,7 +2,10 @@
 
 ## Deployment
 
-### Requirements
+## Examples
+* Seattle: http://127.0.0.1:3000/api/representatives?lat=47.606&long=-122.332
+* Bremerton: http://127.0.0.1:3000/api/representatives?lat=47.5687&long=-122.6515
+* http://127.0.0.1:3000/api/representatives?lat=47.658779.536&long=-117.426048
 
 #### Add Places
 

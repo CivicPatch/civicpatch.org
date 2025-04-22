@@ -1,0 +1,42 @@
+<%= turbo_frame_tag "representatives-list" do %>
+  <% if @representatives.any? %>
+    <ul style="list-style-type: none; padding: 0;">
+      <% @representatives.each do |representative| %>
+        <li style="display: flex; margin-bottom: 20px; gap: 15px; align-items: flex-start;">
+          <% if representative["image"].present? %>
+            <img src="<%= representative["image"] %>" alt="<%= representative["name"] %>" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;">
+          <% else %>
+            <div style="width: 100px; height: 100px; background-color: #f0f0f0; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: 40px; color: #999;"><%= representative["name"][0] %></span>
+            </div>
+          <% end %>
+          
+          <div>
+            <h3><%= representative["name"] %></h3>
+            <ul>
+              <% if representative["other_names"].present? %>
+                <li>Positions: <%= representative["other_names"].map { |position| position["name"] }.join(", ") %></li>
+              <% end %>
+              <% if representative["links"].present? && representative["links"].any? %>
+                <% representative["links"].each do |link| %>
+                  <li><%= link["note"] %>: <a href="<%= link["url"] %>"><%= link["url"] %></a></li>
+                <% end %>
+              <% end %>
+              <% if representative["contact_details"].present? && representative["contact_details"].any? %>
+                <% representative["contact_details"].each do |contact_detail| %>
+                  <% if contact_detail["label"] == "Email" %>
+                    <li><%= contact_detail["label"] %>: <a href="mailto:<%= contact_detail["value"] %>"><%= contact_detail["value"] %></a></li>
+                  <% else %>
+                    <li><%= contact_detail["label"] %>: <%= contact_detail["value"] %></li>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No representatives found</p>
+  <% end %>
+<% end %>
