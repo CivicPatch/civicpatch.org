@@ -30,13 +30,8 @@ RUN gem install overmind
 
 RUN bundle install
 
-COPY package.json package-lock.json* ./
-
-RUN npm install
-# RUN npm install
-
 # Expose the application port
 EXPOSE 3000
 
 # Keep the container running
-CMD ["tail", "-f", "/dev/null"]
+CMD ["bin/rails", "server", "-b", "0.0.0.0", "-p", "3000"]
