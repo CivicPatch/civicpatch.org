@@ -4,6 +4,7 @@
 
 ## Examples
 * Seattle: http://127.0.0.1:3000/api/representatives?lat=47.606&long=-122.332
+* Seattle by OCDID: https://civicpatch.org/api/representatives?ocd_id=ocd-division/country:us/state:wa/place:seattle
 * Bremerton: http://127.0.0.1:3000/api/representatives?lat=47.5687&long=-122.6515
 * http://127.0.0.1:3000/api/representatives?lat=47.658779.536&long=-117.426048
 
