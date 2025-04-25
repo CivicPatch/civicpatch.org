@@ -1,2 +1,30 @@
-#!/usr/bin/env ruby
-exec "./bin/rails", "server", "-b", "0.0.0.0", *ARGV
+#!/usr/bin/env sh
+
+# Remove stale PIDs/Sockets
+rm -f tmp/pids/server.pid 
+rm -f ./.overmind.sock # If using overmind
+
+# Find and run the process manager using exec
+if command -v overmind &> /dev/null; then
+  echo "Starting with Overmind..."
+  exec overmind start -f Procfile.dev "$@"
+elif command -v foreman &> /dev/null; then
+  echo "Starting with Foreman..."
+  exec foreman start -f Procfile.dev "$@"
+elif command -v hivemind &> /dev/null; then
+   echo "Starting with Hivemind..."
+   exec hivemind -f Procfile.dev "$@"
+else
+   echo "ERROR: No process manager (Overmind, Foreman, Hivemind) found." >&2
+   exit 1
+fi
+
+# Default to port 3000 if not specified
+export PORT="${PORT:-3000}"
+
+# Let the debug gem allow remote connections,
+# but avoid loading until `debugger` is called
+export RUBY_DEBUG_OPEN="true"
+export RUBY_DEBUG_LAZY="true"
+
+exec foreman start -f Procfile.dev "$@"

@@ -13,11 +13,19 @@ export default class extends Controller {
 
   marker = null
 
+  markerIcon = L.icon({
+    iconUrl: 'map-marker.png',
+
+    iconSize: [51, 51], // size of the icon
+    iconAnchor: [25, 51], // point of the icon which will correspond to marker's location
+    popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+  });
+
   setMarker(lat, long) {
     if (this.marker) {
       this.marker.remove()
     }
-    this.marker = L.marker([lat, long]).addTo(this.map)
+    this.marker = L.marker([lat, long], { icon: this.markerIcon }).addTo(this.map)
   }
 
   connect() {
