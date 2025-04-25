@@ -23,6 +23,14 @@ namespace :od do
     puts "Copying #{folder_name} to #{destination}..."
     FileUtils.cp_r("#{temp_dir}/#{folder_name}/.", destination)
 
+    # Copy the data_source/<state>/municipalities.json file to the destination
+    municipalities_files = Dir.glob("#{temp_dir}/data_source/*/municipalities.json")
+    municipalities_files.each do |municipalities_file|
+      state = municipalities_file.split("/").last(2).first
+      puts "Copying #{municipalities_file} to #{destination}/#{state}/municipalities.json"
+      FileUtils.cp_r(municipalities_file, "#{destination}/#{state}/municipalities.json")
+    end
+
     puts "Successfully cloned #{folder_name} to #{destination}."
 
     # Copy over data_source/<state>/places.json to data/open-data/<state>/places.json
