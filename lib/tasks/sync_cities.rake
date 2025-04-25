@@ -16,15 +16,15 @@ namespace :sync_cities do
     city_sync_hashes = city_syncs.map(&:meta_hash)
 
     cities_to_sync = []
-    places_files = Dir.glob(Rails.root.join("data", "open-data", "**", "places.json"))
+    places_files = Dir.glob(Rails.root.join("data", "open-data", "**", "municipalities.json"))
     places_files.each do |places_file|
       state = places_file.split("/").last(2).first
-      places = JSON.parse(File.read(places_file))["places"]
-      places.each do |place|
-        next if place["meta_hash"].blank? || city_sync_hashes.include?(place["meta_hash"])
+      municipalities = JSON.parse(File.read(places_file))["municipalities"]
+      municipalities.each do |municipality|
+        next if municipality["meta_hash"].blank? || city_sync_hashes.include?(municipality["meta_hash"])
         cities_to_sync << {
           "state" => state,
-          **place
+          **municipality
         }
       end
     end
@@ -83,10 +83,13 @@ namespace :sync_cities do
 
 
   def get_city_directory(state, city_entry)
+    city_name = city_entry["name"].downcase.split(" ").join("_")
     possible_city_directories = [
-      Rails.root.join("data", "open-data", state, city_entry["name"], "people.yml"),
-      Rails.root.join("data", "open-data", state, "#{city_entry["name"]}_#{city_entry["gnis"]}", "people.yml")
+      Rails.root.join("data", "open-data", state, city_name, "people.yml"),
+      Rails.root.join("data", "open-data", state, "#{city_name}_#{city_entry["gnis"]}", "people.yml")
     ]
+
+    puts "Possible city directories: #{possible_city_directories}"
 
     possible_city_directories.find { |file| File.exist?(file) }
   end
