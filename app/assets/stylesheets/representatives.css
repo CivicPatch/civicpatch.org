@@ -1,5 +1,6 @@
 /* app/assets/stylesheets/representatives.css */
 
+/* --- Base Styles (for larger screens) --- */
 .representatives-list {
   list-style-type: none;
   padding: 0;
@@ -8,6 +9,7 @@
 
 .representative-item {
   display: flex;
+  /* Side-by-side layout by default */
   margin-bottom: 1.5rem;
   /* Increased spacing */
   gap: 1rem;
@@ -105,4 +107,51 @@
   background-color: #f9f9f9;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
+}
+
+
+/* --- Responsive Styles (for screens smaller than 600px) --- */
+@media (max-width: 600px) {
+  .representative-item {
+    flex-direction: column;
+    /* Stack image and details vertically */
+    align-items: center;
+    /* Center items */
+    text-align: center;
+    /* Center text */
+    gap: 0.75rem;
+    /* Adjust gap for vertical layout */
+    padding: 0.75rem;
+    /* Slightly reduce padding */
+  }
+
+  .representative-image,
+  .representative-placeholder {
+    width: 70px;
+    /* Slightly smaller image on mobile */
+    height: 70px;
+    margin-bottom: 0.5rem;
+    /* Add space below image/placeholder */
+  }
+
+  .representative-placeholder-initial {
+    font-size: 28px;
+    /* Slightly smaller initial */
+  }
+
+  .representative-name {
+    font-size: 1.1rem;
+    /* Slightly smaller name */
+  }
+
+  .representative-info-list {
+    font-size: 0.85rem;
+    /* Slightly smaller detail text */
+    /* Keep text alignment from .representative-item or adjust if needed */
+  }
+
+  /* Ensure inner list items are also centered if needed */
+  .representative-info-list li {
+    /* text-align: center; Uncomment if text isn't centering properly */
+  }
 }
