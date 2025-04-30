@@ -1,7 +1,7 @@
 namespace :od do
   desc "Clone a specific folder from the CivicPatch/open-data repository via SSH"
   task sync: :environment do
-    repo_url = "git@github.com:CivicPatch/open-data.git" # SSH URL of the repository
+    repo_url = "https://github.com/CivicPatch/open-data.git" # SSH URL of the repository
     folder_name = "data" # The folder you want to clone (replace with actual folder name)
     destination = Rails.root.join("data", "open-data") # Where to copy the folder (replace with actual path)
 
