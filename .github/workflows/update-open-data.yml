@@ -47,24 +47,23 @@ jobs:
           bundle exec rake od:sync
       
       - name: Commit Changes
-        env:
-          GITHUB_TOKEN: ${{ steps.generate-pipeline-token.outputs.token }}
         run: |
           git add .
           git commit -m "Update Open Data"
-          git push
 
-          - name: Open a pull request
-          run: |
-            git push --set-upstream origin ${{ env.BRANCH_NAME }}
-            COMMENT=$(
-              cat <<EOF
-            PR opened by the Open Data Update workflow - ${{ github.actor }}
-            EOF
-            )
-            gh pr create \
-              --base main \
-              --head ${{ env.BRANCH_NAME }} \
-              --title "Update Open Data" \
-              --body "$COMMENT"
+      - name: Open a pull request
+        env:
+          GITHUB_TOKEN: ${{ steps.generate-pipeline-token.outputs.token }}
+        run: |
+          git push --set-upstream origin ${{ env.BRANCH_NAME }}
+          COMMENT=$(
+            cat <<EOF
+          PR opened by the Open Data Update workflow - ${{ github.actor }}
+          EOF
+          )
+          gh pr create \
+            --base main \
+            --head ${{ env.BRANCH_NAME }} \
+            --title "Update Open Data" \
+            --body "$COMMENT"
   
