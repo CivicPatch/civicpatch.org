@@ -15,6 +15,14 @@ jobs:
         with:
           ruby-version: 3.4.2
           bundler-cache: true
+
+      - name: Generate GitHub App Token
+        id: generate-pipeline-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.GH_APP_BOT_PIPELINE_APP_ID }}
+          private-key: ${{ secrets.GH_APP_BOT_PIPELINE_PRIVATE_KEY }}
+    
       
       - name: Install dependencies
         run: |
@@ -45,12 +53,19 @@ jobs:
           git commit -m "Update Open Data"
           git push
 
-      - name: Create a Pull Request
-        uses: peter-evans/create-pull-request@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          title: Update Open Data
-          body: |
-            Update Open Data - triggered by ${{ github.actor }}
+          - name: Open a pull request
+          run: |
+            git push --set-upstream origin ${{ env.BRANCH_NAME }}
+            COMMENT=$(
+              cat <<EOF
+            PR opened by the Open Data Update workflow - ${{ github.actor }}
+            EOF
+            )
+            gh pr create \
+              --base main \
+              --head ${{ env.BRANCH_NAME }} \
+              --title "Update Open Data" \
+              --body "$COMMENT"
+          env:
+            GITHUB_TOKEN: ${{ steps.generate-pipeline-token.outputs.token }}
+  
