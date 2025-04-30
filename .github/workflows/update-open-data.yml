@@ -1,0 +1,53 @@
+name: Update Open Data
+
+on:
+  workflow_dispatch
+
+jobs:
+  update-open-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4.2
+          bundler-cache: true
+      
+      - name: Install dependencies
+        run: |
+          bundle install
+      
+      - name: Set Git Config
+        run: |
+          git config --global user.name "Civic Patch Pipeline Bot"
+          git config --global user.email "civic-patch-pipeline-bot[bot]@users.noreply.github.com"
+      
+      - name: Create a new branch for changes
+        run: |
+          # Generate a unique branch name for this run
+          BRANCH_NAME="pipeline-update-open-data-${{ github.run_id }}"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+          git checkout -b $BRANCH_NAME
+
+      - name: Update Open Data
+        run: |
+          bundle exec rake od:sync
+      
+      - name: Commit Changes
+        run: |
+          git add .
+          git commit -m "Update Open Data"
+          git push
+
+      - name: Create a Pull Request
+        uses: peter-evans/create-pull-request@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Update Open Data
+          body: |
+            Update Open Data - triggered by ${{ github.actor }}
