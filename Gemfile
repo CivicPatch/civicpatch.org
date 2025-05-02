@@ -67,6 +67,7 @@ gem "rgeo"
 gem "rgeo-activerecord"
 gem "activerecord-postgis-adapter"
 gem "ffi-geos"
+gem "rgeo-geojson"
 
 gem "tailwindcss-ruby", "~> 4.1"
 

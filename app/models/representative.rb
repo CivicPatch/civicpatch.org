@@ -14,6 +14,15 @@ class Representative < ApplicationRecord
     place.representatives.map(&:data)
   end
 
+  def self.get_representatives_by_statefp_geoid(statefp, geoid)
+    puts "Statefp: #{statefp}, Geoid: #{geoid}"
+    place = Place.find_by(statefp: statefp, geoid: geoid)
+
+    return [] if place.nil?
+
+    place.representatives.map(&:data)
+  end
+
   def self.get_representatives_by_lat_long(lat, long)
     lat_float = lat.to_f
     long_float = long.to_f
