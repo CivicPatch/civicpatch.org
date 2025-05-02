@@ -15,9 +15,8 @@ Rails.application.routes.draw do
     resources :representatives, only: [ :index ]
   end
 
-  get "/places/boundaries", to: "places#boundaries"
-  get "/places/containing_point", to: "places#containing_point"
-  root "map#index"
   get "map/details" => "map#details"
+  get "map/lat_long" => "map#lat_long"
   get "map/municipality_boundaries" => "map#municipality_boundaries"
+  root "map#index"
 end

@@ -4,15 +4,13 @@ import { Turbo } from "@hotwired/turbo-rails"
 
 export default class extends Controller {
   static values = {
-    lat: Number,
-    long: Number,
     statefp: String,
     geoid: String,
   }
 
   // This is Seattle, WA
-  latValue = 47.6061
-  longValue = -122.3328
+  statefpValue = "53"
+  geoidValue = "5363000"
 
   marker = null
 
@@ -44,24 +42,22 @@ export default class extends Controller {
 
   connect() {
     const url = new URL(window.location.href)
-    const lat = url.searchParams.get('lat') || this.latValue
-    const long = url.searchParams.get('long') || this.longValue
+    const statefp = url.searchParams.get('statefp') || this.statefpValue
+    const geoid = url.searchParams.get('geoid') || this.geoidValue
 
-    this.initializeMap(lat, long)
+    this.initializeMap(statefp, geoid)
 
     // Load initial boundaries for the current view
     this.loadBoundariesForView()
-
-    // Keep marker logic if needed for specific clicked points
-    if (lat && long) {
-      const initialLat = parseFloat(lat);
-      const initialLong = parseFloat(long);
-      this.setMapPosition(initialLat, initialLong);
-      this.setMarker(initialLat, initialLong);
-    }
   }
 
-  initializeMap(lat, long) {
+  async initializeMap(statefp, geoid) {
+    console.log("Initializing map")
+    // Get latitude and longitude from geoid using the api
+    const response = await fetch(`/map/lat_long?statefp=${statefp}&geoid=${geoid}`)
+    const data = await response.json()
+    const lat = data.lat
+    const long = data.long
     this.map = L.map('map').setView([lat, long], 13)
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
@@ -72,16 +68,26 @@ export default class extends Controller {
     this.boundariesLayer = L.layerGroup().addTo(this.map);
 
     // Event listeners
-    this.map.on('click', this.handleMapClick.bind(this))
+    this.map.on('click', this.handleMapOutOfBoundariesClick.bind(this))
     this.map.on('moveend', this.handleMapMoveEnd.bind(this)) // << Add listener for map movement
-    window.addEventListener('popstate', this.handlePopState.bind(this))
+
+    // Keep marker logic if needed for specific clicked points
+    if (lat && long) {
+      const initialLat = parseFloat(lat);
+      const initialLong = parseFloat(long);
+      this.setMapPosition(initialLat, initialLong);
+      this.setMarker(initialLat, initialLong);
+    }
   }
 
-  handleMapClick(event) {
-    // Keep marker and rep list update, but remove single boundary loading
+  handleMapOutOfBoundariesClick(event) {
     const lat = event.latlng.lat
     const long = event.latlng.lng
+    this.statefpValue = null
+    this.geoidValue = null
+
     this.setMarker(lat, long)
+    this.updateRepresentativesList(null, null)
   }
 
   // Debounced handler for when the map stops moving
@@ -90,26 +96,6 @@ export default class extends Controller {
     this.debounceTimeout = setTimeout(() => { // Set new timeout
       this.loadBoundariesForView();
     }, 500); // Wait 500ms after map stops moving before fetching
-  }
-
-  handlePopState() {
-    this.loadFromUrl()
-  }
-
-  loadFromUrl() {
-    const params = new URLSearchParams(window.location.search)
-    const lat = params.get('lat')
-    const long = params.get('long')
-
-    if (lat && long) {
-      const currentLat = parseFloat(lat);
-      const currentLong = parseFloat(long);
-      this.setMarker(currentLat, currentLong);
-      this.setMapPosition(currentLat, currentLong);
-      this.loadBoundariesForView(); // Load boundaries for the restored view
-    } else {
-      this.boundariesLayer.clearLayers(); // Clear boundaries if no lat/long
-    }
   }
 
   updateRepresentativesList(statefp, geoid, pushHistory = true) {
@@ -150,7 +136,10 @@ export default class extends Controller {
 
   // Fetches and displays boundaries for the current map view
   async loadBoundariesForView() {
-    console.log("Loading boundaries for view")
+    if (!this.map) {
+      return
+    }
+
     this.colorIndex = 0; // Reset color index
 
     const bounds = this.map.getBounds();
@@ -206,11 +195,13 @@ export default class extends Controller {
                 newLayer.resetStyle(e.target);
               },
               click: (e) => {
+                L.DomEvent.stopPropagation(e)
+                this.setMarker(e.latlng.lat, e.latlng.lng)
+
                 const geoid = e.target.feature.properties.geoid;
                 const statefp = e.target.feature.properties.statefp;
                 this.updateRepresentativesList(statefp, geoid);
               }
-
             });
           }
         });
@@ -225,7 +216,7 @@ export default class extends Controller {
     clearTimeout(this.debounceTimeout); // Clear timeout on disconnect
     if (this.map) {
       // Remove specific listeners before removing map
-      this.map.off('click', this.handleMapClick.bind(this));
+      this.map.off('click', this.handleMapOutOfBoundariesClick.bind(this));
       this.map.off('moveend', this.handleMapMoveEnd.bind(this));
       this.map.remove();
     }
