@@ -8,7 +8,7 @@ image: shelltr/civic_patch
 servers:
   web:
     hosts:
-      - 134.199.210.186
+      - ssh.civicpatch.org
 
   # job:
   #   hosts:
@@ -104,7 +104,7 @@ builder:
 accessories:
   db:
     image: postgis/postgis:17-3.5
-    host: 134.199.210.186
+    host: ssh.civicpatch.org
     # Change to 3306 to expose port to the world instead of just local network.
     #port: "127.0.0.1:5432:5432"
     env:
