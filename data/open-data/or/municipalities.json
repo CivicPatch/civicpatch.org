@@ -37,10 +37,12 @@
       "phone_number": "(541) 682-5010",
       "website": "https://www.eugene-or.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "a43018e26cebd5e8b0b361c30f518b57",
+      "meta_updated_at": "2025-05-01",
+      "meta_hash": "4c18b1c4f65c8ac71c1360f495895b21",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -57,10 +59,12 @@
       "phone_number": "(503) 588-6255",
       "website": "https://www.cityofsalem.net",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "ee2df68d8835f17626f903dfe04a908d",
+      "meta_updated_at": "2025-04-28",
+      "meta_hash": "67a331f98530c12e6f5121f42afe8e01",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -76,10 +80,12 @@
       "phone_number": "(503) 661-3000",
       "website": "https://www.greshamoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "b89083c5b48c58539e9ecb7f1ccf2fa9",
+      "meta_updated_at": "2025-05-01",
+      "meta_hash": "50b5ae16705922c2d2dea6fc9d93d65e",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -95,10 +101,12 @@
       "phone_number": "(503) 681-6100",
       "website": "https://www.hillsboro-oregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "7a3b6c78a1f2e034a6edf289efdcdb97",
+      "meta_updated_at": "2025-05-01",
+      "meta_hash": "f9ece922b6581357e9b99ebefc1749f4",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -114,10 +122,12 @@
       "phone_number": "(541) 388-5505",
       "website": "https://www.bendoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "405d70253486db76a9856f44e6bad50e",
+      "meta_updated_at": "2025-04-28",
+      "meta_hash": "1a9fef76246b8fa247c3ce7462dbd398",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -133,10 +143,12 @@
       "phone_number": "(503) 526-2222",
       "website": "https://www.beavertonoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "a9ff20c5f223dd0ca95f37808196cfb7",
+      "meta_updated_at": "2025-04-30",
+      "meta_hash": "5fdf525670e41b5a1119aab3c858313c",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -171,10 +183,12 @@
       "phone_number": "(541) 726-3700",
       "website": "https://springfield-or.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "be5537306e70e5e3b77653ff5a269ddf",
+      "meta_updated_at": "2025-05-01",
+      "meta_hash": "e754d90bd70bf2e4608e3c37ce2b51d6",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -190,10 +204,12 @@
       "phone_number": "(541) 766-6900",
       "website": "https://www.corvallisoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "05acf53c33cf9039bef1471dabcb068d",
+      "meta_updated_at": "2025-05-01",
+      "meta_hash": "4cdedadeb067b7ad1d4e2d460470d4d1",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -210,10 +226,12 @@
       "phone_number": "(541) 917-7500",
       "website": "https://albanyoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "de1afdfbc168c67f65df19fd935a77cd",
+      "meta_updated_at": "2025-04-30",
+      "meta_hash": "2fd892735c209246dddccf61d0730a36",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -250,10 +268,12 @@
       "phone_number": "(503) 635-0270",
       "website": "https://www.ci.oswego.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "3ec0449f81e240ec1056609528251768",
+      "meta_updated_at": "2025-05-01",
+      "meta_hash": "6228c6eca05ff0c51ef7cc8e2d135480",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -288,10 +308,12 @@
       "phone_number": "(541) 450-6000",
       "website": "https://www.grantspassoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "29b10c8b49d8152b0f5c817e0ae44022",
+      "meta_updated_at": "2025-05-01",
+      "meta_hash": "e4051a218b92d4bb63a4cd48455fae67",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -307,10 +329,12 @@
       "phone_number": "(503) 657-0891",
       "website": "https://www.orcity.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "4badcdfd9a7f692b6fc3ef5a67bb2bb1",
+      "meta_updated_at": "2025-05-02",
+      "meta_hash": "e48d99ba21bc5995decf7ad6a776353b",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -345,10 +369,12 @@
       "phone_number": "(541) 923-7710",
       "website": "https://www.redmondoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "69aaa5f954de1db4990c3c0972bdc2a1",
+      "meta_updated_at": "2025-05-01",
+      "meta_hash": "3da3408c0bcb655f8797b2c71314eade",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
