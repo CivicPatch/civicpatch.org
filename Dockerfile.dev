@@ -12,7 +12,8 @@ RUN apt-get update -qq && \
     postgresql-client libgdal-dev gdal-bin \
     procps \
     watchman \
-    tmux nodejs npm && \
+    tmux nodejs npm \
+    jq && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install packages needed to build gems
@@ -27,9 +28,13 @@ COPY Gemfile Gemfile.lock ./
 
 # COPY package.json* package-lock.json* ./
 
-RUN gem install overmind
+# Install latest Bundler
+RUN gem install bundler
 
 RUN bundle install
+
+# Install overmind
+RUN gem install overmind
 
 # Expose the application port
 EXPOSE 3000

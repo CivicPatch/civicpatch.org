@@ -3,15 +3,15 @@ class MapController < ApplicationController
   end
 
   def details
-    @statefp = params[:statefp]
+    @state = params[:state]
     @geoid = params[:geoid]
 
     # If required parameters are missing, prepare an empty list
-    if @statefp.blank? || @geoid.blank?
+    if @state.blank? || @geoid.blank?
       @representatives = []
     else
       # Otherwise, fetch the representatives
-      @representatives = Representative.get_representatives_by_statefp_geoid(@statefp, @geoid)
+      @representatives = Representative.get_representatives_by_state_geoid(@state, @geoid)
     end
 
     # Render the partial (will be empty if @representatives is [])
@@ -19,15 +19,14 @@ class MapController < ApplicationController
   end
 
   def lat_long
-    @statefp = params[:statefp]
+    @state = params[:state]
     @geoid = params[:geoid]
     # Select the centroid coordinates (transforming to WGS84 first)
-    @place = Place.where(statefp: @statefp, geoid: @geoid)
-                  .select(
-                    "ST_Y(ST_Centroid(ST_Transform(geom, 4326))) AS latitude",
-                    "ST_X(ST_Centroid(ST_Transform(geom, 4326))) AS longitude"
-                  )
-                  .first # Use first since we expect one result and select doesn't return a single record
+    @place = Municipality.find_by_state_and_geoid(
+      @state, 
+      @geoid,
+      "ST_Y(ST_Centroid(ST_Transform(geom, 4326))) AS latitude, ST_X(ST_Centroid(ST_Transform(geom, 4326))) AS longitude"
+    ).first
 
     if @place
       render json: {
@@ -57,11 +56,9 @@ class MapController < ApplicationController
     bbox_4326 = "ST_MakeEnvelope(#{sw_lng}, #{sw_lat}, #{ne_lng}, #{ne_lat}, 4326)"
 
     # Find places whose geometry intersects the bounding box
-    # No CDPs -- not municipalities in our case
-    places_in_view = Place.where("geom && ST_Transform(#{bbox_4326}, 4269)")
-                          .where.not("namelsad LIKE ?", "% CDP")
+    places_in_view = Municipality.where("geom && ST_Transform(#{bbox_4326}, 4269)")
                           .select(
-                            "gid, name, statefp, geoid, " \
+                            "name, state, geoid, " \
                             "ST_AsGeoJSON(" \
                               "ST_Transform(" \
                                 "ST_SimplifyPreserveTopology(geom, #{tolerance})" \
@@ -73,8 +70,8 @@ class MapController < ApplicationController
       next unless place.geojson
       {
         type: "Feature",
-        id: place.gid,
-        properties: { name: place.name, statefp: place.statefp, geoid: place.geoid },
+        id: place.id,
+        properties: { name: place.name, state: place.state, geoid: place.geoid },
         geometry: JSON.parse(place.geojson)
       }
     end.compact
@@ -104,9 +101,8 @@ class MapController < ApplicationController
 
     # 1. Check if the point is strictly inside a Place
     # Exclude CDPs as before
-    inside_place = Place.where("ST_Contains(geom, #{point_native_srid_sql})")
-                        .where.not("namelsad LIKE ?", "% CDP")
-                        .select(:gid, :name, :statefp, :geoid)
+    inside_place = Municipality.where("ST_Contains(geom, #{point_native_srid_sql})")
+                        .select(:id, :name, :state, :geoid)
                         .first
 
     if inside_place
@@ -115,9 +111,8 @@ class MapController < ApplicationController
 
     # 2. If not inside, check if it's very close to a boundary
     tolerance_degrees = 0.0001 # Approx 10-11 meters, adjust as needed
-    boundary_place = Place.where("ST_DWithin(ST_Transform(geom, 4326), #{point_4326_sql}, #{tolerance_degrees})")
-                          .where.not("namelsad LIKE ?", "% CDP")
-                          .select(:gid, :name, :statefp, :geoid, "ST_Distance(ST_Transform(geom, 4326), #{point_4326_sql}) as distance")
+    boundary_place = Municipality.where("ST_DWithin(ST_Transform(geom, 4326), #{point_4326_sql}, #{tolerance_degrees})")
+                          .select(:id, :name, :state, :geoid, "ST_Distance(ST_Transform(geom, 4326), #{point_4326_sql}) as distance")
                           .order("distance ASC") # Find the closest boundary
                           .first
 

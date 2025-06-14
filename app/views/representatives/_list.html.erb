@@ -1,50 +1,42 @@
 <%= turbo_frame_tag "representatives-list" do %>
-  <% if @representatives.any? %>
-    <%# On small screens, the container doesn't need overflow if stacking works %>
-    <div class="overflow-x-auto md:overflow-visible"> 
-      <%# Removed min-w-full as stacking takes care of width %>
-      <table class="w-full divide-y divide-gray-200 md:divide-y-0"> 
-        <thead class="bg-gray-50 hidden md:table-header-group"> <%# Hide thead on mobile %>
+  <% if params[:empty] == 'true' %>
+    <div class="flex flex-col items-center justify-center min-h-[200px]">
+      <div class="text-lg font-medium text-gray-700">No representatives found for this location</div>
+    </div>
+  <% elsif @representatives&.any? %>
+    <div class="overflow-x-auto md:overflow-visible border border-gray-200 rounded-lg shadow-sm mb-8">
+      <table class="w-full">
+        <thead class="bg-gray-50 hidden md:table-header-group">
           <tr>
-            <%# Increased width to w-40 %>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-40"></th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Positions</th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Links</th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contact</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200"></th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b-2 border-gray-200">Name</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b-2 border-gray-200">Positions</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b-2 border-gray-200">Links</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b-2 border-gray-200">Contact</th>
           </tr>
         </thead>
-        <%# Removed divide-y from tbody for mobile, re-applied between rows below %>
-        <tbody class="bg-white"> 
-          <% @representatives.each do |representative| %>
-            <%# Rows become blocks on mobile, add border/margin for separation %>
-            <tr class="block md:table-row border-b border-gray-200 md:border-none mb-4 md:mb-0"> 
-              <%# Cells become blocks on mobile, control text alignment, add label via ::before %>
-              <%# Image cell: Special handling for mobile - maybe center it or align left? %>
-              <td class="block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-top" data-label=""> <%# No label needed for image %>
-                <div class="flex justify-center md:justify-start"> <%# Center on mobile? %>
+        <tbody class="bg-white">
+          <% @representatives.each_with_index do |representative, index| %>
+            <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+              <td class="block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-top">
+                <div class="flex justify-center md:justify-start">
                   <% if representative["image"].present? %>
-                    <%# Wrapper div defines the rounded square shape and size %>
-                    <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100"> <%# Added bg-gray-100 as fallback %>
-                      <%# Image fills the wrapper, covers area, preserves aspect ratio %>
-                      <img src="<%= representative["image"] %>" alt="<%= representative["name"] %>" class="object-cover w-full h-full"> 
+                    <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100">
+                      <img src="<%= representative["image"] %>" alt="<%= representative["name"] %>" class="object-cover w-full h-full">
                     </div>
                   <% else %>
-                    <%# Placeholder gets rounded corners too %>
-                    <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500"> 
-                      <%# Adjust text size for mobile vs desktop %>
-                      <span class="font-medium text-3xl md:text-xl"><%= representative["name"] ? representative["name"][0] : '?' %></span> 
+                    <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500">
+                      <span class="font-medium text-3xl md:text-xl"><%= representative["name"] ? representative["name"][0] : '?' %></span>
                     </div>
                   <% end %>
                 </div>
               </td>
-              <%# Other cells: Use data-label and style the pseudo-element %>
               <td class="block md:table-cell px-4 py-2 md:px-6 md:py-4 md:text-left text-sm font-medium text-gray-900 before:content-[attr(data-label)] before:block before:font-medium before:text-gray-500 before:mb-1 md:before:content-none" data-label="Name:"><%= representative["name"] %></td>
               <td class="block md:table-cell px-4 py-2 md:px-6 md:py-4 md:text-left text-sm text-gray-500 before:content-[attr(data-label)] before:block before:font-medium before:text-gray-500 before:mb-1 md:before:content-none" data-label="Positions:">
                 <% if representative["other_names"].present? %>
                   <%= representative["other_names"].map { |position| position["name"] }.join(", ") %>
                 <% else %>
-                  &nbsp; <%# Add space if empty for alignment %>
+                  &nbsp;
                 <% end %>
               </td>
               <td class="block md:table-cell px-4 py-2 md:px-6 md:py-4 md:text-left text-sm text-gray-500 before:content-[attr(data-label)] before:block before:font-medium before:text-gray-500 before:mb-1 md:before:content-none" data-label="Links:">
@@ -62,30 +54,28 @@
                     <% end %>
                   </ul>
                 <% else %>
-                   &nbsp; 
+                  &nbsp;
                 <% end %>
               </td>
               <td class="block md:table-cell px-4 py-2 md:px-6 md:py-4 md:text-left text-sm text-gray-500 before:content-[attr(data-label)] before:block before:font-medium before:text-gray-500 before:mb-1 md:before:content-none" data-label="Contact:">
-                 <% if representative["contact_details"].present? && representative["contact_details"].any? %>
+                <% if representative["contact_details"].present? && representative["contact_details"].any? %>
                   <ul class="list-none p-0 m-0">
                     <% representative["contact_details"].each do |contact_detail| %>
-                       <% if contact_detail["label"] == "Email" %>
+                      <% if contact_detail["label"] == "Email" %>
                         <li><%= contact_detail["label"] %>: <a href="mailto:<%= contact_detail["value"] %>" class="text-indigo-600 hover:text-indigo-900"><%= contact_detail["value"] %></a></li>
                       <% else %>
                         <li><%= contact_detail["label"] %>: <%= contact_detail["value"] %></li>
                       <% end %>
                     <% end %>
                   </ul>
-                 <% else %>
-                   &nbsp; 
-                 <% end %>
+                <% else %>
+                  &nbsp;
+                <% end %>
               </td>
             </tr>
           <% end %>
         </tbody>
       </table>
     </div>
-  <% else %>
-    <p class="text-center text-gray-500 py-4">No representatives found</p>
   <% end %>
 <% end %>

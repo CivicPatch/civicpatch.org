@@ -19,7 +19,8 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y curl \
     libjemalloc2 libvips \
     sqlite3 libpq-dev vim \
-    postgresql-client libgdal-dev gdal-bin && \
+    postgresql-client libgdal-dev gdal-bin \
+    jq && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment

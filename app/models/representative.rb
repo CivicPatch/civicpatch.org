@@ -1,40 +1,39 @@
 class Representative < ApplicationRecord
-  belongs_to :place
+  belongs_to :municipality
 
   def self.get_representatives_by_ocd_id(ocd_id)
     state, county, place = get_ocd_id_parts(ocd_id)
     state_code = state_to_state_code(state)
 
     puts "State code: #{state_code}"
-    puts "Place: #{place}"
+    puts "Municipality: #{place}"
 
-    place = Place.find_by(name: format_name(place), statefp: state_to_state_code(state))
+    municipality = Municipality.find_by_state_and_geoid(state, place)
 
     # TODO: Handle county
-    place.representatives.map(&:data)
+    Representative.where(municipality: municipality).map(&:data)
   end
 
-  def self.get_representatives_by_statefp_geoid(statefp, geoid)
-    puts "Statefp: #{statefp}, Geoid: #{geoid}"
-    place = Place.find_by(statefp: statefp, geoid: geoid)
+  def self.get_representatives_by_state_geoid(state, geoid)
+    puts "State: #{state}, Geoid: #{geoid}"
+    municipality = Municipality.find_by_state_and_geoid(state, geoid)
 
-    return [] if place.nil?
+    return [] if municipality.nil?
 
-    place.representatives.map(&:data)
+    Representative.where(municipality: municipality).map(&:data)
   end
 
   def self.get_representatives_by_lat_long(lat, long)
     lat_float = lat.to_f
     long_float = long.to_f
-    places = Place.find_by_lat_lon(lat_float, long_float)
+    municipalities = Municipality.find_by_lat_lon(lat_float, long_float)
 
-    if places.empty?
+    if municipalities.empty?
       return []
     end
 
-    places.map do |place|
-      place.representatives.map(&:data)
-    end.flatten
+    # Get all representatives for all municipalities in one query
+    Representative.where(municipality_id: municipalities.pluck(:geoid)).map(&:data)
   end
 
   def self.get_ocd_id_parts(ocd_id)
@@ -65,13 +64,13 @@ class Representative < ApplicationRecord
 
     person = {
       "name" => open_data_person["name"],
-      "image" => open_data_person["image"],
+      "image" => open_data_person["cdn_image"],
       "links" => links
     }
 
-    person["other_names"] = open_data_person["positions"].map do |position|
+    person["other_names"] = open_data_person["roles"]&.map do |role|
       {
-        "name" => position
+        "name" => role
       }
     end
 
