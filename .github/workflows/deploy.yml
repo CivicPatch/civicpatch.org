@@ -12,35 +12,41 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      
+      - name: Set up Python3
+        uses: actions/setup-python@v4
         with:
-          ruby-version: '3.4.2'  # Specify your Ruby version
-
-      - name: Setup ssh key
+          python-version: '3.12'
+      
+      - name: Push docker image
         run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519  # Use Ed25519 key
-          chmod 600 ~/.ssh/id_ed25519
-          eval "$(ssh-agent -s)"
-          ssh-add ~/.ssh/id_ed25519
+          ./scripts/build-and-push.py
 
-          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.PROD_DEPLOY_SSH_KEY }}
-          SSH_KNOWN_HOSTS: ${{ secrets.PROD_DEPLOY_SSH_KNOWN_HOSTS }} # This is the output of ssh-keyscan civicpatch.org
 
-      - name: Install Kamal
-        run: gem install kamal
+      #- name: Set up Ruby
+      #  uses: ruby/setup-ruby@v1
+      #  with:
+      #    ruby-version: '3.4.2'  # Specify your Ruby version
 
-      - name: Deploy with Kamal
-        env:
-          POSTGRES_PASSWORD: ${{ secrets.PROD_POSTGRES_PASSWORD }}
-          DOCKER_REGISTRY_PASSWORD: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
-          RAILS_MASTER_KEY: ${{ secrets.PROD_RAILS_KEY }}
-        run: kamal deploy --verbose
+      #- name: Setup ssh key
+      #  run: |
+      #    mkdir -p ~/.ssh
+      #    echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519  # Use Ed25519 key
+      #    chmod 600 ~/.ssh/id_ed25519
+      #    eval "$(ssh-agent -s)"
+      #    ssh-add ~/.ssh/id_ed25519
 
-      - name: Sync cities
-        run: |
-          kamal app exec "rake sync_cities:sync[wa]"
+      #    echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+      #  env:
+      #    SSH_PRIVATE_KEY: ${{ secrets.PROD_DEPLOY_SSH_KEY }}
+      #    SSH_KNOWN_HOSTS: ${{ secrets.PROD_DEPLOY_SSH_KNOWN_HOSTS }} # This is the output of ssh-keyscan civicpatch.org
+
+      #- name: Install Kamal
+      #  run: gem install kamal
+
+      #- name: Deploy with Kamal
+      #  env:
+      #    POSTGRES_PASSWORD: ${{ secrets.PROD_POSTGRES_PASSWORD }}
+      #    DOCKER_REGISTRY_PASSWORD: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+      #    RAILS_MASTER_KEY: ${{ secrets.PROD_RAILS_KEY }}
+      #  run: kamal deploy --verbose

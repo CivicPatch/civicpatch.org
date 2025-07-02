@@ -3,23 +3,29 @@ ARG RUBY_VERSION=3.4.2
 FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 
 ENV RAILS_ENV="development"
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl \
+    apt-get install --no-install-recommends -y curl wget \
     libjemalloc2 libvips \
     sqlite3 libpq-dev \
-    postgresql-client libgdal-dev gdal-bin \
     procps \
     watchman \
     tmux nodejs npm \
-    jq && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    jq
+
+RUN apt-get update -qq && \
+    apt-get install -y postgresql-common libgdal-dev gdal-bin && \
+    /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y && \
+    apt-get update -qq && \
+    apt-get install -y postgresql-client-17
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config vim && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config vim
+
+RUN rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set the working directory
 WORKDIR /app
@@ -35,6 +41,9 @@ RUN bundle install
 
 # Install overmind
 RUN gem install overmind
+
+# Entrypoint prepares the database.
+ENTRYPOINT ["/app/bin/docker-entrypoint"]
 
 # Expose the application port
 EXPOSE 3000

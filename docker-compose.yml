@@ -1,0 +1,49 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: civicpatch_web
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+      - "3036:3036"
+    depends_on:
+      - db
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_USER: civicpatch
+      POSTGRES_PASSWORD: development-password
+      POSTGRES_DB: civicpatch_development
+  db:
+    image: postgis/postgis:17-3.5
+    container_name: civicpatch_db
+    restart: always
+    environment:
+      POSTGRES_USER: civicpatch
+      POSTGRES_PASSWORD: development-password
+      POSTGRES_DB: civicpatch_development
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  test_db:
+    image: postgis/postgis:17-3.5
+    container_name: civicpatch_test_db
+    restart: always
+    environment:
+      POSTGRES_USER: civicpatch
+      POSTGRES_PASSWORD: test-password
+      POSTGRES_DB: civicpatch_test
+    volumes:
+      - testdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+volumes:
+  pgdata:
+  testdata:
+  node_modules_volume: {}
