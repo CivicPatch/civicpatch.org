@@ -17,7 +17,7 @@ run = """
 docker compose up -d
 """
 
-[tasks.container]
+[tasks.shellin]
 run = """
 docker exec -it civicpatch_web bash
 """
