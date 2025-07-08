@@ -15,10 +15,10 @@
 bundle exec rake 'od:sync' 
 
 # Set up "places" table if none exists; adds state places -- use only once per state
-bundle exec rake 'sync_map:sync[place,wa]'
+bundle exec rake 'maps:sync[wa]'
 
 # Add city people for state
-bundle exec rake 'sync_cities:sync[wa]'
+bundle exec rake 'cities:sync'
 ```
 
 ### Deploying
