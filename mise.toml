@@ -1,5 +1,28 @@
 [tools]
 ruby = "3.4.2"
+python = "latest"
 
 [env]
-BUNDLE_PATH = '.bundle'
+_.file = "../civicpatchorg.env"
+
+[tasks.ssh]
+run = 'bin/kamal app exec'
+# mise ssh -- bin/rails db:migrate
+# mise ssh -- bin/rails DISABLE_DATABASE_ENVIRONMENT_CHECK=1 db:drop
+# mise ssh -- bundle exec rake "maps:sync[wa]"
+# mise ssh -- bundle exec rake "cities:sync"
+
+[tasks.dev]
+run = """
+docker compose up -d
+"""
+
+[tasks.shellin]
+run = """
+docker exec -it civicpatch_web bash
+"""
+
+[tasks.deploy]
+run = """
+./scripts/build-and-push.py
+"""

@@ -16,8 +16,8 @@
       "type": "city",
       "population": 737015,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-06-04",
-      "meta_hash": "69267b52c7ba75f87c2efa511293aaa7",
+      "meta_updated_at": "2025-06-22T01:04:03Z",
+      "meta_hash": "410008074e97ca0f662a1241617c1d26",
       "meta_sources": [
         "state_source",
         "gemini",
@@ -40,9 +40,13 @@
       "type": "city",
       "population": 228989,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-16",
-      "meta_hash": "9e73a15931e57924cccdabf05fe7d5f7",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-16T20:32:17Z",
+      "meta_hash": "f755290061c76d8f2b4f49506e509ca5",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5367000"
     },
     {
@@ -132,9 +136,13 @@
       "type": "city",
       "population": 136588,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "2bf1f80b3ec042241fe4ff641daa257f",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-16T18:11:11Z",
+      "meta_hash": "5ab469fbaa373f5fcef371b308c52aaf",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5335415"
     },
     {
@@ -152,9 +160,13 @@
       "type": "city",
       "population": 106785,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "d5ab90225ea70f2884b50108a77bbec5",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-18T23:59:43Z",
+      "meta_hash": "ea9112b3da84df9b4897d45b889642e6",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5357745"
     },
     {
@@ -172,9 +184,13 @@
       "type": "city",
       "population": 102976,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "9bdd12bcfa0f6dfbc767cf1ac1daef60",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-16T20:50:41Z",
+      "meta_hash": "6a5bc94080a9774a21867e2f17771388",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5367167"
     },
     {
@@ -192,9 +208,13 @@
       "type": "city",
       "population": 101030,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-05-29",
-      "meta_hash": "79e5df48cbfaea46648a2d9dce2449d0",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-14T02:52:14Z",
+      "meta_hash": "ed5f9b904312791f5110bd7a0b14c05f",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5323515"
     },
     {
@@ -212,9 +232,13 @@
       "type": "city",
       "population": 96968,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "9539aaa65d5f0010573da60262e707fc",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-14T02:56:48Z",
+      "meta_hash": "e6ace90d587b172deb32cbab160bc9da",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5380010"
     },
     {
@@ -233,8 +257,8 @@
       "population": 92175,
       "government_type": "mayor_council",
       "geoid": "5335940",
-      "meta_updated_at": "2025-06-04",
-      "meta_hash": "ea794058ea10ddec559dc3e02d0f854d",
+      "meta_updated_at": "2025-06-25T02:06:52Z",
+      "meta_hash": "b6964df00f7c30534ec982e50215e9ba",
       "meta_sources": [
         "state_source",
         "gemini",
@@ -256,9 +280,13 @@
       "type": "city",
       "population": 91482,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "16253f6e62be3a33f8d68c1fc3170ec3",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T01:53:32Z",
+      "meta_hash": "da3ad6c38038f1f7d01595f72d88b9b5",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5305280"
     },
     {
@@ -278,9 +306,13 @@
       "type": "city",
       "population": 87256,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "996d99c7f6c3084d2a76e653d121b8b7",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T03:08:11Z",
+      "meta_hash": "a6e677c51b872c928e54ad7491749a24",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5303180"
     },
     {
@@ -298,9 +330,13 @@
       "type": "city",
       "population": 83921,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "6adb28d6b9dbf11e87583132db1ff71c",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-16T20:48:16Z",
+      "meta_hash": "c57d1be414135228fbcbf29a1ade24b6",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5335275"
     },
     {
@@ -318,9 +354,13 @@
       "type": "city",
       "population": 77108,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-05-09",
-      "meta_hash": "3bbf3b5e56f2a1aa84657d701de579b2",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-20T19:13:01Z",
+      "meta_hash": "3032e041da390d8d36ed8bb522e30bb0",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5353545"
     },
     {
@@ -338,9 +378,13 @@
       "type": "city",
       "population": 73256,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "081065cd0b55810c7b2f4dccfe050034",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-20T19:12:44Z",
+      "meta_hash": "b194a20e01547f8a346f437a596ff69f",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5357535"
     },
     {
@@ -358,9 +402,13 @@
       "type": "city",
       "population": 67455,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "b36cdf15117c78aab5c1313fe464b63c",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-16T22:20:07Z",
+      "meta_hash": "bf74fc50caa691671fc52f5ee630530b",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5361115"
     },
     {
@@ -378,9 +426,13 @@
       "type": "city",
       "population": 63612,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "245c5e60e56433abc12cbe552f45f2d2",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-20T19:13:33Z",
+      "meta_hash": "3f091469e4c3db3c2dffcc808a09ac0c",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5338038"
     },
     {
@@ -398,9 +450,13 @@
       "type": "city",
       "population": 60560,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "4a1cfc4a567e91336c819b8b575d37a4",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T03:01:18Z",
+      "meta_hash": "c69f194c8d4c99e6b497cf96fb8c1a95",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5358235"
     },
     {
@@ -418,9 +474,13 @@
       "type": "city",
       "population": 58608,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "631fdd8390dd6ed570d733a1c17a86ac",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T02:59:58Z",
+      "meta_hash": "f1cc47f6579d054b3a07b13c1a3db54e",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5363960"
     },
     {
@@ -438,9 +498,13 @@
       "type": "city",
       "population": 52066,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-17",
-      "meta_hash": "7ca382805981e77232f1af29af0ad72c",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T03:01:10Z",
+      "meta_hash": "21e33b0e79931bb4ea4d422240e602ba",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5308850"
     },
     {
@@ -460,9 +524,13 @@
       "type": "city",
       "population": 48161,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-18",
-      "meta_hash": "5385ab1db8208f8f595825e1c90deae1",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T03:05:03Z",
+      "meta_hash": "22389729daac7f70a72754c2127de812",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5307380"
     },
     {
@@ -480,9 +548,13 @@
       "type": "city",
       "population": 43505,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-21",
-      "meta_hash": "83ab4d0d5800f736c253596325c50b8a",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T03:32:10Z",
+      "meta_hash": "c5b8595522728180620af7110c315f16",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5307695"
     },
     {
@@ -500,9 +572,13 @@
       "type": "city",
       "population": 42973,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "cf31a315c0d5236d741382edd4680856",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T03:27:33Z",
+      "meta_hash": "82b894f84ef3abcba9721a6a6e87562f",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5356695"
     },
     {
@@ -520,9 +596,13 @@
       "type": "city",
       "population": 40051,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-05-02",
-      "meta_hash": "fe66df3b91b7e78b992ceb25fc9ef4c5",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T04:52:42Z",
+      "meta_hash": "257f8cf1615fcabaa3c3910a33c6b6ae",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5333805"
     },
     {
@@ -540,9 +620,13 @@
       "type": "city",
       "population": 37818,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-23",
-      "meta_hash": "9e3594230343df37265c6b5688e891a3",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T03:33:21Z",
+      "meta_hash": "0e615ce83ef1022607806f3ff113d3d6",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5340245"
     },
     {
@@ -584,9 +668,13 @@
       "type": "city",
       "population": 35219,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-23",
-      "meta_hash": "9e5a81cfe4660706337d9c5c6933c87f",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T03:27:57Z",
+      "meta_hash": "8e64f4c9e4fa6f468bb5326cf2a296a3",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5347560"
     },
     {
@@ -604,9 +692,13 @@
       "type": "city",
       "population": 34866,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-23",
-      "meta_hash": "713998a30089ed155247b3cfe95c5ac2",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T21:19:03Z",
+      "meta_hash": "20b11134e2ff4ad6ee4d47f4217260de",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5373465"
     },
     {
@@ -624,9 +716,13 @@
       "type": "city",
       "population": 34060,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-05-29",
-      "meta_hash": "ff2410a363ceff669e977671c2e2ce0b",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-22T01:33:46Z",
+      "meta_hash": "f23e3d04431a823175f28cd09080e77a",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5375775"
     },
     {
@@ -644,9 +740,13 @@
       "type": "city",
       "population": 32901,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-05-30",
-      "meta_hash": "23e09ea397d234c9667d5bcf963b0d4f",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T21:20:27Z",
+      "meta_hash": "94655194be86c21158cc9a431bf1cdf4",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5356625"
     },
     {
@@ -664,9 +764,13 @@
       "type": "city",
       "population": 32888,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-05-30",
-      "meta_hash": "d56c8fdc779f5f94432e0bfe42d8e1aa",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T21:15:53Z",
+      "meta_hash": "29d6e93590196063ae8897d1109fa27b",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5317635"
     },
     {
@@ -708,9 +812,13 @@
       "type": "city",
       "population": 28013,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "0bb026c2fd99d38ed15a43f2a5b462f9",
-      "meta_sources": [],
+      "meta_updated_at": "2025-06-21T21:19:12Z",
+      "meta_hash": "646a65953d4d2bdf26aec735fa8a7280",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "5343150"
     },
     {
@@ -800,10 +908,12 @@
       "type": "city",
       "population": 24825,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "c30c036a201a1ad4622e1cfbc47e5366",
+      "meta_updated_at": "2025-06-22T03:31:36Z",
+      "meta_hash": "5ca677a64cbd971c47d5f7a9b6b2b49c",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5303736"
     },
@@ -846,10 +956,12 @@
       "type": "city",
       "population": 23914,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "6c564157f30b12730f899393ba0c23ef",
+      "meta_updated_at": "2025-06-22T02:08:36Z",
+      "meta_hash": "fd055a8185f6fffe551c75ca8ce99ca3",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5335170"
     },
@@ -892,10 +1004,12 @@
       "type": "city",
       "population": 21798,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "7e3528d3708bf9270f43685b0b3c6b37",
+      "meta_updated_at": "2025-06-22T02:06:55Z",
+      "meta_hash": "c86684f6f0a43db50faba12a1d46e80e",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5372625"
     },
@@ -960,10 +1074,12 @@
       "type": "city",
       "population": 20743,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "1bd2b6367efd23c992f75c30bc4644ea",
+      "meta_updated_at": "2025-06-22T02:08:03Z",
+      "meta_hash": "bccddc73809d31eec9cc079965bd6bc6",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5304475"
     },
@@ -1000,15 +1116,17 @@
       "counties": [
         "Snohomish"
       ],
-      "website": "http://www.ci.monroe.wa.us",
+      "website": "https://www.monroewa.gov",
       "geoid": "5346685",
       "type": "Code city",
       "population": 19699,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "ccc6990c19d051d68a6abaca47d0ee11",
+      "meta_updated_at": "2025-06-22T04:18:07Z",
+      "meta_hash": "9f872e321e7e460f9a6038ac6ad8fa39",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {
@@ -1026,10 +1144,12 @@
       "type": "city",
       "population": 18666,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "64524ad1afa6ef29f68069df5e7bd3d1",
+      "meta_updated_at": "2025-06-22T04:34:05Z",
+      "meta_hash": "c1f61584680057ff1ceaefe80db57c90",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5321240"
     },
@@ -1048,10 +1168,12 @@
       "type": "city",
       "population": 18183,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "38d5cc9fe6f34c594e921b5188e5e339",
+      "meta_updated_at": "2025-06-22T04:41:35Z",
+      "meta_hash": "3486727913091a8f1081b619c90cea67",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5311160"
     },
@@ -1070,10 +1192,12 @@
       "type": "city",
       "population": 17637,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "bf07c989f218cbf4ddcb8c936f69dadf",
+      "meta_updated_at": "2025-06-22T04:37:33Z",
+      "meta_hash": "4fb07b5afdd7174c02c83006441faa0d",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5301990"
     },
@@ -1092,10 +1216,12 @@
       "type": "city",
       "population": 17039,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "4e221a36f83c7b254028d69abd541d28",
+      "meta_updated_at": "2025-06-22T05:47:57Z",
+      "meta_hash": "f6d12f07e49d66071364396bf21d985e",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5376405"
     },
@@ -1114,10 +1240,12 @@
       "type": "city",
       "population": 16375,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "caf8be6615e22cca65fcc1432eba78f8",
+      "meta_updated_at": "2025-06-22T05:09:38Z",
+      "meta_hash": "454aef40be9d0edfc80285da67a1d5a1",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5368750"
     },
@@ -1136,10 +1264,12 @@
       "type": "city",
       "population": 16295,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "79d11b010996c887e433ca7ef11ffaf5",
+      "meta_updated_at": "2025-06-22T04:55:48Z",
+      "meta_hash": "1d1cf274dfa9ca59296fb36e8c8e3258",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5377665"
     },
@@ -1158,10 +1288,12 @@
       "type": "city",
       "population": 15749,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "39078ed3df3d096d789760bcf7dacb20",
+      "meta_updated_at": "2025-06-22T05:00:56Z",
+      "meta_hash": "7362c296c127191f66cb32011528440d",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5340805"
     },
@@ -1180,10 +1312,12 @@
       "type": "city",
       "population": 15587,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "81e7e54a1c94cdb1dc35dd3fde633df3",
+      "meta_updated_at": "2025-06-22T04:53:24Z",
+      "meta_hash": "2e90acbc2ebc38dfc0bb65c3967f3e10",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5355785"
     },
@@ -1202,10 +1336,12 @@
       "type": "city",
       "population": 15048,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "31a45847b342de22c7a8747a6110ac0b",
+      "meta_updated_at": "2025-06-22T04:55:56Z",
+      "meta_hash": "acb76f1a93a0eed8d59b72e359e9ab20",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5323620"
     },
@@ -1224,10 +1360,12 @@
       "type": "city",
       "population": 14158,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "38c1e4238a43ad2c5b542b554eae2786",
+      "meta_updated_at": "2025-06-22T05:47:17Z",
+      "meta_hash": "65d3fdcc320ea46b1a7f4b25f0f11b16",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5320155"
     },
@@ -1246,10 +1384,12 @@
       "type": "city",
       "population": 14121,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "e78864097582cf7a1fa5a7ad72e2f460",
+      "meta_updated_at": "2025-06-22T05:48:07Z",
+      "meta_hash": "9577f7089e449e40d674ef9e980b1932",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5365205"
     },
@@ -1268,10 +1408,12 @@
       "type": "city",
       "population": 13630,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "0e96eac2f3d7bec5cf190cc07e9d4bdc",
+      "meta_updated_at": "2025-06-22T05:47:54Z",
+      "meta_hash": "3f13831e4ef1c39039aed6c1c0a57e4f",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5337270"
     },
@@ -1290,10 +1432,12 @@
       "type": "city",
       "population": 13069,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "c3cccd6c2b965f433bbc5fdaa13ad75b",
+      "meta_updated_at": "2025-06-22T05:47:28Z",
+      "meta_hash": "5b8338a5766bb2e7d59bcb6a7439fb99",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5379590"
     },
@@ -1312,10 +1456,12 @@
       "type": "city",
       "population": 13017,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "951097a349e902402019abaae421dd1a",
+      "meta_updated_at": "2025-06-22T06:14:30Z",
+      "meta_hash": "a9e275f272ac53b121b7cdb979b92fcf",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5348645"
     },
@@ -1334,10 +1480,12 @@
       "type": "city",
       "population": 12720,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "d39c610751860a63016314013ce47356",
+      "meta_updated_at": "2025-06-22T06:08:43Z",
+      "meta_hash": "0dff2afd834960b6f5b89f87f4600339",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5335065"
     },
@@ -1358,10 +1506,12 @@
       "type": "city",
       "population": 12543,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "7d31576f7e677b334ab208b34e217292",
+      "meta_updated_at": "2025-06-22T06:09:21Z",
+      "meta_hash": "88bb8e1ba9ab3e157c62f2380286ae21",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5322045"
     },
@@ -1380,10 +1530,12 @@
       "type": "city",
       "population": 12421,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "0b276df811fd18f1650e952718da6486",
+      "meta_updated_at": "2025-06-22T06:08:45Z",
+      "meta_hash": "d5546ff9c89ad5e0ee556301a247ca87",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5363210"
     },
@@ -1402,10 +1554,12 @@
       "type": "city",
       "population": 12327,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "5ebedd78e9ae6dbb01a74303f78d8390",
+      "meta_updated_at": "2025-06-22T06:10:59Z",
+      "meta_hash": "749ff61d9e0774894e9fedb1d7eecfda",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5320645"
     },
@@ -1424,10 +1578,12 @@
       "type": "city",
       "population": 12029,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "3fa0d4ca412f15c67f0eb425d8c3718d",
+      "meta_updated_at": "2025-06-22T06:21:35Z",
+      "meta_hash": "c33d6b7618c7ece82f851687e3154916",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5326735"
     },
@@ -1446,10 +1602,12 @@
       "type": "city",
       "population": 12003,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "b88ce0aacf9d791fc14d24ded2470cbe",
+      "meta_updated_at": "2025-06-23T01:03:59Z",
+      "meta_hash": "810f118ca33f1ae3bfcf2c7b9136aca3",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5339335"
     },
@@ -1468,10 +1626,12 @@
       "type": "city",
       "population": 11975,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "1db36f2ddda584a967fe36b17974f1b4",
+      "meta_updated_at": "2025-06-23T02:02:45Z",
+      "meta_hash": "9505ea84beb6473d245d48f04d475dd2",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5355995"
     },
@@ -1490,10 +1650,12 @@
       "type": "city",
       "population": 10999,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "d417a8433fda74532f2b4e705be050af",
+      "meta_updated_at": "2025-06-23T04:25:18Z",
+      "meta_hash": "248248ad798c7df7391c17b8bdf6c681",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5323795"
     },
@@ -1512,10 +1674,12 @@
       "type": "city",
       "population": 10907,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "1debfd8162fc97ecc8056a085e10d597",
+      "meta_updated_at": "2025-06-23T01:02:45Z",
+      "meta_hash": "ee3c86b58ee66d58b8cc6f0f6cda18f3",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5327925"
     },
@@ -1534,10 +1698,12 @@
       "type": "city",
       "population": 10757,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "1679d9c7be1a1f24d654f520dc158caa",
+      "meta_updated_at": "2025-06-23T01:27:40Z",
+      "meta_hash": "d906a866e3ed8cb5d1c60cf53ca874af",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5300905"
     },
@@ -1556,10 +1722,12 @@
       "type": "city",
       "population": 10621,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "696d120d87b159705eb3e8be7e10263c",
+      "meta_updated_at": "2025-06-23T01:03:32Z",
+      "meta_hash": "e96057f090f28e7398eaac49ff7e97dc",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5368435"
     },
@@ -1578,10 +1746,12 @@
       "type": "city",
       "population": 10371,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "b2d1218e17d3fe31462133ad9416d66f",
+      "meta_updated_at": "2025-06-23T01:09:41Z",
+      "meta_hash": "a0c503e6f40cfe6808301601ac4cead9",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5363735"
     },
@@ -1600,10 +1770,12 @@
       "type": "city",
       "population": 10319,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "9251c695ebbe5aafadf9d08db8b292ae",
+      "meta_updated_at": "2025-06-23T04:20:04Z",
+      "meta_hash": "8efee4a40ba8aaf2d6935b9dbb8bd22a",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5358410"
     },
@@ -1622,10 +1794,12 @@
       "type": "city",
       "population": 10151,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "c32c85ff7d91575a6d5e3597694385e1",
+      "meta_updated_at": "2025-06-23T01:10:07Z",
+      "meta_hash": "9583b86e7fe95ea9cf14bdab55612d62",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5318965"
     },
@@ -1644,10 +1818,12 @@
       "type": "city",
       "population": 10148,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "8df3d6cc75f28dd9dc297c27a7fa2a08",
+      "meta_updated_at": "2025-06-23T03:14:18Z",
+      "meta_hash": "b59410816e1e233ae388eb4583107c8a",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5355855"
     },
@@ -1666,10 +1842,12 @@
       "type": "city",
       "population": 9902,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "7b204961525883a42a386c4b7b8bd1c7",
+      "meta_updated_at": "2025-06-23T04:18:12Z",
+      "meta_hash": "09e99fd901267fd6ebfc95605db05e04",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5313855"
     },
@@ -1688,10 +1866,12 @@
       "type": "city",
       "population": 9041,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "3b88a250c598fcccfdedadf139fae7ce",
+      "meta_updated_at": "2025-06-23T04:24:27Z",
+      "meta_hash": "d947ca5fba1cf2f1d659f30f94092bce",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5352005"
     },
@@ -1710,10 +1890,12 @@
       "type": "city",
       "population": 8854,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "47057d7ebbd2f989db9b2b2b0165c047",
+      "meta_updated_at": "2025-06-23T04:21:08Z",
+      "meta_hash": "95b348a126f92608cc5a753a7fab2c0a",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5371960"
     },
@@ -1732,10 +1914,12 @@
       "type": "city",
       "population": 8776,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "7d8ce3efac6914580a75593f95627500",
+      "meta_updated_at": "2025-06-23T04:47:49Z",
+      "meta_hash": "56d156887c58830b8bc61c4b1dd3b301",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5332300"
     },
@@ -1756,10 +1940,12 @@
       "type": "city",
       "population": 8697,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "b27858a4076883d334978debb15509b2",
+      "meta_updated_at": "2025-06-25T02:20:13Z",
+      "meta_hash": "0f98a0782810b2e62cb87645d05de9e2",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5346020"
     },
@@ -1778,10 +1964,12 @@
       "type": "city",
       "population": 8549,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "73379fac14f3968b7a29d499077b8bbd",
+      "meta_updated_at": "2025-06-23T04:25:37Z",
+      "meta_hash": "4dfab20bb95ab7b9e38f11086502a21a",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5352215"
     },
@@ -1800,10 +1988,12 @@
       "type": "city",
       "population": 8477,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "98248dbae2c995558d2def60f674e163",
+      "meta_updated_at": "2025-06-23T04:27:42Z",
+      "meta_hash": "b2e50bfd3982458af6a34cd7d5ced11f",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5322080"
     },
@@ -1822,10 +2012,12 @@
       "type": "city",
       "population": 8153,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "3422383c94f6e8862ed04887f48be480",
+      "meta_updated_at": "2025-06-23T04:29:49Z",
+      "meta_hash": "a5d89ec66ebd91330caa1a441352dbf4",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5363280"
     },
@@ -1844,10 +2036,12 @@
       "type": "city",
       "population": 8034,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "3258cbf367188c5300eb1a7fc07adca1",
+      "meta_updated_at": "2025-06-23T04:37:55Z",
+      "meta_hash": "21d8deeb037b805960b1475fef4f7b1d",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5319035"
     },
@@ -1866,10 +2060,12 @@
       "type": "city",
       "population": 8024,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "1e903081f7b537f70e279d1d28f2793f",
+      "meta_updated_at": "2025-06-23T04:34:39Z",
+      "meta_hash": "1fd0773cb4d82250636a21c7c128ac93",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5363385"
     },
@@ -1888,10 +2084,12 @@
       "type": "city",
       "population": 7543,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "2b2231182e57f1a6c432274c59a5e749",
+      "meta_updated_at": "2025-06-23T05:06:36Z",
+      "meta_hash": "d19c5a2ff4a35ac05074ea026d84b087",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5357115"
     },
@@ -1910,10 +2108,12 @@
       "type": "city",
       "population": 7461,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "e6b1af73799fd810b32add9ef437728b",
+      "meta_updated_at": "2025-06-23T05:06:45Z",
+      "meta_hash": "9f4a0907cf5435dc91493bbc480359d5",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5349485"
     },
@@ -1932,10 +2132,12 @@
       "type": "city",
       "population": 7439,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "67a076009afd8ffe168f613b75a79442",
+      "meta_updated_at": "2025-06-23T05:03:17Z",
+      "meta_hash": "2dbe61173445004e60ff6875888ac43b",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5311475"
     },
@@ -1956,10 +2158,12 @@
       "type": "city",
       "population": 7235,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "82ee92efab8d1aff260cfe4b17d5cb2c",
+      "meta_updated_at": "2025-06-23T05:01:17Z",
+      "meta_hash": "49554a3614dee6ae02ca2152ff1fcc6b",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5352495"
     },
@@ -1978,10 +2182,12 @@
       "type": "city",
       "population": 7161,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "404d11ed8bbeec44356c99d0733fa687",
+      "meta_updated_at": "2025-06-23T05:01:58Z",
+      "meta_hash": "ad0863022e5a9c809d7091a3fe4492c4",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5312630"
     },
@@ -2000,10 +2206,12 @@
       "type": "city",
       "population": 7156,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "c093ed83f174e8a31c35c09436e395c3",
+      "meta_updated_at": "2025-06-23T05:10:59Z",
+      "meta_hash": "af7dc71cc135336fc8b8d90e1b3eba3b",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5323970"
     },
@@ -2022,10 +2230,12 @@
       "type": "city",
       "population": 6771,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "42c7bd7e9a8ec550c4e618b3d9c34358",
+      "meta_updated_at": "2025-06-24T04:23:32Z",
+      "meta_hash": "2e8a6d97bdf490431d91a0627e30011c",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5349415"
     },
@@ -2044,10 +2254,12 @@
       "type": "town",
       "population": 6727,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "f124dbf48b9c15fb5e7edea4224d556b",
+      "meta_updated_at": "2025-06-23T05:17:07Z",
+      "meta_hash": "8cf066980f1699545fc30844b844663c",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5367770"
     },
@@ -2066,10 +2278,12 @@
       "type": "city",
       "population": 6715,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "51645cb8efeb5251d557f3d9be2289f1",
+      "meta_updated_at": "2025-06-24T04:35:03Z",
+      "meta_hash": "fc3dcdda308f020916ec6744cb1946e3",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5350570"
     },
@@ -2088,10 +2302,12 @@
       "type": "city",
       "population": 6568,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "88ebc97459c90325aaabc2430127680b",
+      "meta_updated_at": "2025-06-23T05:09:39Z",
+      "meta_hash": "e876d4d7ef5fe024bb573b7dd87403c6",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5373290"
     },
@@ -2112,10 +2328,12 @@
       "type": "city",
       "population": 6531,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "df55877e34da240dbe58033476e3a15f",
+      "meta_updated_at": "2025-06-23T05:14:53Z",
+      "meta_hash": "5c77d9b80b9e45fcf61c3197f0d0873e",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5379625"
     },
@@ -2134,10 +2352,12 @@
       "type": "city",
       "population": 6062,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "fefc33890eee95167e30830badf7d525",
+      "meta_updated_at": "2025-06-23T05:17:53Z",
+      "meta_hash": "dd10a6fc221598247c86eb96f6b9c533",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5356450"
     },
@@ -2156,10 +2376,12 @@
       "type": "city",
       "population": 5884,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "22a580dacb9e7559994451b18954ab94",
+      "meta_updated_at": "2025-06-23T05:12:56Z",
+      "meta_hash": "f7e49b6397d15aeb75dd58dd6d6bcffd",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5306505"
     },
@@ -2178,10 +2400,12 @@
       "type": "city",
       "population": 5441,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "6912194f81b043b25ca793178203caac",
+      "meta_updated_at": "2025-06-25T02:22:18Z",
+      "meta_hash": "2f9571dec42f816c5c495ec9033c859e",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5314485"
     },
@@ -2200,10 +2424,12 @@
       "type": "city",
       "population": 5114,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "eddbc98a616b27cfefdaf835c52bcf52",
+      "meta_updated_at": "2025-06-25T02:24:32Z",
+      "meta_hash": "21b44641ea1ec61aca8fd81a9709590f",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5308570"
     },
@@ -2222,10 +2448,12 @@
       "type": "city",
       "population": 4917,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "a4c4c151c638725001dea357449c5123",
+      "meta_updated_at": "2025-06-25T02:20:08Z",
+      "meta_hash": "b98212af735d7d78de69677de400268c",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5314170"
     },
@@ -2244,10 +2472,12 @@
       "type": "city",
       "population": 4874,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "11ecddee4d9fd575926e2926be29e7ff",
+      "meta_updated_at": "2025-06-25T02:20:06Z",
+      "meta_hash": "b4b9bec877916c251abad5cb68d17229",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5344690"
     },
@@ -2266,10 +2496,12 @@
       "type": "city",
       "population": 4860,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "9231a561625ca361f96f179e89a36cb7",
+      "meta_updated_at": "2025-06-25T02:26:39Z",
+      "meta_hash": "c5e3aa29a931759da957dae598799221",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5351340"
     },
@@ -2288,10 +2520,12 @@
       "type": "city",
       "population": 4697,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "dc5c79ea0fdab962274818a0d8bb4c60",
+      "meta_updated_at": "2025-06-25T02:27:18Z",
+      "meta_hash": "2e6ce909d5a4d297e511d988e79ebb4c",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5306330"
     },
@@ -2310,10 +2544,12 @@
       "type": "city",
       "population": 4607,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "f2c8681f934e032b26ebacf64c33128d",
+      "meta_updated_at": "2025-06-25T02:42:03Z",
+      "meta_hash": "6fd5e95058c33fc708ef98eed5507bb6",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5376125"
     },
@@ -2332,10 +2568,12 @@
       "type": "city",
       "population": 4383,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "60848fda417dfc62e37bb67abe40c193",
+      "meta_updated_at": "2025-06-25T02:28:56Z",
+      "meta_hash": "4cdbc4566e56c7fff43d92b3d0c507f7",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5317320"
     },
@@ -2354,10 +2592,12 @@
       "type": "city",
       "population": 4326,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "3f13c875514a1f70355844d09919fb68",
+      "meta_updated_at": "2025-06-25T04:50:53Z",
+      "meta_hash": "2e3ff8502152de2aa1c2040674c67b67",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5347665"
     },
@@ -2370,16 +2610,18 @@
       "counties": [
         "Chelan"
       ],
-      "website": "http://www.cityofchelan.com",
+      "website": "https://cityofchelan.us",
       "fips": "53-11615",
       "gnis": "2409440",
       "type": "city",
       "population": 4222,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "4f0dfe8d963981a2b0b9dccdc90bf3d0",
+      "meta_updated_at": "2025-06-25T18:00:27Z",
+      "meta_hash": "9765b7813d7c9f96e00d3f599d8654f1",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5311615"
     },
@@ -2398,10 +2640,12 @@
       "type": "city",
       "population": 4138,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "46a4f3badee73a43ec37f2695e8d5817",
+      "meta_updated_at": "2025-06-25T03:00:03Z",
+      "meta_hash": "1c3f5ec7e486dfaad551fed03cbd1ab1",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5346895"
     },
@@ -2420,10 +2664,12 @@
       "type": "city",
       "population": 3624,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "3f0f9fee17b04faea663f237099cb186",
+      "meta_updated_at": "2025-06-25T03:00:47Z",
+      "meta_hash": "e18b4367794d2741446b812cfa03326e",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5327960"
     },
@@ -2442,10 +2688,12 @@
       "type": "city",
       "population": 3479,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "82d6392e9af9f53e304cc291ebe4de43",
+      "meta_updated_at": "2025-06-25T02:57:10Z",
+      "meta_hash": "3378c6681a30fa414dde56d8e0ea081a",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5305560"
     },
@@ -2458,16 +2706,18 @@
       "counties": [
         "Klickitat"
       ],
-      "website": "http://www.cityofgoldendale.com",
+      "website": "https://www.ci.goldendale.wa.us",
       "fips": "53-27435",
       "gnis": "2410612",
       "type": "city",
       "population": 3453,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "a3f6ee831ea502d38fc983db0a1976ba",
+      "meta_updated_at": "2025-06-25T23:06:30Z",
+      "meta_hash": "b2f7f6201e48e589f30ac2e9cb36d9d1",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5327435"
     },
@@ -2486,10 +2736,12 @@
       "type": "city",
       "population": 3438,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "6eed82802025a9c5242217cef9a3afb9",
+      "meta_updated_at": "2025-06-25T03:05:13Z",
+      "meta_hash": "9aea6feb8405ee984011ab7d905187dc",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5321450"
     },
@@ -2508,10 +2760,12 @@
       "type": "city",
       "population": 3424,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "7c6b4d8be38a56e20f8b1ccd80113163",
+      "meta_updated_at": "2025-06-25T03:03:30Z",
+      "meta_hash": "74c64a8b2739dde7f95050a06d30e9f0",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5336710"
     },
@@ -2530,10 +2784,12 @@
       "type": "city",
       "population": 3335,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "ce1510ec9703aed2a7a6e2d2a2ab0404",
+      "meta_updated_at": "2025-06-25T03:04:15Z",
+      "meta_hash": "de45079c92d91403bed52d17770bc58f",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5344165"
     },
@@ -2574,10 +2830,12 @@
       "type": "city",
       "population": 3290,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "2c031973ad3dddeca33a92af28931090",
+      "meta_updated_at": "2025-06-25T03:07:59Z",
+      "meta_hash": "4835999b328a077a6300477def1e8da5",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5301290"
     },
@@ -2596,10 +2854,12 @@
       "type": "city",
       "population": 3248,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "77629bf2316e18334a3decd53ece98dc",
+      "meta_updated_at": "2025-06-25T04:48:31Z",
+      "meta_hash": "b8f64129279e8cb74e912f8fe63511b3",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5310495"
     },
@@ -2618,10 +2878,12 @@
       "type": "city",
       "population": 3179,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "5280ef6c69b8ece3407ae16ce1efa377",
+      "meta_updated_at": "2025-06-25T21:28:20Z",
+      "meta_hash": "27e4801e113986c8d0b929a12f788434",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5380500"
     },
@@ -2640,10 +2902,12 @@
       "type": "city",
       "population": 3126,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "6945e59ffdc2825431e37cefb35e81a0",
+      "meta_updated_at": "2025-06-25T04:52:42Z",
+      "meta_hash": "011013edd5734d9e7e006a52b60dfb58",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5313365"
     },
@@ -2662,10 +2926,12 @@
       "type": "city",
       "population": 3081,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "51ee3b003e9770fe67a17b8497793e65",
+      "meta_updated_at": "2025-06-25T04:52:03Z",
+      "meta_hash": "db1be8e249c5603de40e6db333ee8c11",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5357430"
     },
@@ -2684,10 +2950,12 @@
       "type": "city",
       "population": 2959,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "64a1a6544f49efc62977afac348e1330",
+      "meta_updated_at": "2025-06-25T21:45:44Z",
+      "meta_hash": "e15439945cdc233c282f6c758e498ef6",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5334645"
     },
@@ -2706,10 +2974,12 @@
       "type": "city",
       "population": 2915,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "5d62875f0a3f1ef6ff61c78366b0b5fb",
+      "meta_updated_at": "2025-06-25T21:27:41Z",
+      "meta_hash": "603fa6760716bfe0b5d9c09d18098aba",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5344725"
     },
@@ -2728,10 +2998,12 @@
       "type": "city",
       "population": 2888,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "3a8b62d61d1bac676f8c67a5feb2e90e",
+      "meta_updated_at": "2025-06-25T04:55:56Z",
+      "meta_hash": "4c8c73cff3fc50337137eb762e26659d",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5322745"
     },
@@ -2750,10 +3022,12 @@
       "type": "town",
       "population": 2845,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "02673cd329edcd79c79ec905bfaf88e1",
+      "meta_updated_at": "2025-06-25T21:21:24Z",
+      "meta_hash": "86ad5e8c8e495755c78ddc3aa55d8d87",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5320260"
     },
@@ -2772,10 +3046,12 @@
       "type": "city",
       "population": 2782,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "39681f0ca6cac9e1c83da7883bca021c",
+      "meta_updated_at": "2025-06-25T21:31:26Z",
+      "meta_hash": "355e17feafa84cb10f296f0151a82ebe",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5313785"
     },
@@ -2794,10 +3070,12 @@
       "type": "town",
       "population": 2613,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "b6f07a67619af43970d2d1ac817b4885",
+      "meta_updated_at": "2025-06-25T21:27:09Z",
+      "meta_hash": "11dd29d3a662b85e089214e7d3146860",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5325615"
     },
@@ -2816,10 +3094,12 @@
       "type": "city",
       "population": 2485,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "aa8a4583432a99ba793ba63ba0bfd7d0",
+      "meta_updated_at": "2025-06-25T21:56:05Z",
+      "meta_hash": "efe4f2eaa8983926a6499b7ccafb0ee7",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5378330"
     },
@@ -2838,10 +3118,12 @@
       "type": "city",
       "population": 2470,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "3c661d705ee6ed4c80a20076bda4d591",
+      "meta_updated_at": "2025-06-25T21:34:31Z",
+      "meta_hash": "12c214d0a8f20530c370b87e5be4efd1",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5312140"
     },
@@ -2854,17 +3136,19 @@
       "counties": [
         "Grant"
       ],
-      "website": "http://www.cityofwarden.org",
       "fips": "53-76160",
       "gnis": "2412179",
       "type": "city",
       "population": 2449,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "6690033bdd76f45baea5da16f27e8847",
+      "meta_updated_at": "2025-06-25T21:39:30Z",
+      "meta_hash": "2ab76a06c7db1f4a7ee0261564784d2e",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
+      "meta_comment": "no contact information on website: https://cityofwarden.org/council",
       "geoid": "5376160"
     },
     {
@@ -2882,10 +3166,12 @@
       "type": "city",
       "population": 2448,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "6c22eb9ca911afe1824d896cecbe5c75",
+      "meta_updated_at": "2025-06-25T22:07:52Z",
+      "meta_hash": "3bc9c2880f4f914f43294d4df0b45c1b",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5316970"
     },
@@ -2904,10 +3190,12 @@
       "type": "city",
       "population": 2446,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "42f1e203470d5df930b14c9f09e6ffd4",
+      "meta_updated_at": "2025-06-25T22:07:31Z",
+      "meta_hash": "20f5fa8e04e568c167ec822b099654fc",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5310565"
     },
@@ -2926,10 +3214,12 @@
       "type": "city",
       "population": 2379,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "526e8c02e310eef0e95341a61abcdbbd",
+      "meta_updated_at": "2025-06-25T22:07:42Z",
+      "meta_hash": "a3661aec051a44e29b1daaf507f0158f",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5350920"
     },
@@ -2948,10 +3238,12 @@
       "type": "city",
       "population": 2263,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "786e154235db830d8cc351d895dac8f9",
+      "meta_updated_at": "2025-06-25T22:10:49Z",
+      "meta_hash": "8439847bc33cfe8151d0c7be2d3a1eb2",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5338845"
     },
@@ -2970,10 +3262,12 @@
       "type": "city",
       "population": 2213,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "99a01d915b8e876cf09bf57e8761ec03",
+      "meta_updated_at": "2025-06-25T22:34:17Z",
+      "meta_hash": "712ad588ab49fafb3abd7414c07d28db",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5377630"
     },
@@ -2992,10 +3286,12 @@
       "type": "city",
       "population": 2158,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "6050fdcbcb8d2213f032e72faafcdb72",
+      "meta_updated_at": "2025-06-25T22:12:03Z",
+      "meta_hash": "d64612b400d9e95e73f911eab3b1d222",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5310215"
     },
@@ -3008,16 +3304,18 @@
       "counties": [
         "Kittitas"
       ],
-      "website": "http://www.cityofcleelum.com",
+      "website": "https://cleelum.gov",
       "fips": "53-12945",
       "gnis": "2409476",
       "type": "city",
       "population": 2157,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "d1ca68dda39e527b0ea6073ac814e809",
+      "meta_updated_at": "2025-06-25T22:20:45Z",
+      "meta_hash": "e7c65fee1273dac39e86ebe88fac89ee",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5312945"
     },
@@ -3036,10 +3334,12 @@
       "type": "city",
       "population": 2141,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "8ece9a2c80f58146703326d8bbd6d183",
+      "meta_updated_at": "2025-06-25T22:14:25Z",
+      "meta_hash": "970d8274632f56be40cb878249387406",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5307870"
     },
@@ -3058,10 +3358,12 @@
       "type": "city",
       "population": 2114,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "bcc0d6ab5c46400eec4f3e9d4666d2c1",
+      "meta_updated_at": "2025-06-25T22:14:55Z",
+      "meta_hash": "eb60770e7085a11d6fe18211907003c8",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5348820"
     },
@@ -3080,10 +3382,12 @@
       "type": "city",
       "population": 1997,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "a79d6eeb1103e607d39f593dfd3ab21d",
+      "meta_updated_at": "2025-06-25T22:33:15Z",
+      "meta_hash": "f54672d2fe3b927e34cadcad4474e04f",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5341225"
     },
@@ -3124,10 +3428,12 @@
       "type": "city",
       "population": 1959,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "0ceb7434dbbc282df4af5ab2801119ac",
+      "meta_updated_at": "2025-06-25T22:48:01Z",
+      "meta_hash": "d9b830a8b429b8544f6cab62599f14fd",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5340980"
     },
@@ -3146,10 +3452,12 @@
       "type": "town",
       "population": 1942,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "f8233d602e5cb43f1eb0881647c23e4d",
+      "meta_updated_at": "2025-06-25T22:31:05Z",
+      "meta_hash": "5884c6f2d97bbda1561fa739775ba85c",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5315185"
     },
@@ -3168,10 +3476,12 @@
       "type": "city",
       "population": 1888,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "42b7b1213c2f559d9c0752c1a3b06171",
+      "meta_updated_at": "2025-06-25T22:36:51Z",
+      "meta_hash": "a115c37f244f08d17c22857439bc4ffe",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5347980"
     },
@@ -3190,10 +3500,12 @@
       "type": "city",
       "population": 1881,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "7aa80448fb7b1a02320ec8487319788d",
+      "meta_updated_at": "2025-06-25T22:38:44Z",
+      "meta_hash": "28d29a4861276294c803fee376b8ae33",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5345985"
     },
@@ -3212,10 +3524,12 @@
       "type": "city",
       "population": 1795,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "1f87cb5a8a9a44f974177e41e3481633",
+      "meta_updated_at": "2025-06-25T22:38:13Z",
+      "meta_hash": "647b2cdc0952bc1fc36efc8c164669aa",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5351970"
     },
@@ -3234,10 +3548,12 @@
       "type": "city",
       "population": 1776,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "05c516b05efe8ae435948cccf9b8f245",
+      "meta_updated_at": "2025-06-25T22:45:58Z",
+      "meta_hash": "d1dc2e249af3b5a8fe254c67170b469b",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5360230"
     },
@@ -3256,10 +3572,12 @@
       "type": "city",
       "population": 1767,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "4c07b6b848099aa770ec041df8f326f3",
+      "meta_updated_at": "2025-06-25T22:53:49Z",
+      "meta_hash": "91c0c4bbaee107f5838d53273e158f31",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5358725"
     },
@@ -3278,10 +3596,12 @@
       "type": "city",
       "population": 1746,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "b53b730b474a8b6bc3c4b3344d721d9a",
+      "meta_updated_at": "2025-06-25T23:06:04Z",
+      "meta_hash": "170fea73e08ccf92bc2f97f4f0b131ad",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5365625"
     },
@@ -3300,10 +3620,12 @@
       "type": "city",
       "population": 1691,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "8bc5f8413ef19fcdc53dcf504f9145f2",
+      "meta_updated_at": "2025-06-25T23:07:50Z",
+      "meta_hash": "3917e878998ae4788e168d5a1528d7a2",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5365345"
     },
@@ -3322,10 +3644,12 @@
       "type": "city",
       "population": 1688,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "e6832ce7d8cc6040feffd3fd8604ed88",
+      "meta_updated_at": "2025-06-25T23:08:42Z",
+      "meta_hash": "8ca56e346f85446fa1ee745d3254b314",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5340070"
     },
@@ -3344,10 +3668,12 @@
       "type": "town",
       "population": 1668,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "8d658ddb36bbf904810944bcaedc0b65",
+      "meta_updated_at": "2025-06-25T23:06:37Z",
+      "meta_hash": "5ffbe5b07742583f0c70a2e6149a87e9",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5379975"
     },
@@ -3366,10 +3692,12 @@
       "type": "city",
       "population": 1638,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "fabe951e95654a882b3a8dfe937dcf37",
+      "meta_updated_at": "2025-06-25T23:09:38Z",
+      "meta_hash": "b0c340501d53e22d54ee51810928a63e",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5314870"
     },
@@ -3388,10 +3716,12 @@
       "type": "city",
       "population": 1636,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "f3c878d84839335d7c27c82a0b2bfdca",
+      "meta_updated_at": "2025-06-26T00:02:53Z",
+      "meta_hash": "dc6c5ffc657ce10e210ba03720fc3eda",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5335485"
     },
@@ -3410,10 +3740,12 @@
       "type": "city",
       "population": 1583,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "e641600ecd9887cd39c3fbe6423ad42c",
+      "meta_updated_at": "2025-06-26T17:38:08Z",
+      "meta_hash": "8a619fd3ceedd7b0f2633876184f1796",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5368330"
     },
@@ -3426,16 +3758,18 @@
       "counties": [
         "Skamania"
       ],
-      "website": "http://www.cityofstevenson.com",
+      "website": "https://www.ci.stevenson.wa.us/",
       "fips": "53-67875",
       "gnis": "2411980",
       "type": "city",
       "population": 1491,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "063dfc6ca6e4376938aebb96981a2e5c",
+      "meta_updated_at": "2025-06-26T17:31:40Z",
+      "meta_hash": "b0fe0f7aaa3be2aba844c9f72740aadc",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5367875"
     },
@@ -3454,10 +3788,12 @@
       "type": "city",
       "population": 1472,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "189787b8dbd0d472a23e1f5be64e87e8",
+      "meta_updated_at": "2025-06-26T17:29:52Z",
+      "meta_hash": "2eb8931a0c69c00ba29e4882dea05ab6",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5379275"
     },
@@ -3476,10 +3812,12 @@
       "type": "city",
       "population": 1471,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "f12bff7c48c611962dd181339e288746",
+      "meta_updated_at": "2025-06-26T22:09:25Z",
+      "meta_hash": "476dd28fba83e59945c9f84306f6a844",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5349275"
     },
@@ -3498,10 +3836,12 @@
       "type": "town",
       "population": 1462,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "c92f40d68c2644e177480eb30bc161d3",
+      "meta_updated_at": "2025-06-26T22:04:31Z",
+      "meta_hash": "f319a947c56721ebc6b25422c7367ca2",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5316690"
     },
@@ -3542,10 +3882,12 @@
       "type": "city",
       "population": 1397,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "02f7c1fcf0d8b140e908d15690278134",
+      "meta_updated_at": "2025-06-26T22:06:20Z",
+      "meta_hash": "aef5b73e63a8e882b2b397702e3d8e56",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5349555"
     },
@@ -3580,16 +3922,18 @@
       "counties": [
         "Yakima"
       ],
-      "website": "http://cityoftieton.com",
+      "website": "https://www.cityoftieton.gov",
       "fips": "53-71400",
       "gnis": "2413390",
       "type": "city",
       "population": 1389,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "5446a36c71016e962efb43e2d8dc20c2",
+      "meta_updated_at": "2025-06-26T22:42:11Z",
+      "meta_hash": "d4be43633790221f7da02ad7a473a30b",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5371400"
     },
@@ -3608,10 +3952,12 @@
       "type": "city",
       "population": 1326,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "b22bdf038c9da8095ef45a82ceb8cf57",
+      "meta_updated_at": "2025-06-26T22:09:08Z",
+      "meta_hash": "7d20a7dae6bd1a2688510f7e99da00e2",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5322010"
     },
@@ -3624,16 +3970,18 @@
       "counties": [
         "Douglas"
       ],
-      "website": "http://rockislandwa.org",
+      "website": "https://www.rockislandwa.gov",
       "fips": "53-59180",
       "gnis": "2410975",
       "type": "city",
       "population": 1279,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "1495c76c2eb4284950720a168ad1875a",
+      "meta_updated_at": "2025-06-26T22:34:28Z",
+      "meta_hash": "52a1c1f6d8ab9cc6a52f3e08d4d1e0a8",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5359180"
     },
@@ -3656,10 +4004,12 @@
       "type": "town",
       "population": 1211,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "008e8547760cc8d9251563901f31dfca",
+      "meta_updated_at": "2025-06-26T22:16:50Z",
+      "meta_hash": "a738faf6c56d21435e7bb99ab41a9a2e",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5315115"
     },
@@ -3678,10 +4028,12 @@
       "type": "city",
       "population": 1204,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "cb94d19363349fee4e5df25c14bd04f6",
+      "meta_updated_at": "2025-06-26T22:12:42Z",
+      "meta_hash": "67222fe428b1c35f1c3cdcf428007a71",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5303075"
     },
@@ -3700,10 +4052,12 @@
       "type": "city",
       "population": 1166,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "cff56204ffee6ff273430769e20e512d",
+      "meta_updated_at": "2025-06-26T22:56:25Z",
+      "meta_hash": "7f47e6ffe4daa01c858ef1ecb8b3fe4d",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5375565"
     },
@@ -3760,16 +4114,18 @@
       "counties": [
         "King"
       ],
-      "website": "http://ci.yarrow-point.wa.us",
+      "website": "https://yarrowpointwa.gov",
       "fips": "53-80150",
       "gnis": "2413520",
       "type": "town",
       "population": 1134,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "9572737cffcf17557a879021a7253da0",
+      "meta_updated_at": "2025-06-26T23:14:51Z",
+      "meta_hash": "32d4adeb5cb93e516257cb2392e4814f",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5380150"
     },
@@ -3788,10 +4144,12 @@
       "type": "city",
       "population": 1103,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "9c30f34803d5bdbd69a3e6f6bd3d4ff2",
+      "meta_updated_at": "2025-06-26T23:03:03Z",
+      "meta_hash": "0b26dd18355b2ee1f3570e08801f40b9",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5371890"
     },
@@ -3810,10 +4168,12 @@
       "type": "city",
       "population": 1087,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "8596df59eae32beb52a75fa8231c731d",
+      "meta_updated_at": "2025-06-26T23:05:32Z",
+      "meta_hash": "f63e1380f0f3957e7e24ace123f3491c",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5333000"
     },
@@ -3832,10 +4192,12 @@
       "type": "town",
       "population": 1084,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "e83ea43b3dff28c2bc0a4c62132fd814",
+      "meta_updated_at": "2025-06-26T23:06:48Z",
+      "meta_hash": "e3b2d812e59e42efd607b0cacce569f1",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5347805"
     },
@@ -3854,10 +4216,12 @@
       "type": "town",
       "population": 1055,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "f89f3b864e22d421e1f05393ab62b487",
+      "meta_updated_at": "2025-06-26T23:11:05Z",
+      "meta_hash": "c4c371470b7c843032b0264a25c83e95",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5360510"
     },
@@ -3876,10 +4240,12 @@
       "type": "city",
       "population": 1036,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "75050976a5bc2bbcce0638843670e36a",
+      "meta_updated_at": "2025-06-26T23:13:55Z",
+      "meta_hash": "83f204d83a0a32a4f5694f901433e322",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5347175"
     },
@@ -3892,16 +4258,18 @@
       "counties": [
         "Whitman"
       ],
-      "website": "http://www.visitpalouse.com",
+      "website": "https://www.palousewa.gov",
       "fips": "53-52950",
       "gnis": "2411364",
       "type": "city",
       "population": 1015,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "61664f5756916776d61636a975875c94",
+      "meta_updated_at": "2025-06-26T23:28:12Z",
+      "meta_hash": "71dc6e02b0ad5f3800dd55c3d3c7c137",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5352950"
     },
@@ -3942,10 +4310,12 @@
       "type": "town",
       "population": 992,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "7d55c60724f8c438aa50010c8fa49150",
+      "meta_updated_at": "2025-06-26T23:24:11Z",
+      "meta_hash": "22d2c16830bf58243b6b6293b1c42743",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5373080"
     },
@@ -4008,10 +4378,12 @@
       "type": "city",
       "population": 956,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "372b5b95d4fbeea736d164cdcb2d07f2",
+      "meta_updated_at": "2025-06-26T23:40:17Z",
+      "meta_hash": "1d09dff8f4de006edc4885fe43455279",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5321030"
     },
@@ -4030,10 +4402,12 @@
       "type": "city",
       "population": 950,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "b32bdfd06715d0a496afafe4c263a0d7",
+      "meta_updated_at": "2025-06-26T23:47:28Z",
+      "meta_hash": "34c00c4b893c95ec1675feaf99acf194",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "5360055"
     },
@@ -4051,10 +4425,12 @@
       "type": "Town",
       "population": 895,
       "government_type": "mayor_council",
-      "meta_updated_at": "2025-04-19",
-      "meta_hash": "b6e65efc7fceace1711c416863a4140c",
+      "meta_updated_at": "2025-06-26T23:54:48Z",
+      "meta_hash": "0d587bccc5de6d4256df31c536558a32",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ]
     },
     {

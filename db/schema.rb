@@ -11,10 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.0].define(version: 2025_06_13_232000) do
-  create_schema "tiger"
-  create_schema "tiger_data"
-  create_schema "topology"
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "fuzzystrmatch"
   enable_extension "pg_catalog.plpgsql"

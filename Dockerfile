@@ -19,15 +19,22 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y curl \
     libjemalloc2 libvips \
     sqlite3 libpq-dev vim \
-    postgresql-client libgdal-dev gdal-bin \
-    jq && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    jq
 
 # Set production environment
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development"
+    BUNDLE_WITHOUT="development" \
+    DEBIAN_FRONTEND="noninteractive"
+
+RUN apt-get update -qq && \
+    apt-get install -y postgresql-common libgdal-dev gdal-bin && \
+    /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y && \
+    apt-get update -qq && \
+    apt-get install -y postgresql-client-17
+
+RUN rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Throw-away build stage to reduce size of final image
 FROM base AS build
@@ -51,9 +58,6 @@ RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
-
-
-
 
 # Final stage for app image
 FROM base
