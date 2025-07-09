@@ -404,7 +404,7 @@ DEPENDENCIES
   brakeman
   capybara
   debug
-  ffi-geos
+  ffi-geos (~> 2.5)
   importmap-rails
   jbuilder
   kamal

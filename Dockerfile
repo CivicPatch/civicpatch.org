@@ -21,6 +21,8 @@ RUN apt-get update -qq && \
     sqlite3 libpq-dev vim \
     jq
 
+RUN rm -rf /var/lib/apt/lists
+
 # Set production environment
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
@@ -28,27 +30,23 @@ ENV RAILS_ENV="production" \
     BUNDLE_WITHOUT="development" \
     DEBIAN_FRONTEND="noninteractive"
 
-RUN apt-get update -qq && \
-    apt-get install -y postgresql-common libgdal-dev gdal-bin && \
-    /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y && \
-    apt-get update -qq && \
-    apt-get install -y postgresql-client-17
-
-RUN rm -rf /var/lib/apt/lists /var/cache/apt/archives
-
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config
+
+RUN apt-get update -qq && \
+    apt-get install -y libgeos-dev
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
+
+RUN rm -rf /var/lib/apt/lists
 
 # Copy application code
 COPY . .
@@ -64,8 +62,10 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl postgresql-client && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    apt-get install -y postgresql-common libgdal-dev gdal-bin libpq-dev && \
+    /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y && \
+    apt-get update -qq && \
+    apt-get install -y postgresql-client-17
 
 # Copy built artifacts: gems, application
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
