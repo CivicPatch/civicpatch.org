@@ -16,9 +16,13 @@
       "phone_number": "(503) 823-4000",
       "website": "https://www.portland.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "cb41fdf1fcbeb04ef388932dca9dcaec",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T16:35:56Z",
+      "meta_hash": "aff946aa741a01cdc70973df45bfd706",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4159000"
     },
     {
@@ -34,9 +38,13 @@
       "phone_number": "(541) 682-5010",
       "website": "https://www.eugene-or.gov",
       "email": null,
-      "meta_updated_at": "2025-05-01",
-      "meta_hash": "4c18b1c4f65c8ac71c1360f495895b21",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T16:33:32Z",
+      "meta_hash": "48c770250feac78bb214778379c610f2",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4123850"
     },
     {
@@ -53,9 +61,13 @@
       "phone_number": "(503) 588-6255",
       "website": "https://www.cityofsalem.net",
       "email": null,
-      "meta_updated_at": "2025-04-28",
-      "meta_hash": "67a331f98530c12e6f5121f42afe8e01",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-10T23:54:41Z",
+      "meta_hash": "58efbc7a1e27da09396c0f1c9211edf2",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4164900"
     },
     {
@@ -71,9 +83,13 @@
       "phone_number": "(503) 661-3000",
       "website": "https://www.greshamoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-01",
-      "meta_hash": "50b5ae16705922c2d2dea6fc9d93d65e",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T16:32:21Z",
+      "meta_hash": "f3aae13608802234111d372151529e7c",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4131250"
     },
     {
@@ -89,9 +105,13 @@
       "phone_number": "(503) 681-6100",
       "website": "https://www.hillsboro-oregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-01",
-      "meta_hash": "f9ece922b6581357e9b99ebefc1749f4",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T17:11:59Z",
+      "meta_hash": "387587d2fbedaf4f8561ed71bb0f2b32",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4134100"
     },
     {
@@ -107,9 +127,13 @@
       "phone_number": "(541) 388-5505",
       "website": "https://www.bendoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-28",
-      "meta_hash": "1a9fef76246b8fa247c3ce7462dbd398",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-10T18:47:57Z",
+      "meta_hash": "4650d08c130328d2f72e8b856da6b4c3",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4105800"
     },
     {
@@ -125,9 +149,13 @@
       "phone_number": "(503) 526-2222",
       "website": "https://www.beavertonoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-30",
-      "meta_hash": "5fdf525670e41b5a1119aab3c858313c",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:04:46Z",
+      "meta_hash": "5fc5ea9430c359a1b294d59872627eed",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4105350"
     },
     {
@@ -143,9 +171,13 @@
       "phone_number": "(541) 774-2000",
       "website": "https://www.medfordoregon.gov/Home",
       "email": null,
-      "meta_updated_at": "2025-05-05",
-      "meta_hash": "df2e5351d858d19335f75225bc17f35d",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T16:40:52Z",
+      "meta_hash": "32ddec51889b9665c1a2c23f6d4b45e4",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4147000"
     },
     {
@@ -161,9 +193,13 @@
       "phone_number": "(541) 726-3700",
       "website": "https://springfield-or.gov",
       "email": null,
-      "meta_updated_at": "2025-05-01",
-      "meta_hash": "e754d90bd70bf2e4608e3c37ce2b51d6",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:02:08Z",
+      "meta_hash": "0c47a31a3a8b80c90e8753ff8cf487fd",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4169600"
     },
     {
@@ -179,9 +215,13 @@
       "phone_number": "(541) 766-6900",
       "website": "https://www.corvallisoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-01",
-      "meta_hash": "4cdedadeb067b7ad1d4e2d460470d4d1",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T16:50:30Z",
+      "meta_hash": "7b71604650d3591e1f8682074ad9028c",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4115800"
     },
     {
@@ -198,9 +238,13 @@
       "phone_number": "(541) 917-7500",
       "website": "https://albanyoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-30",
-      "meta_hash": "2fd892735c209246dddccf61d0730a36",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T16:38:20Z",
+      "meta_hash": "06eb4a564ef88e33b04f668c6fe10cbf",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4101000"
     },
     {
@@ -216,9 +260,13 @@
       "phone_number": "(503) 639-4171",
       "website": "https://www.tigard-or.gov",
       "email": null,
-      "meta_updated_at": "2025-05-04",
-      "meta_hash": "cf246989e102ecd75b2385435d83d7b0",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:04:11Z",
+      "meta_hash": "a6c51d5e12ab78698eb029af37eaa59a",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4173650"
     },
     {
@@ -236,9 +284,13 @@
       "phone_number": "(503) 635-0270",
       "website": "https://www.ci.oswego.or.us",
       "email": null,
-      "meta_updated_at": "2025-05-01",
-      "meta_hash": "6228c6eca05ff0c51ef7cc8e2d135480",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T16:43:50Z",
+      "meta_hash": "1dcf59e2a9ef09d3bba95b6834fcb424",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4140550"
     },
     {
@@ -254,9 +306,13 @@
       "phone_number": "(503) 390-3700",
       "website": "https://www.keizer.org",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "9f91339257d59807c4fe4faef659c4d2",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-10T21:10:08Z",
+      "meta_hash": "0ef2e6ebf6f9093300c1269109feea2d",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4138500"
     },
     {
@@ -272,9 +328,13 @@
       "phone_number": "(541) 450-6000",
       "website": "https://www.grantspassoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-01",
-      "meta_hash": "e4051a218b92d4bb63a4cd48455fae67",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T16:54:43Z",
+      "meta_hash": "9cad4d64168452e567930c3c8b4a5732",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4130550"
     },
     {
@@ -290,9 +350,13 @@
       "phone_number": "(503) 657-0891",
       "website": "https://www.orcity.org",
       "email": null,
-      "meta_updated_at": "2025-05-02",
-      "meta_hash": "e48d99ba21bc5995decf7ad6a776353b",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T17:00:58Z",
+      "meta_hash": "ec4120f79326e9ea03820337ac69c9fb",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4155200"
     },
     {
@@ -308,9 +372,13 @@
       "phone_number": "(503) 434-7302",
       "website": "https://www.mcminnvilleoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-04",
-      "meta_hash": "e54a8bcbcbce7471dcdace7cfcd3e5eb",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T17:11:00Z",
+      "meta_hash": "c88463eba0269f3cbe0e898301e99c3f",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4145000"
     },
     {
@@ -326,9 +394,13 @@
       "phone_number": "(541) 923-7710",
       "website": "https://www.redmondoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-01",
-      "meta_hash": "3da3408c0bcb655f8797b2c71314eade",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T17:13:16Z",
+      "meta_hash": "1a1daa12afa9cc36d2be55f2d3d604fb",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4161200"
     },
     {
@@ -345,9 +417,13 @@
       "phone_number": "(503) 692-2000",
       "website": "https://www.tualatinoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-03",
-      "meta_hash": "8cf1491f6912dc15091eb8a101b89609",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:01:05Z",
+      "meta_hash": "993cc7766625f26f27a5dbaa31ba896e",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4174950"
     },
     {
@@ -363,9 +439,13 @@
       "phone_number": "(503) 657-0331",
       "website": "https://westlinnoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "dc9f2e777d69ff8f797d378449a90c8f",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:06:06Z",
+      "meta_hash": "eb4adc7cba2a54ed87c6bca338829bfc",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4180150"
     },
     {
@@ -382,9 +462,13 @@
       "phone_number": "(503) 682-1011",
       "website": "https://www.wilsonvilleoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "eb282ebd5a8cbefccb292ffc22fb226e",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T17:21:38Z",
+      "meta_hash": "087a679f1d6177a64bd0a44600cd6ee2",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4182800"
     },
     {
@@ -400,9 +484,13 @@
       "phone_number": "(503) 992-3200",
       "website": "https://www.forestgrove-or.gov",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "2b8cdd52d8edd142c4c4264d116e033a",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:09:57Z",
+      "meta_hash": "4e0d685cfde234a273da64b4f5adceb4",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4126200"
     },
     {
@@ -418,9 +506,13 @@
       "phone_number": "(503) 982-5228",
       "website": "https://www.woodburn-or.gov",
       "email": null,
-      "meta_updated_at": "2025-05-05",
-      "meta_hash": "d38377b2cd213c473d64dfb3fb7bfeb8",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:06:59Z",
+      "meta_hash": "f616adf77f44a6a36e8380bce0a0671e",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4183750"
     },
     {
@@ -436,9 +528,13 @@
       "phone_number": "(503) 538-9421",
       "website": "https://www.newbergoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-05",
-      "meta_hash": "51c2ae2e19704c0e1da1bd411a25e43a",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:10:58Z",
+      "meta_hash": "60f87019ede6804d182c2b8e13e21eeb",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4152100"
     },
     {
@@ -454,9 +550,13 @@
       "phone_number": "(503) 783-3800",
       "website": "https://www.happyvalleyor.gov",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "08fa143866df1e32c981dce3ac2dc93d",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:07:45Z",
+      "meta_hash": "64706e8153a8b8bb51c4c6617ef403d7",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4132050"
     },
     {
@@ -472,9 +572,13 @@
       "phone_number": "(541) 492-6700",
       "website": "https://www.cityofroseburg.org",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "53103f794b395722e0d1d745069efe0f",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T17:21:38Z",
+      "meta_hash": "02f6c0bff31e55fe8a38894014b64bba",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4163650"
     },
     {
@@ -490,9 +594,13 @@
       "phone_number": "(541) 883-5316",
       "website": "https://www.klamathfalls.city",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "7865d4ac86bb2c939688a0651fec8925",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-09T17:26:59Z",
+      "meta_hash": "dd57dfa08145655208adfcc14b7d47a4",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4139700"
     },
     {
@@ -508,9 +616,13 @@
       "phone_number": "(541) 488-6002",
       "website": "https://ashlandoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "45bf24ee682c79ce7ba40ced8b86d495",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-10T00:49:03Z",
+      "meta_hash": "38a0c6ac8527bc180222074bffb2ec35",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4103050"
     },
     {
@@ -527,9 +639,13 @@
       "phone_number": "(503) 786-7555",
       "website": "https://www.milwaukieoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "f210a3e7c507ef6ffcc3a1ea2037a5d6",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:13:52Z",
+      "meta_hash": "c7f8b69f3c391d8862fa46587efe6789",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4148650"
     },
     {
@@ -545,9 +661,13 @@
       "phone_number": "(503) 625-5522",
       "website": "https://www.sherwoodoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "18b68fbb967f73eb150f9ae2801d3ec0",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:10:37Z",
+      "meta_hash": "d5dd4824cbf787e5880e32580e980407",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4167100"
     },
     {
@@ -563,9 +683,13 @@
       "phone_number": "(541) 567-5521",
       "website": "https://www.hermiston.gov",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "2e6478fbb0e7609924e1bdf3b91b4a07",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:18:29Z",
+      "meta_hash": "15987c2556922ba4b18487fe16027696",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4133700"
     },
     {
@@ -581,9 +705,13 @@
       "phone_number": "+5416643321231",
       "website": "https://www.centralpointoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-08",
-      "meta_hash": "f41d2a189e5eae139bca5deab33d5574",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:17:03Z",
+      "meta_hash": "3ea9648aa7c0b8cbddbcdc3fd46b8418",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4112400"
     },
     {
@@ -599,9 +727,13 @@
       "phone_number": "(541) 258-4900",
       "website": "https://www.lebanonoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "640e26bc7903bcf425f323a06eeeab5a",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T00:20:11Z",
+      "meta_hash": "d55dfa9e994f5e6416dd8d1a94f5a325",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4141650"
     },
     {
@@ -617,9 +749,13 @@
       "phone_number": "(503) 266-4021",
       "website": "https://www.canbyoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "029cdc397c73659c26cfcac14e434e31",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-10T00:59:19Z",
+      "meta_hash": "36572f05424fef9affa5f6b36e12bfc5",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4110750"
     },
     {
@@ -635,9 +771,13 @@
       "phone_number": "(541) 966-0201",
       "website": "https://www.pendletonor.gov",
       "email": null,
-      "meta_updated_at": "2025-05-06",
-      "meta_hash": "7f85f95e7de04f5061d7a0c1193dfd38",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T04:39:57Z",
+      "meta_hash": "1397906b9520fbb4d497fd9dec93fdd5",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4157150"
     },
     {
@@ -653,9 +793,13 @@
       "phone_number": "(503) 623-2338",
       "website": "https://www.dallasor.gov",
       "email": null,
-      "meta_updated_at": "2025-05-07",
-      "meta_hash": "7f47498a5fcddc56fab67e76623e7b15",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-11T04:36:52Z",
+      "meta_hash": "1b3f100ff4ec10476ecc296d47fc41c7",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4117700"
     },
     {
@@ -671,9 +815,13 @@
       "phone_number": "(503) 665-5175",
       "website": "https://www.troutdaleoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-05-07",
-      "meta_hash": "35f6517feec5323407c5dab98acdc074",
-      "meta_sources": [],
+      "meta_updated_at": "2025-07-10T04:16:15Z",
+      "meta_hash": "5e27ebaf67459500331e22900ae277cf",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ],
       "geoid": "4174850"
     },
     {
@@ -689,10 +837,12 @@
       "phone_number": "(541) 296-5481",
       "website": "https://www.thedalles.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "49f81b39687c7edd58671b84f67cddc0",
+      "meta_updated_at": "2025-07-11T04:34:22Z",
+      "meta_hash": "075a82839653e4c82a7da9adfd9164d3",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4172950"
     },
@@ -709,10 +859,12 @@
       "phone_number": "(541) 269-1181",
       "website": "https://www.coosbayor.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "b001305d87d8bfc4947cac9ae0e6fe56",
+      "meta_updated_at": "2025-07-10T03:57:01Z",
+      "meta_hash": "472d7423f9c79a7eefd1a3f25613bd47",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4115250"
     },
@@ -729,10 +881,12 @@
       "phone_number": "(503) 397-6272",
       "website": "https://www.sthelensoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "8b051a0385f564e54e1a05c8d9efe82d",
+      "meta_updated_at": "2025-07-11T04:33:38Z",
+      "meta_hash": "00c4b87f0203d1a19798ba2e2509f44b",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4164600"
     },
@@ -749,10 +903,12 @@
       "phone_number": "(541) 962-1309",
       "website": "https://www.cityoflagrande.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "0847e784ee4d3d459637287daf937c56",
+      "meta_updated_at": "2025-07-11T04:37:05Z",
+      "meta_hash": "330334b68faf7b0b094677fa61a9bf72",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4140350"
     },
@@ -769,10 +925,12 @@
       "phone_number": "(503) 357-9112",
       "website": "https://www.corneliusor.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "25bb6917d5da7907a40ce8d5fe9d4086",
+      "meta_updated_at": "2025-07-11T04:38:14Z",
+      "meta_hash": "ae8e943ccffb0efd463c0b8300cd5fe4",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4115550"
     },
@@ -789,10 +947,12 @@
       "phone_number": "(503) 668-5533",
       "website": "https://www.ci.sandy.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "72be566635f3b5acc6ce4fa03154ee5f",
+      "meta_updated_at": "2025-07-11T04:41:20Z",
+      "meta_hash": "08990f9222a8608e77cfb86b11f54f0c",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4165250"
     },
@@ -809,10 +969,12 @@
       "phone_number": "(503) 656-5225",
       "website": "https://www.ci.gladstone.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "526203690ee310967591563b3f5baa06",
+      "meta_updated_at": "2025-07-11T04:40:46Z",
+      "meta_hash": "ba1012766123148b0add6a83782d71f9",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4129000"
     },
@@ -829,10 +991,12 @@
       "phone_number": "(541) 881-3201",
       "website": "https://www.ontariooregon.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "cd7f4fbc52fedc2e851731b4571e955b",
+      "meta_updated_at": "2025-07-11T04:40:33Z",
+      "meta_hash": "7173f0d7df06c5de50aa1f4ac421c7ce",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4154900"
     },
@@ -849,10 +1013,12 @@
       "phone_number": "(503) 838-0722",
       "website": "https://www.ci.monmouth.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "c9fb5359d5a43b48f605dbfc3405dc49",
+      "meta_updated_at": "2025-07-11T04:41:40Z",
+      "meta_hash": "b8948af867e89966424e79b23cecead1",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4149550"
     },
@@ -869,10 +1035,12 @@
       "phone_number": "(541) 447-5627",
       "website": "https://www.cityofprineville.com",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "2d0c3c98e914dbf43c0136e1e49a8607",
+      "meta_updated_at": "2025-07-11T04:44:52Z",
+      "meta_hash": "4a8eaee1f81e7e5a46f08f863d22c652",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4159850"
     },
@@ -889,10 +1057,12 @@
       "phone_number": "(541) 942-5501",
       "website": "https://www.cottagegroveor.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "7f421a24a75063c7407aaf6202a9ed77",
+      "meta_updated_at": "2025-07-11T04:47:10Z",
+      "meta_hash": "7c9108d0ce7ca6b6afbd729343d804d2",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4115950"
     },
@@ -909,10 +1079,12 @@
       "phone_number": "(503) 873-5321",
       "website": "https://www.silverton.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "af71ffca4497e776ec81db84718efae3",
+      "meta_updated_at": "2025-07-11T04:47:10Z",
+      "meta_hash": "04630ceaef53d5b35c18bc465ce0ae1a",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4167650"
     },
@@ -929,10 +1101,12 @@
       "phone_number": "(503) 665-7929",
       "website": "http://www.fairvieworegon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "92309ab1b333fae490ab0053798ab80d",
+      "meta_updated_at": "2025-07-11T16:55:22Z",
+      "meta_hash": "b1b1e6784fc01982add44956279712f3",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4124250"
     },
@@ -949,10 +1123,12 @@
       "phone_number": "(541) 756-8500",
       "website": "https://www.northbendoregon.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "7fa21573953a28ec29e317d0cd2e502b",
+      "meta_updated_at": "2025-07-11T04:44:53Z",
+      "meta_hash": "76e985c84c9c461f2dd2867a0076d743",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4153000"
     },
@@ -969,10 +1145,12 @@
       "phone_number": "(541) 574-0603",
       "website": "https://www.newportoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "47e9cf68b162d58f3f76270d3bc9a999",
+      "meta_updated_at": "2025-07-11T17:00:44Z",
+      "meta_hash": "fd0e5155aa0a33673f7d4ac4bd0e6a30",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4152450"
     },
@@ -989,10 +1167,12 @@
       "phone_number": "(503) 829-6855",
       "website": "https://www.cityofmolalla.com",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "d0a6cce8c4f86308230e8d4a6113449c",
+      "meta_updated_at": "2025-07-11T17:01:56Z",
+      "meta_hash": "2bf17ea9a2374a83d02e6d51fe7cd1e2",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4149450"
     },
@@ -1009,10 +1189,12 @@
       "phone_number": "(503) 325-5821",
       "website": "https://www.astoria.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "6bcbde559f97368efb88c03305bbca42",
+      "meta_updated_at": "2025-07-11T17:07:54Z",
+      "meta_hash": "0e69c2c81f92d6443804c9b0e26b19b3",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4103150"
     },
@@ -1029,10 +1211,12 @@
       "phone_number": "(541) 523-6541",
       "website": "https://www.bakercity.com",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "9d5d2990639709c9053aa14ad4bf5937",
+      "meta_updated_at": "2025-07-11T17:00:17Z",
+      "meta_hash": "c7182b2f5d2f3b3d7834a0c4c8d1fa5a",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4103650"
     },
@@ -1069,10 +1253,12 @@
       "phone_number": "(503) 838-1212",
       "website": "https://www.ci.independence.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "68ab1ef6080b1b95e10638e3de15bf70",
+      "meta_updated_at": "2025-07-11T17:04:33Z",
+      "meta_hash": "c98bc5163bac23193dcd77f646fa34e0",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4136150"
     },
@@ -1089,10 +1275,12 @@
       "phone_number": "(541) 996-2152",
       "website": "https://www.lincolncity.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "2f157189d40af8e1232b0ea8ed368445",
+      "meta_updated_at": "2025-07-11T17:06:23Z",
+      "meta_hash": "b02cf6a6c45fd5f24924dc74d41f6f69",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4142600"
     },
@@ -1109,10 +1297,12 @@
       "phone_number": "(541) 826-4212",
       "website": "http://www.cityofeaglepoint.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "2e5ceb919e5536a72462cd1a29e4b72c",
+      "meta_updated_at": "2025-07-11T17:05:23Z",
+      "meta_hash": "48997d6e7cb62e3687ba61d0315072dc",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4121550"
     },
@@ -1129,10 +1319,12 @@
       "phone_number": "(541) 997-3436",
       "website": "https://www.ci.florence.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "f537435c02275459584706922e686e4d",
+      "meta_updated_at": "2025-07-11T17:06:31Z",
+      "meta_hash": "7b414fe2b032edc048f4942993d00451",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4126050"
     },
@@ -1149,10 +1341,12 @@
       "phone_number": "(541) 459-2857",
       "website": "https://www.ci.sutherlin.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "8d17f069cdb9f7823897ce89166bf76c",
+      "meta_updated_at": "2025-07-11T17:07:39Z",
+      "meta_hash": "2d0a1940970681517f4a752dfc0ac6ec",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4171650"
     },
@@ -1169,10 +1363,12 @@
       "phone_number": "(541) 386-1488",
       "website": "https://cityofhoodriver.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "5cfc6d4ff93db2bd3051394b1a52e6bc",
+      "meta_updated_at": "2025-07-11T17:08:51Z",
+      "meta_hash": "7b3b6eaeecd867507117bed7a91ec73b",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4134900"
     },
@@ -1189,10 +1385,12 @@
       "phone_number": "(503) 769-3425",
       "website": "https://www.staytonoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "0448885f86fba39e455ca07ba583adce",
+      "meta_updated_at": "2025-07-11T17:10:30Z",
+      "meta_hash": "c4aacbe94190eecb3a9c3f6102ce691d",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4170200"
     },
@@ -1209,10 +1407,12 @@
       "phone_number": "(503) 543-7146",
       "website": "https://www.scappoose.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "ce37503631fa87379effea8088f6a456",
+      "meta_updated_at": "2025-07-11T18:00:35Z",
+      "meta_hash": "02aa64216d04ef0a711a6e1c65d57dff",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4165500"
     },
@@ -1229,10 +1429,12 @@
       "phone_number": "(541) 475-2344",
       "website": "https://www.madras.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "566702ee656e5dcfd6e0c9aa1c60cfa1",
+      "meta_updated_at": "2025-07-11T17:11:01Z",
+      "meta_hash": "997a45179cd99dda671892c387c7ee37",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4145250"
     },
@@ -1249,10 +1451,12 @@
       "phone_number": "(541) 922-3226",
       "website": "https://www.umatilla.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "23f6d872e14f61984746ae304b5e40e6",
+      "meta_updated_at": "2025-07-11T17:15:51Z",
+      "meta_hash": "c141578eb589dcc185740927ed3f98e0",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4175650"
     },
@@ -1269,10 +1473,12 @@
       "phone_number": "(541) 938-5531",
       "website": "https://www.mfcity.com",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "8f6035c1e36a6ecaf80c3933cb99375c",
+      "meta_updated_at": "2025-07-11T18:00:42Z",
+      "meta_hash": "8ce457b272b0253966020d32f687e122",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4148600"
     },
@@ -1309,10 +1515,12 @@
       "phone_number": "(541) 998-2153",
       "website": "https://www.junctioncityoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "aac59da97e23d918aa920e3f49501023",
+      "meta_updated_at": "2025-07-11T18:03:02Z",
+      "meta_hash": "e0d022113311fe325c328b9b627a74d0",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4138000"
     },
@@ -1329,10 +1537,12 @@
       "phone_number": "(541) 469-2163",
       "website": "https://www.brookings.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "b5fee0a46cd048c9fbede3d38e89b692",
+      "meta_updated_at": "2025-07-11T18:04:05Z",
+      "meta_hash": "fb12e05021c2a176808e7c58a23696a1",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4108650"
     },
@@ -1349,10 +1559,12 @@
       "phone_number": "(541) 535-1566",
       "website": "https://www.cityoftalent.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "aaa4bdc74e3b0c7d9e03599fe4b65753",
+      "meta_updated_at": "2025-07-11T18:07:00Z",
+      "meta_hash": "42a6b532d76cd0e9fc60f2912977e8fd",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4172500"
     },
@@ -1389,10 +1601,12 @@
       "phone_number": "(541) 895-2531",
       "website": "https://www.ci.creswell.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "fd1da233d364739a79608495dfa6896e",
+      "meta_updated_at": "2025-07-11T18:06:19Z",
+      "meta_hash": "a48f1b19157be49e3c37dd2c47842032",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4116950"
     },
@@ -1449,10 +1663,12 @@
       "phone_number": "(541) 935-2191",
       "website": "https://www.venetaoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "e7e90fb82af4095964a65ee37c35caea",
+      "meta_updated_at": "2025-07-11T18:09:38Z",
+      "meta_hash": "4a93840aaf53ef90da69e1f62727cf24",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4177050"
     },
@@ -1469,10 +1685,12 @@
       "phone_number": "(503) 842-2472",
       "website": "https://www.tillamookor.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "1e1c266cb21272cb182a4d2101b6f9e4",
+      "meta_updated_at": "2025-07-11T18:10:15Z",
+      "meta_hash": "ae4aa66997b1667798699e132825d79a",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4173700"
     },
@@ -1509,10 +1727,12 @@
       "phone_number": "(503) 843-2347",
       "website": "https://www.cityofsheridanor.com",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "19e58af520fa349babb1d2f66785e932",
+      "meta_updated_at": "2025-07-11T18:13:54Z",
+      "meta_hash": "c37f03b5a8f637b6e9e69b4dc7dda3c1",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4167050"
     },
@@ -1529,10 +1749,12 @@
       "phone_number": "(541) 535-1955",
       "website": "https://www.phoenixoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "799c07c3ec1cfb9e220579fe03db9912",
+      "meta_updated_at": "2025-07-11T18:15:37Z",
+      "meta_hash": "4b8da2406dc9637c9ec8e47be695a56f",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4157500"
     },
@@ -1549,10 +1771,12 @@
       "phone_number": "(503) 864-2451",
       "website": "https://lafayetteoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "b8c9c15da1e3cd2addf6db6259d9704a",
+      "meta_updated_at": "2025-07-11T18:32:35Z",
+      "meta_hash": "e049a1076f412351e9eefa94b90f9cdb",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4140300"
     },
@@ -1569,10 +1793,12 @@
       "phone_number": "(503) 667-6211",
       "website": "https://www.woodvillageor.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "760fd630654489243dfa631ff680430d",
+      "meta_updated_at": "2025-07-11T18:29:14Z",
+      "meta_hash": "fd47243f31c744febe40f09ff3657a64",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4183950"
     },
@@ -1589,10 +1815,12 @@
       "phone_number": "(503) 630-8270",
       "website": "https://www.cityofestacada.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "32cd546fab5b74c560f2c3c7e6d3fc02",
+      "meta_updated_at": "2025-07-11T18:34:09Z",
+      "meta_hash": "a73caedaa1f8e46dbd04e1cc72566ddf",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4123800"
     },
@@ -1609,10 +1837,12 @@
       "phone_number": null,
       "website": "https://www.cityofreedsport.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "b629c989211a3a5325cb83d98fda0211",
+      "meta_updated_at": "2025-07-11T18:33:29Z",
+      "meta_hash": "bf05663596cb16e0716b65f1b2c3bc6d",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4161300"
     },
@@ -1629,10 +1859,12 @@
       "phone_number": "(503) 749-2030",
       "website": "https://www.aumsville.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "cb482f79d2fda7cca4d0f2a347bd6e3b",
+      "meta_updated_at": "2025-07-11T18:33:20Z",
+      "meta_hash": "90cf32f3aaffe7bb4e02c5cab2dceab5",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4103250"
     },
@@ -1649,10 +1881,12 @@
       "phone_number": "(541) 396-2115",
       "website": "https://www.cityofcoquille.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "71f3c56fb618113c4554e1ba177f8385",
+      "meta_updated_at": "2025-07-11T18:32:16Z",
+      "meta_hash": "c2e5c6028135db49b6449c1c25457960",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4115350"
     },
@@ -1669,10 +1903,12 @@
       "phone_number": "(541) 481-9252",
       "website": "https://www.cityofboardman.com",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "8790cb81f1c547f30b63629f5aa012fc",
+      "meta_updated_at": "2025-07-11T18:39:23Z",
+      "meta_hash": "a1f8753fe9a83cd6155d8c8b83726799",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4107200"
     },
@@ -1689,10 +1925,12 @@
       "phone_number": "(541) 995-6655",
       "website": "https://www.ci.harrisburg.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "f5fbf725c23ae752a7d19fb469e71c3e",
+      "meta_updated_at": "2025-07-11T18:58:18Z",
+      "meta_hash": "a652b81dff0da1e72a7b2ac62ac6738e",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4132550"
     },
@@ -1709,10 +1947,12 @@
       "phone_number": "(541) 336-2247",
       "website": "https://www.cityoftoledo.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "f79e7b7d6bf2223ea52cdc3b89e23f74",
+      "meta_updated_at": "2025-07-11T18:36:20Z",
+      "meta_hash": "65d43d86dc9406c5fe97ef7b47faa581",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4174000"
     },
@@ -1749,10 +1989,12 @@
       "phone_number": "(503) 647-5555",
       "website": "https://northplains.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "45d3a9e4dda34a6764c52e26e0c180d3",
+      "meta_updated_at": "2025-07-11T18:38:25Z",
+      "meta_hash": "cb7a96381f4821665c71ca87a2976ffd",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4153150"
     },
@@ -1769,10 +2011,12 @@
       "phone_number": "(503) 981-9633",
       "website": "https://www.cityofhubbard.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "6f20d3153cee0d29ee7e2cb69942931e",
+      "meta_updated_at": "2025-07-11T18:39:18Z",
+      "meta_hash": "f578766e6a445a9fd0e0532a3ed4cc0e",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4135450"
     },
@@ -1786,10 +2030,12 @@
       ],
       "population": 3392,
       "website": "https://www.ci.mt-angel.or.us",
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "2ab76a06c7db1f4a7ee0261564784d2e",
+      "meta_updated_at": "2025-07-11T18:42:10Z",
+      "meta_hash": "b1a50bac28fd0e0b04768612432733f4",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4150150"
     },
@@ -1806,10 +2052,12 @@
       "phone_number": "(541) 327-2768",
       "website": "https://jeffersonoregon.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "5ccc31d34069164ad029079df482dadc",
+      "meta_updated_at": "2025-07-11T18:43:19Z",
+      "meta_hash": "30d28ed0ffb5aecb94303b13749cf311",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4137250"
     },
@@ -1826,10 +2074,12 @@
       "phone_number": "(541) 347-2437",
       "website": "https://www.bandon-or.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "6577262c3e812e33fd917376cd8236b5",
+      "meta_updated_at": "2025-07-11T18:42:58Z",
+      "meta_hash": "afce13778ccfa42e7b344b8c4a3cd0eb",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4103800"
     },
@@ -1846,10 +2096,12 @@
       "phone_number": "(503) 538-3922",
       "website": "https://www.dundeecity.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "0e8981fd035865543e8420b2cbb85ea8",
+      "meta_updated_at": "2025-07-11T19:04:23Z",
+      "meta_hash": "0f8bff5599eb9f9b6381d33944ee16de",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4121050"
     },
@@ -1866,10 +2118,12 @@
       "phone_number": "(541) 782-2258",
       "website": "https://www.ci.oakridge.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "6e754e6fe91416d729b0ce6449a4df89",
+      "meta_updated_at": "2025-07-11T19:05:25Z",
+      "meta_hash": "7dca5c66105701b9615f520cc579db3f",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4154100"
     },
@@ -1886,10 +2140,12 @@
       "phone_number": "(541) 372-2264",
       "website": "https://nyssacity.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "e3998eb03a9019128f78ebef3a9471ef",
+      "meta_updated_at": "2025-07-11T19:03:39Z",
+      "meta_hash": "56c2d3d37798f8224ab3be2963bbb563",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4153750"
     },
@@ -1906,10 +2162,12 @@
       "phone_number": "(541) 878-2225",
       "website": "https://shadycove.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "a7217b073856765e34cd2f9fb39c24f2",
+      "meta_updated_at": "2025-07-11T19:07:19Z",
+      "meta_hash": "fefdba3dbc55c0a1377dac5007b410e5",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4166550"
     },
@@ -1926,10 +2184,12 @@
       "phone_number": "(541) 549-6022",
       "website": "https://www.ci.sisters.or.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "3bd8b89e9e354e68deb35fcaab70e845",
+      "meta_updated_at": "2025-07-11T19:02:05Z",
+      "meta_hash": "3bcca95b164cfbcfe46c34a14d95cf19",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4167950"
     },
@@ -1946,10 +2206,12 @@
       "phone_number": "(541) 899-1231",
       "website": "https://www.jacksonvilleor.us",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "b8094e6e327276df42889198cbfb3851",
+      "meta_updated_at": "2025-07-11T19:08:03Z",
+      "meta_hash": "ae912a6ba600961f2b992b4e6b7570de",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4137000"
     },
@@ -1986,10 +2248,12 @@
       "phone_number": "+54192845234582336300",
       "website": "https://www.millersburgoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "10a1b2c36d7de9214d28bf9eb2decc90",
+      "meta_updated_at": "2025-07-11T19:07:34Z",
+      "meta_hash": "ca46748e9cbdcc38d5ece498ff1c3cb6",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4148300"
     },
@@ -2006,10 +2270,12 @@
       "phone_number": "(541) 573-5255",
       "website": "https://www.cityofburnsor.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "d15f1f721333e5db3b6e5ae65ea4b6a3",
+      "meta_updated_at": "2025-07-11T19:12:30Z",
+      "meta_hash": "804553b6825c2f414967325c2832c6fb",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4109800"
     },
@@ -2026,10 +2292,12 @@
       "phone_number": "(503) 864-2221",
       "website": "https://www.daytonoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "692e97fa4d7235d8d9146a202873e453",
+      "meta_updated_at": "2025-07-11T19:12:58Z",
+      "meta_hash": "2f9020e5153c7ad103692688f8d7f958",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4118250"
     },
@@ -2046,10 +2314,12 @@
       "phone_number": "(503) 792-4900",
       "website": "http://www.gervaisoregon.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "c94c1981a71bc6850b15e6c3e0f47798",
+      "meta_updated_at": "2025-07-11T19:14:52Z",
+      "meta_hash": "2a1ce76400f0a0132ae97a851cc68ced",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4128650"
     },
@@ -2066,10 +2336,12 @@
       "phone_number": "(541) 536-1432",
       "website": "http://www.lapineoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "c813cd341bf4153129e6ca15f9a340c1",
+      "meta_updated_at": "2025-07-11T19:12:47Z",
+      "meta_hash": "9947067d386fa6066b8343b03586b6e2",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4141050"
     },
@@ -2106,10 +2378,12 @@
       "phone_number": "(503) 743-2155",
       "website": "https://turneroregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "b175a73c6746fab6a15a544a09be4a53",
+      "meta_updated_at": "2025-07-11T19:17:51Z",
+      "meta_hash": "0072ac6441881f37dd7ee525d876bc21",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4175150"
     },
@@ -2146,10 +2420,12 @@
       "phone_number": "(541) 582-4401",
       "website": "https://www.cityofrogueriver.org",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "6a6d7bf8e4bf67fe10cf3eec3bf08f5b",
+      "meta_updated_at": "2025-07-12T15:55:55Z",
+      "meta_hash": "6b3f1519bc97a1a46187eba027c837cf",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4163450"
     },
@@ -2166,10 +2442,12 @@
       "phone_number": "(503) 429-5291",
       "website": "https://www.vernonia-or.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "d0073644aeb574c986670b24884e5fc9",
+      "meta_updated_at": "2025-07-12T15:54:18Z",
+      "meta_hash": "8cb31e15e606444da1e5e9a6b7e05e69",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4177250"
     },
@@ -2186,10 +2464,12 @@
       "phone_number": "(541) 247-7029",
       "website": "https://www.goldbeachoregon.gov",
       "email": null,
-      "meta_updated_at": "2025-04-24",
-      "meta_hash": "f6889e031d9fcdcbfa9f309f7c7d2fb9",
+      "meta_updated_at": "2025-07-12T15:56:14Z",
+      "meta_hash": "aa99e9213c12349a81c15b767ab6d5d5",
       "meta_sources": [
-        "state_source"
+        "state_source",
+        "gemini",
+        "openai"
       ],
       "geoid": "4129900"
     },
