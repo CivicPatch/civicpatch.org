@@ -1958,7 +1958,14 @@
       "government_type": "select_board",
       "email": "miltonta@miltonnh-us.com",
       "website": "http://www.miltonnh-us.com",
-      "geoid": "3301748660"
+      "geoid": "3301748660",
+      "meta_updated_at": "2025-07-03T02:03:41Z",
+      "meta_hash": "3242fe6fa82f68e3fcfaa31167d04c74",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ]
     },
     {
       "name": "Enfield",
@@ -2295,8 +2302,15 @@
       "phone_number": "(603) 523-4501",
       "government_type": "select_board",
       "email": "townadmin@canaannh.org",
-      "website": "http://www.canaannh.org",
-      "geoid": "3300908980"
+      "website": "https://www.canaannh.gov",
+      "geoid": "3300908980",
+      "meta_updated_at": "2025-07-03T02:49:23Z",
+      "meta_hash": "54ee4a006525ea11a966f4f0dafea199",
+      "meta_sources": [
+        "state_source",
+        "gemini",
+        "openai"
+      ]
     },
     {
       "name": "Walpole",
