@@ -11,7 +11,7 @@ default: &default
 
 development:
   <<: *default
-  host: db
+  host: civicpatch_db
   adapter: postgis
   database: civicpatch_development
   username: civicpatch
@@ -23,7 +23,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  host: test_db
+  host: civicpatch_test_db
   adapter: postgis
   database: civicpatch_test
   username: civicpatch
