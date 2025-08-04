@@ -9,7 +9,7 @@ _.file = "../civicpatchorg.env"
 run = 'bin/kamal app exec'
 # mise ssh -- bin/rails db:migrate
 # mise ssh -- bin/rails DISABLE_DATABASE_ENVIRONMENT_CHECK=1 db:drop
-# mise ssh -- bundle exec rake "maps:sync[wa]"
+# mise ssh -- bundle exec rake "maps:sync"
 # mise ssh -- bundle exec rake "cities:sync"
 
 [tasks.dev]
@@ -20,6 +20,11 @@ docker compose up -d
 [tasks.shellin]
 run = """
 docker exec -it civicpatch_web bash
+"""
+
+[tasks.shell]
+run = """
+docker exec -it civicpatch_web
 """
 
 [tasks.deploy]

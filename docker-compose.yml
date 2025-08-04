@@ -1,5 +1,5 @@
 services:
-  web:
+  civicpatch_web:
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -12,13 +12,14 @@ services:
       - "3000:3000"
       - "3036:3036"
     depends_on:
-      - db
+      - civicpatch_db
     environment:
-      POSTGRES_HOST: db
+      POSTGRES_HOST: civicpatch_db
       POSTGRES_USER: civicpatch
       POSTGRES_PASSWORD: development-password
       POSTGRES_DB: civicpatch_development
-  db:
+    restart: on-failure
+  civicpatch_db:
     image: postgis/postgis:17-3.5
     container_name: civicpatch_db
     restart: always
@@ -30,7 +31,7 @@ services:
       - pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-  test_db:
+  civicpatch_test_db:
     image: postgis/postgis:17-3.5
     container_name: civicpatch_test_db
     restart: always
