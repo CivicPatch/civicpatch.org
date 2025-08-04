@@ -28,7 +28,9 @@ RUN apt-get update -qq && \
 RUN rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /rails
+
+COPY . .
 
 COPY Gemfile Gemfile.lock ./
 
@@ -39,11 +41,10 @@ RUN gem install bundler
 
 RUN bundle install
 
-# Install overmind
-RUN gem install overmind
+RUN gem install foreman
 
 # Entrypoint prepares the database.
-ENTRYPOINT ["/app/bin/docker-entrypoint"]
+ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Expose the application port
 EXPOSE 3000
