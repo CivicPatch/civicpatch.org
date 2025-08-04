@@ -5,13 +5,6 @@ python = "latest"
 [env]
 _.file = "../civicpatchorg.env"
 
-[tasks.ssh]
-run = 'bin/kamal app exec'
-# mise ssh -- bin/rails db:migrate
-# mise ssh -- bin/rails DISABLE_DATABASE_ENVIRONMENT_CHECK=1 db:drop
-# mise ssh -- bundle exec rake "maps:sync"
-# mise ssh -- bundle exec rake "cities:sync"
-
 [tasks.dev]
 run = """
 docker compose up -d
