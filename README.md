@@ -5,7 +5,7 @@
 ### Setup
 
 - Tested with: Mac OSX, Windows & WSL2 (Ubuntu)
-- Create `.env` file with command: `./scripts/setup-env.sh`
+- Create `.env` file with command: `./script/setup-env.sh`
 - Run commands:
 
 ```bash
