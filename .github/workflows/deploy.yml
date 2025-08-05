@@ -24,4 +24,4 @@ jobs:
           CIVICPATCHORG_GITEA_DOCKER_TOKEN: ${{ secrets.CIVICPATCHORG_GITEA_DOCKER_TOKEN }} 
           REMOTELAB_WORKFLOW_TOKEN: ${{ secrets.REMOTELAB_WORKFLOW_TOKEN }}
         run: |
-          ./scripts/build-and-push.py
+          ./script/build-and-push.py

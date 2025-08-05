@@ -22,5 +22,5 @@ docker exec -it civicpatch_web
 
 [tasks.deploy]
 run = """
-./scripts/build-and-push.py
+./script/build-and-push.py
 """
