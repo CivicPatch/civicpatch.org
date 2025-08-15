@@ -1,0 +1,257 @@
+<div class="max-w-7xl mx-auto">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">📊 CivicPatch Progress Dashboard</h1>
+    <p class="text-lg text-gray-600">Municipal data collection progress across participating states</p>
+  </div>
+
+  <div id="progress-map-container" style="background-color: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px;">
+    <h2 style="color: #333; margin-bottom: 20px;">CivicPatch Municipal Data Collection Progress</h2>
+    
+    <!-- US Map Visualization -->
+    <div id="us-map-container" style="text-align: center; margin-bottom: 30px;">
+      <svg id="us-map" width="960" height="500" style="background-color: white; border-radius: 4px; border: 1px solid #ddd;"></svg>
+      
+      <!-- Legend -->
+      <div id="map-legend" style="display: flex; justify-content: center; align-items: center; margin-top: 15px; gap: 15px;">
+        <span style="font-weight: bold; color: #333;">Completion Rate:</span>
+        <div style="display: flex; align-items: center; gap: 5px;">
+          <div style="width: 20px; height: 15px; background: #2d5016; border-radius: 3px;"></div>
+          <span style="font-size: 12px;">70%+</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 5px;">
+          <div style="width: 20px; height: 15px; background: #5a9216; border-radius: 3px;"></div>
+          <span style="font-size: 12px;">50-69%</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 5px;">
+          <div style="width: 20px; height: 15px; background: #8eb021; border-radius: 3px;"></div>
+          <span style="font-size: 12px;">30-49%</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 5px;">
+          <div style="width: 20px; height: 15px; background: #d4a574; border-radius: 3px;"></div>
+          <span style="font-size: 12px;">10-29%</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 5px;">
+          <div style="width: 20px; height: 15px; background: #8b4513; border-radius: 3px;"></div>
+          <span style="font-size: 12px;">0-9%</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 5px;">
+          <div style="width: 20px; height: 15px; background: #e5e5e5; border-radius: 3px;"></div>
+          <span style="font-size: 12px;">No Data</span>
+        </div>
+      </div>
+      
+      <!-- Tooltip -->
+      <div id="map-tooltip" style="position: absolute; padding: 8px 12px; background: rgba(0,0,0,0.8); color: white; border-radius: 4px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity 0.2s;"></div>
+    </div>
+    
+    <!-- Progress Bars (detailed view) -->
+    <div id="static-progress">
+      <h3 style="margin-bottom: 15px; color: #555;">Detailed Progress by State</h3>
+      
+      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
+        <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <strong style="width: 60px;">WA</strong>
+          <span style="flex: 1; color: #666;">176 of 219 municipalities</span>
+          <span style="font-weight: bold;">80.4%</span>
+        </div>
+        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
+          <div style="background: #28a745; height: 100%; width: 80.4%; transition: width 0.3s ease;"></div>
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
+        <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <strong style="width: 60px;">ID</strong>
+          <span style="flex: 1; color: #666;">95 of 132 municipalities</span>
+          <span style="font-weight: bold;">72.0%</span>
+        </div>
+        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
+          <div style="background: #28a745; height: 100%; width: 72%; transition: width 0.3s ease;"></div>
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
+        <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <strong style="width: 60px;">CO</strong>
+          <span style="flex: 1; color: #666;">117 of 216 municipalities</span>
+          <span style="font-weight: bold;">54.2%</span>
+        </div>
+        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
+          <div style="background: #ffc107; height: 100%; width: 54.2%; transition: width 0.3s ease;"></div>
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
+        <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <strong style="width: 60px;">OR</strong>
+          <span style="flex: 1; color: #666;">103 of 222 municipalities</span>
+          <span style="font-weight: bold;">46.4%</span>
+        </div>
+        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
+          <div style="background: #ffc107; height: 100%; width: 46.4%; transition: width 0.3s ease;"></div>
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
+        <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <strong style="width: 60px;">NH</strong>
+          <span style="flex: 1; color: #666;">100 of 229 municipalities</span>
+          <span style="font-weight: bold;">43.7%</span>
+        </div>
+        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
+          <div style="background: #ffc107; height: 100%; width: 43.7%; transition: width 0.3s ease;"></div>
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
+        <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <strong style="width: 60px;">ND</strong>
+          <span style="flex: 1; color: #666;">38 of 139 municipalities</span>
+          <span style="font-weight: bold;">27.3%</span>
+        </div>
+        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
+          <div style="background: #dc3545; height: 100%; width: 27.3%; transition: width 0.3s ease;"></div>
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
+        <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <strong style="width: 60px;">CA</strong>
+          <span style="flex: 1; color: #666;">73 of 482 municipalities</span>
+          <span style="font-weight: bold;">15.2%</span>
+        </div>
+        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
+          <div style="background: #dc3545; height: 100%; width: 15.2%; transition: width 0.3s ease;"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div style="margin-top: 20px; padding: 15px; background: #d1ecf1; border-radius: 6px; color: #0c5460;">
+      <strong>Summary:</strong> 7 states tracked • 702 of 1,639 municipalities scraped • 42.8% average completion
+    </div>
+  </div>
+
+  <div class="mt-8 text-center">
+    <%= link_to "← Back to Map", root_path, class: "inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" %>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('Loading US map visualization...');
+    
+    // State progress data
+    const stateProgress = {
+      'WA': { progress: 80.4, scraped: 176, total: 219 },
+      'ID': { progress: 72.0, scraped: 95, total: 132 },
+      'CO': { progress: 54.2, scraped: 117, total: 216 },
+      'OR': { progress: 46.4, scraped: 103, total: 222 },
+      'NH': { progress: 43.7, scraped: 100, total: 229 },
+      'ND': { progress: 27.3, scraped: 38, total: 139 },
+      'CA': { progress: 15.2, scraped: 73, total: 482 }
+    };
+    
+    function getColorForProgress(progress) {
+      if (progress >= 70) return '#2d5016';
+      if (progress >= 50) return '#5a9216';
+      if (progress >= 30) return '#8eb021';
+      if (progress >= 10) return '#d4a574';
+      if (progress > 0) return '#8b4513';
+      return '#e5e5e5';
+    }
+    
+    // Check if D3 is available
+    if (typeof d3 === 'undefined') {
+      console.log('D3 not available, showing static visualization only');
+      document.getElementById('us-map-container').innerHTML = 
+        '<p style="text-align: center; padding: 40px; color: #666;">Interactive map requires D3.js. See detailed progress below.</p>';
+      return;
+    }
+    
+    // Load US states topology
+    loadUSMap();
+    
+    async function loadUSMap() {
+      try {
+        console.log('Loading US topology data...');
+        
+        // Use a simple US states GeoJSON from a reliable source
+        const response = await fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
+        
+        if (!response.ok) {
+          throw new Error('Failed to load US map data');
+        }
+        
+        const us = await response.json();
+        
+        // Setup SVG and projection
+        const svg = d3.select('#us-map');
+        const width = 960;
+        const height = 500;
+        
+        const projection = d3.geoAlbersUsa()
+          .scale(1000)
+          .translate([width / 2, height / 2]);
+        
+        const path = d3.geoPath().projection(projection);
+        
+        // Convert TopoJSON to GeoJSON
+        const states = topojson.feature(us, us.objects.states);
+        
+        // Create tooltip
+        const tooltip = d3.select('#map-tooltip');
+        
+        // Draw states
+        svg.selectAll('path')
+          .data(states.features)
+          .enter()
+          .append('path')
+          .attr('d', path)
+          .attr('fill', function(d) {
+            const stateName = getStateName(d.id);
+            const stateData = stateProgress[stateName];
+            return stateData ? getColorForProgress(stateData.progress) : '#e5e5e5';
+          })
+          .attr('stroke', '#ffffff')
+          .attr('stroke-width', 1)
+          .style('cursor', 'pointer')
+          .on('mouseover', function(event, d) {
+            const stateName = getStateName(d.id);
+            const stateData = stateProgress[stateName];
+            
+            tooltip.style('opacity', 1)
+              .html(stateData ? 
+                `<strong>${stateName}</strong><br/>
+                 Progress: ${stateData.progress}%<br/>
+                 Municipalities: ${stateData.scraped}/${stateData.total}` :
+                `<strong>${stateName || 'Unknown'}</strong><br/>No data available`
+              )
+              .style('left', (event.pageX + 10) + 'px')
+              .style('top', (event.pageY - 10) + 'px');
+              
+            d3.select(this).attr('stroke-width', 2);
+          })
+          .on('mouseout', function() {
+            tooltip.style('opacity', 0);
+            d3.select(this).attr('stroke-width', 1);
+          });
+        
+        console.log('US map visualization complete!');
+        
+      } catch (error) {
+        console.error('Error loading US map:', error);
+        document.getElementById('us-map-container').innerHTML = 
+          '<p style="text-align: center; padding: 40px; color: #dc3545;">Failed to load interactive map. See detailed progress below.</p>';
+      }
+    }
+    
+    // Simple state ID to name mapping for the states we have data for
+    function getStateName(id) {
+      const stateMap = {
+        '53': 'WA', '16': 'ID', '08': 'CO', '41': 'OR', 
+        '33': 'NH', '38': 'ND', '06': 'CA'
+      };
+      return stateMap[id.toString().padStart(2, '0')];
+    }
+  });
+</script>

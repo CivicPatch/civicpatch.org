@@ -2,6 +2,9 @@ class MapController < ApplicationController
   def index
   end
 
+  def progress
+  end
+
   def details
     @state = params[:state]
     @geoid = params[:geoid]
