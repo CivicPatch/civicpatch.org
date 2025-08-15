@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   get "map/details" => "map#details"
   get "map/lat_long" => "map#lat_long"
   get "map/municipality_boundaries" => "map#municipality_boundaries"
+  get "progress" => "map#progress", as: :progress
   root "map#index"
 end
