@@ -22,11 +22,17 @@
                 <div class="flex justify-center md:justify-start">
                   <% if representative["image"].present? %>
                     <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100">
-                      <img src="<%= representative["image"] %>" alt="<%= representative["name"] %>" class="object-cover w-full h-full">
+                      <img src="<%= representative["image"] %>" 
+                          alt="<%= representative["name"] %>" 
+                          class="object-cover w-full h-full"
+                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                      <div class="h-full w-full bg-gray-200 flex items-center justify-center text-gray-500" style="display: none;">
+                        <span class="font-medium text-3xl md:text-xl"><%= representative["name"] ? representative["name"][0] : '?' %></span>
+                      </div>
                     </div>
                   <% else %>
                     <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500">
-                      <span class="font-medium text-3xl md:text-xl"><%= representative["name"] ? representative["name"][0] : '?' %></span>
+                      <span class="font-medium text-3xl md:text-xl"><%= representative["name"].to_s.first || '?' %></span>
                     </div>
                   <% end %>
                 </div>
