@@ -59,15 +59,13 @@ class MapController < ApplicationController
     bbox_4326 = "ST_MakeEnvelope(#{sw_lng}, #{sw_lat}, #{ne_lng}, #{ne_lat}, 4326)"
 
     # Find places whose geometry intersects the bounding box
-    places_in_view = Municipality.where("geom && ST_Transform(#{bbox_4326}, 4269)")
-                          .select(
-                            "name, state, geoid, " \
-                            "ST_AsGeoJSON(" \
-                              "ST_Transform(" \
-                                "ST_SimplifyPreserveTopology(geom, #{tolerance})" \
-                              ", 4326)" \
-                            ") as geojson"
-                          )
+    places_in_view = Municipality.where(
+      "geom && ST_Transform(ST_MakeEnvelope(?, ?, ?, ?, 4326), 4269)",
+      params[:sw_lng].to_f,
+      params[:sw_lat].to_f, 
+      params[:ne_lng].to_f,
+      params[:ne_lat].to_f
+    )
 
     features = places_in_view.map do |place|
       next unless place.geojson
