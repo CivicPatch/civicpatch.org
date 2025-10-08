@@ -19,7 +19,7 @@ DOCKER_PASSWORD = os.getenv("CIVICPATCHORG_GITEA_DOCKER_TOKEN")  # Prefer using 
 GITEA_API_URL = 'https://code.wizards.cafe/api/v1'
 GITEA_TOKEN = os.getenv('REMOTELAB_WORKFLOW_TOKEN', 'your_gitea_token')
 REPO_OWNER = 'witch'
-REPO_NAME = 'remotelab'
+REPO_NAME = 'spellbook'
 WORKFLOW_FILE = 'deploy.yml'
 
 def run(command, cwd=None, input=None):
