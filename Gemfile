@@ -75,4 +75,3 @@ gem "rgeo-geojson"
 gem "tailwindcss-ruby", "~> 4.1"
 
 gem "tailwindcss-rails", "~> 4.2"
-
