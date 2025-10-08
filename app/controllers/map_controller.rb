@@ -26,7 +26,7 @@ class MapController < ApplicationController
     @geoid = params[:geoid]
     # Select the centroid coordinates (transforming to WGS84 first)
     @place = Municipality.find_by_state_and_geoid(
-      @state, 
+      @state,
       @geoid,
       "ST_Y(ST_Centroid(ST_Transform(geom, 4326))) AS latitude, ST_X(ST_Centroid(ST_Transform(geom, 4326))) AS longitude"
     ).first
