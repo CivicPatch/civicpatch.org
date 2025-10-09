@@ -62,7 +62,7 @@ class MapController < ApplicationController
     places_in_view = Municipality.where(
       "geom && ST_Transform(ST_MakeEnvelope(?, ?, ?, ?, 4326), 4269)",
       params[:sw_lng].to_f,
-      params[:sw_lat].to_f, 
+      params[:sw_lat].to_f,
       params[:ne_lng].to_f,
       params[:ne_lat].to_f
     )
