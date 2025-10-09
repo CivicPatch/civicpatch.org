@@ -2,6 +2,11 @@
 
 ## Deployment
 
+### Requirements
+- docker
+- mise (optional, only if you want to try running without docker)
+  - There are also some scripts available under `mise.toml`
+
 ### Setup
 
 - Tested with: Mac OSX, Windows & WSL2 (Ubuntu)
@@ -20,7 +25,6 @@ App should be up at [http://localhost:3000](http://localhost:3000)
 
 - Update open data source (optional) -- this will pull in data from open-data
   `docker exec -it civicpatch_web bundle exec rake 'od:sync'`
-
 
 - To populate the progress map with data, run:
   ```bash

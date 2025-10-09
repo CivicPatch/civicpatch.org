@@ -10,12 +10,12 @@ run = """
 docker compose up -d
 """
 
-[tasks.shellin]
+[tasks.containersh]
 run = """
 docker exec -it civicpatch_web bash
 """
 
-[tasks.shell]
+[tasks.container]
 run = """
 docker exec -it civicpatch_web
 """
