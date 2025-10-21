@@ -1,4 +1,6 @@
 class Api::RepresentativesController < ApplicationController
+  protect_from_forgery with: :null_session
+
   def index
     ocd_id = params[:ocd_id]
     representatives = []
@@ -12,6 +14,36 @@ class Api::RepresentativesController < ApplicationController
     end
 
     render json: representatives
+  end
+
+  def search
+    address = params[:address]
+    
+    if address.blank?
+      render json: { error: "Address is required" }, status: :bad_request
+      return
+    end
+
+    begin
+      Rails.logger.info "Searching for address: #{address}"
+      
+      # Use a geocoding service to convert address to coordinates
+      coordinates = geocode_address(address)
+      
+      if coordinates
+        Rails.logger.info "Geocoded to coordinates: lat=#{coordinates[:lat]}, lng=#{coordinates[:lng]}"
+        representatives = Representative.get_representatives_by_lat_long(coordinates[:lat], coordinates[:lng])
+        Rails.logger.info "Found #{representatives.length} representatives"
+        render json: { representatives: representatives, address: address }
+      else
+        Rails.logger.error "Unable to geocode address: #{address}"
+        render json: { error: "Unable to geocode address" }, status: :unprocessable_entity
+      end
+    rescue => e
+      Rails.logger.error "Error searching representatives: #{e.message}"
+      Rails.logger.error e.backtrace.join("\n")
+      render json: { error: "An error occurred while searching: #{e.message}" }, status: :internal_server_error
+    end
   end
 
   private
@@ -31,5 +63,34 @@ class Api::RepresentativesController < ApplicationController
 
     # Check if the OCD ID matches either pattern
     ocd_id.match?(state_place_pattern) || ocd_id.match?(county_place_pattern)
+  end
+
+  def geocode_address(address)
+    # Simple geocoding using a free service (you can replace with Google Maps API, etc.)
+    begin
+      require 'net/http'
+      require 'uri'
+      require 'json'
+      
+      # Using Nominatim (OpenStreetMap) - free geocoding service
+      encoded_address = URI.encode_www_form_component(address)
+      uri = URI("https://nominatim.openstreetmap.org/search?q=#{encoded_address}&format=json&limit=1&countrycodes=us")
+      
+      response = Net::HTTP.get(uri)
+      data = JSON.parse(response)
+      
+      if data.any?
+        location = data.first
+        {
+          lat: location['lat'].to_f,
+          lng: location['lon'].to_f
+        }
+      else
+        nil
+      end
+    rescue => e
+      Rails.logger.error "Geocoding error: #{e.message}"
+      nil
+    end
   end
 end
