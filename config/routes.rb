@@ -12,12 +12,17 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   namespace :api do
-    resources :representatives, only: [ :index ]
+    resources :representatives, only: [ :index ] do
+      collection do
+        post :search
+      end
+    end
   end
 
   get "map/details" => "map#details"
   get "map/lat_long" => "map#lat_long"
   get "map/municipality_boundaries" => "map#municipality_boundaries"
   get "progress" => "map#progress", as: :progress
+  get "address_search" => "pages#address_search", as: :address_search
   root "map#index"
 end
