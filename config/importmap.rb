@@ -8,3 +8,6 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 
 # Leaflet
 pin "leaflet" # @1.9.4
+
+# Address Search
+pin "address_search"
