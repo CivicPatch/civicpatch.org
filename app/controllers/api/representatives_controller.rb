@@ -18,18 +18,14 @@ class Api::RepresentativesController < ApplicationController
 
   def search
     address = params[:address]
-    
     if address.blank?
       render json: { error: "Address is required" }, status: :bad_request
       return
     end
-
     begin
       Rails.logger.info "Searching for address: #{address}"
-      
       # Use a geocoding service to convert address to coordinates
       coordinates = geocode_address(address)
-      
       if coordinates
         Rails.logger.info "Geocoded to coordinates: lat=#{coordinates[:lat]}, lng=#{coordinates[:lng]}"
         representatives = Representative.get_representatives_by_lat_long(coordinates[:lat], coordinates[:lng])
@@ -68,22 +64,19 @@ class Api::RepresentativesController < ApplicationController
   def geocode_address(address)
     # Simple geocoding using a free service (you can replace with Google Maps API, etc.)
     begin
-      require 'net/http'
-      require 'uri'
-      require 'json'
-      
+      require "net/http"
+      require "uri"
+      require "json"
       # Using Nominatim (OpenStreetMap) - free geocoding service
       encoded_address = URI.encode_www_form_component(address)
       uri = URI("https://nominatim.openstreetmap.org/search?q=#{encoded_address}&format=json&limit=1&countrycodes=us")
-      
       response = Net::HTTP.get(uri)
       data = JSON.parse(response)
-      
       if data.any?
         location = data.first
         {
-          lat: location['lat'].to_f,
-          lng: location['lon'].to_f
+          lat: location["lat"].to_f,
+          lng: location["lon"].to_f
         }
       else
         nil
