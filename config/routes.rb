@@ -20,10 +20,10 @@ Rails.application.routes.draw do
   end
 
   get "map/details" => "map#details"
-  get "map#index" => "map#index", as: :map_index 
+  get "map#index" => "map#index", as: :map_index
   get "map/lat_long" => "map#lat_long"
   get "map/municipality_boundaries" => "map#municipality_boundaries"
   get "progress" => "map#progress", as: :progress
-  get "address_search" => "pages#address_search", as: :address_search 
+  get "address_search" => "pages#address_search", as: :address_search
   root "pages#home"
 end
