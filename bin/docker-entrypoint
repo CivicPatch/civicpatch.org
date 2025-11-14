@@ -9,9 +9,8 @@ fi
 # If running the rails server then create or migrate existing database
 if { [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; } || [ "${@: -1:1}" == "bin/dev" ]; then
   ./bin/rails db:prepare
-
-  rake maps:sync || true
-  rake cities:sync || true
+  #rake maps:sync || true
+  #rake cities:sync || true
 fi
 
 exec "${@}"

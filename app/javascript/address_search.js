@@ -21,38 +21,38 @@ window.handleImageError = handleImageError;
 
 // Address suggestions functionality
 let debounceTimer;
-function showAddressSuggestions(suggestions) {
-  const suggestionsDiv = $('address-suggestions');
-  
-  if (!suggestionsDiv) {
-    console.error('Suggestions div not found!');
-    return;
-  }
-
-  if (suggestions.length === 0) {
-    suggestionsDiv.classList.add('hidden');
-    return;
-  }
-
-  suggestionsDiv.innerHTML = suggestions.map((suggestion, index) => 
-    `<div class="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-100 last:border-b-0" 
-          data-address="${suggestion.display_name.replace(/"/g, '&quot;')}" data-index="${index}">
-      ${suggestion.display_name}
-    </div>`
-  ).join('');
-  
-  // Add click event listeners to each suggestion
-  const suggestionElements = suggestionsDiv.querySelectorAll('[data-address]');
-  
-  suggestionElements.forEach((element, index) => {
-    element.addEventListener('click', () => {
-      const address = element.getAttribute('data-address');
-      selectAddress(address);
-    });
-  });
-  
-  suggestionsDiv.classList.remove('hidden');
-}
+//function showAddressSuggestions(suggestions) {
+//  const suggestionsDiv = $('address-suggestions');
+//  
+//  if (!suggestionsDiv) {
+//    console.error('Suggestions div not found!');
+//    return;
+//  }
+//
+//  if (suggestions.length === 0) {
+//    suggestionsDiv.classList.add('hidden');
+//    return;
+//  }
+//
+//  suggestionsDiv.innerHTML = suggestions.map((suggestion, index) => 
+//    `<div class="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-100 last:border-b-0" 
+//          data-address="${suggestion.display_name.replace(/"/g, '&quot;')}" data-index="${index}">
+//      ${suggestion.display_name}
+//    </div>`
+//  ).join('');
+//  
+//  // Add click event listeners to each suggestion
+//  const suggestionElements = suggestionsDiv.querySelectorAll('[data-address]');
+//  
+//  suggestionElements.forEach((element, index) => {
+//    element.addEventListener('click', () => {
+//      const address = element.getAttribute('data-address');
+//      selectAddress(address);
+//    });
+//  });
+//  
+//  suggestionsDiv.classList.remove('hidden');
+//}
 
 function selectAddress(address) {
   const addressInput = $('address-input');
@@ -69,12 +69,12 @@ function selectAddress(address) {
 // Export immediately after definition
 window.selectAddress = selectAddress;
 
-function hideAddressSuggestions() {
-  const suggestionsDiv = $('address-suggestions');
-  if (suggestionsDiv) {
-    setTimeout(() => suggestionsDiv.classList.add('hidden'), 150); // Small delay to allow click events
-  }
-}
+//function hideAddressSuggestions() {
+//  const suggestionsDiv = $('address-suggestions');
+//  if (suggestionsDiv) {
+//    setTimeout(() => suggestionsDiv.classList.add('hidden'), 150); // Small delay to allow click events
+//  }
+//}
 
 // Main search function
 async function performSearch() {
