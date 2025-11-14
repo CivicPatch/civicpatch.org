@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_bellingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_bellingham</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bellingham/government</td>
+            <td>Kim Lund</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(360) 778-8100</td>
+            <td>mayorsoffice@cob.org</td>
+            <td>https://cob.org/gov/mayor/bio</td>
+            <td>2024-01-01</td>
+            <td></td>
+            <td>https://cob.org/wp-content/smush-webp/Lund1a810-320x400.jpg.webp</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bellingham/images/9dae86339cbd4a972a2ae01a6dedbb356f926c1b3c8cd2bb94e7231c7d7d98bf.webp</td>
+            <td>[&quot;https://cob.org/gov/mayor/bio&quot;, &quot;https://cob.org/gov/mayor&quot;]</td>
+            <td>2025-06-21T01:53:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bellingham/government</td>
+            <td>Hollie Huthman</td>
+            <td>[&quot;Council President&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 2&quot;]</td>
+            <td>(360) 778-8216</td>
+            <td>hahuthman@cob.org</td>
+            <td>https://cob.org/gov/council/hollie-huthman</td>
+            <td>2022-01</td>
+            <td>2025-12</td>
+            <td>https://cob.org/wp-content/uploads/p950131-1-430x245.jpg?theia_smart_thumbnails_file_version=2</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bellingham/images/15f32ca0f467d3a2c0fb91d4eef1bcd2f2671ae6584e0fc281de6f890d460ba1.jpg</td>
+            <td>[&quot;https://cob.org/gov/council/contacts-bios&quot;, &quot;https://cob.org/gov/council/hollie-huthman&quot;]</td>
+            <td>2025-06-21T01:53:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bellingham/government</td>
+            <td>Daniel Hammill</td>
+            <td>[&quot;Council President&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 3&quot;]</td>
+            <td>(360) 778-8213</td>
+            <td>dchammill@cob.org</td>
+            <td>https://cob.org/gov/council/daniel-hammill</td>
+            <td>2023-01</td>
+            <td>2027-12</td>
+            <td>https://cob.org/wp-content/smush-webp/p001179-council-430x245.jpg.webp</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bellingham/images/13e64a569d85602a39b1ff906c5e2e4b9808a1a15dcb10514e315732beceecdc.webp</td>
+            <td>[&quot;https://cob.org/gov/council/contacts-bios&quot;, &quot;https://cob.org/gov/council/daniel-hammill&quot;]</td>
+            <td>2025-06-21T01:53:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bellingham/government</td>
+            <td>Jace Cotton</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(360) 778-8214</td>
+            <td>jacotton@cob.org</td>
+            <td>https://cob.org/gov/council/council-member-jace-cotton</td>
+            <td>2024-01</td>
+            <td>2025-12</td>
+            <td>https://cob.org/wp-content/smush-webp/image.jpeg.webp</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bellingham/images/dcc7f2a1e1f6dd99a0beaad1c2d5e7a907c87ed25dd3f880af8e31b620e83da4.png</td>
+            <td>[&quot;https://cob.org/gov/council/contacts-bios&quot;, &quot;https://cob.org/gov/council/council-member-jace-cotton&quot;]</td>
+            <td>2025-06-21T01:53:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bellingham/government</td>
+            <td>Hannah Stone</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 1&quot;]</td>
+            <td>(360) 778-8211</td>
+            <td>hestone@cob.org</td>
+            <td>https://cob.org/gov/council/hanna-stone</td>
+            <td>2024-01</td>
+            <td>2027-12</td>
+            <td>https://cob.org/wp-content/smush-webp/p950127-1-430x245.jpg.webp</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bellingham/images/1d39454ed49aa165385ac6c3ad587270ace0563c5129e9d088cd492cea569ab6.png</td>
+            <td>[&quot;https://cob.org/gov/council/contacts-bios&quot;, &quot;https://cob.org/gov/council/hanna-stone&quot;]</td>
+            <td>2025-06-21T01:53:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bellingham/government</td>
+            <td>Edwin H. “Skip” Williams</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 4&quot;]</td>
+            <td>(360) 778-8215</td>
+            <td>ehwilliams@cob.org</td>
+            <td>https://cob.org/gov/council/edwin-williams</td>
+            <td>2022-01</td>
+            <td>2025-12</td>
+            <td>https://cob.org/wp-content/smush-webp/Skip-Williams-2024-1.jpg.webp</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bellingham/images/b4526a39f4b4b06effbe3d91da86fc3752669503ef9f90466324004da95ce7d2.webp</td>
+            <td>[&quot;https://cob.org/gov/council/contacts-bios&quot;, &quot;https://cob.org/gov/council/edwin-williams&quot;]</td>
+            <td>2025-06-21T01:53:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bellingham/government</td>
+            <td>Lisa Anderson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 5&quot;]</td>
+            <td>(360) 778-8217</td>
+            <td>laanderson@cob.org</td>
+            <td>https://cob.org/gov/council/lisa-anderson</td>
+            <td>2024-01</td>
+            <td>2027-12</td>
+            <td>https://cob.org/wp-content/smush-webp/p950129-1-320x400.jpg.webp</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bellingham/images/61dba673546199ae24318c7eb3ef7849d983acd7fb375dd49f9eb53b6eb96e92.png</td>
+            <td>[&quot;https://cob.org/gov/council/contacts-bios&quot;, &quot;https://cob.org/gov/council/lisa-anderson&quot;]</td>
+            <td>2025-06-21T01:53:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bellingham/government</td>
+            <td>Michael Lilliquist</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 6&quot;]</td>
+            <td>(360) 778-8212</td>
+            <td>mlilliquist@cob.org</td>
+            <td>https://cob.org/gov/council/michael-lilliquist</td>
+            <td>2022-01</td>
+            <td>2025-12</td>
+            <td>https://cob.org/wp-content/smush-webp/p950132-1-320x400.jpg.webp</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bellingham/images/f16c199950e24e1f9fb5751269e1e11af1707141ceb744da67439a1bf3050adb.webp</td>
+            <td>[&quot;https://cob.org/gov/council/michael-lilliquist&quot;, &quot;https://cob.org/gov/council/contacts-bios&quot;]</td>
+            <td>2025-06-21T01:53:32+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

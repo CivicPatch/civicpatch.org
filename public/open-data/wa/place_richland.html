@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_richland</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_richland</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:richland/government</td>
+            <td>Theresa Richardson</td>
+            <td>[&quot;Mayor&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td>(509) 942-7390</td>
+            <td>trichardson@ci.richland.wa.us</td>
+            <td>https://www.ci.richland.wa.us/government/city-council/theresa-richardson</td>
+            <td>2022-01</td>
+            <td>2027-12-31</td>
+            <td>https://www.ci.richland.wa.us/home/showpublishedimage/9853/638204290796700000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/richland/images/54fa5318f439fdbd019907977dac4e905f0718de378a580182d764296e24a031.jpg</td>
+            <td>[&quot;https://www.ci.richland.wa.us/government/city-council/theresa-richardson&quot;, &quot;https://www.ci.richland.wa.us/government/city-council&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/sandra-kent&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/jhoanna-jones&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/ryan-whitten&quot;]</td>
+            <td>2025-06-21T03:01:18+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:richland/government</td>
+            <td>Sandra Kent</td>
+            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td>(509) 942-7390</td>
+            <td>skent@CI.RICHLAND.WA.US</td>
+            <td>https://www.ci.richland.wa.us/government/city-council/sandra-kent</td>
+            <td>2009-11</td>
+            <td>2025-12-31</td>
+            <td>https://www.ci.richland.wa.us/home/showpublishedimage/8704/637812044968600000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/richland/images/6f96d53f9e138dde51756d890a996c190dad28792d6bc058d4082c84ee0449b3.jpg</td>
+            <td>[&quot;https://www.ci.richland.wa.us/government/city-council/theresa-richardson&quot;, &quot;https://www.ci.richland.wa.us/government/city-council&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/sandra-kent&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/jhoanna-jones&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/ryan-whitten&quot;]</td>
+            <td>2025-06-21T03:01:18+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:richland/government</td>
+            <td>Jhoanna Jones</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td></td>
+            <td>jjones@ci.richland.wa.us</td>
+            <td>https://www.ci.richland.wa.us/government/city-council/jhoanna-jones</td>
+            <td>2022-01</td>
+            <td>2027-12-31</td>
+            <td>https://www.ci.richland.wa.us/home/showpublishedimage/8724/637813102300400000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/richland/images/bce2ce417324a4f43056fd6c04c0875e1211603d54121377db37ece9b2dbbdcf.png</td>
+            <td>[&quot;https://www.ci.richland.wa.us/government/city-council/theresa-richardson&quot;, &quot;https://www.ci.richland.wa.us/government/city-council&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/sandra-kent&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/jhoanna-jones&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/ryan-whitten&quot;]</td>
+            <td>2025-06-21T03:01:18+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:richland/government</td>
+            <td>Ryan Lukson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td></td>
+            <td>rlukson@ci.richland.wa.us</td>
+            <td>https://www.ci.richland.wa.us/government/city-council/ryan-lukson</td>
+            <td>2017</td>
+            <td>2025-12-31</td>
+            <td>https://www.ci.richland.wa.us/home/showpublishedimage/8694/637812044144800000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/richland/images/2a03555e45b43606a66696b6248b9a85a89c5c3fce68e9a3e9a0326d3630320b.png</td>
+            <td>[&quot;https://www.ci.richland.wa.us/government/city-council/theresa-richardson&quot;, &quot;https://www.ci.richland.wa.us/government/city-council&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/sandra-kent&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/jhoanna-jones&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/ryan-lukson&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/ryan-whitten&quot;]</td>
+            <td>2025-06-21T03:01:18+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:richland/government</td>
+            <td>Shayne VanDyke</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td></td>
+            <td>svandyke@ci.richland.wa.us</td>
+            <td>https://www.ci.richland.wa.us/government/city-council/shayne-vandyke</td>
+            <td>2022-07</td>
+            <td>2027-12-31</td>
+            <td>https://www.ci.richland.wa.us/home/showpublishedimage/9155/637952130905930000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/richland/images/d7e6b281c5d2ed612989f5f726e353d0cb3efd07e32bd692fa8629accb08cc39.jpg</td>
+            <td>[&quot;https://www.ci.richland.wa.us/government/city-council/theresa-richardson&quot;, &quot;https://www.ci.richland.wa.us/government/city-council&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/sandra-kent&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/jhoanna-jones&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/shayne-vandyke&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/ryan-whitten&quot;]</td>
+            <td>2025-06-21T03:01:18+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:richland/government</td>
+            <td>Kurt Maier</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td></td>
+            <td>kmaier@ci.richland.wa.us</td>
+            <td>https://www.ci.richland.wa.us/government/kurt-maier</td>
+            <td>2024-01-02</td>
+            <td>2025-12-31</td>
+            <td>https://www.ci.richland.wa.us/home/showpublishedimage/10715/638427318917170000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/richland/images/3cd08462c3166968f795604f7d23bd19d18ead069d62cbef0fdb9cd5abe83c1b.png</td>
+            <td>[&quot;https://www.ci.richland.wa.us/government/city-council/theresa-richardson&quot;, &quot;https://www.ci.richland.wa.us/government/city-council&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/sandra-kent&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/jhoanna-jones&quot;, &quot;https://www.ci.richland.wa.us/government/kurt-maier&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/ryan-whitten&quot;]</td>
+            <td>2025-06-21T03:01:18+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:richland/government</td>
+            <td>Ryan Whitten</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td></td>
+            <td>rwhitten@ci.richland.wa.us</td>
+            <td>https://www.ci.richland.wa.us/government/city-council/ryan-whitten</td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.ci.richland.wa.us/home/showpublishedimage/9496/638204282134930000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/richland/images/9419e12c457972ebef2be531fa86f3c7ecf25195b44b09f201d2089bb8a95916.jpg</td>
+            <td>[&quot;https://www.ci.richland.wa.us/government/city-council/theresa-richardson&quot;, &quot;https://www.ci.richland.wa.us/government/city-council&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/sandra-kent&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/jhoanna-jones&quot;, &quot;https://www.ci.richland.wa.us/government/city-council/ryan-whitten&quot;]</td>
+            <td>2025-06-21T03:01:18+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

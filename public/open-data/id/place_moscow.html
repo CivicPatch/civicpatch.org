@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_moscow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_moscow</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:moscow/government</td>
+            <td>Art Bettge</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 883-7021</td>
+            <td></td>
+            <td>https://www.ci.moscow.id.us/337/Mayor-Bettge</td>
+            <td></td>
+            <td></td>
+            <td>https://www.ci.moscow.id.us/ImageRepository/Document?documentID=32486</td>
+            <td>https://cdn.civicpatch.org/open-data/id/moscow/images/c26d9458870626875bc2703715492e296c3cffd7eed29fc67e7c3c83796f8709.png</td>
+            <td>[&quot;https://www.ci.moscow.id.us/337/Mayor-Bettge&quot;, &quot;https://www.ci.moscow.id.us/1071/Drew-Davis&quot;]</td>
+            <td>2025-07-12T20:07:49+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:moscow/government</td>
+            <td>Bryce Blankenship</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 883-7000</td>
+            <td>bblankenship@ci.moscow.id.us</td>
+            <td>https://www.ci.moscow.id.us/327/Bryce-Blankenship</td>
+            <td>2023-11</td>
+            <td>2027</td>
+            <td>https://www.ci.moscow.id.us/ImageRepository/Document?documentID=31761</td>
+            <td>https://cdn.civicpatch.org/open-data/id/moscow/images/952bfcc4bbc0d9988349f02eb36313e1a2e804a7914ea4b438ac040fc5b6a8e5.jpg</td>
+            <td>[&quot;https://www.ci.moscow.id.us/314/City-Council&quot;, &quot;https://www.ci.moscow.id.us/327/Bryce-Blankenship&quot;]</td>
+            <td>2025-07-12T20:07:49+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:moscow/government</td>
+            <td>Drew Davis</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 883-7000</td>
+            <td>ddavis@ci.moscow.id.us</td>
+            <td>https://www.ci.moscow.id.us/1071/Drew-Davis</td>
+            <td>2023-11</td>
+            <td>2027</td>
+            <td>https://www.ci.moscow.id.us/ImageRepository/Document?documentID=31754</td>
+            <td>https://cdn.civicpatch.org/open-data/id/moscow/images/c9ba08970b12082b0de51a0d3ba2fa31dbb0c07e7be12c124261a1eb8fe6db36.jpg</td>
+            <td>[&quot;https://www.ci.moscow.id.us/314/City-Council&quot;, &quot;https://www.ci.moscow.id.us/1071/Drew-Davis&quot;]</td>
+            <td>2025-07-12T20:07:49+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:moscow/government</td>
+            <td>Gina Taruscio</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 883-7000</td>
+            <td>gtaruscio@ci.moscow.id.us</td>
+            <td>https://www.ci.moscow.id.us/323/Gina-Taruscio</td>
+            <td>2021-11</td>
+            <td>2025</td>
+            <td>https://www.ci.moscow.id.us/ImageRepository/Document?documentID=31755</td>
+            <td>https://cdn.civicpatch.org/open-data/id/moscow/images/6a54c18aa974ee3835a7accd9d56e7317e30aa910b8782b2ac2089ddd800094a.jpg</td>
+            <td>[&quot;https://www.ci.moscow.id.us/314/City-Council&quot;, &quot;https://www.ci.moscow.id.us/323/Gina-Taruscio&quot;]</td>
+            <td>2025-07-12T20:07:49+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:moscow/government</td>
+            <td>Hailey Lewis</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 883-7000</td>
+            <td>hlewis@ci.moscow.id.us</td>
+            <td>https://www.ci.moscow.id.us/1012/Hailey-Lewis</td>
+            <td>2021-11</td>
+            <td>2025</td>
+            <td>https://www.ci.moscow.id.us/ImageRepository/Document?documentID=31757</td>
+            <td>https://cdn.civicpatch.org/open-data/id/moscow/images/32bf6c67a68c5ee63ec262719d99f77ab677ca44caed2c69173a4b7cecc6ce75.jpg</td>
+            <td>[&quot;https://www.ci.moscow.id.us/314/City-Council&quot;, &quot;https://www.ci.moscow.id.us/1012/Hailey-Lewis&quot;]</td>
+            <td>2025-07-12T20:07:49+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:moscow/government</td>
+            <td>Julia Parker</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 883-7000</td>
+            <td>jparker@ci.moscow.id.us</td>
+            <td>https://www.ci.moscow.id.us/1013/Julia-Parker</td>
+            <td>2021-11</td>
+            <td>2025</td>
+            <td>https://www.ci.moscow.id.us/ImageRepository/Document?documentID=31758</td>
+            <td>https://cdn.civicpatch.org/open-data/id/moscow/images/c18c9dc3d8c77de839b26370d3219e8b3d7144c0a67e85f6c4d82d75b89fee9b.jpg</td>
+            <td>[&quot;https://www.ci.moscow.id.us/314/City-Council&quot;, &quot;https://www.ci.moscow.id.us/1013/Julia-Parker&quot;]</td>
+            <td>2025-07-12T20:07:49+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:moscow/government</td>
+            <td>Sandra Kelly</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 883-7000</td>
+            <td>skelly@ci.moscow.id.us</td>
+            <td>https://www.ci.moscow.id.us/324/Sandra-Kelly</td>
+            <td>2023-11-07</td>
+            <td>2027</td>
+            <td>https://www.ci.moscow.id.us/ImageRepository/Document?documentID=31759</td>
+            <td>https://cdn.civicpatch.org/open-data/id/moscow/images/96fc745adf596d19131723f65311b0b002cd1157bd62a348ae445ec782841f83.jpg</td>
+            <td>[&quot;https://www.ci.moscow.id.us/314/City-Council&quot;, &quot;https://www.ci.moscow.id.us/324/Sandra-Kelly&quot;]</td>
+            <td>2025-07-12T20:07:49+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_fremont</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_fremont</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:fremont/government</td>
+            <td>Raj Salwan</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(510) 284-4082</td>
+            <td>rsalwan@fremont.gov</td>
+            <td>https://www.fremont.gov/government/mayor-city-council</td>
+            <td>2024-11</td>
+            <td>2028-11</td>
+            <td>https://www.fremont.gov/home/showpublishedimage/482/638791182509370000</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/fremont/images/0e33d2c59f2efe32c3ffc45e0c6b40be7f4ac319041306138c4f93d7fbc1f405.jpg</td>
+            <td>[&quot;https://www.fremont.gov/government/mayor-city-council&quot;]</td>
+            <td>2025-07-17T17:17:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:fremont/government</td>
+            <td>Teresa Keng</td>
+            <td>[&quot;Vice Mayor&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 1&quot;]</td>
+            <td>(510) 284-4012</td>
+            <td>tkeng@fremont.gov</td>
+            <td>https://www.fremont.gov/government/mayor-city-council</td>
+            <td>2024-11</td>
+            <td>2028-11</td>
+            <td>https://www.fremont.gov/home/showpublishedimage/6159/637981555727730000</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/fremont/images/2ffcea94f62d0c841715bb459ccdc166a54b142064aa42cd837199999ae49d73.jpg</td>
+            <td>[&quot;https://www.fremont.gov/government/mayor-city-council&quot;]</td>
+            <td>2025-07-17T17:17:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:fremont/government</td>
+            <td>Desrie Campbell</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 2&quot;]</td>
+            <td>(510) 284-4008</td>
+            <td>dcampbell@fremont.gov</td>
+            <td>https://www.fremont.gov/government/mayor-city-council</td>
+            <td>2022-12-13</td>
+            <td>2026-12</td>
+            <td>https://www.fremont.gov/home/showpublishedimage/6771/638072457065130000</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/fremont/images/4d4d974c6d3972015da52a9d969d2af18828a0caef74a48ee7a0b866ec64513e.jpg</td>
+            <td>[&quot;https://www.fremont.gov/government/mayor-city-council&quot;]</td>
+            <td>2025-07-17T17:17:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:fremont/government</td>
+            <td>Kathy Kimberlin</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 3&quot;]</td>
+            <td>(510) 284-4095</td>
+            <td>kkimberlin@fremont.gov</td>
+            <td>https://www.fremont.gov/government/mayor-city-council</td>
+            <td>2024-09-10</td>
+            <td>2026-12</td>
+            <td>https://www.fremont.gov/home/showpublishedimage/9621/638767001732970000</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/fremont/images/743aa1c2a796ec755ca7e4378fb6e308e682229a0eb6521640162b0a3a5572d4.jpg</td>
+            <td>[&quot;https://www.fremont.gov/government/mayor-city-council&quot;]</td>
+            <td>2025-07-17T17:17:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:fremont/government</td>
+            <td>Yang Shao</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 4&quot;]</td>
+            <td>(510) 284-4019</td>
+            <td>yshao@fremont.gov</td>
+            <td>https://www.fremont.gov/government/mayor-city-council</td>
+            <td>2022-12-13</td>
+            <td>2026-12</td>
+            <td>https://www.fremont.gov/home/showpublishedimage/10104/638767007145300000</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/fremont/images/3bd87246203eacbc220f4f6e32a20751c1327d861e6e2cb30337ed1952088a27.jpg</td>
+            <td>[&quot;https://www.fremont.gov/government/mayor-city-council&quot;]</td>
+            <td>2025-07-17T17:17:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:fremont/government</td>
+            <td>Yajing Zhang</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 5&quot;]</td>
+            <td>(510) 284-4083</td>
+            <td>yazhang@fremont.gov</td>
+            <td>https://www.fremont.gov/government/mayor-city-council</td>
+            <td>2024-11</td>
+            <td>2028-11</td>
+            <td>https://www.fremont.gov/home/showpublishedimage/9838/638767002190270000</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/fremont/images/b5e9e2d5a991424966376ac174a5a89a0bbea8a49fcb03913a203ee2d03c1f29.jpg</td>
+            <td>[&quot;https://www.fremont.gov/government/mayor-city-council&quot;]</td>
+            <td>2025-07-17T17:17:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:fremont/government</td>
+            <td>Raymond Liu</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 6&quot;]</td>
+            <td>(510) 284-4097</td>
+            <td>rliu@fremont.gov</td>
+            <td>https://www.fremont.gov/government/mayor-city-council</td>
+            <td>2024-11</td>
+            <td>2028-11</td>
+            <td>https://www.fremont.gov/home/showpublishedimage/9840/638791182084370000</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/fremont/images/dd39af1076d6844ed6e098d5fc221ca4f30f9d197bb4868c997ea19451367f77.jpg</td>
+            <td>[&quot;https://www.fremont.gov/government/mayor-city-council&quot;]</td>
+            <td>2025-07-17T17:17:43+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_casselton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_casselton</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:casselton/government</td>
+            <td>Michael Faught</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 388-3182</td>
+            <td>michael.faught@casselton.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://images.squarespace-cdn.com/content/v1/5a5fc163d55b412c123050d6/1d6efc10-560b-4901-aafd-4994605da1c3/Mike+Faught.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/casselton/images/70cdeced06e2393909156c56c23e9e369150396f170002d875fe476a23aff90c.jpg</td>
+            <td>[&quot;https://www.casselton.com/council-staff&quot;]</td>
+            <td>2025-07-03T21:33:47+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:casselton/government</td>
+            <td>Blaine Nichols</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 799-1271</td>
+            <td>blaine.nichols@casselton.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://images.squarespace-cdn.com/content/v1/5a5fc163d55b412c123050d6/9a148c1a-f4e6-4527-8c7f-17d367ce7b91/Blaine+Nichols.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/casselton/images/ee0ec92c6ac084cd39177bc038f43ca241aaea0055e7122b69b3683da40bc884.jpg</td>
+            <td>[&quot;https://www.casselton.com/council-staff&quot;]</td>
+            <td>2025-07-03T21:33:47+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:casselton/government</td>
+            <td>Charles Francis</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 729-6667</td>
+            <td>charles.francis@casselton.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://images.squarespace-cdn.com/content/v1/5a5fc163d55b412c123050d6/423463eb-cb43-4274-a5aa-97d060d1e528/photo-coming-soon.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/casselton/images/c7a75c0280971b5aa9c809aecd755e7886fad0aa315cbf3b614a73f682271023.jpg</td>
+            <td>[&quot;https://www.casselton.com/council-staff&quot;]</td>
+            <td>2025-07-03T21:33:47+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:casselton/government</td>
+            <td>Jake Ansberry</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 541-3750</td>
+            <td>jake.ansberry@casselton.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://images.squarespace-cdn.com/content/v1/5a5fc163d55b412c123050d6/5fea752c-6e0e-4329-a0d2-76cc12109cc3/photo-coming-soon.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/casselton/images/e2ea42663ce2aa6c0f6ce5cd9eaf656c5ed9ab0ff1863e94f198ffe1b1869971.jpg</td>
+            <td>[&quot;https://www.casselton.com/council-staff&quot;]</td>
+            <td>2025-07-03T21:33:47+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:casselton/government</td>
+            <td>Mason Vance</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 866-7148</td>
+            <td>mason.vance@casselton.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://images.squarespace-cdn.com/content/v1/5a5fc163d55b412c123050d6/f9f8a374-20aa-4e26-acfa-42b85ded52fc/Mason+Vance.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/casselton/images/8b629eb2f3ae8fa5cac131788f2f3a189c4547a5073dfe5fb6bd19c015299c78.jpg</td>
+            <td>[&quot;https://www.casselton.com/council-staff&quot;]</td>
+            <td>2025-07-03T21:33:47+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:casselton/government</td>
+            <td>Sam Wagner</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 371-5474</td>
+            <td>sam.wagner@casselton.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://images.squarespace-cdn.com/content/v1/5a5fc163d55b412c123050d6/699b187f-c2af-49b7-83fd-c24301b6b5c5/Sam+Wagner.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/casselton/images/e861ec7b6e905b151762212c3042af12d17d2d4c64f6d840b81b41f0254fab25.jpg</td>
+            <td>[&quot;https://www.casselton.com/council-staff&quot;]</td>
+            <td>2025-07-03T21:33:47+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:casselton/government</td>
+            <td>Sarah Michels</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 566-4707</td>
+            <td>sarah.michels@casselton.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://images.squarespace-cdn.com/content/v1/5a5fc163d55b412c123050d6/cdb5b840-6aff-4742-93c3-e716dd8bd2b5/Sarah+Michels.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/casselton/images/c02a79bb7458abd130cdf5342b7eb989c9465e81f301878fd77433ec3252809d.jpg</td>
+            <td>[&quot;https://www.casselton.com/council-staff&quot;]</td>
+            <td>2025-07-03T21:33:47+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

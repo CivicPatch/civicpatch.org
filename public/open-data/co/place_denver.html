@@ -1,0 +1,328 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_denver</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_denver</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Mike Johnston</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(720) 865-9000</td>
+            <td>MOComms@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Elected-Officials/Mayor</td>
+            <td>2023-07-17</td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/3/mayor/images/mayor_mike_johnston-headshot_ccb.jpg?dimension=pageimage&amp;w=480</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/c2e1e45729c8e83cd036039905f28e83638a0caadb69793231dfe9b3b0db07a6.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Mayors-Office/About&quot;, &quot;https://www.denvergov.org/Government/Elected-Officials/Mayor&quot;, &quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Kevin-Flynn-Council-District-2&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/GonzalesGutierrezAtLarge&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Sarah Parady</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(720) 337-7713</td>
+            <td>ParadyAtLarge@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/ParadyAtLarge</td>
+            <td></td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/central/2023-member-photos/sarah_parady_bio_landscape.jpg?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/f2eed793ae7d00d15fedd0f503da6e2d09f63d2caf1a6663dfca11a948abce18.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/ParadyAtLarge&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Serena Gonzales-Gutierrez</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(720) 337-7712</td>
+            <td>G-Gutierrez.atlarge@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/GonzalesGutierrezAtLarge</td>
+            <td>2023-07</td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/central/2023-member-photos/gonzales-gutierrez-16-9.jpg?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/9ccc8833d75073697658e5948961a83390c4943a9c14f4996ed6fdc36004c12f.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/GonzalesGutierrezAtLarge&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Amanda Sandoval</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 1&quot;]</td>
+            <td>(720) 337-7701</td>
+            <td>district1@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Amanda-P.-Sandoval-Council-District-1</td>
+            <td>2023</td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/d1/amanda.springphoto.jpeg?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/f0d291bb6d4ad00e8076d6ebefd871bcae123a118aefa1a00194e0cea526fb8d.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Amanda-P.-Sandoval-Council-District-1&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Christopher Hinds</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 10&quot;]</td>
+            <td>(720) 337-7710</td>
+            <td>district10@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Chris-Hinds-Council-District-10</td>
+            <td></td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/2019-council-members/hinds_web.jpg?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/e04aaf91013fc0fe3eeffe37a18a501fd096e75366c74535dd9694123625850c.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Chris-Hinds-Council-District-10&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Stacie Gilmore</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 11&quot;]</td>
+            <td>(720) 337-7711</td>
+            <td>stacie.gilmore@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Stacie-Gilmore-Council-District-11</td>
+            <td>2023</td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/2019-council-members/stacie-gilmore-headshot-2023_16-9ratio.png?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/76ea0e91a366f5033b80a5739f63f9e0adda961d42dea6892113724f143060a9.png</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Kevin-Flynn-Council-District-2&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Stacie-Gilmore-Council-District-11&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Kevin Flynn</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 2&quot;]</td>
+            <td>(720) 337-2222</td>
+            <td>kevin.flynn@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Kevin-Flynn-Council-District-2</td>
+            <td>2023</td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/2019-council-members/flynn_web.jpg?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/f1c1b347ee400c1796c795cec65580b332b20050a0a6c4c7601e83021eb29468.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Kevin-Flynn-Council-District-2&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Jamie Torres</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 3&quot;]</td>
+            <td>(720) 337-3333</td>
+            <td>District3@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Jamie-Torres-Council-District-3</td>
+            <td>2019-07-15</td>
+            <td>2024-07</td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/d3/councilwoman-torres-headshot-horizontal.jpeg?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/29774a5628aa6155344271f79a0934f040cc475d965a29918fe6b09bcd6fcee5.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Jamie-Torres-Council-District-3&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Diana Romero Campbell</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 4&quot;]</td>
+            <td>(720) 337-4444</td>
+            <td>district4@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/District-4</td>
+            <td>2023-04-04</td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/central/2023-member-photos/rsz_diana_headshot_2.jpg?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/158991a20ec1d1ff9c4ec7dd2574ed05c1682074d72462a8d0143aa5089fc581.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/District-4&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Amanda Sawyer</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 5&quot;]</td>
+            <td>(720) 337-5555</td>
+            <td>DenverCouncil5@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Amanda-Sawyer-Council-District-5</td>
+            <td></td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/d5/img_1714.jpg?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/3aa4e2f97d6fa29f1823befc81bd57937bf6b4d8048bdfdfa8567acd0a62251f.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Kevin-Flynn-Council-District-2&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Amanda-Sawyer-Council-District-5&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Paul Kashmann</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 6&quot;]</td>
+            <td>(720) 337-6666</td>
+            <td>paul.kashmann@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Paul-Kashmann-Council-District-6</td>
+            <td></td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/d6/kashmann_16-9web.jpg?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/0d6266d4403c7d5073375186ada3e8517c5bcc6244367a7ec565c22224eb94c3.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Paul-Kashmann-Council-District-6&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Flor Alvidrez</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 7&quot;]</td>
+            <td>(720) 337-7777</td>
+            <td>district7@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Flor-Alvidrez-District-7</td>
+            <td></td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/central/2023-member-photos/flor-alvidrez-16-9.jpg?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/4059d676d327cc923a41a5a753d10d23b73f3443dc7f04629564c1ccca30f603.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Kevin-Flynn-Council-District-2&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Flor-Alvidrez-District-7&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Shontel Lewis</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 8&quot;]</td>
+            <td>(720) 337-8888</td>
+            <td>District8@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/District-8</td>
+            <td></td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/central/2023-member-photos/shontel-lewis-16-9.jpg?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/85fd3a9a3639382c18363da47a7d01dc9ffb321cc7a2b3418b67647e9610937a.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/District-8&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:denver/government</td>
+            <td>Darrell Watson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 9&quot;]</td>
+            <td>(720) 337-7709</td>
+            <td>district9@denvergov.org</td>
+            <td>https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/District-9</td>
+            <td></td>
+            <td></td>
+            <td>https://www.denvergov.org/files/assets/public/v/1/city-council/images/central/2023-member-photos/darrell-bridge.jpg?dimension=largethumbnail&amp;w=480&amp;h=316</td>
+            <td>https://cdn.civicpatch.org/open-data/co/denver/images/f1f4cc3f1428dc24269f808ef77543166215af580dda22e5abee5b64f9aba1f3.jpg</td>
+            <td>[&quot;https://www.denvergov.org/Government/Elected-Officials/City-Council&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/Kevin-Flynn-Council-District-2&quot;, &quot;https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Denver-City-Council/Council-Members-Websites-Info/District-9&quot;]</td>
+            <td>2025-06-27T19:43:55+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_brighton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_brighton</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:brighton/government</td>
+            <td>Greg Mills</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;At-large&quot;, &quot;Ward 2&quot;]</td>
+            <td>(303) 655-2268</td>
+            <td>gmills@brightonco.gov</td>
+            <td>https://co-brighton2.civicplus.com/1195/Greg-Mills</td>
+            <td>2022-01</td>
+            <td>2026-01</td>
+            <td>https://co-brighton2.civicplus.com/ImageRepository/Document?documentID=13275</td>
+            <td>https://cdn.civicpatch.org/open-data/co/brighton/images/1323f034644362900f0bc1dd1d50952c9254eac991ab938eb1620adf7bfe380d.jpg</td>
+            <td>[&quot;https://www.brightonco.gov/203/City-Council&quot;, &quot;https://co-brighton2.civicplus.com/1195/Greg-Mills&quot;, &quot;https://www.brightonco.gov/1197/Chris-Fiedler&quot;]</td>
+            <td>2025-06-27T20:54:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:brighton/government</td>
+            <td>Peter Padilla</td>
+            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 4&quot;]</td>
+            <td>(303) 655-2269</td>
+            <td>ppadilla@brightonco.gov</td>
+            <td>https://www.brightonco.gov/724/Peter-Padilla</td>
+            <td>2022-01</td>
+            <td>2026-01</td>
+            <td>https://www.brightonco.gov/ImageRepository/Document?documentID=28921</td>
+            <td>https://cdn.civicpatch.org/open-data/co/brighton/images/d004e94b447d966fe292dca6be8f114564fc1e6a529f654c5650fdad8f0b13e5.jpg</td>
+            <td>[&quot;https://www.brightonco.gov/203/City-Council&quot;, &quot;https://www.brightonco.gov/1197/Chris-Fiedler&quot;, &quot;https://www.brightonco.gov/724/Peter-Padilla&quot;]</td>
+            <td>2025-06-27T20:54:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:brighton/government</td>
+            <td>Tom Green</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 1&quot;]</td>
+            <td>(303) 655-2261</td>
+            <td>tgreen@brightonco.gov</td>
+            <td>https://www.brightonco.gov/2872</td>
+            <td>2024-01</td>
+            <td>2028-01</td>
+            <td>https://www.brightonco.gov/ImageRepository/Document?documentID=29817</td>
+            <td>https://cdn.civicpatch.org/open-data/co/brighton/images/305782a53c003c347c8aa8971c064bef7862d6b747565d54872665c19f7906f3.jpg</td>
+            <td>[&quot;https://www.brightonco.gov/203/City-Council&quot;, &quot;https://www.brightonco.gov/2872&quot;, &quot;https://www.brightonco.gov/1197/Chris-Fiedler&quot;]</td>
+            <td>2025-06-27T20:54:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:brighton/government</td>
+            <td>Ann Taddeo</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 2&quot;]</td>
+            <td>(303) 655-2266</td>
+            <td>ataddeo@brightonco.gov</td>
+            <td>https://www.brightonco.gov/1508/Ann-Taddeo</td>
+            <td>2022-01</td>
+            <td>2026-01</td>
+            <td>https://www.brightonco.gov/ImageRepository/Document?documentID=22377</td>
+            <td>https://cdn.civicpatch.org/open-data/co/brighton/images/0227f677d3e645831ba0313a0feb0a4692f54a14f6bbc36bd1aac3ec6027b4cc.jpg</td>
+            <td>[&quot;https://www.brightonco.gov/203/City-Council&quot;, &quot;https://www.brightonco.gov/1508/Ann-Taddeo&quot;, &quot;https://www.brightonco.gov/1197/Chris-Fiedler&quot;]</td>
+            <td>2025-06-27T20:54:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:brighton/government</td>
+            <td>Jim Snyder</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 2&quot;]</td>
+            <td>(303) 655-2264</td>
+            <td>jsnyder@brightonco.gov</td>
+            <td>https://www.brightonco.gov/708/Jim-Snyder</td>
+            <td>2024-01</td>
+            <td>2028-01</td>
+            <td>https://www.brightonco.gov/ImageRepository/Document?documentID=29812</td>
+            <td>https://cdn.civicpatch.org/open-data/co/brighton/images/bc8e5a06da0bb1119d22e06d4a57b6be782e7092bcb68a337a413e1e5464862a.jpg</td>
+            <td>[&quot;https://www.brightonco.gov/203/City-Council&quot;, &quot;https://www.brightonco.gov/708/Jim-Snyder&quot;, &quot;https://www.brightonco.gov/1197/Chris-Fiedler&quot;]</td>
+            <td>2025-06-27T20:54:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:brighton/government</td>
+            <td>Chris Fiedler</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 3&quot;]</td>
+            <td>(303) 655-2267</td>
+            <td>cfiedler@brightonco.gov</td>
+            <td>https://www.brightonco.gov/1197/Chris-Fiedler</td>
+            <td>2024-01</td>
+            <td>2028-01</td>
+            <td>https://www.brightonco.gov/ImageRepository/Document?documentID=29811</td>
+            <td>https://cdn.civicpatch.org/open-data/co/brighton/images/4bf4f862de7c8786438860f7559d2b567e49608c53b9ec6103156864c1be1a51.jpg</td>
+            <td>[&quot;https://www.brightonco.gov/203/City-Council&quot;, &quot;https://www.brightonco.gov/1197/Chris-Fiedler&quot;]</td>
+            <td>2025-06-27T20:54:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:brighton/government</td>
+            <td>Jan Pawlowski</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 3&quot;]</td>
+            <td>(303) 655-2263</td>
+            <td>jpawlowski@brightonco.gov</td>
+            <td>https://www.brightonco.gov/710/Jan-Pawlowski</td>
+            <td>2022-01</td>
+            <td>2026-01</td>
+            <td>https://www.brightonco.gov/ImageRepository/Document?documentID=28918</td>
+            <td>https://cdn.civicpatch.org/open-data/co/brighton/images/1c89a9aac10e9e5839d58817458ec0abb2cbfd4a4e58cb7f74a8523b7fb2fb1b.jpg</td>
+            <td>[&quot;https://www.brightonco.gov/203/City-Council&quot;, &quot;https://www.brightonco.gov/1197/Chris-Fiedler&quot;, &quot;https://www.brightonco.gov/710/Jan-Pawlowski&quot;]</td>
+            <td>2025-06-27T20:54:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:brighton/government</td>
+            <td>Lloyd Worth</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 4&quot;]</td>
+            <td>(303) 655-2260</td>
+            <td>lworth@brightonco.gov</td>
+            <td>https://www.brightonco.gov/3101/Lloyd-Worth</td>
+            <td>2024-01</td>
+            <td>2028-01</td>
+            <td>https://www.brightonco.gov/ImageRepository/Document?documentID=29813</td>
+            <td>https://cdn.civicpatch.org/open-data/co/brighton/images/30d76de6b92f34772cc4630d5f4943181be08746b884a97d9bd839317cdc9dc3.jpg</td>
+            <td>[&quot;https://www.brightonco.gov/203/City-Council&quot;, &quot;https://www.brightonco.gov/1197/Chris-Fiedler&quot;, &quot;https://www.brightonco.gov/3101/Lloyd-Worth&quot;]</td>
+            <td>2025-06-27T20:54:43+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

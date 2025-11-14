@@ -1,0 +1,208 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_steilacoom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_steilacoom</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:steilacoom/government</td>
+            <td>Dick Muri</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(253) 439-9797</td>
+            <td>dick.muri@ci.steilacoom.wa.us</td>
+            <td>https://townofsteilacoom.org/directory.aspx?EID=28</td>
+            <td>2022-01-01</td>
+            <td>2025-12-31</td>
+            <td>https://townofsteilacoom.org/ImageRepository/Document?documentID=2531</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/steilacoom/images/8d56b993a6edffa30940f5d4150efef0360372049b3f166c0b4021cfb0b27f26.jpg</td>
+            <td>[&quot;https://townofsteilacoom.org/170/Mayor-Town-Council&quot;, &quot;https://townofsteilacoom.org/directory.aspx?EID=28&quot;]</td>
+            <td>2025-06-23T05:17:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:steilacoom/government</td>
+            <td>Elizabeth Grasher</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(253) 316-3709</td>
+            <td>elizabeth.grasher@ci.steilacoom.wa.us</td>
+            <td>https://townofsteilacoom.org/Directory.aspx?EID=30</td>
+            <td>2022-01</td>
+            <td>2025-12</td>
+            <td>https://townofsteilacoom.org/ImageRepository/Document?documentID=2913</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/steilacoom/images/d3e6cdafa5074fcfc233b110a0c65ec8a4c4e31671fb44137213e32e2ce992e7.jpg</td>
+            <td>[&quot;https://townofsteilacoom.org/170/Mayor-Town-Council&quot;, &quot;https://townofsteilacoom.org/Directory.aspx?EID=30&quot;]</td>
+            <td>2025-06-23T05:17:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:steilacoom/government</td>
+            <td>Mike Johnson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(253) 226-4099</td>
+            <td>mike.johnson@ci.steilacoom.wa.us</td>
+            <td>https://townofsteilacoom.org/Directory.aspx?EID=70</td>
+            <td>2024-01-01</td>
+            <td>2027-12-31</td>
+            <td>https://townofsteilacoom.org/ImageRepository/Document?documentID=3596</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/steilacoom/images/3e504cb987ce68ea539a11bac3af2d9a39c94e303d0f417d756b0025d4bc2ef5.jpg</td>
+            <td>[&quot;https://townofsteilacoom.org/170/Mayor-Town-Council&quot;, &quot;https://townofsteilacoom.org/Directory.aspx?EID=70&quot;]</td>
+            <td>2025-06-23T05:17:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:steilacoom/government</td>
+            <td>Nancy Henderson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(253) 584-7284</td>
+            <td>nancy.henderson@ci.steilacoom.wa.us</td>
+            <td>https://townofsteilacoom.org/Directory.aspx?EID=32</td>
+            <td>2024-01-01</td>
+            <td>2027-12-31</td>
+            <td>https://townofsteilacoom.org/images/CityDirectory/4/henderson_nancy_sm.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/steilacoom/images/e0d899f53cbf23cd36ccaaa326227c9acb099975348bad644036515e42ef8f02.jpg</td>
+            <td>[&quot;https://townofsteilacoom.org/170/Mayor-Town-Council&quot;, &quot;https://townofsteilacoom.org/Directory.aspx?EID=32&quot;]</td>
+            <td>2025-06-23T05:17:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:steilacoom/government</td>
+            <td>Pete Franklin</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(253) 584-0808</td>
+            <td>pete.franklin@ci.steilacoom.wa.us</td>
+            <td>https://townofsteilacoom.org/directory.aspx?EID=65</td>
+            <td>2022-01</td>
+            <td>2025-12</td>
+            <td>https://townofsteilacoom.org/images/CityDirectory/4/pete_franklin.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/steilacoom/images/469473897bd837e776ad224810f7ae73166c19c980528a0f7e97ba32993ba334.jpg</td>
+            <td>[&quot;https://townofsteilacoom.org/170/Mayor-Town-Council&quot;, &quot;https://townofsteilacoom.org/directory.aspx?EID=65&quot;, &quot;https://townofsteilacoom.org/Directory.aspx?DID=4&quot;]</td>
+            <td>2025-06-23T05:17:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:steilacoom/government</td>
+            <td>Roger Neal</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(253) 691-6120</td>
+            <td>roger.neal@ci.steilacoom.wa.us</td>
+            <td>https://townofsteilacoom.org/Directory.aspx?EID=81</td>
+            <td>2022-01</td>
+            <td>2025-12</td>
+            <td>https://townofsteilacoom.org/ImageRepository/Document?documentID=1402</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/steilacoom/images/1628d007e3a238a365be04b4ea10d741b4fcfd129373b9defe0667430a59f98c.jpg</td>
+            <td>[&quot;https://townofsteilacoom.org/170/Mayor-Town-Council&quot;, &quot;https://townofsteilacoom.org/Directory.aspx?EID=81&quot;]</td>
+            <td>2025-06-23T05:17:07+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

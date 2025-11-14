@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_dayton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_dayton</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:dayton/government</td>
+            <td>Roger Trump</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>rtrump@daytonwa.com</td>
+            <td></td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.daytonwa.com/images/photos/council_members/Trump.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/dayton/images/4347ccef3947371dc608e318ee8f1f0a090bf95578d792e2fd0e90ccd2a1ba51.jpg</td>
+            <td>[&quot;https://www.daytonwa.com/inside-city-hall/city-council/city-council-contact-information&quot;]</td>
+            <td>2025-06-25T22:07:52+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:dayton/government</td>
+            <td>Laura Aukerman</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td></td>
+            <td>laukerman@daytonwa.com</td>
+            <td></td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.daytonwa.com/images/photos/council_members/L-Aukerman-300.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/dayton/images/a385fbbe4ce0a448624462ab6fc27fc2af4c936c4ec046032082c803dd393b94.jpg</td>
+            <td>[&quot;https://www.daytonwa.com/inside-city-hall/city-council/city-council-contact-information&quot;]</td>
+            <td>2025-06-25T22:07:52+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:dayton/government</td>
+            <td>Jim Su&#39;euga</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td></td>
+            <td>jsueuga@daytonwa.com</td>
+            <td></td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.daytonwa.com/images/photos/council_members/J-Sueuga-300.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/dayton/images/dffabda300322fd1f39590d806a6a8274d58e62c4fba106b926bd4d65e5e60e7.jpg</td>
+            <td>[&quot;https://www.daytonwa.com/inside-city-hall/city-council/city-council-contact-information&quot;]</td>
+            <td>2025-06-25T22:07:52+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:dayton/government</td>
+            <td>Glen Hagfeldt</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td></td>
+            <td>ghagfeldt@daytonwa.com</td>
+            <td></td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td></td>
+            <td></td>
+            <td>[&quot;https://www.daytonwa.com/inside-city-hall/city-council/city-council-contact-information&quot;]</td>
+            <td>2025-06-25T22:07:52+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:dayton/government</td>
+            <td>Joann Patras</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td></td>
+            <td>jpatras@daytonwa.com</td>
+            <td></td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.daytonwa.com/images/photos/council_members/Patras.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/dayton/images/da05d2cce9597b2ba94bfae31d9eb151837115d629e22bf73ef03a15ea2f3b4a.jpg</td>
+            <td>[&quot;https://www.daytonwa.com/inside-city-hall/city-council/city-council-contact-information&quot;]</td>
+            <td>2025-06-25T22:07:52+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:dayton/government</td>
+            <td>Shannon McMillen</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td></td>
+            <td>smcmillen@daytonwa.com</td>
+            <td></td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.daytonwa.com/images/photos/council_members/S-McMillen-300.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/dayton/images/cb8243d564fc9fe5ca243253337dc11bce5b12aff770b4f0929a36d34fd07ef6.jpg</td>
+            <td>[&quot;https://www.daytonwa.com/inside-city-hall/city-council/city-council-contact-information&quot;]</td>
+            <td>2025-06-25T22:07:52+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:dayton/government</td>
+            <td>Kyle Anderson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td></td>
+            <td>kanderson@daytonwa.com</td>
+            <td></td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.daytonwa.com/images/photos/council_members/K-Anderson-300.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/dayton/images/88f2fd8c0e47e5abe01c92f9467d156a330988bcd7977b2be00329d465792e97.jpg</td>
+            <td>[&quot;https://www.daytonwa.com/inside-city-hall/city-council/city-council-contact-information&quot;]</td>
+            <td>2025-06-25T22:07:52+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:dayton/government</td>
+            <td>Mike Smith</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td></td>
+            <td>msmith@daytonwa.com</td>
+            <td></td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td></td>
+            <td></td>
+            <td>[&quot;https://www.daytonwa.com/inside-city-hall/city-council/city-council-contact-information&quot;]</td>
+            <td>2025-06-25T22:07:52+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

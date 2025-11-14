@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_medina</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_medina</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:medina/government</td>
+            <td>Jessica Rossman</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td>(425) 233-6400</td>
+            <td>jrossman@medina-wa.gov</td>
+            <td>https://www.medina-wa.gov/directory-listing/jessica-rossman-0</td>
+            <td>2022-01-01</td>
+            <td>2025-12-31</td>
+            <td>https://www.medina-wa.gov/sites/default/files/styles/full_node_primary/public/imageattachments/directory/10984/rossman_dsc8909_large.jpg?itok=UscUd7_J</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/medina/images/892f0beb4fadc5434b4dd7214a9a009897e8fa775831a510639785adf4c0d9b1.jpg</td>
+            <td>[&quot;https://www.medina-wa.gov/citycouncil&quot;, &quot;https://www.medina-wa.gov/directory-listing/jessica-rossman-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/harini-gokul-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/heija-nunn&quot;, &quot;https://www.medina-wa.gov/directory-listing/michael-luis&quot;, &quot;https://www.medina-wa.gov/directory-listing/mac-johnston-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/joseph-brazen&quot;, &quot;https://www.medina-wa.gov/directory-listing/randy-reeves&quot;]</td>
+            <td>2025-06-25T21:27:41+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:medina/government</td>
+            <td>Randy Reeves</td>
+            <td>[&quot;Deputy Mayor&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td></td>
+            <td>rreeves@medina-wa.gov</td>
+            <td>https://www.medina-wa.gov/directory-listing/randy-reeves</td>
+            <td>2022-01-01</td>
+            <td>2025-12-31</td>
+            <td>https://www.medina-wa.gov/sites/default/files/styles/full_node_primary/public/imageattachments/directory/11014/randy_reeves.jpg?itok=lsmJtB3d</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/medina/images/bbc174bbfe01742cbbea4af3ec46b066a2053b7ab1d469a60c9aca2a0b91d5ae.jpg</td>
+            <td>[&quot;https://www.medina-wa.gov/citycouncil&quot;, &quot;https://www.medina-wa.gov/directory-listing/jessica-rossman-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/harini-gokul-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/heija-nunn&quot;, &quot;https://www.medina-wa.gov/directory-listing/michael-luis&quot;, &quot;https://www.medina-wa.gov/directory-listing/mac-johnston-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/joseph-brazen&quot;, &quot;https://www.medina-wa.gov/directory-listing/randy-reeves&quot;]</td>
+            <td>2025-06-25T21:27:41+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:medina/government</td>
+            <td>Harini Gokul</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td>(425) 233-6400</td>
+            <td>hgokul@medina-wa.gov</td>
+            <td>https://www.medina-wa.gov/directory-listing/harini-gokul-0</td>
+            <td>2024-01-01</td>
+            <td>2027-12-31</td>
+            <td>https://www.medina-wa.gov/sites/default/files/styles/full_node_primary/public/imageattachments/directory/10994/gokul.jpg?itok=ZdrHdN6X</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/medina/images/23b539087bb972a8a6e3d226e456c9e7b74176109876af5730f8a042b47d4fde.jpg</td>
+            <td>[&quot;https://www.medina-wa.gov/citycouncil&quot;, &quot;https://www.medina-wa.gov/directory-listing/jessica-rossman-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/harini-gokul-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/heija-nunn&quot;, &quot;https://www.medina-wa.gov/directory-listing/michael-luis&quot;, &quot;https://www.medina-wa.gov/directory-listing/mac-johnston-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/joseph-brazen&quot;, &quot;https://www.medina-wa.gov/directory-listing/randy-reeves&quot;]</td>
+            <td>2025-06-25T21:27:41+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:medina/government</td>
+            <td>Heija Nunn</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td>(425) 233-6400</td>
+            <td>hnunn@medina-wa.gov</td>
+            <td>https://www.medina-wa.gov/directory-listing/heija-nunn</td>
+            <td>2022-01-01</td>
+            <td>2025-12-31</td>
+            <td>https://www.medina-wa.gov/sites/default/files/styles/full_node_primary/public/imageattachments/directory/10999/original-cd7db24d-f671-450c-9a69-737d08b15277.jpeg?itok=zmaO8v2p</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/medina/images/0129120caf490f74dc60b79eb7f76bc7b2754a541bd928b94d0fcc77b38efba8.jpg</td>
+            <td>[&quot;https://www.medina-wa.gov/citycouncil&quot;, &quot;https://www.medina-wa.gov/directory-listing/jessica-rossman-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/harini-gokul-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/heija-nunn&quot;, &quot;https://www.medina-wa.gov/directory-listing/michael-luis&quot;, &quot;https://www.medina-wa.gov/directory-listing/mac-johnston-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/joseph-brazen&quot;, &quot;https://www.medina-wa.gov/directory-listing/randy-reeves&quot;]</td>
+            <td>2025-06-25T21:27:41+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:medina/government</td>
+            <td>Michael Luis</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td></td>
+            <td>mluis@medina-wa.gov</td>
+            <td>https://www.medina-wa.gov/directory-listing/michael-luis</td>
+            <td>2024-01-01</td>
+            <td>2027-12-31</td>
+            <td>https://www.medina-wa.gov/sites/default/files/styles/full_node_primary/public/imageattachments/directory/10989/luis.jpg?itok=KoAL0REu</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/medina/images/4e9ebdf966afdbc6c294ef77dfaaa62362eae4b03ea8d108b6890e40be689559.jpg</td>
+            <td>[&quot;https://www.medina-wa.gov/citycouncil&quot;, &quot;https://www.medina-wa.gov/directory-listing/jessica-rossman-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/harini-gokul-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/heija-nunn&quot;, &quot;https://www.medina-wa.gov/directory-listing/michael-luis&quot;, &quot;https://www.medina-wa.gov/directory-listing/mac-johnston-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/joseph-brazen&quot;, &quot;https://www.medina-wa.gov/directory-listing/randy-reeves&quot;]</td>
+            <td>2025-06-25T21:27:41+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:medina/government</td>
+            <td>Mac Johnston</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td>(425) 233-6400</td>
+            <td>mjohnston@medina-wa.gov</td>
+            <td>https://www.medina-wa.gov/directory-listing/mac-johnston-0</td>
+            <td>2022-01-01</td>
+            <td>2025-12-31</td>
+            <td>https://www.medina-wa.gov/sites/default/files/styles/full_node_primary/public/imageattachments/directory/11004/johnston.jpg?itok=tF5AVR_c</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/medina/images/199e9762ef1636fe53cc07f670c13b6e767b28180bbef9387cd524109e4385de.jpg</td>
+            <td>[&quot;https://www.medina-wa.gov/citycouncil&quot;, &quot;https://www.medina-wa.gov/directory-listing/jessica-rossman-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/harini-gokul-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/heija-nunn&quot;, &quot;https://www.medina-wa.gov/directory-listing/michael-luis&quot;, &quot;https://www.medina-wa.gov/directory-listing/mac-johnston-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/joseph-brazen&quot;, &quot;https://www.medina-wa.gov/directory-listing/randy-reeves&quot;]</td>
+            <td>2025-06-25T21:27:41+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:medina/government</td>
+            <td>Joseph Brazen</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td>(425) 233-6400</td>
+            <td>jbrazen@medina-wa.gov</td>
+            <td>https://www.medina-wa.gov/directory-listing/joseph-brazen</td>
+            <td>2024-01-01</td>
+            <td>2027-12-31</td>
+            <td>https://www.medina-wa.gov/sites/default/files/styles/full_node_primary/public/imageattachments/directory/11009/j_brazen.png?itok=cP1SWwbL</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/medina/images/9345b909e5b7c8a2fb8d2267a971c66730c050704c3901f350053035df9d9819.png</td>
+            <td>[&quot;https://www.medina-wa.gov/citycouncil&quot;, &quot;https://www.medina-wa.gov/directory-listing/jessica-rossman-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/harini-gokul-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/heija-nunn&quot;, &quot;https://www.medina-wa.gov/directory-listing/michael-luis&quot;, &quot;https://www.medina-wa.gov/directory-listing/mac-johnston-0&quot;, &quot;https://www.medina-wa.gov/directory-listing/joseph-brazen&quot;, &quot;https://www.medina-wa.gov/directory-listing/randy-reeves&quot;]</td>
+            <td>2025-06-25T21:27:41+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

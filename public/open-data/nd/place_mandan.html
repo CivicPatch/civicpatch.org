@@ -1,0 +1,193 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_mandan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_mandan</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:mandan/government</td>
+            <td>James Froelich</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 301-6792</td>
+            <td>james.froelich@cityofmandan.com</td>
+            <td>https://www.cityofmandan.com/index.asp?SEC=39B6721C-AE8A-433B-9C55-258065537CD5</td>
+            <td>2024</td>
+            <td>2028</td>
+            <td>https://www.cityofmandan.com/vertical/Sites/%7B38C3EFDC-F4D8-4D02-9E13-0987A081A7A4%7D/uploads/Jim_Froelich_-_Use_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/mandan/images/dbacbb80b1cea208b432fff1d397fea37b044fc2fdbfe33017af7c0769565ff2.jpg</td>
+            <td>[&quot;https://www.cityofmandan.com/index.asp?SEC=39B6721C-AE8A-433B-9C55-258065537CD5&quot;, &quot;https://www.cityofmandan.com/citycommission&quot;]</td>
+            <td>2025-07-03T20:51:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:mandan/government</td>
+            <td>Craig Sjoberg</td>
+            <td>[&quot;Commissioner&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 391-6108</td>
+            <td>craig.sjoberg@cityofmandan.com</td>
+            <td>https://www.cityofmandan.com/index.asp?SEC=DCA72556-6E6D-47A2-9630-AAF2EF013EB6</td>
+            <td>2024</td>
+            <td>2028</td>
+            <td>https://www.cityofmandan.com/vertical/Sites/%7B38C3EFDC-F4D8-4D02-9E13-0987A081A7A4%7D/uploads/Craig_Sjoberg_-_use_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/mandan/images/fbd561719102cd2c91fd3a8f6dfc36833f62814e811084a61cab99d14da3ef32.jpg</td>
+            <td>[&quot;https://www.cityofmandan.com/citycommission&quot;, &quot;https://www.cityofmandan.com/index.asp?SEC=DCA72556-6E6D-47A2-9630-AAF2EF013EB6&quot;]</td>
+            <td>2025-07-03T20:51:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:mandan/government</td>
+            <td>Dennis Rohr</td>
+            <td>[&quot;Commissioner&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 471-4972</td>
+            <td>drohr@cityofmandan.com</td>
+            <td>https://www.cityofmandan.com/index.asp?Type=B_BASIC&amp;SEC=%7B5ED7AA3B-2E23-4E3B-88F6-6B7DD56EF766%7D</td>
+            <td>2022</td>
+            <td>2026</td>
+            <td>https://www.cityofmandan.com/vertical/Sites/%7B38C3EFDC-F4D8-4D02-9E13-0987A081A7A4%7D/uploads/DSC_0075_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/mandan/images/910a11df0a00f433cd4f23c17bb79dc5270d358641204fc447a1ebeb9f5d12e5.jpg</td>
+            <td>[&quot;https://www.cityofmandan.com/citycommission&quot;, &quot;https://www.cityofmandan.com/index.asp?Type=B_BASIC&amp;SEC=%7B5ED7AA3B-2E23-4E3B-88F6-6B7DD56EF766%7D&quot;]</td>
+            <td>2025-07-03T20:51:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:mandan/government</td>
+            <td>Mike Braun</td>
+            <td>[&quot;Commissioner&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 391-3667</td>
+            <td>mbraun@cityofmandan.com</td>
+            <td>https://www.cityofmandan.com/index.asp?Type=B_BASIC&amp;SEC=%7B16EEA163-A15F-46DB-AEC5-964C739284BF%7D</td>
+            <td>2024</td>
+            <td>2028</td>
+            <td>https://www.cityofmandan.com/vertical/Sites/%7B38C3EFDC-F4D8-4D02-9E13-0987A081A7A4%7D/uploads/DSC_1725_-_use_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/mandan/images/93166133bbd80a700b994a177705c814e5f34a94bf70fc8b358c966dce595e68.jpg</td>
+            <td>[&quot;https://www.cityofmandan.com/citycommission&quot;, &quot;https://www.cityofmandan.com/index.asp?Type=B_BASIC&amp;SEC=%7B16EEA163-A15F-46DB-AEC5-964C739284BF%7D&quot;]</td>
+            <td>2025-07-03T20:51:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:mandan/government</td>
+            <td>Ryan Heinsohn</td>
+            <td>[&quot;Commissioner&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 425-3398</td>
+            <td>ryan.heinsohn@cityofmandan.com</td>
+            <td>https://www.cityofmandan.com/index.asp?SEC=F3707545-FFD2-4ADE-80F2-8B086CEE25E3</td>
+            <td>2024-07-16</td>
+            <td>2026</td>
+            <td>https://www.cityofmandan.com/vertical/Sites/%7B38C3EFDC-F4D8-4D02-9E13-0987A081A7A4%7D/uploads/DSC_1055_-_use_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/mandan/images/eccc198ad975723e6b19a83520b9e40d4bc758f522bb94411f511aa984ad6419.jpg</td>
+            <td>[&quot;https://www.cityofmandan.com/citycommission&quot;, &quot;https://www.cityofmandan.com/index.asp?SEC=F3707545-FFD2-4ADE-80F2-8B086CEE25E3&quot;]</td>
+            <td>2025-07-03T20:51:30+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_snoqualmie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_snoqualmie</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:snoqualmie/government</td>
+            <td>Katherine Ross</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(425) 888-5307</td>
+            <td>mayor@snoqualmiewa.gov</td>
+            <td>https://www.snoqualmiewa.gov/793/Mayor-Katherine-Ross</td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.snoqualmiewa.gov/ImageRepository/Document?documentId=37501</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/snoqualmie/images/124b301a05c9aab3713004394513b409b7efdec375a409340868c6481317b572.jpg</td>
+            <td>[&quot;https://www.snoqualmiewa.gov/793/Mayor-Katherine-Ross&quot;]</td>
+            <td>2025-06-22T05:48:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:snoqualmie/government</td>
+            <td>Bryan Holloway</td>
+            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td>(425) 888-1555</td>
+            <td>bholloway@snoqualmiewa.gov</td>
+            <td>https://www.snoqualmiewa.gov/491/Bryan-Holloway</td>
+            <td>2006</td>
+            <td>2025-12-31</td>
+            <td>https://www.snoqualmiewa.gov/ImageRepository/Document?documentId=37593</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/snoqualmie/images/ad6e35745a5479e4b59177229e020978499c1a2863a4283cef8a7b8e61cf34bd.jpg</td>
+            <td>[&quot;https://www.snoqualmiewa.gov/526/City-Council&quot;, &quot;https://www.snoqualmiewa.gov/789/Rob-Wotton&quot;, &quot;https://www.snoqualmiewa.gov/491/Bryan-Holloway&quot;]</td>
+            <td>2025-06-22T05:48:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:snoqualmie/government</td>
+            <td>Ethan Benson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td>(425) 888-1555</td>
+            <td>ebenson@snoqualmiewa.gov</td>
+            <td>https://www.snoqualmiewa.gov/788/Ethan-Benson</td>
+            <td>2021-11</td>
+            <td>2025-12-31</td>
+            <td>https://www.snoqualmiewa.gov/ImageRepository/Document?documentId=37572</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/snoqualmie/images/4732537f12ab92c7ccb6e014e51c4767ea93f367c60dfe2759be195621a068f1.jpg</td>
+            <td>[&quot;https://www.snoqualmiewa.gov/526/City-Council&quot;, &quot;https://www.snoqualmiewa.gov/788/Ethan-Benson&quot;, &quot;https://www.snoqualmiewa.gov/789/Rob-Wotton&quot;]</td>
+            <td>2025-06-22T05:48:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:snoqualmie/government</td>
+            <td>Rob Wotton</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td>(425) 888-1555</td>
+            <td>rwotton@snoqualmiewa.gov</td>
+            <td>https://www.snoqualmiewa.gov/789/Rob-Wotton</td>
+            <td>2023-11</td>
+            <td>2027-12-31</td>
+            <td>https://www.snoqualmiewa.gov/ImageRepository/Document?documentId=37574</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/snoqualmie/images/6a168b4514bf4d0f6886b6cc5eb0195c0796886c217c83d3ba0785b3db5df98f.jpg</td>
+            <td>[&quot;https://www.snoqualmiewa.gov/526/City-Council&quot;, &quot;https://www.snoqualmiewa.gov/789/Rob-Wotton&quot;]</td>
+            <td>2025-06-22T05:48:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:snoqualmie/government</td>
+            <td>Louis Washington</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td>(425) 888-1555</td>
+            <td>lwashington@snoqualmiewa.gov</td>
+            <td>https://www.snoqualmiewa.gov/492/Louis-Washington</td>
+            <td>2023-11</td>
+            <td>2027-12-31</td>
+            <td>https://www.snoqualmiewa.gov/ImageRepository/Document?documentId=37503</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/snoqualmie/images/a2d23ac228cacd62223f99fedd5d1ef22e6dc48f9e0ca81955e75b796d83da25.jpg</td>
+            <td>[&quot;https://www.snoqualmiewa.gov/526/City-Council&quot;, &quot;https://www.snoqualmiewa.gov/789/Rob-Wotton&quot;, &quot;https://www.snoqualmiewa.gov/492/Louis-Washington&quot;]</td>
+            <td>2025-06-22T05:48:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:snoqualmie/government</td>
+            <td>Catherine Cotton</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td>(425) 888-1555</td>
+            <td>ccotton@snoqualmiewa.gov</td>
+            <td>https://www.snoqualmiewa.gov/490/Catherine-Cat-Cotton</td>
+            <td>2023-11</td>
+            <td>2025-12-31</td>
+            <td>https://www.snoqualmiewa.gov/ImageRepository/Document?documentId=37502</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/snoqualmie/images/97442e670f4017330ed31f0127d4e92e2dcf8a2b5e7eed627094c2cf18679e47.jpg</td>
+            <td>[&quot;https://www.snoqualmiewa.gov/526/City-Council&quot;, &quot;https://www.snoqualmiewa.gov/789/Rob-Wotton&quot;, &quot;https://www.snoqualmiewa.gov/490/Catherine-Cat-Cotton&quot;]</td>
+            <td>2025-06-22T05:48:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:snoqualmie/government</td>
+            <td>Cara Christensen</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td>(425) 888-1555</td>
+            <td>cchristensen@snoqualmiewa.gov</td>
+            <td>https://www.snoqualmiewa.gov/494/Cara-Christensen</td>
+            <td>2023-11</td>
+            <td>2027-12-31</td>
+            <td>https://www.snoqualmiewa.gov/ImageRepository/Document?documentId=37573</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/snoqualmie/images/aa55c02ad4f63f0de00468afdb3bb65d3885926db3db1c890fc49579b52e0648.jpg</td>
+            <td>[&quot;https://www.snoqualmiewa.gov/526/City-Council&quot;, &quot;https://www.snoqualmiewa.gov/789/Rob-Wotton&quot;, &quot;https://www.snoqualmiewa.gov/494/Cara-Christensen&quot;]</td>
+            <td>2025-06-22T05:48:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:snoqualmie/government</td>
+            <td>Jolyon Johnson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td>(425) 888-1555</td>
+            <td>jjohnson@snoqualmiewa.gov</td>
+            <td>https://www.snoqualmiewa.gov/787/Jolyon-Johnson</td>
+            <td>2021-11</td>
+            <td>2025-12-31</td>
+            <td>https://www.snoqualmiewa.gov/ImageRepository/Document?documentId=37588</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/snoqualmie/images/9086190a82cb6d4a8a045718bbd69a751e6ba11767e3fdcc20544b7e48608f10.jpg</td>
+            <td>[&quot;https://www.snoqualmiewa.gov/526/City-Council&quot;, &quot;https://www.snoqualmiewa.gov/789/Rob-Wotton&quot;, &quot;https://www.snoqualmiewa.gov/787/Jolyon-Johnson&quot;]</td>
+            <td>2025-06-22T05:48:07+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

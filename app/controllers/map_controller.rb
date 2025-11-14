@@ -65,6 +65,8 @@ class MapController < ApplicationController
       params[:sw_lat].to_f,
       params[:ne_lng].to_f,
       params[:ne_lat].to_f
+    ).select(
+        Arel.sql("name, state, geoid, ST_AsGeoJSON(ST_Simplify(geom, #{tolerance})) as geojson")
     )
 
     features = places_in_view.map do |place|

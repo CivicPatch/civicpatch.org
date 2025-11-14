@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_bainbridge_island</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_bainbridge_island</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bainbridge_island/government</td>
+            <td>Ashley Mathews</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;District 6&quot;, &quot;Ward South&quot;]</td>
+            <td>(206) 949-7413</td>
+            <td>amathews@bainbridgewa.gov</td>
+            <td>https://www.bainbridgewa.gov/Directory.aspx?EID=338</td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.bainbridgewa.gov/ImageRepository/Document?documentID=18418</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bainbridge_island/images/b53b7d2dc65530426ba3c8c65c96c84263fb4a28e57c63835f5af9fdb8f3aa9e.jpg</td>
+            <td>[&quot;https://bainbridgewa.gov/217/City-Council&quot;, &quot;https://www.bainbridgewa.gov/Directory.aspx?EID=338&quot;]</td>
+            <td>2025-06-22T03:31:36+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bainbridge_island/government</td>
+            <td>Jon Quitslund</td>
+            <td>[&quot;Deputy Mayor&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 3&quot;, &quot;Ward South&quot;]</td>
+            <td>(206) 450-6218</td>
+            <td>jquitslund@bainbridgewa.gov</td>
+            <td>https://www.bainbridgewa.gov/directory.aspx?EID=293</td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.bainbridgewa.gov/ImageRepository/Document?documentID=15697</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bainbridge_island/images/b49a0c73329eb65b175f8ba00d747e5f5b68e0728b3503f97716ff4c75f0f1ff.jpg</td>
+            <td>[&quot;https://bainbridgewa.gov/217/City-Council&quot;, &quot;https://www.bainbridgewa.gov/directory.aspx?EID=293&quot;]</td>
+            <td>2025-06-22T03:31:36+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bainbridge_island/government</td>
+            <td>Kirsten Hytopoulos</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;, &quot;District 1&quot;]</td>
+            <td>(206) 482-4958</td>
+            <td>khytopoulos@bainbridgewa.gov</td>
+            <td>https://www.bainbridgewa.gov/directory.aspx?EID=260</td>
+            <td>2019</td>
+            <td>2027-12-31</td>
+            <td>https://www.bainbridgewa.gov/ImageRepository/Document?documentID=18415</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bainbridge_island/images/42aae6784f544371db8a47d1397e59544533ad87e52be0032856d72e939ee619.jpg</td>
+            <td>[&quot;https://bainbridgewa.gov/217/City-Council&quot;, &quot;https://www.bainbridgewa.gov/directory.aspx?EID=260&quot;, &quot;https://www.bainbridgewa.gov/Directory.aspx?DID=14&quot;]</td>
+            <td>2025-06-22T03:31:36+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bainbridge_island/government</td>
+            <td>Brenda Fantroy-Johnson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 2&quot;, &quot;Ward North&quot;]</td>
+            <td>(206) 498-4294</td>
+            <td>bfantroy-johnson@bainbridgewa.gov</td>
+            <td>https://www.bainbridgewa.gov/directory.aspx?EID=274</td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.bainbridgewa.gov/ImageRepository/Document?documentID=18414</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bainbridge_island/images/981b1af24c91abea5478e38320de1386359c4a441fe88ab55df9f3a58284c3e3.jpg</td>
+            <td>[&quot;https://bainbridgewa.gov/217/City-Council&quot;, &quot;https://www.bainbridgewa.gov/directory.aspx?EID=274&quot;]</td>
+            <td>2025-06-22T03:31:36+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bainbridge_island/government</td>
+            <td>Leslie Schneider</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 4&quot;, &quot;Ward Central&quot;]</td>
+            <td>(206) 200-4502</td>
+            <td>lschneider@bainbridgewa.gov</td>
+            <td>https://www.bainbridgewa.gov/Directory.aspx?EID=250</td>
+            <td>2018</td>
+            <td>2027-12-31</td>
+            <td>https://www.bainbridgewa.gov/ImageRepository/Document?documentID=18417</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bainbridge_island/images/72cbc8b30617bd344ef3dd4bf0221cbd47bd29266203a2b84a90dee33737b181.jpg</td>
+            <td>[&quot;https://bainbridgewa.gov/217/City-Council&quot;, &quot;https://www.bainbridgewa.gov/Directory.aspx?EID=250&quot;]</td>
+            <td>2025-06-22T03:31:36+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bainbridge_island/government</td>
+            <td>Clarence Moriwaki</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 5&quot;, &quot;Ward Central&quot;]</td>
+            <td>(206) 491-6131</td>
+            <td>cmoriwaki@bainbridgewa.gov</td>
+            <td>https://www.bainbridgewa.gov/directory.aspx?EID=296</td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.bainbridgewa.gov/ImageRepository/Document?documentID=15698</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bainbridge_island/images/f30124de52b430ac4c80bccf7a90c7b6502e95b8c7b34d805217cb5cf0435163.jpg</td>
+            <td>[&quot;https://bainbridgewa.gov/217/City-Council&quot;, &quot;https://www.bainbridgewa.gov/directory.aspx?EID=296&quot;]</td>
+            <td>2025-06-22T03:31:36+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bainbridge_island/government</td>
+            <td>Joe Deets</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 7&quot;, &quot;Ward North&quot;]</td>
+            <td>(206) 473-1864</td>
+            <td>jdeets@bainbridgewa.gov</td>
+            <td>https://www.bainbridgewa.gov/directory.aspx?EID=229</td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.bainbridgewa.gov/ImageRepository/Document?documentID=18376</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bainbridge_island/images/1997397fe02ec597b38e44381d1e99a210155bc35dfd19378e43335b26b3a37b.jpg</td>
+            <td>[&quot;https://bainbridgewa.gov/217/City-Council&quot;, &quot;https://www.bainbridgewa.gov/directory.aspx?EID=229&quot;]</td>
+            <td>2025-06-22T03:31:36+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

@@ -1,0 +1,253 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_berkeley</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_berkeley</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:berkeley/government</td>
+            <td>Adena Ishii</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(510) 981-7100</td>
+            <td>mayor@berkeleyca.gov</td>
+            <td>https://berkeleyca.gov/your-government/city-council/council-roster/adena-ishii</td>
+            <td>2024-11</td>
+            <td>2028-11-30</td>
+            <td>https://berkeleyca.gov/sites/default/files/elected-office-holder/adena-ishii.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/berkeley/images/e7557f440e3953874d17500fb1d408409c6ca5db5270a1740186af089667b2bd.jpg</td>
+            <td>[&quot;https://berkeleyca.gov/your-government/city-council/council-roster&quot;, &quot;https://berkeleyca.gov/your-government/city-council/council-roster/adena-ishii&quot;]</td>
+            <td>2025-07-17T19:35:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:berkeley/government</td>
+            <td>Rashi Kesarwani</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 1&quot;]</td>
+            <td>(510) 981-7110</td>
+            <td>rkesarwani@berkeleyca.gov</td>
+            <td>https://berkeleyca.gov/your-government/city-council/council-roster/rashi-kesarwani</td>
+            <td>2018-11</td>
+            <td>2026-11-30</td>
+            <td>https://berkeleyca.gov/sites/default/files/elected-office-holder/kesarwani.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/berkeley/images/f50c4e17730b877ef054970b1d604802f07f873fc86f77867ec46ade76b82ae2.jpg</td>
+            <td>[&quot;https://berkeleyca.gov/your-government/city-council/council-roster&quot;, &quot;https://berkeleyca.gov/your-government/city-council/council-roster/rashi-kesarwani&quot;]</td>
+            <td>2025-07-17T19:35:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:berkeley/government</td>
+            <td>Terry Taplin</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 2&quot;]</td>
+            <td>(510) 981-7120</td>
+            <td>ttaplin@berkeleyca.gov</td>
+            <td>https://berkeleyca.gov/your-government/city-council/council-roster/terry-taplin</td>
+            <td>2020-11</td>
+            <td>2028-11-30</td>
+            <td>https://berkeleyca.gov/sites/default/files/elected-office-holder/Terry%20Taplin.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/berkeley/images/0bd98aa36058dbb014cae93e2b187f947816b8ea63fd06d639f1d9478fed90fd.jpg</td>
+            <td>[&quot;https://berkeleyca.gov/your-government/city-council/council-roster&quot;, &quot;https://berkeleyca.gov/your-government/city-council/council-roster/terry-taplin&quot;]</td>
+            <td>2025-07-17T19:35:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:berkeley/government</td>
+            <td>Ben Bartlett</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 3&quot;]</td>
+            <td>(510) 981-7130</td>
+            <td>bbartlett@berkeleyca.gov</td>
+            <td>https://berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett</td>
+            <td>2016-11</td>
+            <td>2028-11-30</td>
+            <td>https://berkeleyca.gov/sites/default/files/elected-office-holder/Ben-Bartlet.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/berkeley/images/921c1782f30d2868a72cd092344fdac8cf6a8e64230431a3550e0f7c489510c2.jpg</td>
+            <td>[&quot;https://berkeleyca.gov/your-government/city-council/council-roster&quot;, &quot;https://berkeleyca.gov/your-government/city-council/council-roster/ben-bartlett&quot;]</td>
+            <td>2025-07-17T19:35:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:berkeley/government</td>
+            <td>Igor Tregub</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 4&quot;]</td>
+            <td>(510) 981-7140</td>
+            <td>itregub@berkeleyca.gov</td>
+            <td>https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub</td>
+            <td>2024-05</td>
+            <td>2026-11-30</td>
+            <td>https://berkeleyca.gov/sites/default/files/elected-office-holder/Igor-Tregub-headshot.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/berkeley/images/9431882364f9925395faecc5080656cb76e3ea07ea1782b2a6107684c5821ad8.jpg</td>
+            <td>[&quot;https://berkeleyca.gov/your-government/city-council/council-roster&quot;, &quot;https://berkeleyca.gov/your-government/city-council/council-roster/igor-tregub&quot;]</td>
+            <td>2025-07-17T19:35:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:berkeley/government</td>
+            <td>Shoshana O’Keefe</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 5&quot;]</td>
+            <td>(510) 981-7150</td>
+            <td>sokeefe@berkeleyca.gov</td>
+            <td>https://berkeleyca.gov/your-government/city-council/council-roster/shoshana-o-keefe</td>
+            <td>2024-11</td>
+            <td>2028-11-30</td>
+            <td>https://berkeleyca.gov/sites/default/files/elected-office-holder/OKeefe240628-499.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/berkeley/images/7a3e7872955da2f1a6920f7131dc3efdc6897e12dfd0ba7df300891bcb353d47.jpg</td>
+            <td>[&quot;https://berkeleyca.gov/your-government/city-council/council-roster&quot;, &quot;https://berkeleyca.gov/your-government/city-council/council-roster/shoshana-o-keefe&quot;]</td>
+            <td>2025-07-17T19:35:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:berkeley/government</td>
+            <td>Brent Blackaby</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 6&quot;]</td>
+            <td>(510) 981-7160</td>
+            <td>bblackaby@berkeleyca.gov</td>
+            <td>https://berkeleyca.gov/your-government/city-council/council-roster/brent-blackaby</td>
+            <td>2024-11</td>
+            <td>2028-11-30</td>
+            <td>https://berkeleyca.gov/sites/default/files/elected-office-holder/brent_blackaby_square_headshot-medium.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/berkeley/images/240d30244a5263c6494f466d638e7ff6f994f333ee6811bc0e90d7acc8c5db27.jpg</td>
+            <td>[&quot;https://berkeleyca.gov/your-government/city-council/council-roster&quot;, &quot;https://berkeleyca.gov/your-government/city-council/council-roster/brent-blackaby&quot;]</td>
+            <td>2025-07-17T19:35:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:berkeley/government</td>
+            <td>Cecilia Lunaparra</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 7&quot;]</td>
+            <td>(510) 981-7170</td>
+            <td>clunaparra@berkeleyca.gov</td>
+            <td>https://berkeleyca.gov/your-government/city-council/council-roster/cecilia-lunaparra</td>
+            <td>2024-04</td>
+            <td>2026-11-30</td>
+            <td>https://berkeleyca.gov/sites/default/files/elected-office-holder/cecilia-lunaparra.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/berkeley/images/e6fc3dfde54f3139d368c40e579fa8a3ee9347f4a69f7a8e367b2b1ed68d918d.jpg</td>
+            <td>[&quot;https://berkeleyca.gov/your-government/city-council/council-roster&quot;, &quot;https://berkeleyca.gov/your-government/city-council/council-roster/cecilia-lunaparra&quot;]</td>
+            <td>2025-07-17T19:35:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:berkeley/government</td>
+            <td>Mark Humbert</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 8&quot;]</td>
+            <td>(510) 981-7180</td>
+            <td>mhumbert@berkeleyca.gov</td>
+            <td>https://berkeleyca.gov/your-government/city-council/council-roster/mark-humbert</td>
+            <td>2022-11</td>
+            <td>2026-11-30</td>
+            <td>https://berkeleyca.gov/sites/default/files/elected-office-holder/Mark-Humbert-300px.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/berkeley/images/f4b1b3da912a7ad334d72815edbf8c8fef3411992a06491a8a3960f92af0dbcf.jpg</td>
+            <td>[&quot;https://berkeleyca.gov/your-government/city-council/council-roster&quot;, &quot;https://berkeleyca.gov/your-government/city-council/council-roster/mark-humbert&quot;]</td>
+            <td>2025-07-17T19:35:42+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

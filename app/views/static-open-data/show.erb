@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title><%= city_name %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1><%= city_name %></h1>
+
+  <table>
+    <thead>
+      <tr>
+        <% people.first&.keys&.each do |field| %>
+          <th><%= field.capitalize %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% people.each do |person| %>
+        <tr>
+          <% person.each do |k, v| %>
+            <td><%= v %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
+</html>

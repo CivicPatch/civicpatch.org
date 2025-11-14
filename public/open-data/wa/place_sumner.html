@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_sumner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_sumner</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:sumner/government</td>
+            <td>Kathy Hayden</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(253) 299-5790</td>
+            <td>khayden@sumnerwa.gov</td>
+            <td>https://sumnerwa.gov/mayor</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>[&quot;https://sumnerwa.gov/mayor&quot;]</td>
+            <td>2025-06-23T01:03:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:sumner/government</td>
+            <td>Andy Elfers</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(253) 299-5791</td>
+            <td>aelfers@sumnerwa.gov</td>
+            <td></td>
+            <td>2024</td>
+            <td>2027</td>
+            <td>https://sumnerwa.gov/wp-content/uploads/2023/12/ElfersHeadShot-150x150.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/sumner/images/719e57303efd5fe00e8b38edc6d55a74bf782e90c663d7b3c6b8e9c94b80e61a.jpg</td>
+            <td>[&quot;https://sumnerwa.gov/council&quot;]</td>
+            <td>2025-06-23T01:03:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:sumner/government</td>
+            <td>Barbara Bitetto</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(253) 299-5791</td>
+            <td>bbitetto@sumnerwa.gov</td>
+            <td></td>
+            <td>2022</td>
+            <td>2025</td>
+            <td>https://sumnerwa.gov/wp-content/uploads/2020/01/Barbara-Bitetto-150x150.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/sumner/images/aca05cc3f3c327d6b239173d085dd378e76d739086089c943f96fa27f7e0be64.jpg</td>
+            <td>[&quot;https://sumnerwa.gov/council&quot;]</td>
+            <td>2025-06-23T01:03:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:sumner/government</td>
+            <td>Carla Bowman</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(253) 299-5791</td>
+            <td>cbowman@sumnerwa.gov</td>
+            <td></td>
+            <td>2024</td>
+            <td>2027</td>
+            <td>https://sumnerwa.gov/wp-content/uploads/2023/12/Bowman-150x150.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/sumner/images/347f22b0a1c5658f6ae9abe8906d3cf162d03db136081519e95bba89d715c5c4.jpg</td>
+            <td>[&quot;https://sumnerwa.gov/council&quot;]</td>
+            <td>2025-06-23T01:03:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:sumner/government</td>
+            <td>Greg Reinke</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(253) 299-5791</td>
+            <td>greinke@sumnerwa.gov</td>
+            <td></td>
+            <td>2024</td>
+            <td>2025</td>
+            <td>https://sumnerwa.gov/wp-content/uploads/2024/05/Reinke-2-scaled-e1715209952726-150x150.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/sumner/images/e350e369a968bdbf94011f21d76c6a46256136cc0e50bfafacfb0a0aaa6d591b.jpg</td>
+            <td>[&quot;https://sumnerwa.gov/council&quot;]</td>
+            <td>2025-06-23T01:03:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:sumner/government</td>
+            <td>Matt Kenna</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(253) 299-5791</td>
+            <td>mkenna@sumnerwa.gov</td>
+            <td></td>
+            <td>2024</td>
+            <td>2025</td>
+            <td>https://sumnerwa.gov/wp-content/uploads/2025/06/Kenna2-e1750099881321-150x150.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/sumner/images/9eeabe9a4041160b0bfc73007f1787b886827f24b5433409783b11e3f52e3aa3.jpg</td>
+            <td>[&quot;https://sumnerwa.gov/council&quot;]</td>
+            <td>2025-06-23T01:03:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:sumner/government</td>
+            <td>Pat Clerget</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(253) 299-5791</td>
+            <td>pclerget@sumnerwa.gov</td>
+            <td></td>
+            <td>2024</td>
+            <td>2025</td>
+            <td>https://sumnerwa.gov/wp-content/uploads/2024/03/Pat-Clerget-2-scaled-e1709660566101-150x150.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/sumner/images/69a4a03ee82cdee80d32f142b4336b91452855852ff231b9abd926b311a33ade.jpg</td>
+            <td>[&quot;https://sumnerwa.gov/council&quot;]</td>
+            <td>2025-06-23T01:03:32+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:sumner/government</td>
+            <td>Pat Cole</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(253) 299-5791</td>
+            <td>pcole@sumnerwa.gov</td>
+            <td></td>
+            <td>2022</td>
+            <td>2025</td>
+            <td>https://sumnerwa.gov/wp-content/uploads/2021/12/Pat-Cole-150x150.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/sumner/images/1148328b5106aaf5a1417a9c2c81630a5ab10f9739fe8b7c3873e44c24aa6c73.jpg</td>
+            <td>[&quot;https://sumnerwa.gov/council&quot;]</td>
+            <td>2025-06-23T01:03:32+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

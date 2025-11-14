@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_alamosa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_alamosa</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:alamosa/government</td>
+            <td>Ty Coleman</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(719) 313-7241</td>
+            <td></td>
+            <td>https://cityofalamosa.org/mayor</td>
+            <td></td>
+            <td></td>
+            <td>https://cityofalamosa.org/wp-content/uploads/2022/02/IMG_0479-683x1024.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/co/alamosa/images/330c748392a7e8051c8e5e551c43e7669988e7bfa6ade0f81733b5695e6fff86.jpg</td>
+            <td>[&quot;https://cityofalamosa.org/team/city-council&quot;, &quot;https://cityofalamosa.org/mayor&quot;]</td>
+            <td>2025-06-30T17:01:59+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:alamosa/government</td>
+            <td>Jan Vigil</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(970) 946-5611</td>
+            <td></td>
+            <td>https://cityofalamosa.org/councilor-at-large-vigil</td>
+            <td></td>
+            <td></td>
+            <td>https://cityofalamosa.org/wp-content/uploads/2022/02/IMG_0490-683x1024.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/co/alamosa/images/2927d180be796f0b55a7442a10c4b4a3f86a27e297fdf35cd2364ebe218e0179.jpg</td>
+            <td>[&quot;https://cityofalamosa.org/team/city-council&quot;, &quot;https://cityofalamosa.org/councilor-at-large-vigil&quot;]</td>
+            <td>2025-06-30T17:01:59+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:alamosa/government</td>
+            <td>Michael Carson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(719) 992-4839</td>
+            <td></td>
+            <td>https://cityofalamosa.org/councilor-at-large-daniel</td>
+            <td></td>
+            <td></td>
+            <td>https://cityofalamosa.org/wp-content/uploads/2022/02/IMG_9183.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/co/alamosa/images/3e64490dc1cf5225a9c48fe3dac710d83b31ca66bb932b477d871d307f32fd79.jpg</td>
+            <td>[&quot;https://cityofalamosa.org/team/city-council&quot;, &quot;https://cityofalamosa.org/councilor-at-large-daniel&quot;]</td>
+            <td>2025-06-30T17:01:59+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:alamosa/government</td>
+            <td>Liz Hensley</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 1&quot;]</td>
+            <td>(719) 580-0201</td>
+            <td></td>
+            <td>https://cityofalamosa.org/city-councilor-ward-1</td>
+            <td></td>
+            <td></td>
+            <td>https://cityofalamosa.org/wp-content/uploads/2022/02/IMG_0486.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/co/alamosa/images/cf42cdae3deb9921575019fe58a4f31f51cdd37351bffe1a27022af08e1aa675.jpg</td>
+            <td>[&quot;https://cityofalamosa.org/team/city-council&quot;, &quot;https://cityofalamosa.org/city-councilor-ward-1&quot;]</td>
+            <td>2025-06-30T17:01:59+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:alamosa/government</td>
+            <td>Dawn Krebs</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 2&quot;]</td>
+            <td>(719) 580-2194</td>
+            <td></td>
+            <td>https://cityofalamosa.org/city-councilor-ward-2</td>
+            <td></td>
+            <td></td>
+            <td>https://cityofalamosa.org/wp-content/uploads/2022/02/IMG_9105-683x1024.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/co/alamosa/images/7ba138d6964067a1250396d3b0856287a0967787572036cb47f6703b9a72b215.jpg</td>
+            <td>[&quot;https://cityofalamosa.org/team/city-council&quot;, &quot;https://cityofalamosa.org/city-councilor-ward-2&quot;]</td>
+            <td>2025-06-30T17:01:59+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:alamosa/government</td>
+            <td>Jackie Vigil</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 3&quot;]</td>
+            <td>(719) 992-8008</td>
+            <td></td>
+            <td>https://cityofalamosa.org/mayorprotem-ward3</td>
+            <td></td>
+            <td></td>
+            <td>https://cityofalamosa.org/wp-content/uploads/2022/02/JackieVigil-683x1024.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/co/alamosa/images/ddc9baa5a1dfcc7276d8f26e050aa867575cca21be9ad560fd044f199fbd1812.jpg</td>
+            <td>[&quot;https://cityofalamosa.org/mayorprotem-ward3&quot;, &quot;https://cityofalamosa.org/team/city-council&quot;, &quot;https://cityofalamosa.org/mayor&quot;]</td>
+            <td>2025-06-30T17:01:59+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:alamosa/government</td>
+            <td>Jamie Dominguez</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 4&quot;]</td>
+            <td>(719) 937-3039</td>
+            <td></td>
+            <td>https://cityofalamosa.org/city-councilor-ward-4</td>
+            <td></td>
+            <td></td>
+            <td>https://cityofalamosa.org/wp-content/uploads/2022/02/JamieDominguez-scaled.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/co/alamosa/images/986fba6ff59df47feba3453158ab68d03f8eab5a50e105fd1667a724dd7a46c7.jpg</td>
+            <td>[&quot;https://cityofalamosa.org/team/city-council&quot;, &quot;https://cityofalamosa.org/city-councilor-ward-2&quot;, &quot;https://cityofalamosa.org/city-councilor-ward-4&quot;]</td>
+            <td>2025-06-30T17:01:59+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

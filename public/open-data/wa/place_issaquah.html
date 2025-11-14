@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_issaquah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_issaquah</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:issaquah/government</td>
+            <td>Mary Lou Pauly</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(425) 837-3020</td>
+            <td>mayor@issaquahwa.gov</td>
+            <td>https://www.issaquahwa.gov/528/Mary-Lou-Pauly-Mayor</td>
+            <td>2021-11-02</td>
+            <td>2025-12-31</td>
+            <td>https://www.issaquahwa.gov/ImageRepository/Document?documentId=8736</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/issaquah/images/d7a6c6538de8d176b8feb666f2c007273e9b5acd8d1f475053427302f4accc63.jpg</td>
+            <td>[&quot;https://www.issaquahwa.gov/528/Mary-Lou-Pauly-Mayor&quot;, &quot;https://www.issaquahwa.gov/27/Your-Government&quot;, &quot;https://www.issaquahwa.gov/532/Chris-Reh-Councilmember&quot;, &quot;https://www.issaquahwa.gov/534/Tola-Marts-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3183/Zach-Hall-Councilmember&quot;, &quot;https://www.issaquahwa.gov/531/Lindsey-Walsh-Council-President&quot;, &quot;https://www.issaquahwa.gov/3322/Russell-Joe-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3138/Barbara-de-Michele-Deputy-Council-Presid&quot;]</td>
+            <td>2025-06-21T04:52:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:issaquah/government</td>
+            <td>Lindsey Walsh</td>
+            <td>[&quot;Council President&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td>(425) 918-2512</td>
+            <td>lindseyw@issaquahwa.gov</td>
+            <td>https://www.issaquahwa.gov/531/Lindsey-Walsh-Council-President</td>
+            <td>2023-11-07</td>
+            <td>2027-12-31</td>
+            <td>https://www.issaquahwa.gov/ImageRepository/Document?documentId=8672</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/issaquah/images/b90b4666fb405cc218cce6469c5220bfc323f371aa4c266ff7f91ee46c9270ee.jpg</td>
+            <td>[&quot;https://www.issaquahwa.gov/528/Mary-Lou-Pauly-Mayor&quot;, &quot;https://www.issaquahwa.gov/27/Your-Government&quot;, &quot;https://www.issaquahwa.gov/532/Chris-Reh-Councilmember&quot;, &quot;https://www.issaquahwa.gov/534/Tola-Marts-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3183/Zach-Hall-Councilmember&quot;, &quot;https://www.issaquahwa.gov/531/Lindsey-Walsh-Council-President&quot;, &quot;https://www.issaquahwa.gov/3322/Russell-Joe-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3138/Barbara-de-Michele-Deputy-Council-Presid&quot;]</td>
+            <td>2025-06-21T04:52:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:issaquah/government</td>
+            <td>Barbara de Michele</td>
+            <td>[&quot;Deputy Council President&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td>(425) 436-1577</td>
+            <td>barbd@issaquahwa.gov</td>
+            <td>https://www.issaquahwa.gov/3138/Barbara-de-Michele-Deputy-Council-Presid</td>
+            <td>2021-11-02</td>
+            <td>2025-12-31</td>
+            <td>https://www.issaquahwa.gov/ImageRepository/Document?documentId=8670</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/issaquah/images/f24549033ff9dd87ebdf04fd38b5976f8e1c036bda3712ed0891c2de6d86560c.jpg</td>
+            <td>[&quot;https://www.issaquahwa.gov/528/Mary-Lou-Pauly-Mayor&quot;, &quot;https://www.issaquahwa.gov/27/Your-Government&quot;, &quot;https://www.issaquahwa.gov/532/Chris-Reh-Councilmember&quot;, &quot;https://www.issaquahwa.gov/534/Tola-Marts-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3183/Zach-Hall-Councilmember&quot;, &quot;https://www.issaquahwa.gov/531/Lindsey-Walsh-Council-President&quot;, &quot;https://www.issaquahwa.gov/3322/Russell-Joe-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3138/Barbara-de-Michele-Deputy-Council-Presid&quot;]</td>
+            <td>2025-06-21T04:52:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:issaquah/government</td>
+            <td>Chris Reh</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td>(425) 436-1553</td>
+            <td>chrisr@issaquahwa.gov</td>
+            <td>https://www.issaquahwa.gov/532/Chris-Reh-Councilmember</td>
+            <td>2021-11-02</td>
+            <td>2025-12-31</td>
+            <td>https://www.issaquahwa.gov/ImageRepository/Document?documentId=8671</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/issaquah/images/2eb40b4518d1d20f28c000e13dd15ebfaa4379b8831b76817e562a2d65ca7e87.jpg</td>
+            <td>[&quot;https://www.issaquahwa.gov/528/Mary-Lou-Pauly-Mayor&quot;, &quot;https://www.issaquahwa.gov/27/Your-Government&quot;, &quot;https://www.issaquahwa.gov/532/Chris-Reh-Councilmember&quot;, &quot;https://www.issaquahwa.gov/534/Tola-Marts-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3183/Zach-Hall-Councilmember&quot;, &quot;https://www.issaquahwa.gov/531/Lindsey-Walsh-Council-President&quot;, &quot;https://www.issaquahwa.gov/3322/Russell-Joe-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3138/Barbara-de-Michele-Deputy-Council-Presid&quot;]</td>
+            <td>2025-06-21T04:52:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:issaquah/government</td>
+            <td>Zach Hall</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td>(425) 436-1554</td>
+            <td>zachh@issaquahwa.gov</td>
+            <td>https://www.issaquahwa.gov/3183/Zach-Hall-Councilmember</td>
+            <td>2023-11</td>
+            <td>2027-12-31</td>
+            <td>https://www.issaquahwa.gov/ImageRepository/Document?documentId=8676</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/issaquah/images/b9546361cd463c518ac5a549dad049d146e275d24d8463d3cc32a04016738864.jpg</td>
+            <td>[&quot;https://www.issaquahwa.gov/528/Mary-Lou-Pauly-Mayor&quot;, &quot;https://www.issaquahwa.gov/27/Your-Government&quot;, &quot;https://www.issaquahwa.gov/532/Chris-Reh-Councilmember&quot;, &quot;https://www.issaquahwa.gov/534/Tola-Marts-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3183/Zach-Hall-Councilmember&quot;, &quot;https://www.issaquahwa.gov/531/Lindsey-Walsh-Council-President&quot;, &quot;https://www.issaquahwa.gov/3322/Russell-Joe-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3138/Barbara-de-Michele-Deputy-Council-Presid&quot;]</td>
+            <td>2025-06-21T04:52:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:issaquah/government</td>
+            <td>Russell Joe</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td>(425) 667-0126</td>
+            <td>russellj@issaquahwa.gov</td>
+            <td>https://www.issaquahwa.gov/3322/Russell-Joe-Councilmember</td>
+            <td>2021-11-02</td>
+            <td>2025-12-31</td>
+            <td>https://www.issaquahwa.gov/ImageRepository/Document?documentId=8673</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/issaquah/images/6e9679b83b8757427a7421e2cd51f74b5781c4abb40ed3e427c527716e24c328.jpg</td>
+            <td>[&quot;https://www.issaquahwa.gov/528/Mary-Lou-Pauly-Mayor&quot;, &quot;https://www.issaquahwa.gov/27/Your-Government&quot;, &quot;https://www.issaquahwa.gov/532/Chris-Reh-Councilmember&quot;, &quot;https://www.issaquahwa.gov/534/Tola-Marts-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3183/Zach-Hall-Councilmember&quot;, &quot;https://www.issaquahwa.gov/531/Lindsey-Walsh-Council-President&quot;, &quot;https://www.issaquahwa.gov/3322/Russell-Joe-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3138/Barbara-de-Michele-Deputy-Council-Presid&quot;]</td>
+            <td>2025-06-21T04:52:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:issaquah/government</td>
+            <td>Kelly Jiang</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td>(425) 521-0240</td>
+            <td>kelly.jiang@issaquahwa.gov</td>
+            <td>https://www.issaquahwa.gov/3556/Kelly-Jiang-Councilmember</td>
+            <td>2025-02-10</td>
+            <td>2025-11</td>
+            <td>https://www.issaquahwa.gov/ImageRepository/Document?documentId=11487</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/issaquah/images/234c127d784f26f54dc1639bcac0d75819cfa9eb2a0dc3ad78bc1bcca5a9eb1c.png</td>
+            <td>[&quot;https://www.issaquahwa.gov/528/Mary-Lou-Pauly-Mayor&quot;, &quot;https://www.issaquahwa.gov/27/Your-Government&quot;, &quot;https://www.issaquahwa.gov/532/Chris-Reh-Councilmember&quot;, &quot;https://www.issaquahwa.gov/534/Tola-Marts-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3183/Zach-Hall-Councilmember&quot;, &quot;https://www.issaquahwa.gov/531/Lindsey-Walsh-Council-President&quot;, &quot;https://www.issaquahwa.gov/3556/Kelly-Jiang-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3322/Russell-Joe-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3138/Barbara-de-Michele-Deputy-Council-Presid&quot;]</td>
+            <td>2025-06-21T04:52:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:issaquah/government</td>
+            <td>Tola Marts</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td>(425) 829-0812</td>
+            <td>tolam@issaquahwa.gov</td>
+            <td>https://www.issaquahwa.gov/534/Tola-Marts-Councilmember</td>
+            <td>2021-11-02</td>
+            <td>2025-12-31</td>
+            <td>https://www.issaquahwa.gov/ImageRepository/Document?documentId=8674</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/issaquah/images/3fdfafc1c229552f825067f4c5da40b532a75617718f665b3d8299e05414efcf.jpg</td>
+            <td>[&quot;https://www.issaquahwa.gov/528/Mary-Lou-Pauly-Mayor&quot;, &quot;https://www.issaquahwa.gov/27/Your-Government&quot;, &quot;https://www.issaquahwa.gov/532/Chris-Reh-Councilmember&quot;, &quot;https://www.issaquahwa.gov/534/Tola-Marts-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3183/Zach-Hall-Councilmember&quot;, &quot;https://www.issaquahwa.gov/531/Lindsey-Walsh-Council-President&quot;, &quot;https://www.issaquahwa.gov/3322/Russell-Joe-Councilmember&quot;, &quot;https://www.issaquahwa.gov/3138/Barbara-de-Michele-Deputy-Council-Presid&quot;]</td>
+            <td>2025-06-21T04:52:42+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

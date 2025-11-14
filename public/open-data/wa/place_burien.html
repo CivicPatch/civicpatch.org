@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_burien</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_burien</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:burien/government</td>
+            <td>Kevin Schilling</td>
+            <td>[&quot;Mayor&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td>(206) 241-4647</td>
+            <td>kevins@burienwa.gov</td>
+            <td>https://www.burienwa.gov/city_hall/city_council/mayor_kevin_schilling</td>
+            <td>2024-01-01</td>
+            <td>2027-12-31</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11045935/Image/City%20Hall/City%20Council/Kevin-Schilling-2024.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/burien/images/b7b7e7c03136b6b084e54f36d799117942258dd837c4149c151e2609d7dfde07.jpg</td>
+            <td>[&quot;https://www.burienwa.gov/city_hall&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/mayor_kevin_schilling&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/linda_akey&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/alex_andrade&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/deputy_mayor_stephanie_mora&quot;]</td>
+            <td>2025-06-21T03:01:10+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:burien/government</td>
+            <td>Sarah Moore</td>
+            <td>[&quot;Deputy Mayor&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td>(206) 241-4647</td>
+            <td>sarahm@burienwa.gov</td>
+            <td>https://www.burienwa.gov/city_hall/city_council/sarah_moore</td>
+            <td>2022-01-01</td>
+            <td>2025-12-31</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11045935/Image/City%20Hall/City%20Council/Sarah-Moore-2024.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/burien/images/2fd9f27bcbecae432b04528500b71d8df5eed59134e2492338ecf92d5b55efb4.jpg</td>
+            <td>[&quot;https://www.burienwa.gov/city_hall&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/mayor_kevin_schilling&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/sarah_moore&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/linda_akey&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/alex_andrade&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/deputy_mayor_stephanie_mora&quot;]</td>
+            <td>2025-06-21T03:01:10+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:burien/government</td>
+            <td>Stephanie Mora</td>
+            <td>[&quot;Deputy Mayor&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td>(206) 241-4647</td>
+            <td>stephaniem@burienwa.gov</td>
+            <td>https://www.burienwa.gov/city_hall/city_council/deputy_mayor_stephanie_mora</td>
+            <td>2022-01-01</td>
+            <td>2025-12-31</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11045935/Image/City%20Hall/City%20Council/Stephanie-Mora-2024.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/burien/images/440725f766930db19a40f5f7c3b922e27ad36855a02bae7b5e12ae4e4f58be2c.jpg</td>
+            <td>[&quot;https://www.burienwa.gov/city_hall&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/mayor_kevin_schilling&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/linda_akey&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/alex_andrade&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/deputy_mayor_stephanie_mora&quot;]</td>
+            <td>2025-06-21T03:01:10+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:burien/government</td>
+            <td>Hugo Garcia</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td>(206) 241-4647</td>
+            <td>hugog@burienwa.gov</td>
+            <td>https://www.burienwa.gov/city_hall/city_council/hugo_garcia</td>
+            <td>2022-01-01</td>
+            <td>2025-12-31</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11045935/Image/City%20Hall/City%20Council/Hugo-Garcia-2024.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/burien/images/f32ddbb03f87d71397b0c61910ccb5ca2b1b8e8bd92bf4bf9660ad66778ac629.jpg</td>
+            <td>[&quot;https://www.burienwa.gov/city_hall&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/mayor_kevin_schilling&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/hugo_garcia&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/linda_akey&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/alex_andrade&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/deputy_mayor_stephanie_mora&quot;]</td>
+            <td>2025-06-21T03:01:10+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:burien/government</td>
+            <td>Linda Akey</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td>(206) 241-4647</td>
+            <td>lindaa@burienwa.gov</td>
+            <td>https://www.burienwa.gov/city_hall/city_council/linda_akey</td>
+            <td>2024-01-01</td>
+            <td>2027-12-31</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11045935/Image/City%20Hall/City%20Council/Linda-Akey-2024.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/burien/images/dcbe774bae6d8f2f068d7545d28cb5ffc29fb2cb653bcec69303ed0cad0d1faa.jpg</td>
+            <td>[&quot;https://www.burienwa.gov/city_hall&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/mayor_kevin_schilling&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/linda_akey&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/alex_andrade&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/deputy_mayor_stephanie_mora&quot;]</td>
+            <td>2025-06-21T03:01:10+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:burien/government</td>
+            <td>Jimmy Matta</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td>(206) 241-4647</td>
+            <td>Jimmym@burienwa.gov</td>
+            <td>https://www.burienwa.gov/city_hall/city_council/jimmy_matta</td>
+            <td>2022-01-01</td>
+            <td>2025-12-31</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11045935/Image/City%20Hall/City%20Council/Jimmy-Matta-2024-web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/burien/images/bc8e093a550e0b082d6973a30be2f04bf445cdfa88ea67cb45522b72cb4f5758.jpg</td>
+            <td>[&quot;https://www.burienwa.gov/city_hall/city_council/jimmy_matta&quot;, &quot;https://www.burienwa.gov/city_hall&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/mayor_kevin_schilling&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/linda_akey&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/alex_andrade&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/deputy_mayor_stephanie_mora&quot;]</td>
+            <td>2025-06-21T03:01:10+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:burien/government</td>
+            <td>Alex Andrade</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td>(206) 241-4647</td>
+            <td>alexa@burienwa.gov</td>
+            <td>https://www.burienwa.gov/city_hall/city_council/alex_andrade</td>
+            <td>2024-01-01</td>
+            <td>2027-12-31</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11045935/Image/City%20Hall/City%20Council/Alex-Andrade-2024.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/burien/images/81b25a471e16417df243ff948ce041277c8c435b864159d26808cadc8383dbb8.png</td>
+            <td>[&quot;https://www.burienwa.gov/city_hall&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/mayor_kevin_schilling&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/linda_akey&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/alex_andrade&quot;, &quot;https://www.burienwa.gov/city_hall/city_council/deputy_mayor_stephanie_mora&quot;]</td>
+            <td>2025-06-21T03:01:10+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

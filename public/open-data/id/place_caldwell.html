@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_caldwell</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_caldwell</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:caldwell/government</td>
+            <td>Jarom Wagoner</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 455-3000</td>
+            <td>mayorsoffice@cityofcaldwell.org</td>
+            <td>https://www.cityofcaldwell.org/Government/Mayor/About-the-Mayor</td>
+            <td>2021-11</td>
+            <td>2025</td>
+            <td>https://www.cityofcaldwell.org/files/assets/city/v/2/mayors-office/images/portrait_jarom-wagoner.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/caldwell/images/c842ec98bd18f5abea872815ad4a438baf9b35d56e27d1bb74947ce1c2398bf6.jpg</td>
+            <td>[&quot;https://www.cityofcaldwell.org/Government/Mayor/About-the-Mayor&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-4&quot;]</td>
+            <td>2025-07-13T02:45:40+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:caldwell/government</td>
+            <td>Brad Doty</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Seat 1&quot;]</td>
+            <td>(208) 504-9520</td>
+            <td>bdoty@cityofcaldwell.org</td>
+            <td>https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-1</td>
+            <td>2022-01</td>
+            <td></td>
+            <td>https://www.cityofcaldwell.org/files/assets/city/v/3/city-clerk/images/portrait_councilor-brad-doty.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
+            <td>https://cdn.civicpatch.org/open-data/id/caldwell/images/f622e83feadc3ce47c9c84028dd505259062e68c13cf09ffbb329a0bea352aac.jpg</td>
+            <td>[&quot;https://www.cityofcaldwell.org/Government/Mayor/About-the-Mayor&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-1&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-4&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-6&quot;]</td>
+            <td>2025-07-13T02:45:40+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:caldwell/government</td>
+            <td>Chuck Stadick</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Seat 2&quot;]</td>
+            <td>(208) 250-2410</td>
+            <td>cstadick@cityofcaldwell.org</td>
+            <td>https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-2</td>
+            <td>2021</td>
+            <td></td>
+            <td>https://www.cityofcaldwell.org/files/assets/city/v/4/city-clerk/images/portrait_councilor-chuck-stadick.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
+            <td>https://cdn.civicpatch.org/open-data/id/caldwell/images/4b4d42e707120a75029c4275e8075d46ef29645eab56cd7b31ebec5028e2e4f8.jpg</td>
+            <td>[&quot;https://www.cityofcaldwell.org/Government/Mayor/About-the-Mayor&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-1&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-2&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-4&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-6&quot;]</td>
+            <td>2025-07-13T02:45:40+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:caldwell/government</td>
+            <td>Diana Register</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Seat 3&quot;]</td>
+            <td>(208) 614-8462</td>
+            <td>dregister@cityofcaldwell.org</td>
+            <td>https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-3</td>
+            <td>2022-01</td>
+            <td></td>
+            <td>https://www.cityofcaldwell.org/files/assets/city/v/3/city-clerk/images/portrait_councilor-diana-register.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
+            <td>https://cdn.civicpatch.org/open-data/id/caldwell/images/c377eb875175ff9556e8e788001537aa8163ff7e3470e5e8dfbb15df964815ce.jpg</td>
+            <td>[&quot;https://www.cityofcaldwell.org/Government/Mayor/About-the-Mayor&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-1&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-3&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-4&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-6&quot;]</td>
+            <td>2025-07-13T02:45:40+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:caldwell/government</td>
+            <td>Geoff Williams</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Seat 4&quot;]</td>
+            <td>(208) 504-7770</td>
+            <td>gwilliams@cityofcaldwell.org</td>
+            <td>https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-4</td>
+            <td>2022-02-16</td>
+            <td></td>
+            <td>https://www.cityofcaldwell.org/files/assets/city/v/2/city-clerk/images/portrait_councilor-geoff-williams.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
+            <td>https://cdn.civicpatch.org/open-data/id/caldwell/images/370e4b2cdfa9798464154018bfb9ae4c34111bc96b7083bf0976aea1a2d05572.jpg</td>
+            <td>[&quot;https://www.cityofcaldwell.org/Government/Mayor/About-the-Mayor&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-1&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-4&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-6&quot;]</td>
+            <td>2025-07-13T02:45:40+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:caldwell/government</td>
+            <td>Chris Allgood</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Seat 5&quot;]</td>
+            <td>(208) 249-0876</td>
+            <td>callgood@cityofcaldwell.org</td>
+            <td>https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-5</td>
+            <td>2019</td>
+            <td>2023-12-31</td>
+            <td>https://www.cityofcaldwell.org/files/assets/city/v/3/city-clerk/images/portrait_councilor-chris-allgood.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
+            <td>https://cdn.civicpatch.org/open-data/id/caldwell/images/2996eb80440cf3710d02791f0d9a2d72d35db9592ac78fa2a3139884ca0a593b.jpg</td>
+            <td>[&quot;https://www.cityofcaldwell.org/Government/Mayor/About-the-Mayor&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-1&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-4&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-6&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-5&quot;]</td>
+            <td>2025-07-13T02:45:40+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:caldwell/government</td>
+            <td>Mike Dittenber</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Seat 6&quot;]</td>
+            <td>(208) 504-7201</td>
+            <td>mdittenber@cityofcaldwell.org</td>
+            <td>https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-6</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofcaldwell.org/files/assets/city/v/2/city-clerk/images/portrait_councilor-mike-dittenber.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
+            <td>https://cdn.civicpatch.org/open-data/id/caldwell/images/731d7d49a21854ada7b4532c073859120b6bad17e1321c738879bed8c05141a7.jpg</td>
+            <td>[&quot;https://www.cityofcaldwell.org/Government/Mayor/About-the-Mayor&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-1&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-4&quot;, &quot;https://www.cityofcaldwell.org/Government/City-Council/City-Council-Seat-6&quot;]</td>
+            <td>2025-07-13T02:45:40+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

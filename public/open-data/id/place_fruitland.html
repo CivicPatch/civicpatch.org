@@ -1,0 +1,193 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_fruitland</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_fruitland</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:fruitland/government</td>
+            <td>Kari Peterson</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>mayor@fruitland.org</td>
+            <td></td>
+            <td>2024</td>
+            <td></td>
+            <td>https://www.fruitland.org/vertical/Sites/%7B0D05ADA3-D512-48E7-8B13-DA20B51EAD7F%7D/uploads/Mayor_Peterson22_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/fruitland/images/fe9bc2d3e9f08ae2c6ce2e122723b184a73f340111824ce8b2cfd074ec1faf97.jpg</td>
+            <td>[&quot;https://www.fruitland.org/council&quot;]</td>
+            <td>2025-07-12T23:42:46+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:fruitland/government</td>
+            <td>Cathy Yasuda</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>cathy.yasuda@fruitland.org</td>
+            <td></td>
+            <td>2024-04</td>
+            <td></td>
+            <td>https://www.fruitland.org/vertical/Sites/%7B0D05ADA3-D512-48E7-8B13-DA20B51EAD7F%7D/uploads/Yasuda_Cathy_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/fruitland/images/1701756a158e0aa3e624b430d954c8c7f148745ec803861c0ff499c0eaf3ca2f.jpg</td>
+            <td>[&quot;https://www.fruitland.org/council&quot;]</td>
+            <td>2025-07-12T23:42:46+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:fruitland/government</td>
+            <td>Ed Pierson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>ed.pierson@fruitland.org</td>
+            <td></td>
+            <td>2018-01</td>
+            <td></td>
+            <td>https://www.fruitland.org/vertical/Sites/%7B0D05ADA3-D512-48E7-8B13-DA20B51EAD7F%7D/uploads/Pierson_Edward_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/fruitland/images/7eefb57c5dbba72a06ac1d79360889ffba4a82da106fd48f3bc31c1051f5d08c.jpg</td>
+            <td>[&quot;https://www.fruitland.org/council&quot;]</td>
+            <td>2025-07-12T23:42:46+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:fruitland/government</td>
+            <td>Jeff Carpenter</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>jeff.carpenter@fruitland.org</td>
+            <td></td>
+            <td>2016-01</td>
+            <td></td>
+            <td>https://www.fruitland.org/vertical/Sites/%7B0D05ADA3-D512-48E7-8B13-DA20B51EAD7F%7D/uploads/Carpenter_Jeffrey_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/fruitland/images/f3b2b1fcbf93a016b3be75f16c9f5c94c99fe74dccb355ff4b08f9d0b6c25aa8.jpg</td>
+            <td>[&quot;https://www.fruitland.org/council&quot;]</td>
+            <td>2025-07-12T23:42:46+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:fruitland/government</td>
+            <td>Thomas Limbaugh</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>tom.limbaugh@fruitland.org</td>
+            <td></td>
+            <td>2022-01</td>
+            <td></td>
+            <td>https://www.fruitland.org/vertical/Sites/%7B0D05ADA3-D512-48E7-8B13-DA20B51EAD7F%7D/uploads/Limbaugh_Thomas_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/fruitland/images/19f570261e961103e5e0b64ea969cd4563202d9f7dec55db718fa064b9c6ee13.jpg</td>
+            <td>[&quot;https://www.fruitland.org/council&quot;]</td>
+            <td>2025-07-12T23:42:46+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

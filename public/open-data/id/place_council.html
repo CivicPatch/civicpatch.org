@@ -1,0 +1,193 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_council</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_council</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:council/government</td>
+            <td>Bruce Gardner</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 253-4201</td>
+            <td></td>
+            <td>https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=15882D4C-4CD9-4022-B4F1-A4A3D0B70991</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=15882D4C-4CD9-4022-B4F1-A4A3D0B70991</td>
+            <td></td>
+            <td>[&quot;https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&quot;, &quot;https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=15882D4C-4CD9-4022-B4F1-A4A3D0B70991&quot;]</td>
+            <td>2025-07-15T16:32:01+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:council/government</td>
+            <td>Mendy Stanford</td>
+            <td>[&quot;Council President&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 253-4201</td>
+            <td>mstanford@achcid.org</td>
+            <td>https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=E4FB1665-5054-4AB8-9CE8-DEDC289D514A</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=E4FB1665-5054-4AB8-9CE8-DEDC289D514A</td>
+            <td></td>
+            <td>[&quot;https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&quot;, &quot;https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=E4FB1665-5054-4AB8-9CE8-DEDC289D514A&quot;]</td>
+            <td>2025-07-15T16:32:01+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:council/government</td>
+            <td>Dan Huter</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 253-4201</td>
+            <td>dlhuter69@gmail.com</td>
+            <td>https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=8E963628-1622-4753-ADCB-B2C058B25E4B</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=8E963628-1622-4753-ADCB-B2C058B25E4B</td>
+            <td></td>
+            <td>[&quot;https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&quot;, &quot;https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=8E963628-1622-4753-ADCB-B2C058B25E4B&quot;]</td>
+            <td>2025-07-15T16:32:01+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:council/government</td>
+            <td>David Tubridy</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 253-4201</td>
+            <td>councilmembertubridy@yahoo.com</td>
+            <td>https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=9D587856-336D-4A63-B92F-86E41E23C1EB</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=9D587856-336D-4A63-B92F-86E41E23C1EB</td>
+            <td></td>
+            <td>[&quot;https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&quot;, &quot;https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=9D587856-336D-4A63-B92F-86E41E23C1EB&quot;]</td>
+            <td>2025-07-15T16:32:01+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:council/government</td>
+            <td>Mark Edwards</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 253-4201</td>
+            <td>oldidahologger@gmail.com</td>
+            <td>https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=45F0CA71-3921-494B-B03B-07F8DFA22A26</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=45F0CA71-3921-494B-B03B-07F8DFA22A26</td>
+            <td></td>
+            <td>[&quot;https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&quot;, &quot;https://www.cityofcouncilidaho.org/index.asp?SEC=68BCCAA9-B7AF-4C16-A4B2-DBC763AA78BE&amp;DE=45F0CA71-3921-494B-B03B-07F8DFA22A26&quot;]</td>
+            <td>2025-07-15T16:32:01+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

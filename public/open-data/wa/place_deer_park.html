@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_deer_park</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_deer_park</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:deer_park/government</td>
+            <td>Timothy Verzal</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(509) 276-8801</td>
+            <td>Mayor@ci.deerpark.wa.us</td>
+            <td>https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=62A27A8B-4838-44BF-A0F2-A1B606254FE1</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofdeerparkwa.com/vertical/Sites/%7B5711725D-ADD8-4687-A4C9-BFEFE3686970%7D/uploads/Verzal_t350_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/deer_park/images/4b8da0bec7b8bce522afa1c5f8939900147ce00652981fae43da3047450d93d8.jpg</td>
+            <td>[&quot;https://www.cityofdeerparkwa.com/council&quot;, &quot;https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=62A27A8B-4838-44BF-A0F2-A1B606254FE1&quot;]</td>
+            <td>2025-06-25T02:28:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:deer_park/government</td>
+            <td>Billy Costello</td>
+            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td>(509) 939-1426</td>
+            <td>Councilmember4@ci.deerpark.wa.us</td>
+            <td>https://www.facebook.com/councilmanbillycostello</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofdeerparkwa.com/vertical/Sites/%7B5711725D-ADD8-4687-A4C9-BFEFE3686970%7D/uploads/billy_Costello_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/deer_park/images/f71c675e4074b90e80121a325400e378ff893beed8f66967a53e3f6468775297.jpg</td>
+            <td>[&quot;https://www.cityofdeerparkwa.com/council&quot;, &quot;https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=21AAB2B8-847B-4E18-A4AA-928E136176D1&quot;, &quot;https://www.facebook.com/councilmanbillycostello&quot;]</td>
+            <td>2025-06-25T02:28:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:deer_park/government</td>
+            <td>Jason Upchurch</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td>(509) 994-1360</td>
+            <td>councilmember1@ci.deerpark.wa.us</td>
+            <td>https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=146DFE7C-F7AC-4B6D-A5B6-E8BD41E4C012</td>
+            <td>2021</td>
+            <td></td>
+            <td>https://www.cityofdeerparkwa.com/vertical/Sites/%7B5711725D-ADD8-4687-A4C9-BFEFE3686970%7D/uploads/Jason_Upchurch_Council_Pic_Web.JPG</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/deer_park/images/58f140c7c3274791196bcaf8c560aa4de3c3cb55d9d60658a969d15d163aa16b.jpg</td>
+            <td>[&quot;https://www.cityofdeerparkwa.com/council&quot;, &quot;https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=146DFE7C-F7AC-4B6D-A5B6-E8BD41E4C012&quot;]</td>
+            <td>2025-06-25T02:28:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:deer_park/government</td>
+            <td>Fred Senn</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td>(509) 276-8801</td>
+            <td>Councilmember2@ci.deerpark.wa.us</td>
+            <td>https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=F24E7F2B-9E65-409D-8A7B-E7F5ABF6F1DD</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofdeerparkwa.com/vertical/Sites/%7B5711725D-ADD8-4687-A4C9-BFEFE3686970%7D/uploads/fred_Web.JPG</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/deer_park/images/2116cf2f75007b0c6d44493c38754c0afc3e0c96b9377a449aabe99090de48d5.jpg</td>
+            <td>[&quot;https://www.cityofdeerparkwa.com/council&quot;, &quot;https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=F24E7F2B-9E65-409D-8A7B-E7F5ABF6F1DD&quot;]</td>
+            <td>2025-06-25T02:28:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:deer_park/government</td>
+            <td>Ellen Standen</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td>(509) 276-8801</td>
+            <td>councilmember3@ci.deerpark.wa.us</td>
+            <td>https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=1F487502-79C7-4999-8711-CF17BA7D5D88</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofdeerparkwa.com/vertical/Sites/%7B5711725D-ADD8-4687-A4C9-BFEFE3686970%7D/uploads/Ellen_Standen.png</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/deer_park/images/d39e03d7132ca2e858d2d35372b3b95b9b6dbe37548bd6ac32b40bac719703fb.png</td>
+            <td>[&quot;https://www.cityofdeerparkwa.com/council&quot;, &quot;https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=1F487502-79C7-4999-8711-CF17BA7D5D88&quot;]</td>
+            <td>2025-06-25T02:28:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:deer_park/government</td>
+            <td>Diane Pfaeffle</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td>(509) 727-5792</td>
+            <td>Councilmember5@ci.deerpark.wa.us</td>
+            <td>https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=15A8C44C-AC6A-4F6F-8511-BC395470D5D8</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofdeerparkwa.com/vertical/Sites/%7B5711725D-ADD8-4687-A4C9-BFEFE3686970%7D/uploads/Diane_Pfaeffle_Picture_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/deer_park/images/f193cb1bbfb882cb9a5a308629fc625814be08541dfdc2700643bdff896f849d.jpg</td>
+            <td>[&quot;https://www.cityofdeerparkwa.com/council&quot;, &quot;https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=15A8C44C-AC6A-4F6F-8511-BC395470D5D8&quot;]</td>
+            <td>2025-06-25T02:28:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:deer_park/government</td>
+            <td>Ross Hall</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td>(509) 276-8801</td>
+            <td></td>
+            <td>https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=78656665-B9D8-499C-8EA5-4C8E0EFFE879</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofdeerparkwa.com/vertical/Sites/%7B5711725D-ADD8-4687-A4C9-BFEFE3686970%7D/uploads/Ross_%28002%29_Web.JPG</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/deer_park/images/072ada84ec94b0869c6ea0c2d07c9ffa28ee0d1022ebb83a9ed7f1b714d46931.jpg</td>
+            <td>[&quot;https://www.cityofdeerparkwa.com/council&quot;, &quot;https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=78656665-B9D8-499C-8EA5-4C8E0EFFE879&quot;]</td>
+            <td>2025-06-25T02:28:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:deer_park/government</td>
+            <td>Chase Vining</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td>(509) 276-8801</td>
+            <td></td>
+            <td>https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=7FA0094F-4FFF-4CF9-B3C8-5FA94F0DC3A1</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofdeerparkwa.com/vertical/Sites/%7B5711725D-ADD8-4687-A4C9-BFEFE3686970%7D/uploads/chase_Web.JPG</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/deer_park/images/364baf13761e681d8ebfddf04012a541ab545354c5992dbeca1df0a29afd4964.jpg</td>
+            <td>[&quot;https://www.cityofdeerparkwa.com/council&quot;, &quot;https://www.cityofdeerparkwa.com/index.asp?SEC=B5032113-9910-43CC-9A94-4846DB542A53&amp;DE=7FA0094F-4FFF-4CF9-B3C8-5FA94F0DC3A1&quot;]</td>
+            <td>2025-06-25T02:28:56+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->
