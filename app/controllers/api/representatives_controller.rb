@@ -72,16 +72,21 @@ class Api::RepresentativesController < ApplicationController
 
       # Using Nominatim (OpenStreetMap) - free geocoding service
       encoded_address = URI.encode_www_form_component(address)
-      uri = URI("https://nominatim.openstreetmap.org/search?q=#{encoded_address}&format=json&limit=1&countrycodes=us")
+      # Using Census Geocoding Service
+      # uri = URI("https://nominatim.openstreetmap.org/search?q=#{encoded_address}&format=json&limit=1&countrycodes=us")
+      uri = URI("https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=#{encoded_address}&benchmark=4&format=json")
+
+      puts uri
+
 
       response = Net::HTTP.get(uri)
       data = JSON.parse(response)
 
-      if data.any?
-        location = data.first
+      if data["result"]["addressMatches"].any?
+        location = data["result"]["addressMatches"].first
         {
-          lat: location["lat"].to_f,
-          lng: location["lon"].to_f
+          lat: location["coordinates"]["y"].to_f,
+          lng: location["coordinates"]["x"].to_f
         }
       else
         nil
