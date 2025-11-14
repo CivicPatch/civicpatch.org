@@ -1,283 +1,421 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lakewood/images/3d916580fab8bfd5852062dbac6963f6ccae214b91ec42086991e6ea48276674.jpg" alt="Wendi Strom" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">WS</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Wendi Strom</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:wstrom@lakewood.org" class="break-all">wstrom@lakewood.org</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 987-7040">(303) 987-7040</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_lakewood</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_lakewood</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.lakewood.org/Government/City-Council/City-Council-Members/Mayor-Wendi-Strom" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lakewood/government</td>
-            <td>Wendi Strom</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(303) 987-7040</td>
-            <td>wstrom@lakewood.org</td>
-            <td>https://www.lakewood.org/Government/City-Council/City-Council-Members/Mayor-Wendi-Strom</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td>https://www.lakewood.org/files/assets/public/v/7/city-council/images/wendi-strom.jpg?dimension=pageimage&amp;w=480</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lakewood/images/3d916580fab8bfd5852062dbac6963f6ccae214b91ec42086991e6ea48276674.jpg</td>
-            <td>[&quot;https://www.lakewood.org/Government/City-Council/City-Council-Members/Mayor-Wendi-Strom&quot;, &quot;https://www.lakewood.org/Government/City-Council/City-Council-Members&quot;]</td>
-            <td>2025-06-27T19:42:30+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lakewood/government</td>
-            <td>Glenda Sinks</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 1&quot;]</td>
-            <td>(303) 987-7729</td>
-            <td>gsinks@lakewood.org</td>
-            <td>https://www.lakewood.org/Government/City-Council/City-Council-Members/Glenda-Sinks</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td>https://www.lakewood.org/files/assets/public/v/4/city-council/images/glenda-sinks.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lakewood/images/d74fa73b0762f0c0722c0002d01dd7f23f7ce1e97ad9c38b7097e87f1a536159.jpg</td>
-            <td>[&quot;https://www.lakewood.org/Government/City-Council/City-Council-Members&quot;, &quot;https://www.lakewood.org/Government/City-Council/City-Council-Members/Glenda-Sinks&quot;]</td>
-            <td>2025-06-27T19:42:30+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lakewood/government</td>
-            <td>Jeslin Shahrezaei</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 1&quot;]</td>
-            <td>(303) 987-7728</td>
-            <td>jshahrezaei@lakewood.org</td>
-            <td>https://www.lakewood.org/Government/City-Council/City-Council-Members/Jeslin-Shahrezaei</td>
-            <td>2021-11</td>
-            <td>2025-11</td>
-            <td>https://www.lakewood.org/files/assets/public/v/4/city-council/jeslin-shahrezaei-2021-11.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lakewood/images/a5fa7499e9b29b7bf0d6830fa77f59d501868edd7f9eea50bb6531eec5036832.jpg</td>
-            <td>[&quot;https://www.lakewood.org/Government/City-Council/City-Council-Members&quot;, &quot;https://www.lakewood.org/Government/City-Council/City-Council-Members/Jeslin-Shahrezaei&quot;]</td>
-            <td>2025-06-27T19:42:30+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lakewood/government</td>
-            <td>Isabel Cruz</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 2&quot;]</td>
-            <td>(303) 987-7739</td>
-            <td>icruz@lakewood.org</td>
-            <td>https://www.lakewood.org/Government/City-Council/City-Council-Members/Isabel-Cruz</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td>https://www.lakewood.org/files/assets/public/v/4/city-council/images/isabel-cruz.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lakewood/images/d641a9ee8c63a2ae80dca0c1e1e675547e0970e8a179539b85a384ab6b111c77.jpg</td>
-            <td>[&quot;https://www.lakewood.org/Government/City-Council/City-Council-Members&quot;, &quot;https://www.lakewood.org/Government/City-Council/City-Council-Members/Isabel-Cruz&quot;]</td>
-            <td>2025-06-27T19:42:30+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lakewood/government</td>
-            <td>Sophia Mayott-Guerrero</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 2&quot;]</td>
-            <td>(303) 987-7738</td>
-            <td>sguerrero@lakewood.org</td>
-            <td>https://www.lakewood.org/Government/City-Council/City-Council-Members/Sophia-Mayott-Guerrero</td>
-            <td>2021-11</td>
-            <td>2025-11</td>
-            <td>https://www.lakewood.org/files/assets/public/v/4/city-council/sophia-mayotte-guerrera-2021-11.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lakewood/images/4d302d025de6bfd7eae16b39f85f61361841b1b6578ddfa8ea877ebf95ecc9c1.png</td>
-            <td>[&quot;https://www.lakewood.org/Government/City-Council/City-Council-Members&quot;, &quot;https://www.lakewood.org/Government/City-Council/City-Council-Members/Sophia-Mayott-Guerrero&quot;]</td>
-            <td>2025-06-27T19:42:30+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lakewood/government</td>
-            <td>Ken Cruz</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 3&quot;]</td>
-            <td>(303) 987-7740</td>
-            <td>kcruz@lakewood.org</td>
-            <td>https://www.lakewood.org/Government/City-Council/City-Council-Members/Ken-Cruz</td>
-            <td>2025-04</td>
-            <td>2025-11</td>
-            <td>https://www.lakewood.org/files/assets/public/v/2/city-clerks-office/elections/candidate-photos/ken-cruz.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lakewood/images/abe722adf0e2f1a1e943adb035cf969d0a0ea58b2116d79189c3fbf34d517b29.jpg</td>
-            <td>[&quot;https://www.lakewood.org/Government/City-Council/City-Council-Members&quot;, &quot;https://www.lakewood.org/Government/City-Council/City-Council-Members/Ken-Cruz&quot;]</td>
-            <td>2025-06-27T19:42:30+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lakewood/government</td>
-            <td>Roger Low</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 3&quot;]</td>
-            <td>(303) 987-7743</td>
-            <td>rlow@lakewood.org</td>
-            <td>https://www.lakewood.org/Government/City-Council/City-Council-Members/Roger-Low</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td>https://www.lakewood.org/files/assets/public/v/3/city-council/images/roger-low.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lakewood/images/304ecaf0e204db7f3b0bd36e28ccf93a8aff72ce9f8ce24d38358f017df6f657.jpg</td>
-            <td>[&quot;https://www.lakewood.org/Government/City-Council/City-Council-Members&quot;, &quot;https://www.lakewood.org/Government/City-Council/City-Council-Members/Roger-Low&quot;]</td>
-            <td>2025-06-27T19:42:30+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lakewood/government</td>
-            <td>Bill Furman</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 4&quot;]</td>
-            <td>(303) 987-7748</td>
-            <td>bfurman@lakewood.org</td>
-            <td>https://www.lakewood.org/Government/City-Council/City-Council-Members/Bill-Furman</td>
-            <td>2025-04</td>
-            <td>2025-11</td>
-            <td>https://www.lakewood.org/files/assets/public/v/4/city-clerks-office/elections/candidate-photos/bill-furman.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lakewood/images/72136a0132945365876a84d69059414273fa441d5b641aff240e06447cde122e.jpg</td>
-            <td>[&quot;https://www.lakewood.org/Government/City-Council/City-Council-Members&quot;, &quot;https://www.lakewood.org/Government/City-Council/City-Council-Members/Bill-Furman&quot;]</td>
-            <td>2025-06-27T19:42:30+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lakewood/government</td>
-            <td>David Rein</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 4&quot;]</td>
-            <td>(303) 987-7766</td>
-            <td>drein@lakewood.org</td>
-            <td>https://www.lakewood.org/Government/City-Council/City-Council-Members/David-Rein</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td>https://www.lakewood.org/files/assets/public/v/5/city-council/images/dave-rein.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lakewood/images/8a708383dc57d740356c32746b250e4fc6fb0b00b7810df52ca8d2b87e7bac25.png</td>
-            <td>[&quot;https://www.lakewood.org/Government/City-Council/City-Council-Members&quot;, &quot;https://www.lakewood.org/Government/City-Council/City-Council-Members/David-Rein&quot;]</td>
-            <td>2025-06-27T19:42:30+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lakewood/government</td>
-            <td>Jacob LaBure</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 5&quot;]</td>
-            <td>(303) 987-7776</td>
-            <td>jlabure@lakewood.org</td>
-            <td>https://www.lakewood.org/Government/City-Council/City-Council-Members/Jacob-LaBure</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td>https://www.lakewood.org/files/assets/public/v/5/city-council/images/jacob-labure.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lakewood/images/28dedae339706c3fc605627cf6a83a9b1796d65eb4e8208086191d74ac9b5567.jpg</td>
-            <td>[&quot;https://www.lakewood.org/Government/City-Council/City-Council-Members&quot;, &quot;https://www.lakewood.org/Government/City-Council/City-Council-Members/Jacob-LaBure&quot;]</td>
-            <td>2025-06-27T19:42:30+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lakewood/government</td>
-            <td>Paula Nystrom</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 5&quot;]</td>
-            <td>(303) 987-7767</td>
-            <td>pnystrom@lakewood.org</td>
-            <td>https://www.lakewood.org/Government/City-Council/City-Council-Members/Paula-Nystrom</td>
-            <td>2024-01</td>
-            <td>2025-11</td>
-            <td>https://www.lakewood.org/files/assets/public/v/6/city-council/images/paula-nystrom.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lakewood/images/e35ca237588dd7b3314e32d0878dafdfe99d5f00f679132010d582cf1075c64e.jpg</td>
-            <td>[&quot;https://www.lakewood.org/Government/City-Council/City-Council-Members&quot;, &quot;https://www.lakewood.org/Government/City-Council/City-Council-Members/Paula-Nystrom&quot;]</td>
-            <td>2025-06-27T19:42:30+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lakewood/images/d74fa73b0762f0c0722c0002d01dd7f23f7ce1e97ad9c38b7097e87f1a536159.jpg" alt="Glenda Sinks" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">GS</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Glenda Sinks</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:gsinks@lakewood.org" class="break-all">gsinks@lakewood.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 987-7729">(303) 987-7729</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.lakewood.org/Government/City-Council/City-Council-Members/Glenda-Sinks" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lakewood/images/a5fa7499e9b29b7bf0d6830fa77f59d501868edd7f9eea50bb6531eec5036832.jpg" alt="Jeslin Shahrezaei" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JS</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Jeslin Shahrezaei</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:jshahrezaei@lakewood.org" class="break-all">jshahrezaei@lakewood.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 987-7728">(303) 987-7728</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.lakewood.org/Government/City-Council/City-Council-Members/Jeslin-Shahrezaei" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lakewood/images/d641a9ee8c63a2ae80dca0c1e1e675547e0970e8a179539b85a384ab6b111c77.jpg" alt="Isabel Cruz" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">IC</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Isabel Cruz</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:icruz@lakewood.org" class="break-all">icruz@lakewood.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 987-7739">(303) 987-7739</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.lakewood.org/Government/City-Council/City-Council-Members/Isabel-Cruz" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lakewood/images/4d302d025de6bfd7eae16b39f85f61361841b1b6578ddfa8ea877ebf95ecc9c1.png" alt="Sophia Mayott-Guerrero" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SM</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Sophia Mayott-Guerrero</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:sguerrero@lakewood.org" class="break-all">sguerrero@lakewood.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 987-7738">(303) 987-7738</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.lakewood.org/Government/City-Council/City-Council-Members/Sophia-Mayott-Guerrero" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lakewood/images/abe722adf0e2f1a1e943adb035cf969d0a0ea58b2116d79189c3fbf34d517b29.jpg" alt="Ken Cruz" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">KC</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Ken Cruz</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:kcruz@lakewood.org" class="break-all">kcruz@lakewood.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 987-7740">(303) 987-7740</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.lakewood.org/Government/City-Council/City-Council-Members/Ken-Cruz" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lakewood/images/304ecaf0e204db7f3b0bd36e28ccf93a8aff72ce9f8ce24d38358f017df6f657.jpg" alt="Roger Low" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RL</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Roger Low</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:rlow@lakewood.org" class="break-all">rlow@lakewood.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 987-7743">(303) 987-7743</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.lakewood.org/Government/City-Council/City-Council-Members/Roger-Low" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lakewood/images/72136a0132945365876a84d69059414273fa441d5b641aff240e06447cde122e.jpg" alt="Bill Furman" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">BF</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Bill Furman</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:bfurman@lakewood.org" class="break-all">bfurman@lakewood.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 987-7748">(303) 987-7748</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.lakewood.org/Government/City-Council/City-Council-Members/Bill-Furman" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lakewood/images/8a708383dc57d740356c32746b250e4fc6fb0b00b7810df52ca8d2b87e7bac25.png" alt="David Rein" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DR</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">David Rein</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:drein@lakewood.org" class="break-all">drein@lakewood.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 987-7766">(303) 987-7766</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.lakewood.org/Government/City-Council/City-Council-Members/David-Rein" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lakewood/images/28dedae339706c3fc605627cf6a83a9b1796d65eb4e8208086191d74ac9b5567.jpg" alt="Jacob LaBure" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JL</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Jacob LaBure</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:jlabure@lakewood.org" class="break-all">jlabure@lakewood.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 987-7776">(303) 987-7776</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.lakewood.org/Government/City-Council/City-Council-Members/Jacob-LaBure" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lakewood/images/e35ca237588dd7b3314e32d0878dafdfe99d5f00f679132010d582cf1075c64e.jpg" alt="Paula Nystrom" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">PN</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Paula Nystrom</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:pnystrom@lakewood.org" class="break-all">pnystrom@lakewood.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 987-7767">(303) 987-7767</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.lakewood.org/Government/City-Council/City-Council-Members/Paula-Nystrom" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

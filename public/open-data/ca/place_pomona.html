@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/pomona/images/00af7c7c993538041cc7b9c7873ea0085578af23abce8679d762fa4a0b892828.png" alt="Tim Sandoval" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">TS</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Tim Sandoval</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:tim.sandoval@pomonaca.gov" class="break-all">tim.sandoval@pomonaca.gov</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(909) 620-2053">(909) 620-2053</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_pomona</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_pomona</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.pomonaca.gov/government/mayor-city-council/mayor-sandoval" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:pomona/government</td>
-            <td>Tim Sandoval</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(909) 620-2053</td>
-            <td>tim.sandoval@pomonaca.gov</td>
-            <td>https://www.pomonaca.gov/government/mayor-city-council/mayor-sandoval</td>
-            <td>2016</td>
-            <td></td>
-            <td>https://www.pomonaca.gov/home/showpublishedimage/4847/638723568920330000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/pomona/images/00af7c7c993538041cc7b9c7873ea0085578af23abce8679d762fa4a0b892828.png</td>
-            <td>[&quot;https://www.pomonaca.gov/government/mayor-city-council/mayor-sandoval&quot;, &quot;https://www.pomonaca.gov/government/mayor-city-council&quot;]</td>
-            <td>2025-07-17T19:19:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:pomona/government</td>
-            <td>Victor Preciado</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 2&quot;]</td>
-            <td>(909) 630-3125</td>
-            <td>Victor.Preciado@pomonaca.gov</td>
-            <td>https://www.pomonaca.gov/government/mayor-city-council/councilmember-victor-preciado</td>
-            <td>2018-11</td>
-            <td></td>
-            <td>https://www.pomonaca.gov/home/showpublishedimage/1141/637521079579730000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/pomona/images/89a72375a38f4ba7bf569a12016d963707f7fcc8ac52c5f180045ce10ac0393a.png</td>
-            <td>[&quot;https://www.pomonaca.gov/government/mayor-city-council&quot;, &quot;https://www.pomonaca.gov/government/mayor-city-council/councilmember-victor-preciado&quot;]</td>
-            <td>2025-07-17T19:19:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:pomona/government</td>
-            <td>Steve Lustro</td>
-            <td>[&quot;Vice Mayor&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 5&quot;]</td>
-            <td>(909) 671-6114</td>
-            <td>steve.lustro@pomonaca.gov</td>
-            <td>https://www.pomonaca.gov/government/mayor-city-council/councilmember-steve-lustro</td>
-            <td></td>
-            <td></td>
-            <td>https://www.pomonaca.gov/home/showpublishedimage/1147/637521080317330000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/pomona/images/b46dc1e1c0fe26c3df9376d1a196d003d7022c141550e21747397c538ce5ddcd.png</td>
-            <td>[&quot;https://www.pomonaca.gov/government/mayor-city-council&quot;, &quot;https://www.pomonaca.gov/government/mayor-city-council/councilmember-steve-lustro&quot;]</td>
-            <td>2025-07-17T19:19:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:pomona/government</td>
-            <td>Debra Martin</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 1&quot;]</td>
-            <td>(909) 298-3011</td>
-            <td>debra.martin@pomonaca.gov</td>
-            <td>https://www.pomonaca.gov/government/mayor-city-council/councilmember-debra-martin</td>
-            <td>2024</td>
-            <td></td>
-            <td>https://www.pomonaca.gov/home/showpublishedimage/4841/638723568891930000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/pomona/images/d0d8e0f1a082beb2505e4f7f08c40d0f577b6b594dbb08412089fe602625ee2b.png</td>
-            <td>[&quot;https://www.pomonaca.gov/government/mayor-city-council&quot;, &quot;https://www.pomonaca.gov/government/mayor-city-council/councilmember-debra-martin&quot;]</td>
-            <td>2025-07-17T19:19:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:pomona/government</td>
-            <td>Nora Garcia</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 3&quot;]</td>
-            <td>(909) 630-3378</td>
-            <td>Nora.Garcia@pomonaca.gov</td>
-            <td>https://www.pomonaca.gov/government/mayor-city-council/councilmember-nora-garcia</td>
-            <td></td>
-            <td></td>
-            <td>https://www.pomonaca.gov/home/showpublishedimage/1143/637521079823730000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/pomona/images/acb1d356dcce60a3835d2e1c0874541fdd305b101d38cd3cbe34d181efe65523.png</td>
-            <td>[&quot;https://www.pomonaca.gov/government/mayor-city-council&quot;, &quot;https://www.pomonaca.gov/government/mayor-city-council/councilmember-nora-garcia&quot;]</td>
-            <td>2025-07-17T19:19:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:pomona/government</td>
-            <td>Elizabeth Ontiveros-Cole</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 4&quot;]</td>
-            <td>(909) 837-8677</td>
-            <td>Elizabeth.Ontiveros-Cole@pomonaca.gov</td>
-            <td>https://www.pomonaca.gov/government/mayor-city-council/councilmember-elizabeth-ontiveros-cole</td>
-            <td></td>
-            <td></td>
-            <td>https://www.pomonaca.gov/home/showpublishedimage/4843/638723568902170000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/pomona/images/f73dc13d05ae80ab152601d579b422d662f4fd2f0a6c4fa71d56978fdebc6183.png</td>
-            <td>[&quot;https://www.pomonaca.gov/government/mayor-city-council&quot;, &quot;https://www.pomonaca.gov/government/mayor-city-council/councilmember-elizabeth-ontiveros-cole&quot;]</td>
-            <td>2025-07-17T19:19:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:pomona/government</td>
-            <td>Lorraine Canales</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 6&quot;]</td>
-            <td>(909) 298-3012</td>
-            <td>Lorraine.Canales@pomonaca.gov</td>
-            <td>https://www.pomonaca.gov/government/mayor-city-council/councilmember-lorraine-canales</td>
-            <td></td>
-            <td></td>
-            <td>https://www.pomonaca.gov/home/showpublishedimage/4845/638723568911570000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/pomona/images/a461bf5dc0111a89958cc51a158480c1f63bce2873ffb1539a161991c0913112.png</td>
-            <td>[&quot;https://www.pomonaca.gov/government/mayor-city-council&quot;, &quot;https://www.pomonaca.gov/government/mayor-city-council/councilmember-lorraine-canales&quot;]</td>
-            <td>2025-07-17T19:19:34+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/pomona/images/89a72375a38f4ba7bf569a12016d963707f7fcc8ac52c5f180045ce10ac0393a.png" alt="Victor Preciado" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">VP</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Victor Preciado</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Victor.Preciado@pomonaca.gov" class="break-all">Victor.Preciado@pomonaca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(909) 630-3125">(909) 630-3125</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.pomonaca.gov/government/mayor-city-council/councilmember-victor-preciado" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/pomona/images/b46dc1e1c0fe26c3df9376d1a196d003d7022c141550e21747397c538ce5ddcd.png" alt="Steve Lustro" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SL</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Steve Lustro</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Vice Mayor, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:steve.lustro@pomonaca.gov" class="break-all">steve.lustro@pomonaca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(909) 671-6114">(909) 671-6114</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.pomonaca.gov/government/mayor-city-council/councilmember-steve-lustro" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/pomona/images/d0d8e0f1a082beb2505e4f7f08c40d0f577b6b594dbb08412089fe602625ee2b.png" alt="Debra Martin" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DM</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Debra Martin</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:debra.martin@pomonaca.gov" class="break-all">debra.martin@pomonaca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(909) 298-3011">(909) 298-3011</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.pomonaca.gov/government/mayor-city-council/councilmember-debra-martin" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/pomona/images/acb1d356dcce60a3835d2e1c0874541fdd305b101d38cd3cbe34d181efe65523.png" alt="Nora Garcia" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">NG</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Nora Garcia</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Nora.Garcia@pomonaca.gov" class="break-all">Nora.Garcia@pomonaca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(909) 630-3378">(909) 630-3378</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.pomonaca.gov/government/mayor-city-council/councilmember-nora-garcia" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/pomona/images/f73dc13d05ae80ab152601d579b422d662f4fd2f0a6c4fa71d56978fdebc6183.png" alt="Elizabeth Ontiveros-Cole" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">EO</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Elizabeth Ontiveros-Cole</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Elizabeth.Ontiveros-Cole@pomonaca.gov" class="break-all">Elizabeth.Ontiveros-Cole@pomonaca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(909) 837-8677">(909) 837-8677</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.pomonaca.gov/government/mayor-city-council/councilmember-elizabeth-ontiveros-cole" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/pomona/images/a461bf5dc0111a89958cc51a158480c1f63bce2873ffb1539a161991c0913112.png" alt="Lorraine Canales" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">LC</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Lorraine Canales</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Lorraine.Canales@pomonaca.gov" class="break-all">Lorraine.Canales@pomonaca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(909) 298-3012">(909) 298-3012</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.pomonaca.gov/government/mayor-city-council/councilmember-lorraine-canales" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/basalt/images/8c05017f53ff0d99067542152171023b6c79316c16cd8cdf3c2bd27aa0861271.jpg" alt="David Knight" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DK</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">David Knight</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:David.Knight@basalt.net" class="break-all">David.Knight@basalt.net</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(970) 924-0475">(970) 924-0475</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_basalt</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_basalt</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.basalt.net/Directory.aspx?EID=111" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:basalt/government</td>
-            <td>David Knight</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(970) 924-0475</td>
-            <td>David.Knight@basalt.net</td>
-            <td>https://www.basalt.net/Directory.aspx?EID=111</td>
-            <td>2024-04</td>
-            <td>2028-04</td>
-            <td>https://www.basalt.net/ImageRepository/Document?documentID=5660</td>
-            <td>https://cdn.civicpatch.org/open-data/co/basalt/images/8c05017f53ff0d99067542152171023b6c79316c16cd8cdf3c2bd27aa0861271.jpg</td>
-            <td>[&quot;https://www.basalt.net/137/Town-Council&quot;, &quot;https://www.basalt.net/Directory.aspx?EID=111&quot;]</td>
-            <td>2025-06-30T21:42:10+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:basalt/government</td>
-            <td>Ryan Slack</td>
-            <td>[&quot;Mayor Pro Tempore&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(970) 927-4701</td>
-            <td>ryan.slack@basalt.net</td>
-            <td>https://www.basalt.net/directory.aspx?EID=96</td>
-            <td>2022-04</td>
-            <td>2026-04</td>
-            <td>https://www.basalt.net/ImageRepository/Document?documentID=2469</td>
-            <td>https://cdn.civicpatch.org/open-data/co/basalt/images/b5e5ac3abf42fae67ced226ff1ffab9900453f98a1037e268c9177f5af0c784f.jpg</td>
-            <td>[&quot;https://www.basalt.net/137/Town-Council&quot;, &quot;https://www.basalt.net/directory.aspx?EID=96&quot;]</td>
-            <td>2025-06-30T21:42:10+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:basalt/government</td>
-            <td>Angela Anderson</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(970) 279-3310</td>
-            <td>Angela.Anderson@basalt.net</td>
-            <td>https://www.basalt.net/directory.aspx?EID=122</td>
-            <td>2022-04</td>
-            <td>2026-04</td>
-            <td>https://www.basalt.net/ImageRepository/Document?documentID=4884</td>
-            <td>https://cdn.civicpatch.org/open-data/co/basalt/images/7d1fb69e7e6701904b02f81be7383e17d341593610d32815fa7434d67def6239.jpg</td>
-            <td>[&quot;https://www.basalt.net/137/Town-Council&quot;, &quot;https://www.basalt.net/directory.aspx?EID=122&quot;, &quot;https://www.basalt.net/Directory.aspx?DID=11&quot;]</td>
-            <td>2025-06-30T21:42:10+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:basalt/government</td>
-            <td>Angele Dupre-Butchart</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(713) 410-2373</td>
-            <td>Angele.Dupre-Butchart@basalt.net</td>
-            <td>https://www.basalt.net/Directory.aspx?EID=144</td>
-            <td>2024-04</td>
-            <td>2028-04</td>
-            <td>https://www.basalt.net/ImageRepository/Document?documentID=5723</td>
-            <td>https://cdn.civicpatch.org/open-data/co/basalt/images/9b7bff92843245f775657eb52d40393de5c85f3faa81aa731ec35a546fd91c13.jpg</td>
-            <td>[&quot;https://www.basalt.net/137/Town-Council&quot;, &quot;https://www.basalt.net/Directory.aspx?EID=144&quot;]</td>
-            <td>2025-06-30T21:42:10+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:basalt/government</td>
-            <td>Dieter Schindler</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(773) 578-7702</td>
-            <td>Dieter.Schindler@basalt.net</td>
-            <td>https://www.basalt.net/Directory.aspx?EID=123</td>
-            <td>2022-04</td>
-            <td>2026-04</td>
-            <td>https://www.basalt.net/ImageRepository/Document?documentID=4885</td>
-            <td>https://cdn.civicpatch.org/open-data/co/basalt/images/59891be1267b1614e3116d328c27319990dee108548226ae5893aa9957cdb1e5.jpg</td>
-            <td>[&quot;https://www.basalt.net/137/Town-Council&quot;, &quot;https://www.basalt.net/Directory.aspx?EID=123&quot;]</td>
-            <td>2025-06-30T21:42:10+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:basalt/government</td>
-            <td>Hannah Berman</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(303) 727-0366</td>
-            <td>Hannah.Berman@basalt.net</td>
-            <td>https://www.basalt.net/Directory.aspx?EID=143</td>
-            <td>2024-04</td>
-            <td>2028-04</td>
-            <td>https://www.basalt.net/ImageRepository/Document?documentID=5661</td>
-            <td>https://cdn.civicpatch.org/open-data/co/basalt/images/14193a363b03ab217765c971f37cb9a07c1b5c1a710495f2afc207f655d79b86.jpg</td>
-            <td>[&quot;https://www.basalt.net/137/Town-Council&quot;, &quot;https://www.basalt.net/Directory.aspx?EID=143&quot;]</td>
-            <td>2025-06-30T21:42:10+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:basalt/government</td>
-            <td>Rick Stevens</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(970) 379-2752</td>
-            <td>Rick.Stevens@basalt.net</td>
-            <td>https://www.basalt.net/Directory.aspx?EID=145</td>
-            <td>2024-04</td>
-            <td>2028-04</td>
-            <td>https://www.basalt.net/ImageRepository/Document?documentID=5663</td>
-            <td>https://cdn.civicpatch.org/open-data/co/basalt/images/479720b2d715c9f21365af4cfb4ed3c5bfd745b7660c0ebfe08888e2fe1e7237.jpg</td>
-            <td>[&quot;https://www.basalt.net/137/Town-Council&quot;, &quot;https://www.basalt.net/Directory.aspx?EID=145&quot;]</td>
-            <td>2025-06-30T21:42:10+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/basalt/images/b5e5ac3abf42fae67ced226ff1ffab9900453f98a1037e268c9177f5af0c784f.jpg" alt="Ryan Slack" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RS</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Ryan Slack</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:ryan.slack@basalt.net" class="break-all">ryan.slack@basalt.net</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(970) 927-4701">(970) 927-4701</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.basalt.net/directory.aspx?EID=96" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/basalt/images/7d1fb69e7e6701904b02f81be7383e17d341593610d32815fa7434d67def6239.jpg" alt="Angela Anderson" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">AA</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Angela Anderson</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Angela.Anderson@basalt.net" class="break-all">Angela.Anderson@basalt.net</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(970) 279-3310">(970) 279-3310</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.basalt.net/directory.aspx?EID=122" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/basalt/images/9b7bff92843245f775657eb52d40393de5c85f3faa81aa731ec35a546fd91c13.jpg" alt="Angele Dupre-Butchart" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">AD</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Angele Dupre-Butchart</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Angele.Dupre-Butchart@basalt.net" class="break-all">Angele.Dupre-Butchart@basalt.net</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(713) 410-2373">(713) 410-2373</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.basalt.net/Directory.aspx?EID=144" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/basalt/images/59891be1267b1614e3116d328c27319990dee108548226ae5893aa9957cdb1e5.jpg" alt="Dieter Schindler" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DS</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Dieter Schindler</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Dieter.Schindler@basalt.net" class="break-all">Dieter.Schindler@basalt.net</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(773) 578-7702">(773) 578-7702</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.basalt.net/Directory.aspx?EID=123" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/basalt/images/14193a363b03ab217765c971f37cb9a07c1b5c1a710495f2afc207f655d79b86.jpg" alt="Hannah Berman" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">HB</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Hannah Berman</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Hannah.Berman@basalt.net" class="break-all">Hannah.Berman@basalt.net</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 727-0366">(303) 727-0366</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.basalt.net/Directory.aspx?EID=143" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/basalt/images/479720b2d715c9f21365af4cfb4ed3c5bfd745b7660c0ebfe08888e2fe1e7237.jpg" alt="Rick Stevens" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RS</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Rick Stevens</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Rick.Stevens@basalt.net" class="break-all">Rick.Stevens@basalt.net</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(970) 379-2752">(970) 379-2752</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.basalt.net/Directory.aspx?EID=145" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

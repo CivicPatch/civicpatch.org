@@ -1,223 +1,270 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/fircrest/images/f5d6cfb9c1d51bfd8b189efb5199c22dc30c0d0c64c2b91eefc504da80c03964.jpg" alt="Shannon Reynolds" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SR</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Shannon Reynolds</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor, Council Member</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:sreynolds@cityoffircrest.net" class="break-all">sreynolds@cityoffircrest.net</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_fircrest</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_fircrest</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityoffircrest.net/government/city-council/reynolds" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:fircrest/government</td>
-            <td>Shannon Reynolds</td>
-            <td>[&quot;Mayor&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Position 2&quot;]</td>
-            <td></td>
-            <td>sreynolds@cityoffircrest.net</td>
-            <td>https://www.cityoffircrest.net/government/city-council/reynolds</td>
-            <td>2013-11</td>
-            <td>2025-12</td>
-            <td>https://www.cityoffircrest.net/wp-content/uploads/2018/03/Shannon-Reynolds-2018-240x300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/fircrest/images/f5d6cfb9c1d51bfd8b189efb5199c22dc30c0d0c64c2b91eefc504da80c03964.jpg</td>
-            <td>[&quot;https://www.cityoffircrest.net/government/city-council/reynolds&quot;, &quot;https://www.cityoffircrest.net/government/city-council/viafore&quot;, &quot;https://www.cityoffircrest.net/government/city-council/wittner&quot;, &quot;https://www.cityoffircrest.net/government/city-council/karen-mauer-smith&quot;, &quot;https://www.cityoffircrest.net/government/city-council/george&quot;, &quot;https://www.cityoffircrest.net/government/city-council/bufford&quot;, &quot;https://www.cityoffircrest.net/government/city-council/jim-andrews&quot;]</td>
-            <td>2025-06-23T05:10:59+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:fircrest/government</td>
-            <td>Nikki Bufford</td>
-            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Position 6&quot;]</td>
-            <td></td>
-            <td>nbufford@cityoffircrest.net</td>
-            <td>https://www.cityoffircrest.net/government/city-council/bufford</td>
-            <td></td>
-            <td>2025-12</td>
-            <td>https://www.cityoffircrest.net/wp-content/uploads/2025/04/Bufford-200x300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/fircrest/images/698d5e95d5624dabe1155374351b954ca643eba0300815dd3992198a68bc52f8.jpg</td>
-            <td>[&quot;https://www.cityoffircrest.net/government/city-council/reynolds&quot;, &quot;https://www.cityoffircrest.net/government/city-council/wittner&quot;, &quot;https://www.cityoffircrest.net/government/city-council/karen-mauer-smith&quot;, &quot;https://www.cityoffircrest.net/government/city-council/george&quot;, &quot;https://www.cityoffircrest.net/government/city-council/bufford&quot;, &quot;https://www.cityoffircrest.net/government/city-council/jim-andrews&quot;]</td>
-            <td>2025-06-23T05:10:59+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:fircrest/government</td>
-            <td>David M. Viafore</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 1&quot;]</td>
-            <td></td>
-            <td>dviafore@cityoffircrest.net</td>
-            <td>https://www.cityoffircrest.net/government/city-council/viafore</td>
-            <td>2025</td>
-            <td>2025-12</td>
-            <td>https://www.cityoffircrest.net/wp-content/uploads/2018/03/David-M.-Viafore-2018-240x300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/fircrest/images/d1afdb90da244ee7919bb85997cdcda25387a5104c372afbeaabf870fb1a6abd.jpg</td>
-            <td>[&quot;https://www.cityoffircrest.net/government/city-council/reynolds&quot;, &quot;https://www.cityoffircrest.net/government/city-council/viafore&quot;, &quot;https://www.cityoffircrest.net/government/city-council/wittner&quot;, &quot;https://www.cityoffircrest.net/government/city-council/karen-mauer-smith&quot;, &quot;https://www.cityoffircrest.net/government/city-council/george&quot;, &quot;https://www.cityoffircrest.net/government/city-council/bufford&quot;, &quot;https://www.cityoffircrest.net/government/city-council/jim-andrews&quot;]</td>
-            <td>2025-06-23T05:10:59+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:fircrest/government</td>
-            <td>Brett Wittner</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 3&quot;]</td>
-            <td></td>
-            <td>bwittner@cityoffircrest.net</td>
-            <td>https://www.cityoffircrest.net/government/city-council/wittner</td>
-            <td>2015-11</td>
-            <td>2027-12</td>
-            <td>https://www.cityoffircrest.net/wp-content/uploads/2018/03/Brett-Wittner-2018-240x300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/fircrest/images/ee66944831620f74275f6048193a8abbf637adb8ed27fb1f8ec1912ceb13622f.jpg</td>
-            <td>[&quot;https://www.cityoffircrest.net/government/city-council/reynolds&quot;, &quot;https://www.cityoffircrest.net/government/city-council/viafore&quot;, &quot;https://www.cityoffircrest.net/government/city-council/wittner&quot;, &quot;https://www.cityoffircrest.net/government/city-council/karen-mauer-smith&quot;, &quot;https://www.cityoffircrest.net/government/city-council/george&quot;, &quot;https://www.cityoffircrest.net/government/city-council/bufford&quot;, &quot;https://www.cityoffircrest.net/government/city-council/jim-andrews&quot;]</td>
-            <td>2025-06-23T05:10:59+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:fircrest/government</td>
-            <td>Karen Mauer-Smith</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 4&quot;]</td>
-            <td></td>
-            <td>kmauer-smith@cityoffircrest.net</td>
-            <td>https://www.cityoffircrest.net/government/city-council/karen-mauer-smith</td>
-            <td></td>
-            <td>2027-12</td>
-            <td></td>
-            <td></td>
-            <td>[&quot;https://www.cityoffircrest.net/government/city-council/reynolds&quot;, &quot;https://www.cityoffircrest.net/government/city-council/viafore&quot;, &quot;https://www.cityoffircrest.net/government/city-council/wittner&quot;, &quot;https://www.cityoffircrest.net/government/city-council/karen-mauer-smith&quot;, &quot;https://www.cityoffircrest.net/government/city-council/george&quot;, &quot;https://www.cityoffircrest.net/government/city-council/bufford&quot;, &quot;https://www.cityoffircrest.net/government/city-council/jim-andrews&quot;]</td>
-            <td>2025-06-23T05:10:59+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:fircrest/government</td>
-            <td>Hunter T. George</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 5&quot;]</td>
-            <td></td>
-            <td>hgeorge@cityoffircrest.net</td>
-            <td>https://www.cityoffircrest.net/government/city-council/george</td>
-            <td>2012</td>
-            <td>2027-12</td>
-            <td>https://www.cityoffircrest.net/wp-content/uploads/2018/03/Hunter-T.-George-2018-240x300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/fircrest/images/02b0ba9db930b3a9d24b51d87dae9bf395a8aa13c83ee3b1998cb008dbfd32d2.jpg</td>
-            <td>[&quot;https://www.cityoffircrest.net/government/city-council/reynolds&quot;, &quot;https://www.cityoffircrest.net/government/city-council/viafore&quot;, &quot;https://www.cityoffircrest.net/government/city-council/wittner&quot;, &quot;https://www.cityoffircrest.net/government/city-council/karen-mauer-smith&quot;, &quot;https://www.cityoffircrest.net/government/city-council/george&quot;, &quot;https://www.cityoffircrest.net/government/city-council/bufford&quot;, &quot;https://www.cityoffircrest.net/government/city-council/jim-andrews&quot;]</td>
-            <td>2025-06-23T05:10:59+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:fircrest/government</td>
-            <td>Jim Andrews</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 7&quot;]</td>
-            <td></td>
-            <td>jandrews@cityoffircrest.net</td>
-            <td>https://www.cityoffircrest.net/government/city-council/jim-andrews</td>
-            <td></td>
-            <td>2025-12</td>
-            <td>https://www.cityoffircrest.net/wp-content/uploads/2021/11/JA-225x300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/fircrest/images/ad896714be79ddde64e75190160081025627eedaed6704146b6e3fbdfcc2f8c7.jpg</td>
-            <td>[&quot;https://www.cityoffircrest.net/government/city-council/reynolds&quot;, &quot;https://www.cityoffircrest.net/government/city-council/viafore&quot;, &quot;https://www.cityoffircrest.net/government/city-council/wittner&quot;, &quot;https://www.cityoffircrest.net/government/city-council/karen-mauer-smith&quot;, &quot;https://www.cityoffircrest.net/government/city-council/george&quot;, &quot;https://www.cityoffircrest.net/government/city-council/bufford&quot;, &quot;https://www.cityoffircrest.net/government/city-council/jim-andrews&quot;]</td>
-            <td>2025-06-23T05:10:59+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/fircrest/images/698d5e95d5624dabe1155374351b954ca643eba0300815dd3992198a68bc52f8.jpg" alt="Nikki Bufford" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">NB</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Nikki Bufford</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:nbufford@cityoffircrest.net" class="break-all">nbufford@cityoffircrest.net</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityoffircrest.net/government/city-council/bufford" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/fircrest/images/d1afdb90da244ee7919bb85997cdcda25387a5104c372afbeaabf870fb1a6abd.jpg" alt="David M. Viafore" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DV</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">David M. Viafore</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:dviafore@cityoffircrest.net" class="break-all">dviafore@cityoffircrest.net</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityoffircrest.net/government/city-council/viafore" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/fircrest/images/ee66944831620f74275f6048193a8abbf637adb8ed27fb1f8ec1912ceb13622f.jpg" alt="Brett Wittner" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">BW</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Brett Wittner</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:bwittner@cityoffircrest.net" class="break-all">bwittner@cityoffircrest.net</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityoffircrest.net/government/city-council/wittner" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2"><div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm">KM</div></div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Karen Mauer-Smith</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:kmauer-smith@cityoffircrest.net" class="break-all">kmauer-smith@cityoffircrest.net</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityoffircrest.net/government/city-council/karen-mauer-smith" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/fircrest/images/02b0ba9db930b3a9d24b51d87dae9bf395a8aa13c83ee3b1998cb008dbfd32d2.jpg" alt="Hunter T. George" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">HG</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Hunter T. George</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:hgeorge@cityoffircrest.net" class="break-all">hgeorge@cityoffircrest.net</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityoffircrest.net/government/city-council/george" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/fircrest/images/ad896714be79ddde64e75190160081025627eedaed6704146b6e3fbdfcc2f8c7.jpg" alt="Jim Andrews" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JA</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Jim Andrews</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:jandrews@cityoffircrest.net" class="break-all">jandrews@cityoffircrest.net</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityoffircrest.net/government/city-council/jim-andrews" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

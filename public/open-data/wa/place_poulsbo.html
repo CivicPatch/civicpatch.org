@@ -1,238 +1,310 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/poulsbo/images/bd2f6762b472111edce5b637d7e849573fb8b50052298676ff2ea93c6f618a7e.jpg" alt="Becky Erickson" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">BE</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Becky Erickson</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:berickson@cityofpoulsbo.com" class="break-all">berickson@cityofpoulsbo.com</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 779-3901">(360) 779-3901</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_poulsbo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_poulsbo</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://cityofpoulsbo.com/meet-your-mayor" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:poulsbo/government</td>
-            <td>Becky Erickson</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(360) 779-3901</td>
-            <td>berickson@cityofpoulsbo.com</td>
-            <td>https://cityofpoulsbo.com/meet-your-mayor</td>
-            <td>2010</td>
-            <td></td>
-            <td>https://cityofpoulsbo.com/wp-content/uploads/2018/06/mayor-erickson-300x200.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/poulsbo/images/bd2f6762b472111edce5b637d7e849573fb8b50052298676ff2ea93c6f618a7e.jpg</td>
-            <td>[&quot;https://cityofpoulsbo.com/meet-your-mayor&quot;]</td>
-            <td>2025-06-23T02:02:45+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:poulsbo/government</td>
-            <td>Ed Stern</td>
-            <td>[&quot;Deputy Mayor&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Position 5&quot;]</td>
-            <td>(360) 779-3901</td>
-            <td>estern@cityofpoulsbo.com</td>
-            <td>https://cityofpoulsbo.com/ed-stern</td>
-            <td>1998</td>
-            <td>2025-12-31</td>
-            <td>https://cityofpoulsbo.com/wp-content/uploads/2025/03/Stern-resize2.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/poulsbo/images/6b477e1d181d7be51cab861f3b3fa9941364077195b334fda6156bf2fe948f58.jpg</td>
-            <td>[&quot;https://cityofpoulsbo.com/poulsbo-city-council&quot;, &quot;https://cityofpoulsbo.com/pam-crowe&quot;, &quot;https://cityofpoulsbo.com/ed-stern&quot;]</td>
-            <td>2025-06-23T02:02:45+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:poulsbo/government</td>
-            <td>Rick Eckert</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 1&quot;]</td>
-            <td>(360) 779-3901</td>
-            <td>reckert@cityofpoulsbo.com</td>
-            <td>https://cityofpoulsbo.com/rick-eckert</td>
-            <td>2024</td>
-            <td>2027-12-31</td>
-            <td>https://cityofpoulsbo.com/wp-content/uploads/2024/01/Eckert-Position-1-Web.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/poulsbo/images/57520e68a6d67558800225744c8d2ac083ade033f0c3e99dc177f5a50650191c.jpg</td>
-            <td>[&quot;https://cityofpoulsbo.com/poulsbo-city-council&quot;, &quot;https://cityofpoulsbo.com/pam-crowe&quot;, &quot;https://cityofpoulsbo.com/rick-eckert&quot;]</td>
-            <td>2025-06-23T02:02:45+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:poulsbo/government</td>
-            <td>Pam Crowe</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 2&quot;]</td>
-            <td>(360) 779-3901</td>
-            <td>pcrowe@cityofpoulsbo.com</td>
-            <td>https://cityofpoulsbo.com/pam-crowe</td>
-            <td>2024</td>
-            <td>2027-12-31</td>
-            <td>https://cityofpoulsbo.com/wp-content/uploads/2024/01/Crowe-WEB.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/poulsbo/images/2e0caed3e7e25010db5c1ba107e571e8a17008e404669d54768f4b4d2d32b570.jpg</td>
-            <td>[&quot;https://cityofpoulsbo.com/poulsbo-city-council&quot;, &quot;https://cityofpoulsbo.com/pam-crowe&quot;]</td>
-            <td>2025-06-23T02:02:45+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:poulsbo/government</td>
-            <td>Britt Livdahl</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 3&quot;]</td>
-            <td>(360) 779-3901</td>
-            <td>blivdahl@cityofpoulsbo.com</td>
-            <td>https://cityofpoulsbo.com/britt-livdahl</td>
-            <td>2020</td>
-            <td>2027-12-31</td>
-            <td>https://cityofpoulsbo.com/wp-content/uploads/2023/03/Bitt-Livdahl.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/poulsbo/images/78f45ab2740c189ec2d08098a7ac2d0caea21a85ffe5183eaf93c0bb0e2c049d.jpg</td>
-            <td>[&quot;https://cityofpoulsbo.com/poulsbo-city-council&quot;, &quot;https://cityofpoulsbo.com/pam-crowe&quot;, &quot;https://cityofpoulsbo.com/britt-livdahl&quot;]</td>
-            <td>2025-06-23T02:02:45+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:poulsbo/government</td>
-            <td>Doug Newell</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 4&quot;]</td>
-            <td>(360) 779-3901</td>
-            <td>dnewell@cityofpoulsbo.com</td>
-            <td>https://cityofpoulsbo.com/doug-newell</td>
-            <td>2024</td>
-            <td>2027-12-31</td>
-            <td>https://cityofpoulsbo.com/wp-content/uploads/2024/01/Doug-Newell-WEB.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/poulsbo/images/580ef48c7bb486d6fc4c37ae3337ad0ca10f131484d8bd3cc01774b84f4f777c.jpg</td>
-            <td>[&quot;https://cityofpoulsbo.com/poulsbo-city-council&quot;, &quot;https://cityofpoulsbo.com/pam-crowe&quot;, &quot;https://cityofpoulsbo.com/doug-newell&quot;]</td>
-            <td>2025-06-23T02:02:45+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:poulsbo/government</td>
-            <td>Doug Taber</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 6&quot;]</td>
-            <td>(360) 779-3901</td>
-            <td>dtaber@cityofpoulsbo.com</td>
-            <td>https://cityofpoulsbo.com/doug-taber</td>
-            <td>2024-04-03</td>
-            <td>2025-12-31</td>
-            <td>https://cityofpoulsbo.com/wp-content/uploads/2024/04/Taber-Doug-e1712264722791.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/poulsbo/images/fab7a8dd9b46773bc28ade729dc37db5e4b9e647393b5d9629f3f38585cfde74.jpg</td>
-            <td>[&quot;https://cityofpoulsbo.com/poulsbo-city-council&quot;, &quot;https://cityofpoulsbo.com/pam-crowe&quot;, &quot;https://cityofpoulsbo.com/doug-taber&quot;]</td>
-            <td>2025-06-23T02:02:45+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:poulsbo/government</td>
-            <td>Gary McVey</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 7&quot;]</td>
-            <td>(360) 779-3901</td>
-            <td>gmcvey@cityofpoulsbo.com</td>
-            <td>https://cityofpoulsbo.com/gary-mcvey</td>
-            <td>2020</td>
-            <td>2025-12-31</td>
-            <td>https://cityofpoulsbo.com/wp-content/uploads/2019/12/Gary-McVey-227x300.png</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/poulsbo/images/4029d0bcab57d0674fc37c68989d170251dc3d0e7fe6b1232cff31f91ee4ca60.png</td>
-            <td>[&quot;https://cityofpoulsbo.com/poulsbo-city-council&quot;, &quot;https://cityofpoulsbo.com/pam-crowe&quot;, &quot;https://cityofpoulsbo.com/gary-mcvey&quot;]</td>
-            <td>2025-06-23T02:02:45+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/poulsbo/images/6b477e1d181d7be51cab861f3b3fa9941364077195b334fda6156bf2fe948f58.jpg" alt="Ed Stern" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">ES</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Ed Stern</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Deputy Mayor, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:estern@cityofpoulsbo.com" class="break-all">estern@cityofpoulsbo.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 779-3901">(360) 779-3901</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://cityofpoulsbo.com/ed-stern" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/poulsbo/images/57520e68a6d67558800225744c8d2ac083ade033f0c3e99dc177f5a50650191c.jpg" alt="Rick Eckert" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RE</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Rick Eckert</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:reckert@cityofpoulsbo.com" class="break-all">reckert@cityofpoulsbo.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 779-3901">(360) 779-3901</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://cityofpoulsbo.com/rick-eckert" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/poulsbo/images/2e0caed3e7e25010db5c1ba107e571e8a17008e404669d54768f4b4d2d32b570.jpg" alt="Pam Crowe" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">PC</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Pam Crowe</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:pcrowe@cityofpoulsbo.com" class="break-all">pcrowe@cityofpoulsbo.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 779-3901">(360) 779-3901</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://cityofpoulsbo.com/pam-crowe" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/poulsbo/images/78f45ab2740c189ec2d08098a7ac2d0caea21a85ffe5183eaf93c0bb0e2c049d.jpg" alt="Britt Livdahl" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">BL</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Britt Livdahl</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:blivdahl@cityofpoulsbo.com" class="break-all">blivdahl@cityofpoulsbo.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 779-3901">(360) 779-3901</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://cityofpoulsbo.com/britt-livdahl" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/poulsbo/images/580ef48c7bb486d6fc4c37ae3337ad0ca10f131484d8bd3cc01774b84f4f777c.jpg" alt="Doug Newell" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DN</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Doug Newell</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:dnewell@cityofpoulsbo.com" class="break-all">dnewell@cityofpoulsbo.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 779-3901">(360) 779-3901</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://cityofpoulsbo.com/doug-newell" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/poulsbo/images/fab7a8dd9b46773bc28ade729dc37db5e4b9e647393b5d9629f3f38585cfde74.jpg" alt="Doug Taber" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DT</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Doug Taber</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:dtaber@cityofpoulsbo.com" class="break-all">dtaber@cityofpoulsbo.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 779-3901">(360) 779-3901</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://cityofpoulsbo.com/doug-taber" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/poulsbo/images/4029d0bcab57d0674fc37c68989d170251dc3d0e7fe6b1232cff31f91ee4ca60.png" alt="Gary McVey" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">GM</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Gary McVey</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:gmcvey@cityofpoulsbo.com" class="break-all">gmcvey@cityofpoulsbo.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 779-3901">(360) 779-3901</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://cityofpoulsbo.com/gary-mcvey" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

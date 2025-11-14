@@ -1,0 +1,99 @@
+<table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+    <% people.each do |rep| %>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <% initials = initials_for(rep['name']) %>
+          <% if rep['cdn_image']&.strip&.present? %>
+            <div class="flex justify-center p-2">
+              <img src="<%= h(rep['cdn_image']) %>" alt="<%= h(rep['name'] || 'Representative') %>" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;"><%= initials %></div>
+            </div>
+          <% else %>
+            <div class="flex justify-center p-2"><div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm"><%= initials %></div></div>
+          <% end %>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900"><%= h(rep['name'].present? ? rep['name'] : '-') %></div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <% office_text = office_text_for(rep).present? ? office_text_for(rep) : '-' %>
+          <% other_names = other_names_for(rep) %>
+          <% if other_names.any? %>
+            <% if other_names.size > 1 %>
+              <% if office_text != '-' %>
+                <div class="text-center">
+                  <div class="font-medium"><%= h(office_text) %></div>
+                  <% other_names.each do |name| %>
+                    <div class="text-gray-600"><%= h(name) %></div>
+                  <% end %>
+                </div>
+              <% else %>
+                <div class="text-center">
+                  <% other_names.each do |name| %>
+                    <div class="text-gray-600"><%= h(name) %></div>
+                  <% end %>
+                </div>
+              <% end %>
+            <% else %>
+              <% combined = office_text != '-' ? "#{office_text} (#{other_names.first})" : other_names.first %>
+              <div class="text-center"><%= h(combined) %></div>
+            <% end %>
+          <% else %>
+            <div class="text-center"><%= h(office_text) %></div>
+          <% end %>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <% email = email_for(rep) %>
+          <% if email&.present? %>
+            <div class="text-center"><a href="mailto:<%= h(email) %>" class="break-all"><%= h(email) %></a></div>
+          <% else %>
+            <div class="text-center">-</div>
+          <% end %>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <% phone = phone_for(rep) %>
+          <% if phone&.present? %>
+            <div class="text-center"><a href="tel:<%= h(phone) %>"><%= h(phone) %></a></div>
+          <% else %>
+            <div class="text-center">-</div>
+          <% end %>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <% links = all_links_for(rep) %>
+          <% if links.any? %>
+            <div class="text-center space-y-1">
+              <% links.each do |link| %>
+                <a href="<%= h(link[:url]) %>" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800"><%= h(link[:label]) %></a>
+              <% end %>
+            </div>
+          <% else %>
+            <div class="text-center">-</div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

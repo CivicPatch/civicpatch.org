@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/ridgefield/images/5a349d137fa37dc0bd06151b2aef6897bc0d54d5d5214c1063fc35efaff416e0.png" alt="Matt Cole" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MC</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Matt Cole</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Matt.Cole@ridgefieldwa.us" class="break-all">Matt.Cole@ridgefieldwa.us</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_ridgefield</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_ridgefield</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://ridgefieldwa.us/directory.aspx?eid=10" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:ridgefield/government</td>
-            <td>Matt Cole</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;Position 4&quot;]</td>
-            <td></td>
-            <td>Matt.Cole@ridgefieldwa.us</td>
-            <td>https://ridgefieldwa.us/directory.aspx?eid=10</td>
-            <td>2022</td>
-            <td>2025-12-31</td>
-            <td>https://ridgefieldwa.us/ImageRepository/Document?documentID=2628</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/ridgefield/images/5a349d137fa37dc0bd06151b2aef6897bc0d54d5d5214c1063fc35efaff416e0.png</td>
-            <td>[&quot;https://ridgefieldwa.us/163/City-Council&quot;, &quot;https://ridgefieldwa.us/directory.aspx?eid=10&quot;]</td>
-            <td>2025-06-23T04:20:04+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:ridgefield/government</td>
-            <td>Judy Chipman</td>
-            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Position 7&quot;]</td>
-            <td></td>
-            <td>judy.chipman@ridgefieldwa.us</td>
-            <td>https://ridgefieldwa.us/directory.aspx?eid=12</td>
-            <td>2021</td>
-            <td>2027-12-31</td>
-            <td>https://ridgefieldwa.us/ImageRepository/Document?documentID=2627</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/ridgefield/images/e84ea7846e609edbd5c039ca92b52c032c48db080ef9587bc828fff10d1f13ae.png</td>
-            <td>[&quot;https://ridgefieldwa.us/163/City-Council&quot;, &quot;https://ridgefieldwa.us/directory.aspx?eid=12&quot;]</td>
-            <td>2025-06-23T04:20:04+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:ridgefield/government</td>
-            <td>Meghan Hamilton</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 1&quot;]</td>
-            <td></td>
-            <td>meghan.hamilton@ridgefieldwa.us</td>
-            <td>https://ridgefieldwa.us/directory.aspx?eid=7</td>
-            <td>2025</td>
-            <td>2025-12-31</td>
-            <td>https://ridgefieldwa.us/ImageRepository/Document?documentID=2788</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/ridgefield/images/bd90bce8f6d3003b0f570354ca0baf096232277ebbb75f4ebcc6f77bddf55758.png</td>
-            <td>[&quot;https://ridgefieldwa.us/163/City-Council&quot;, &quot;https://ridgefieldwa.us/directory.aspx?eid=7&quot;]</td>
-            <td>2025-06-23T04:20:04+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:ridgefield/government</td>
-            <td>Clyde Burkle</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 2&quot;]</td>
-            <td></td>
-            <td>clyde.burkle@ridgefieldwa.us</td>
-            <td>https://ridgefieldwa.us/directory.aspx?eid=90</td>
-            <td>2023</td>
-            <td>2027-12-31</td>
-            <td>https://ridgefieldwa.us/ImageRepository/Document?documentID=2629</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/ridgefield/images/5c5edd26a864739e197f26c008e9385e5b1e774ebfdfdab5cd1ec3e8351b4408.png</td>
-            <td>[&quot;https://ridgefieldwa.us/163/City-Council&quot;, &quot;https://ridgefieldwa.us/directory.aspx?eid=90&quot;]</td>
-            <td>2025-06-23T04:20:04+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:ridgefield/government</td>
-            <td>Lee Wells</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 3&quot;]</td>
-            <td></td>
-            <td>david.standal@ci.ridgefield.wa.us</td>
-            <td>https://ridgefieldwa.us/directory.aspx?eid=9</td>
-            <td>2008</td>
-            <td>2027-12-31</td>
-            <td>https://ridgefieldwa.us/ImageRepository/Document?documentID=2630</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/ridgefield/images/f5cf134ab524bd526be18d9dfcb716a409c0d516aa888960830fdc70b66a39e8.png</td>
-            <td>[&quot;https://ridgefieldwa.us/163/City-Council&quot;, &quot;https://ridgefieldwa.us/directory.aspx?eid=9&quot;]</td>
-            <td>2025-06-23T04:20:04+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:ridgefield/government</td>
-            <td>Katie Favela</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 5&quot;]</td>
-            <td></td>
-            <td>katie.favela@ridgefieldwa.us</td>
-            <td>https://ridgefieldwa.us/directory.aspx?eid=11</td>
-            <td>2024-04-11</td>
-            <td>2027-12-31</td>
-            <td>https://ridgefieldwa.us/ImageRepository/Document?documentID=2626</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/ridgefield/images/9d19a60d531d9b958912045b626263c3c4c78e6a5c68c109df786ba615dc2833.png</td>
-            <td>[&quot;https://ridgefieldwa.us/163/City-Council&quot;, &quot;https://ridgefieldwa.us/directory.aspx?eid=11&quot;]</td>
-            <td>2025-06-23T04:20:04+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:ridgefield/government</td>
-            <td>Rian Davis</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 6&quot;]</td>
-            <td></td>
-            <td>rian.davis@ridgefieldwa.us</td>
-            <td>https://ridgefieldwa.us/directory.aspx?eid=6</td>
-            <td>2024-10-10</td>
-            <td>2025-12-31</td>
-            <td>https://ridgefieldwa.us/ImageRepository/Document?documentID=2632</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/ridgefield/images/05cacb8f90d1876d575486761b58dcb913b1973695936ba59e2f015c4c7b841b.png</td>
-            <td>[&quot;https://ridgefieldwa.us/163/City-Council&quot;, &quot;https://ridgefieldwa.us/directory.aspx?eid=6&quot;]</td>
-            <td>2025-06-23T04:20:04+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/ridgefield/images/e84ea7846e609edbd5c039ca92b52c032c48db080ef9587bc828fff10d1f13ae.png" alt="Judy Chipman" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JC</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Judy Chipman</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:judy.chipman@ridgefieldwa.us" class="break-all">judy.chipman@ridgefieldwa.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://ridgefieldwa.us/directory.aspx?eid=12" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/ridgefield/images/bd90bce8f6d3003b0f570354ca0baf096232277ebbb75f4ebcc6f77bddf55758.png" alt="Meghan Hamilton" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MH</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Meghan Hamilton</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:meghan.hamilton@ridgefieldwa.us" class="break-all">meghan.hamilton@ridgefieldwa.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://ridgefieldwa.us/directory.aspx?eid=7" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/ridgefield/images/5c5edd26a864739e197f26c008e9385e5b1e774ebfdfdab5cd1ec3e8351b4408.png" alt="Clyde Burkle" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">CB</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Clyde Burkle</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:clyde.burkle@ridgefieldwa.us" class="break-all">clyde.burkle@ridgefieldwa.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://ridgefieldwa.us/directory.aspx?eid=90" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/ridgefield/images/f5cf134ab524bd526be18d9dfcb716a409c0d516aa888960830fdc70b66a39e8.png" alt="Lee Wells" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">LW</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Lee Wells</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:david.standal@ci.ridgefield.wa.us" class="break-all">david.standal@ci.ridgefield.wa.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://ridgefieldwa.us/directory.aspx?eid=9" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/ridgefield/images/9d19a60d531d9b958912045b626263c3c4c78e6a5c68c109df786ba615dc2833.png" alt="Katie Favela" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">KF</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Katie Favela</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:katie.favela@ridgefieldwa.us" class="break-all">katie.favela@ridgefieldwa.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://ridgefieldwa.us/directory.aspx?eid=11" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/ridgefield/images/05cacb8f90d1876d575486761b58dcb913b1973695936ba59e2f015c4c7b841b.png" alt="Rian Davis" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RD</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Rian Davis</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:rian.davis@ridgefieldwa.us" class="break-all">rian.davis@ridgefieldwa.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://ridgefieldwa.us/directory.aspx?eid=6" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

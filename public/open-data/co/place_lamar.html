@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lamar/images/d2ef31c7c0b45cd166b8ed418a574a29b0dd8ff48e153d865b20acc2e7d8fc9e.jpg" alt="Kirk Crespin" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">KC</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Kirk Crespin</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:kirk.crespin@ci.lamar.co.us" class="break-all">kirk.crespin@ci.lamar.co.us</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(719) 688-9778">(719) 688-9778</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_lamar</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_lamar</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.ci.lamar.co.us/kirk-crespin" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lamar/government</td>
-            <td>Kirk Crespin</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(719) 688-9778</td>
-            <td>kirk.crespin@ci.lamar.co.us</td>
-            <td>https://www.ci.lamar.co.us/kirk-crespin</td>
-            <td></td>
-            <td></td>
-            <td>https://streamline.imgix.net/68127084-7db1-406c-acc4-f2aeb70c9675/ce40a8e2-9ac5-4a7d-9965-2442df00ecba/KCrespin.jpg?ixlib=rb-1.1.0&amp;w=2000&amp;h=2000&amp;fit=max&amp;or=0&amp;s=121e863ac334ab1b64202123d345f468</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lamar/images/d2ef31c7c0b45cd166b8ed418a574a29b0dd8ff48e153d865b20acc2e7d8fc9e.jpg</td>
-            <td>[&quot;https://www.ci.lamar.co.us/mayor-council&quot;, &quot;https://www.ci.lamar.co.us/kirk-crespin&quot;]</td>
-            <td>2025-06-30T17:28:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lamar/government</td>
-            <td>Manuel Tamez</td>
-            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 1&quot;]</td>
-            <td>(719) 373-0519</td>
-            <td>manuel.tamez@ci.lamar.co.us</td>
-            <td>https://www.ci.lamar.co.us/manuel-tamez</td>
-            <td></td>
-            <td></td>
-            <td>https://streamline.imgix.net/68127084-7db1-406c-acc4-f2aeb70c9675/d0ece5f4-152c-43ff-9adf-ca2c79f5bbd4/MTamez.jpg?ixlib=rb-1.1.0&amp;w=2000&amp;h=2000&amp;fit=max&amp;or=0&amp;s=66681a869157f63a0541a31a87a10cc4</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lamar/images/d98b8ce86960e303b7c626636a5c2dac14d7556c54121879e07c63e4041407fc.jpg</td>
-            <td>[&quot;https://www.ci.lamar.co.us/mayor-council&quot;, &quot;https://www.ci.lamar.co.us/manuel-tamez&quot;]</td>
-            <td>2025-06-30T17:28:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lamar/government</td>
-            <td>Brent Bates</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 1&quot;]</td>
-            <td>(719) 940-2483</td>
-            <td>brent.bates@ci.lamar.co.us</td>
-            <td>https://www.ci.lamar.co.us/brent-bates</td>
-            <td></td>
-            <td></td>
-            <td>https://streamline.imgix.net/68127084-7db1-406c-acc4-f2aeb70c9675/e6aa2b27-6297-4ccf-ac50-90a6405323dc/BBates.jpg?ixlib=rb-1.1.0&amp;w=2000&amp;h=2000&amp;fit=max&amp;or=0&amp;s=eb213e6dd04896e9dfe8f756aedf5422</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lamar/images/a8c0888e05f9adb46519434cdaf585955cb1895ff2b9e3d5f3c839a177ec06d2.jpg</td>
-            <td>[&quot;https://www.ci.lamar.co.us/mayor-council&quot;, &quot;https://www.ci.lamar.co.us/brent-bates&quot;]</td>
-            <td>2025-06-30T17:28:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lamar/government</td>
-            <td>David Zavala</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 2&quot;]</td>
-            <td>(719) 688-2940</td>
-            <td>david.zavala@ci.lamar.co.us</td>
-            <td>https://www.ci.lamar.co.us/david-zavala</td>
-            <td>2025-06-30</td>
-            <td></td>
-            <td>https://streamline.imgix.net/68127084-7db1-406c-acc4-f2aeb70c9675/5a197a02-18af-46e5-9e24-b12d85677ad1/DZavala.jpg?ixlib=rb-1.1.0&amp;w=2000&amp;h=2000&amp;fit=max&amp;or=0&amp;s=6679e3f67257c6474116de565a6ea8f6</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lamar/images/2a228c6c69d19fe2b565afdf0340803a5af9db018dc8c4147cca88572f3e66b7.jpg</td>
-            <td>[&quot;https://www.ci.lamar.co.us/mayor-council&quot;, &quot;https://www.ci.lamar.co.us/david-zavala&quot;]</td>
-            <td>2025-06-30T17:28:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lamar/government</td>
-            <td>Gerry Jenkins</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 2&quot;]</td>
-            <td>(719) 940-1185</td>
-            <td>gerry.jenkins@ci.lamar.co.us</td>
-            <td>https://www.ci.lamar.co.us/gerry-jenkins</td>
-            <td></td>
-            <td></td>
-            <td>https://streamline.imgix.net/68127084-7db1-406c-acc4-f2aeb70c9675/7f04a53a-72b4-49ba-9491-095c8b5f9eda/GJenkins.jpg?ixlib=rb-1.1.0&amp;w=2000&amp;h=2000&amp;fit=max&amp;or=0&amp;s=067f2945789db828009435eaa45965b4</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lamar/images/09e3a458b5309d46001cbac665ae063046ada689e72e6f939e6e6dfb35b8d565.jpg</td>
-            <td>[&quot;https://www.ci.lamar.co.us/mayor-council&quot;, &quot;https://www.ci.lamar.co.us/gerry-jenkins&quot;]</td>
-            <td>2025-06-30T17:28:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lamar/government</td>
-            <td>Joe Gonzales</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 3&quot;]</td>
-            <td>(719) 688-0137</td>
-            <td>joe.gonzales@ci.lamar.co.us</td>
-            <td>https://www.ci.lamar.co.us/joe-gonzales</td>
-            <td></td>
-            <td></td>
-            <td>https://streamline.imgix.net/68127084-7db1-406c-acc4-f2aeb70c9675/0f578a35-cf19-4caa-9013-d9218ec18054/JGonzeales.jpg?ixlib=rb-1.1.0&amp;w=2000&amp;h=2000&amp;fit=max&amp;or=0&amp;s=5be30ae06f0a862f32b0843d51b38f21</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lamar/images/aee821baf37f1e8586dfc843e9b350f9f1771ef2fb49b350f16579e70bb42c58.jpg</td>
-            <td>[&quot;https://www.ci.lamar.co.us/mayor-council&quot;, &quot;https://www.ci.lamar.co.us/joe-gonzales&quot;]</td>
-            <td>2025-06-30T17:28:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:lamar/government</td>
-            <td>Shalah Mata</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 3&quot;]</td>
-            <td>(719) 336-4376</td>
-            <td>shalah.mata@ci.lamar.co.us</td>
-            <td>https://www.ci.lamar.co.us/shalah-mata</td>
-            <td></td>
-            <td></td>
-            <td>https://streamline.imgix.net/68127084-7db1-406c-acc4-f2aeb70c9675/31b881e4-7e9c-47e4-83f5-3c6a14ec5829/SMata.jpg?ixlib=rb-1.1.0&amp;w=2000&amp;h=2000&amp;fit=max&amp;or=0&amp;s=ee9aa5afca2715479e65f4c1e51c3943</td>
-            <td>https://cdn.civicpatch.org/open-data/co/lamar/images/1d2468964b688c610eeda06a770600fd221b701270ab4ff3d16fac6d3f081a12.jpg</td>
-            <td>[&quot;https://www.ci.lamar.co.us/mayor-council&quot;, &quot;https://www.ci.lamar.co.us/shalah-mata&quot;]</td>
-            <td>2025-06-30T17:28:34+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lamar/images/d98b8ce86960e303b7c626636a5c2dac14d7556c54121879e07c63e4041407fc.jpg" alt="Manuel Tamez" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MT</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Manuel Tamez</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:manuel.tamez@ci.lamar.co.us" class="break-all">manuel.tamez@ci.lamar.co.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(719) 373-0519">(719) 373-0519</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.ci.lamar.co.us/manuel-tamez" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lamar/images/a8c0888e05f9adb46519434cdaf585955cb1895ff2b9e3d5f3c839a177ec06d2.jpg" alt="Brent Bates" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">BB</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Brent Bates</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:brent.bates@ci.lamar.co.us" class="break-all">brent.bates@ci.lamar.co.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(719) 940-2483">(719) 940-2483</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.ci.lamar.co.us/brent-bates" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lamar/images/2a228c6c69d19fe2b565afdf0340803a5af9db018dc8c4147cca88572f3e66b7.jpg" alt="David Zavala" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DZ</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">David Zavala</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:david.zavala@ci.lamar.co.us" class="break-all">david.zavala@ci.lamar.co.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(719) 688-2940">(719) 688-2940</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.ci.lamar.co.us/david-zavala" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lamar/images/09e3a458b5309d46001cbac665ae063046ada689e72e6f939e6e6dfb35b8d565.jpg" alt="Gerry Jenkins" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">GJ</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Gerry Jenkins</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:gerry.jenkins@ci.lamar.co.us" class="break-all">gerry.jenkins@ci.lamar.co.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(719) 940-1185">(719) 940-1185</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.ci.lamar.co.us/gerry-jenkins" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lamar/images/aee821baf37f1e8586dfc843e9b350f9f1771ef2fb49b350f16579e70bb42c58.jpg" alt="Joe Gonzales" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JG</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Joe Gonzales</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:joe.gonzales@ci.lamar.co.us" class="break-all">joe.gonzales@ci.lamar.co.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(719) 688-0137">(719) 688-0137</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.ci.lamar.co.us/joe-gonzales" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/lamar/images/1d2468964b688c610eeda06a770600fd221b701270ab4ff3d16fac6d3f081a12.jpg" alt="Shalah Mata" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SM</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Shalah Mata</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:shalah.mata@ci.lamar.co.us" class="break-all">shalah.mata@ci.lamar.co.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(719) 336-4376">(719) 336-4376</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.ci.lamar.co.us/shalah-mata" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

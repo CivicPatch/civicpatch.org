@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/englewood/images/a2531d3687cca674ef43615f311485bf78eca5ca1212cc8dbb29e37e10781177.png" alt="Othoniel Sierra" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">OS</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Othoniel Sierra</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor, Council Member</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:osierra@englewoodco.gov" class="break-all">osierra@englewoodco.gov</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(720) 551-3301">(720) 551-3301</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_englewood</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_englewood</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.englewoodco.gov/government/city-council/othoniel-sierra-mayor" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:englewood/government</td>
-            <td>Othoniel Sierra</td>
-            <td>[&quot;Mayor&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 1&quot;]</td>
-            <td>(720) 551-3301</td>
-            <td>osierra@englewoodco.gov</td>
-            <td>https://www.englewoodco.gov/government/city-council/othoniel-sierra-mayor</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td>https://www.englewoodco.gov/home/showpublishedimage/4070/638290033237330000</td>
-            <td>https://cdn.civicpatch.org/open-data/co/englewood/images/a2531d3687cca674ef43615f311485bf78eca5ca1212cc8dbb29e37e10781177.png</td>
-            <td>[&quot;https://www.englewoodco.gov/government/city-council/othoniel-sierra-mayor&quot;, &quot;https://www.englewoodco.gov/government/city-council&quot;, &quot;https://www.englewoodco.gov/government/city-council/chelsea-nunnenkamp-district-2&quot;, &quot;https://www.englewoodco.gov/government/city-council/steven-ward-district-4&quot;, &quot;https://www.englewoodco.gov/government/city-council/rita-russell-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/tena-prange-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/kim-wright-at-large&quot;]</td>
-            <td>2025-06-27T21:01:47+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:englewood/government</td>
-            <td>Joe Anderson</td>
-            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 3&quot;]</td>
-            <td>(720) 998-6116</td>
-            <td>janderson@englewoodco.gov</td>
-            <td>https://www.englewoodco.gov/government/city-council/joe-anderson-mayor-pro-tem</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td>https://www.englewoodco.gov/home/showpublishedimage/6050/638290034348470000</td>
-            <td>https://cdn.civicpatch.org/open-data/co/englewood/images/b1b53e518471764f6f57a00c8a60bf4bb2260b36c8fdd66053c1b98d66a17ae9.jpg</td>
-            <td>[&quot;https://www.englewoodco.gov/government/city-council/othoniel-sierra-mayor&quot;, &quot;https://www.englewoodco.gov/government/city-council&quot;, &quot;https://www.englewoodco.gov/government/city-council/joe-anderson-mayor-pro-tem&quot;, &quot;https://www.englewoodco.gov/government/city-council/chelsea-nunnenkamp-district-2&quot;, &quot;https://www.englewoodco.gov/government/city-council/steven-ward-district-4&quot;, &quot;https://www.englewoodco.gov/government/city-council/rita-russell-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/tena-prange-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/kim-wright-at-large&quot;]</td>
-            <td>2025-06-27T21:01:47+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:englewood/government</td>
-            <td>Kim Wright</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;At-large&quot;]</td>
-            <td>(303) 222-7129</td>
-            <td>kwright@englewoodco.gov</td>
-            <td>https://www.englewoodco.gov/government/city-council/kim-wright-at-large</td>
-            <td>2023-11</td>
-            <td>2025-11</td>
-            <td>https://www.englewoodco.gov/home/showpublishedimage/10793/638494723088670000</td>
-            <td>https://cdn.civicpatch.org/open-data/co/englewood/images/539c24ac783a4ec13a43a268057cdadcc41f1915323f1740eff0ac5cd5d78450.png</td>
-            <td>[&quot;https://www.englewoodco.gov/government/city-council/othoniel-sierra-mayor&quot;, &quot;https://www.englewoodco.gov/government/city-council&quot;, &quot;https://www.englewoodco.gov/government/city-council/chelsea-nunnenkamp-district-2&quot;, &quot;https://www.englewoodco.gov/government/city-council/steven-ward-district-4&quot;, &quot;https://www.englewoodco.gov/government/city-council/rita-russell-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/tena-prange-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/kim-wright-at-large&quot;]</td>
-            <td>2025-06-27T21:01:47+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:englewood/government</td>
-            <td>Rita Russell</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;At-large&quot;]</td>
-            <td>(303) 639-6181</td>
-            <td>rrussell@englewoodco.gov</td>
-            <td>https://www.englewoodco.gov/government/city-council/rita-russell-at-large</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td>https://www.englewoodco.gov/home/showpublishedimage/2946/638290033767030000</td>
-            <td>https://cdn.civicpatch.org/open-data/co/englewood/images/c5fccd4c1318618f5f458c727715f160deac8fdf0c8b1427a7755abb6d41ef55.png</td>
-            <td>[&quot;https://www.englewoodco.gov/government/city-council/othoniel-sierra-mayor&quot;, &quot;https://www.englewoodco.gov/government/city-council&quot;, &quot;https://www.englewoodco.gov/government/city-council/chelsea-nunnenkamp-district-2&quot;, &quot;https://www.englewoodco.gov/government/city-council/steven-ward-district-4&quot;, &quot;https://www.englewoodco.gov/government/city-council/rita-russell-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/tena-prange-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/kim-wright-at-large&quot;]</td>
-            <td>2025-06-27T21:01:47+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:englewood/government</td>
-            <td>Tena Prange</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;At-large&quot;]</td>
-            <td>(303) 762-2300</td>
-            <td>tprange@englewoodco.gov</td>
-            <td>https://www.englewoodco.gov/government/city-council/tena-prange-at-large</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td>https://www.englewoodco.gov/home/showpublishedimage/10807/638497186695830000</td>
-            <td>https://cdn.civicpatch.org/open-data/co/englewood/images/89b45c683cab398e8a90d3e6ef651218cbf72598707913139945039072309850.png</td>
-            <td>[&quot;https://www.englewoodco.gov/government/city-council/othoniel-sierra-mayor&quot;, &quot;https://www.englewoodco.gov/government/city-council&quot;, &quot;https://www.englewoodco.gov/government/city-council/chelsea-nunnenkamp-district-2&quot;, &quot;https://www.englewoodco.gov/government/city-council/steven-ward-district-4&quot;, &quot;https://www.englewoodco.gov/government/city-council/rita-russell-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/tena-prange-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/kim-wright-at-large&quot;]</td>
-            <td>2025-06-27T21:01:47+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:englewood/government</td>
-            <td>Chelsea Nunnenkamp</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 2&quot;]</td>
-            <td>(303) 762-2300</td>
-            <td>cnunnenkamp@englewoodco.gov</td>
-            <td>https://www.englewoodco.gov/government/city-council/chelsea-nunnenkamp-district-2</td>
-            <td>2021-11</td>
-            <td>2025-11</td>
-            <td>https://www.englewoodco.gov/home/showpublishedimage/8320/638839339683900000</td>
-            <td>https://cdn.civicpatch.org/open-data/co/englewood/images/e93faadca9d888f1461387178ebbb4337f9e402848be59270b2d2f7ba81e5bf6.jpg</td>
-            <td>[&quot;https://www.englewoodco.gov/government/city-council/othoniel-sierra-mayor&quot;, &quot;https://www.englewoodco.gov/government/city-council&quot;, &quot;https://www.englewoodco.gov/government/city-council/chelsea-nunnenkamp-district-2&quot;, &quot;https://www.englewoodco.gov/government/city-council/steven-ward-district-4&quot;, &quot;https://www.englewoodco.gov/government/city-council/rita-russell-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/tena-prange-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/kim-wright-at-large&quot;]</td>
-            <td>2025-06-27T21:01:47+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:englewood/government</td>
-            <td>Steven Ward</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 4&quot;]</td>
-            <td>(303) 900-8811</td>
-            <td>sward@englewoodco.gov</td>
-            <td>https://www.englewoodco.gov/government/city-council/steven-ward-district-4</td>
-            <td>2021-11</td>
-            <td>2025-11</td>
-            <td>https://www.englewoodco.gov/home/showpublishedimage/7482/638290034968470000</td>
-            <td>https://cdn.civicpatch.org/open-data/co/englewood/images/ce3fc236c8fcbd5d926ee1f15c622816d4c45213c1ff3f328ffb0de8bd23adf9.jpg</td>
-            <td>[&quot;https://www.englewoodco.gov/government/city-council/othoniel-sierra-mayor&quot;, &quot;https://www.englewoodco.gov/government/city-council&quot;, &quot;https://www.englewoodco.gov/government/city-council/chelsea-nunnenkamp-district-2&quot;, &quot;https://www.englewoodco.gov/government/city-council/steven-ward-district-4&quot;, &quot;https://www.englewoodco.gov/government/city-council/rita-russell-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/tena-prange-at-large&quot;, &quot;https://www.englewoodco.gov/government/city-council/kim-wright-at-large&quot;]</td>
-            <td>2025-06-27T21:01:47+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/englewood/images/b1b53e518471764f6f57a00c8a60bf4bb2260b36c8fdd66053c1b98d66a17ae9.jpg" alt="Joe Anderson" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JA</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Joe Anderson</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:janderson@englewoodco.gov" class="break-all">janderson@englewoodco.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(720) 998-6116">(720) 998-6116</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.englewoodco.gov/government/city-council/joe-anderson-mayor-pro-tem" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/englewood/images/539c24ac783a4ec13a43a268057cdadcc41f1915323f1740eff0ac5cd5d78450.png" alt="Kim Wright" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">KW</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Kim Wright</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:kwright@englewoodco.gov" class="break-all">kwright@englewoodco.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 222-7129">(303) 222-7129</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.englewoodco.gov/government/city-council/kim-wright-at-large" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/englewood/images/c5fccd4c1318618f5f458c727715f160deac8fdf0c8b1427a7755abb6d41ef55.png" alt="Rita Russell" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RR</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Rita Russell</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:rrussell@englewoodco.gov" class="break-all">rrussell@englewoodco.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 639-6181">(303) 639-6181</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.englewoodco.gov/government/city-council/rita-russell-at-large" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/englewood/images/89b45c683cab398e8a90d3e6ef651218cbf72598707913139945039072309850.png" alt="Tena Prange" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">TP</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Tena Prange</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:tprange@englewoodco.gov" class="break-all">tprange@englewoodco.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 762-2300">(303) 762-2300</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.englewoodco.gov/government/city-council/tena-prange-at-large" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/englewood/images/e93faadca9d888f1461387178ebbb4337f9e402848be59270b2d2f7ba81e5bf6.jpg" alt="Chelsea Nunnenkamp" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">CN</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Chelsea Nunnenkamp</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:cnunnenkamp@englewoodco.gov" class="break-all">cnunnenkamp@englewoodco.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 762-2300">(303) 762-2300</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.englewoodco.gov/government/city-council/chelsea-nunnenkamp-district-2" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/englewood/images/ce3fc236c8fcbd5d926ee1f15c622816d4c45213c1ff3f328ffb0de8bd23adf9.jpg" alt="Steven Ward" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SW</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Steven Ward</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:sward@englewoodco.gov" class="break-all">sward@englewoodco.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 900-8811">(303) 900-8811</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.englewoodco.gov/government/city-council/steven-ward-district-4" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

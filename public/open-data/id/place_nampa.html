@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/id/nampa/images/5c3687414fbc08e77f060d9d8e36fcd29fc83427a2e282ade21c113833f3e33a.jpg" alt="Debbie Kling" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DK</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Debbie Kling</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:mayor@cityofnampa.us" class="break-all">mayor@cityofnampa.us</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(208) 468-5401">(208) 468-5401</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_nampa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_nampa</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofnampa.us/529/Office-of-the-Mayor" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:id/place:nampa/government</td>
-            <td>Debbie Kling</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(208) 468-5401</td>
-            <td>mayor@cityofnampa.us</td>
-            <td>https://www.cityofnampa.us/529/Office-of-the-Mayor</td>
-            <td>2022</td>
-            <td></td>
-            <td>https://www.cityofnampa.us/ImageRepository/Document?documentID=11476</td>
-            <td>https://cdn.civicpatch.org/open-data/id/nampa/images/5c3687414fbc08e77f060d9d8e36fcd29fc83427a2e282ade21c113833f3e33a.jpg</td>
-            <td>[&quot;https://www.cityofnampa.us/529/Office-of-the-Mayor&quot;, &quot;https://www.cityofnampa.us/216/Mayors-Office&quot;, &quot;https://www.cityofnampa.us&quot;, &quot;https://www.cityofnampa.us/518/mayor-newsletters&quot;]</td>
-            <td>2025-07-13T00:22:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:id/place:nampa/government</td>
-            <td>Dale Reynolds</td>
-            <td>[&quot;Council President&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 4&quot;]</td>
-            <td></td>
-            <td>reynoldsd@cityofnampa.us</td>
-            <td>https://www.cityofnampa.us/526/Dale-Reynolds</td>
-            <td>2024-01-02</td>
-            <td>2028-01-01</td>
-            <td>https://www.cityofnampa.us/ImageRepository/Document?documentID=14794</td>
-            <td>https://cdn.civicpatch.org/open-data/id/nampa/images/0a356c1f3d33f34ea849a1b45abcf36619713591ac312828d939505b56f29ea9.png</td>
-            <td>[&quot;https://www.cityofnampa.us/94/City-Government&quot;, &quot;https://www.cityofnampa.us/1308/Natalie-Jangula&quot;, &quot;https://www.cityofnampa.us/526/Dale-Reynolds&quot;, &quot;https://www.cityofnampa.us/622/Randy-Haverfield&quot;]</td>
-            <td>2025-07-13T00:22:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:id/place:nampa/government</td>
-            <td>Victor Rodriguez</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 1&quot;]</td>
-            <td></td>
-            <td>rodriguezv@cityofnampa.us</td>
-            <td>https://www.cityofnampa.us/525/Victor-Rodriguez</td>
-            <td>2021-11</td>
-            <td></td>
-            <td>https://www.cityofnampa.us/ImageRepository/Document?documentID=11306</td>
-            <td>https://cdn.civicpatch.org/open-data/id/nampa/images/de41c0d116bca2480b66a89067fadcc33a33c40276580d9c3d3d6b7bc9850572.jpg</td>
-            <td>[&quot;https://www.cityofnampa.us/525/Victor-Rodriguez&quot;, &quot;https://www.cityofnampa.us/94/City-Government&quot;, &quot;https://www.cityofnampa.us/1308/Natalie-Jangula&quot;, &quot;https://www.cityofnampa.us/622/Randy-Haverfield&quot;]</td>
-            <td>2025-07-13T00:22:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:id/place:nampa/government</td>
-            <td>Natalie Jangula</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 2&quot;]</td>
-            <td></td>
-            <td>jangulan@cityofnampa.us</td>
-            <td>https://www.cityofnampa.us/1308/Natalie-Jangula</td>
-            <td>2024-01-02</td>
-            <td></td>
-            <td>https://www.cityofnampa.us/ImageRepository/Document?documentID=14176</td>
-            <td>https://cdn.civicpatch.org/open-data/id/nampa/images/d3b7bf3e535cf41b0f07ad4501340df743dd6aa0977e4d82615b27c7af4f3794.png</td>
-            <td>[&quot;https://www.cityofnampa.us/94/City-Government&quot;, &quot;https://www.cityofnampa.us/1308/Natalie-Jangula&quot;, &quot;https://www.cityofnampa.us/622/Randy-Haverfield&quot;]</td>
-            <td>2025-07-13T00:22:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:id/place:nampa/government</td>
-            <td>David Bills</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 3&quot;]</td>
-            <td></td>
-            <td>billsd@cityofnampa.us</td>
-            <td>https://www.cityofnampa.us/524/David-Bills</td>
-            <td>2024-01</td>
-            <td></td>
-            <td>https://www.cityofnampa.us/ImageRepository/Document?documentID=17733</td>
-            <td>https://cdn.civicpatch.org/open-data/id/nampa/images/90c176f62d8cf8f09d35737cf8614c85c29ff881effb333e84436621e17a9d82.jpg</td>
-            <td>[&quot;https://www.cityofnampa.us/94/City-Government&quot;, &quot;https://www.cityofnampa.us/1308/Natalie-Jangula&quot;, &quot;https://www.cityofnampa.us/524/David-Bills&quot;, &quot;https://www.cityofnampa.us/622/Randy-Haverfield&quot;]</td>
-            <td>2025-07-13T00:22:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:id/place:nampa/government</td>
-            <td>Randy Haverfield</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 5&quot;]</td>
-            <td></td>
-            <td>haverfieldr@cityofnampa.us</td>
-            <td>https://www.cityofnampa.us/622/Randy-Haverfield</td>
-            <td>2021-11</td>
-            <td></td>
-            <td>https://www.cityofnampa.us/ImageRepository/Document?documentID=19086</td>
-            <td>https://cdn.civicpatch.org/open-data/id/nampa/images/e25481c52b0be6fa45c7a6df2386e7ba2bd4137417a9d3a34f6be09e52d78af7.jpg</td>
-            <td>[&quot;https://www.cityofnampa.us/94/City-Government&quot;, &quot;https://www.cityofnampa.us/1308/Natalie-Jangula&quot;, &quot;https://www.cityofnampa.us/622/Randy-Haverfield&quot;]</td>
-            <td>2025-07-13T00:22:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:id/place:nampa/government</td>
-            <td>Sebastian Griffin</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 6&quot;]</td>
-            <td></td>
-            <td>griffins@cityofnampa.us</td>
-            <td>https://www.cityofnampa.us/1307/Sebastian-Griffin</td>
-            <td>2024-01-02</td>
-            <td>2026-12</td>
-            <td>https://www.cityofnampa.us/ImageRepository/Document?documentID=17735</td>
-            <td>https://cdn.civicpatch.org/open-data/id/nampa/images/882dc4d0ae461aeae344d19238896475140efe730bb3502f327f53e057f0fbd8.jpg</td>
-            <td>[&quot;https://www.cityofnampa.us/94/City-Government&quot;, &quot;https://www.cityofnampa.us/1308/Natalie-Jangula&quot;, &quot;https://www.cityofnampa.us/622/Randy-Haverfield&quot;, &quot;https://www.cityofnampa.us/1307/Sebastian-Griffin&quot;]</td>
-            <td>2025-07-13T00:22:34+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/id/nampa/images/0a356c1f3d33f34ea849a1b45abcf36619713591ac312828d939505b56f29ea9.png" alt="Dale Reynolds" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DR</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Dale Reynolds</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council President, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:reynoldsd@cityofnampa.us" class="break-all">reynoldsd@cityofnampa.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofnampa.us/526/Dale-Reynolds" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/id/nampa/images/de41c0d116bca2480b66a89067fadcc33a33c40276580d9c3d3d6b7bc9850572.jpg" alt="Victor Rodriguez" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">VR</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Victor Rodriguez</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:rodriguezv@cityofnampa.us" class="break-all">rodriguezv@cityofnampa.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofnampa.us/525/Victor-Rodriguez" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/id/nampa/images/d3b7bf3e535cf41b0f07ad4501340df743dd6aa0977e4d82615b27c7af4f3794.png" alt="Natalie Jangula" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">NJ</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Natalie Jangula</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:jangulan@cityofnampa.us" class="break-all">jangulan@cityofnampa.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofnampa.us/1308/Natalie-Jangula" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/id/nampa/images/90c176f62d8cf8f09d35737cf8614c85c29ff881effb333e84436621e17a9d82.jpg" alt="David Bills" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DB</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">David Bills</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:billsd@cityofnampa.us" class="break-all">billsd@cityofnampa.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofnampa.us/524/David-Bills" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/id/nampa/images/e25481c52b0be6fa45c7a6df2386e7ba2bd4137417a9d3a34f6be09e52d78af7.jpg" alt="Randy Haverfield" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RH</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Randy Haverfield</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:haverfieldr@cityofnampa.us" class="break-all">haverfieldr@cityofnampa.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofnampa.us/622/Randy-Haverfield" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/id/nampa/images/882dc4d0ae461aeae344d19238896475140efe730bb3502f327f53e057f0fbd8.jpg" alt="Sebastian Griffin" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SG</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Sebastian Griffin</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:griffins@cityofnampa.us" class="break-all">griffins@cityofnampa.us</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofnampa.us/1307/Sebastian-Griffin" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

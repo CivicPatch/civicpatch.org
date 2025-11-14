@@ -1,253 +1,332 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2"><div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm">ML</div></div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Meredith Leighty</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:mleighty@northglenn.org" class="break-all">mleighty@northglenn.org</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 450-8713">(303) 450-8713</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_northglenn</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_northglenn</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.northglenn.org/government/city_council/meredith_leighty.php" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:northglenn/government</td>
-            <td>Meredith Leighty</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(303) 450-8713</td>
-            <td>mleighty@northglenn.org</td>
-            <td>https://www.northglenn.org/government/city_council/meredith_leighty.php</td>
-            <td>2023-11</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>[&quot;https://www.northglenn.org/government/city_council/meredith_leighty.php&quot;, &quot;https://www.northglenn.org/government/city_council&quot;, &quot;https://www.northglenn.org/government/city_council/nicholas_walker.php&quot;, &quot;https://www.northglenn.org/government/city_council/adam_nowicki.php&quot;, &quot;https://www.northglenn.org/katherinegoff&quot;, &quot;https://www.northglenn.org/government/city_council/richard_kondo.php&quot;, &quot;https://www.northglenn.org/government/city_council/shannon_lukeman-hiromasa.php&quot;, &quot;https://www.northglenn.org/government/city_council/jody_roper.php&quot;]</td>
-            <td>2025-06-27T21:03:51+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:northglenn/government</td>
-            <td>Shannon Lukeman-Hiromasa</td>
-            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 4&quot;]</td>
-            <td>(970) 567-0028</td>
-            <td>slukemanhiromasa@northglenn.org</td>
-            <td>https://www.northglenn.org/government/city_council/shannon_lukeman-hiromasa.php</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td>https://www.northglenn.org/Citywide/Wards/City_Map_Wards_Streets_Color_ward4.png</td>
-            <td>https://cdn.civicpatch.org/open-data/co/northglenn/images/b929cff127167fcd8fa5150596d58f3a5b83afcb67b0091b2e4248925d03fec1.png</td>
-            <td>[&quot;https://www.northglenn.org/government/city_council/meredith_leighty.php&quot;, &quot;https://www.northglenn.org/government/city_council&quot;, &quot;https://www.northglenn.org/government/city_council/nicholas_walker.php&quot;, &quot;https://www.northglenn.org/government/city_council/adam_nowicki.php&quot;, &quot;https://www.northglenn.org/katherinegoff&quot;, &quot;https://www.northglenn.org/government/city_council/richard_kondo.php&quot;, &quot;https://www.northglenn.org/government/city_council/shannon_lukeman-hiromasa.php&quot;, &quot;https://www.northglenn.org/government/city_council/jody_roper.php&quot;]</td>
-            <td>2025-06-27T21:03:51+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:northglenn/government</td>
-            <td>Megan Burns</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 1&quot;]</td>
-            <td>(720) 504-3870</td>
-            <td>mburns@northglenn.org</td>
-            <td>https://www.northglenn.org/government/city_council/megan_burns.php</td>
-            <td>2023-11</td>
-            <td></td>
-            <td>https://www.northglenn.org/Government/Wards/new_brand_wards_revize_ward1.png</td>
-            <td>https://cdn.civicpatch.org/open-data/co/northglenn/images/a4e9dba8370f56d45aa26a8a339bc5111bc8b9c4b855b73f670a0b26052c7cdd.png</td>
-            <td>[&quot;https://www.northglenn.org/government/city_council/meredith_leighty.php&quot;, &quot;https://www.northglenn.org/government/city_council&quot;, &quot;https://www.northglenn.org/government/city_council/megan_burns.php&quot;, &quot;https://www.northglenn.org/government/city_council/nicholas_walker.php&quot;, &quot;https://www.northglenn.org/government/city_council/adam_nowicki.php&quot;, &quot;https://www.northglenn.org/katherinegoff&quot;, &quot;https://www.northglenn.org/government/city_council/richard_kondo.php&quot;, &quot;https://www.northglenn.org/government/city_council/shannon_lukeman-hiromasa.php&quot;, &quot;https://www.northglenn.org/government/city_council/jody_roper.php&quot;]</td>
-            <td>2025-06-27T21:03:51+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:northglenn/government</td>
-            <td>Nicholas Walker</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 1&quot;]</td>
-            <td>(913) 302-4160</td>
-            <td>nwalker@northglenn.org</td>
-            <td>https://www.northglenn.org/government/city_council/nicholas_walker.php</td>
-            <td>2021-11</td>
-            <td>2025-11</td>
-            <td></td>
-            <td></td>
-            <td>[&quot;https://www.northglenn.org/government/city_council/meredith_leighty.php&quot;, &quot;https://www.northglenn.org/government/city_council&quot;, &quot;https://www.northglenn.org/government/city_council/nicholas_walker.php&quot;, &quot;https://www.northglenn.org/government/city_council/adam_nowicki.php&quot;, &quot;https://www.northglenn.org/katherinegoff&quot;, &quot;https://www.northglenn.org/government/city_council/richard_kondo.php&quot;, &quot;https://www.northglenn.org/government/city_council/shannon_lukeman-hiromasa.php&quot;, &quot;https://www.northglenn.org/government/city_council/jody_roper.php&quot;]</td>
-            <td>2025-06-27T21:03:51+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:northglenn/government</td>
-            <td>Adam Nowicki</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 2&quot;]</td>
-            <td>(720) 619-1069</td>
-            <td>anowicki@northglenn.org</td>
-            <td>https://www.northglenn.org/government/city_council/adam_nowicki.php</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td></td>
-            <td></td>
-            <td>[&quot;https://www.northglenn.org/government/city_council/meredith_leighty.php&quot;, &quot;https://www.northglenn.org/government/city_council&quot;, &quot;https://www.northglenn.org/government/city_council/nicholas_walker.php&quot;, &quot;https://www.northglenn.org/government/city_council/adam_nowicki.php&quot;, &quot;https://www.northglenn.org/katherinegoff&quot;, &quot;https://www.northglenn.org/government/city_council/richard_kondo.php&quot;, &quot;https://www.northglenn.org/government/city_council/shannon_lukeman-hiromasa.php&quot;, &quot;https://www.northglenn.org/government/city_council/jody_roper.php&quot;]</td>
-            <td>2025-06-27T21:03:51+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:northglenn/government</td>
-            <td>Jay Jaramillo</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 2&quot;]</td>
-            <td>(720) 620-6203</td>
-            <td>jjaramillo@northglenn.org</td>
-            <td>https://www.northglenn.org/government/city_council/jay_jaramillo.php</td>
-            <td>2021-11</td>
-            <td>2025-11</td>
-            <td></td>
-            <td></td>
-            <td>[&quot;https://www.northglenn.org/government/city_council/meredith_leighty.php&quot;, &quot;https://www.northglenn.org/government/city_council&quot;, &quot;https://www.northglenn.org/government/city_council/nicholas_walker.php&quot;, &quot;https://www.northglenn.org/government/city_council/jay_jaramillo.php&quot;, &quot;https://www.northglenn.org/government/city_council/adam_nowicki.php&quot;, &quot;https://www.northglenn.org/katherinegoff&quot;, &quot;https://www.northglenn.org/government/city_council/richard_kondo.php&quot;, &quot;https://www.northglenn.org/government/city_council/shannon_lukeman-hiromasa.php&quot;, &quot;https://www.northglenn.org/government/city_council/jody_roper.php&quot;]</td>
-            <td>2025-06-27T21:03:51+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:northglenn/government</td>
-            <td>Katherine E. Goff</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 3&quot;]</td>
-            <td>(720) 439-9891</td>
-            <td>kgoff@northglenn.org</td>
-            <td>https://www.northglenn.org/government/city_council/katherine_goff.php</td>
-            <td>2023-11</td>
-            <td>2027-11</td>
-            <td></td>
-            <td></td>
-            <td>[&quot;https://www.northglenn.org/government/city_council/meredith_leighty.php&quot;, &quot;https://www.northglenn.org/government/city_council&quot;, &quot;https://www.northglenn.org/government/city_council/nicholas_walker.php&quot;, &quot;https://www.northglenn.org/government/city_council/adam_nowicki.php&quot;, &quot;https://www.northglenn.org/katherinegoff&quot;, &quot;https://www.northglenn.org/government/city_council/richard_kondo.php&quot;, &quot;https://www.northglenn.org/government/city_council/shannon_lukeman-hiromasa.php&quot;, &quot;https://www.northglenn.org/government/city_council/jody_roper.php&quot;, &quot;https://www.northglenn.org/government/city_council/katherine_goff.php&quot;]</td>
-            <td>2025-06-27T21:03:51+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:northglenn/government</td>
-            <td>Richard Kondo</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 3&quot;]</td>
-            <td>(303) 246-3031</td>
-            <td>rkondo@northglenn.org</td>
-            <td>https://www.northglenn.org/government/city_council/richard_kondo.php</td>
-            <td>2023-11</td>
-            <td>2025-11</td>
-            <td>https://www.northglenn.org/Government/Wards/new_brand_wards_revize_ward3.png</td>
-            <td>https://cdn.civicpatch.org/open-data/co/northglenn/images/d998b27f1ec1008089e6bb50f41f2f44be17e99b03e44db92e14bf74079a4750.png</td>
-            <td>[&quot;https://www.northglenn.org/government/city_council/meredith_leighty.php&quot;, &quot;https://www.northglenn.org/government/city_council&quot;, &quot;https://www.northglenn.org/government/city_council/nicholas_walker.php&quot;, &quot;https://www.northglenn.org/government/city_council/adam_nowicki.php&quot;, &quot;https://www.northglenn.org/katherinegoff&quot;, &quot;https://www.northglenn.org/government/city_council/richard_kondo.php&quot;, &quot;https://www.northglenn.org/government/city_council/shannon_lukeman-hiromasa.php&quot;, &quot;https://www.northglenn.org/government/city_council/jody_roper.php&quot;]</td>
-            <td>2025-06-27T21:03:51+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:northglenn/government</td>
-            <td>Jody Roper</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 4&quot;]</td>
-            <td>(303) 523-6503</td>
-            <td>jroper@northglenn.org</td>
-            <td>https://www.northglenn.org/government/city_council/jody_roper.php</td>
-            <td>2023-11</td>
-            <td>2025-11</td>
-            <td>https://www.northglenn.org/Citywide/Wards/City_Map_Wards_Streets_Color_ward4.png</td>
-            <td>https://cdn.civicpatch.org/open-data/co/northglenn/images/b929cff127167fcd8fa5150596d58f3a5b83afcb67b0091b2e4248925d03fec1.png</td>
-            <td>[&quot;https://www.northglenn.org/government/city_council/meredith_leighty.php&quot;, &quot;https://www.northglenn.org/government/city_council&quot;, &quot;https://www.northglenn.org/government/city_council/nicholas_walker.php&quot;, &quot;https://www.northglenn.org/government/city_council/adam_nowicki.php&quot;, &quot;https://www.northglenn.org/katherinegoff&quot;, &quot;https://www.northglenn.org/government/city_council/richard_kondo.php&quot;, &quot;https://www.northglenn.org/government/city_council/shannon_lukeman-hiromasa.php&quot;, &quot;https://www.northglenn.org/government/city_council/jody_roper.php&quot;]</td>
-            <td>2025-06-27T21:03:51+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/northglenn/images/b929cff127167fcd8fa5150596d58f3a5b83afcb67b0091b2e4248925d03fec1.png" alt="Shannon Lukeman-Hiromasa" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SL</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Shannon Lukeman-Hiromasa</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:slukemanhiromasa@northglenn.org" class="break-all">slukemanhiromasa@northglenn.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(970) 567-0028">(970) 567-0028</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.northglenn.org/government/city_council/shannon_lukeman-hiromasa.php" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/northglenn/images/a4e9dba8370f56d45aa26a8a339bc5111bc8b9c4b855b73f670a0b26052c7cdd.png" alt="Megan Burns" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MB</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Megan Burns</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:mburns@northglenn.org" class="break-all">mburns@northglenn.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(720) 504-3870">(720) 504-3870</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.northglenn.org/government/city_council/megan_burns.php" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2"><div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm">NW</div></div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Nicholas Walker</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:nwalker@northglenn.org" class="break-all">nwalker@northglenn.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(913) 302-4160">(913) 302-4160</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.northglenn.org/government/city_council/nicholas_walker.php" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2"><div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm">AN</div></div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Adam Nowicki</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:anowicki@northglenn.org" class="break-all">anowicki@northglenn.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(720) 619-1069">(720) 619-1069</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.northglenn.org/government/city_council/adam_nowicki.php" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2"><div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm">JJ</div></div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Jay Jaramillo</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:jjaramillo@northglenn.org" class="break-all">jjaramillo@northglenn.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(720) 620-6203">(720) 620-6203</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.northglenn.org/government/city_council/jay_jaramillo.php" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2"><div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm">KG</div></div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Katherine E. Goff</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:kgoff@northglenn.org" class="break-all">kgoff@northglenn.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(720) 439-9891">(720) 439-9891</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.northglenn.org/government/city_council/katherine_goff.php" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/northglenn/images/d998b27f1ec1008089e6bb50f41f2f44be17e99b03e44db92e14bf74079a4750.png" alt="Richard Kondo" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RK</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Richard Kondo</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:rkondo@northglenn.org" class="break-all">rkondo@northglenn.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 246-3031">(303) 246-3031</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.northglenn.org/government/city_council/richard_kondo.php" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/northglenn/images/b929cff127167fcd8fa5150596d58f3a5b83afcb67b0091b2e4248925d03fec1.png" alt="Jody Roper" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JR</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Jody Roper</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:jroper@northglenn.org" class="break-all">jroper@northglenn.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 523-6503">(303) 523-6503</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.northglenn.org/government/city_council/jody_roper.php" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

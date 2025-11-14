@@ -1,238 +1,310 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/riverside/images/7682a33f42d71e9c8a3e4ffe58873ad2088f9b385dad6fb2f0aa2a965773c9b1.jpg" alt="Patricia Lock Dawson" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">PD</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Patricia Lock Dawson</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_riverside</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_riverside</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.riversideca.gov/mayor/mayor-patricia-lock-dawson" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:riverside/government</td>
-            <td>Patricia Lock Dawson</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td></td>
-            <td></td>
-            <td>https://www.riversideca.gov/mayor/mayor-patricia-lock-dawson</td>
-            <td>2020</td>
-            <td></td>
-            <td>https://www.riversideca.gov/mayor/sites/riversideca.gov.mayor/files/images/mayor-pld-plddesk.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/riverside/images/7682a33f42d71e9c8a3e4ffe58873ad2088f9b385dad6fb2f0aa2a965773c9b1.jpg</td>
-            <td>[&quot;https://www.riversideca.gov/mayor&quot;, &quot;https://www.riversideca.gov/mayor/mayor-patricia-lock-dawson&quot;]</td>
-            <td>2025-07-17T03:26:11+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:riverside/government</td>
-            <td>Philip Falcone</td>
-            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 1&quot;]</td>
-            <td>(951) 826-5242</td>
-            <td></td>
-            <td>https://www.riversideca.gov/council/wards/ward-1</td>
-            <td>2024-04-09</td>
-            <td></td>
-            <td>https://riversideca.gov/sites/default/files/council/assets/Ward%201-Philip%20Falcone_Gray%20BG.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/riverside/images/6aaaaf2f5ec9001e003b1fb0fbab4dc802535dda0545aa0e7c480532067a5928.jpg</td>
-            <td>[&quot;https://www.riversideca.gov/council&quot;, &quot;https://www.riversideca.gov/council/wards/ward-1&quot;]</td>
-            <td>2025-07-17T03:26:11+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:riverside/government</td>
-            <td>Clarissa Cervantes</td>
-            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 2&quot;]</td>
-            <td>(951) 826-5419</td>
-            <td></td>
-            <td>https://www.riversideca.gov/council/wards/ward-2</td>
-            <td>2021-07-13</td>
-            <td>2026-07-13</td>
-            <td>https://riversideca.gov/sites/default/files/Clarissa%20Cervantes-Square.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/riverside/images/e9b0dc7203d9862e701b0fd007ada5dd0e5dfd92bea91054d024bb8ebeb2ac36.jpg</td>
-            <td>[&quot;https://www.riversideca.gov/council&quot;, &quot;https://www.riversideca.gov/council/wards/ward-2&quot;]</td>
-            <td>2025-07-17T03:26:11+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:riverside/government</td>
-            <td>Steven Robillard</td>
-            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 3&quot;]</td>
-            <td>(951) 826-5905</td>
-            <td>rengles@riversideca.gov</td>
-            <td>https://www.riversideca.gov/council/wards/ward-3</td>
-            <td>2024-04-09</td>
-            <td></td>
-            <td>https://riversideca.gov/sites/default/files/Robillard-BG.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/riverside/images/21980fefb8a48409f55554fa68a285c35070f041a531cfc7cb7b323c926bb1cc.jpg</td>
-            <td>[&quot;https://www.riversideca.gov/council&quot;, &quot;https://www.riversideca.gov/council/wards/ward-3&quot;]</td>
-            <td>2025-07-17T03:26:11+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:riverside/government</td>
-            <td>Chuck Conder</td>
-            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 4&quot;]</td>
-            <td>(951) 826-5991</td>
-            <td>farreola@riversideca.gov</td>
-            <td>https://www.riversideca.gov/council/wards/ward-4</td>
-            <td>2021-07-13</td>
-            <td>2026-07-12</td>
-            <td>https://riversideca.gov/sites/default/files/img/2017-conder1.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/riverside/images/62b087e22027ab0d817f0a042d42ff8d1558438767c721b4f2b5ad64ba137f85.jpg</td>
-            <td>[&quot;https://www.riversideca.gov/council&quot;, &quot;https://www.riversideca.gov/council/wards/ward-4&quot;]</td>
-            <td>2025-07-17T03:26:11+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:riverside/government</td>
-            <td>Sean Mill</td>
-            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 5&quot;]</td>
-            <td>(951) 826-5328</td>
-            <td>SMill@Riversideca.gov</td>
-            <td>https://www.riversideca.gov/council/wards/ward-5</td>
-            <td>2024-04-09</td>
-            <td></td>
-            <td>https://riversideca.gov/sites/default/files/council/assets/Ward%205-Sean%20Mill_Gray%20BG.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/riverside/images/6ba0ba5e03f8dbe5effe265722abef6ad142ad7654b2e8692dc304e6cf737769.jpg</td>
-            <td>[&quot;https://www.riversideca.gov/council&quot;, &quot;https://www.riversideca.gov/council/wards/ward-5&quot;]</td>
-            <td>2025-07-17T03:26:11+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:riverside/government</td>
-            <td>Jim Perry</td>
-            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 6&quot;]</td>
-            <td>(951) 826-5991</td>
-            <td>SGarcia@RiversideCA.gov</td>
-            <td>https://www.riversideca.gov/council/wards/ward-6</td>
-            <td>2021</td>
-            <td></td>
-            <td>https://riversideca.gov/sites/default/files/img/2013-perry.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/riverside/images/727cef093b04ddf510e229aa10bb5a1f53d19a969bae059da534e0ed45e9e693.jpg</td>
-            <td>[&quot;https://www.riversideca.gov/council&quot;, &quot;https://www.riversideca.gov/council/wards/ward-6&quot;]</td>
-            <td>2025-07-17T03:26:11+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:riverside/government</td>
-            <td>Steve Hemenway</td>
-            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 7&quot;]</td>
-            <td>(951) 826-5024</td>
-            <td>lvega@riversideca.gov</td>
-            <td>https://www.riversideca.gov/council/wards/ward-7</td>
-            <td>2019-11-05</td>
-            <td></td>
-            <td>https://www.riversideca.gov/sites/default/files/council/images/2019/Ronaldo%20Ward%203%20Close%20Council%20Hexagon%20Template.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/riverside/images/8caf5391cc0f4b4b5809aba28bad8cbdd38dbc0cc58fa1b1062162dca7d1ea6a.jpg</td>
-            <td>[&quot;https://www.riversideca.gov/council&quot;, &quot;https://www.riversideca.gov/council/wards/ward-7&quot;]</td>
-            <td>2025-07-17T03:26:11+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/riverside/images/6aaaaf2f5ec9001e003b1fb0fbab4dc802535dda0545aa0e7c480532067a5928.jpg" alt="Philip Falcone" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">PF</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Philip Falcone</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Vice Chair, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(951) 826-5242">(951) 826-5242</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.riversideca.gov/council/wards/ward-1" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/riverside/images/e9b0dc7203d9862e701b0fd007ada5dd0e5dfd92bea91054d024bb8ebeb2ac36.jpg" alt="Clarissa Cervantes" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">CC</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Clarissa Cervantes</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Vice Chair, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(951) 826-5419">(951) 826-5419</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.riversideca.gov/council/wards/ward-2" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/riverside/images/21980fefb8a48409f55554fa68a285c35070f041a531cfc7cb7b323c926bb1cc.jpg" alt="Steven Robillard" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SR</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Steven Robillard</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Vice Chair, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:rengles@riversideca.gov" class="break-all">rengles@riversideca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(951) 826-5905">(951) 826-5905</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.riversideca.gov/council/wards/ward-3" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/riverside/images/62b087e22027ab0d817f0a042d42ff8d1558438767c721b4f2b5ad64ba137f85.jpg" alt="Chuck Conder" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">CC</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Chuck Conder</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Vice Chair, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:farreola@riversideca.gov" class="break-all">farreola@riversideca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(951) 826-5991">(951) 826-5991</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.riversideca.gov/council/wards/ward-4" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/riverside/images/6ba0ba5e03f8dbe5effe265722abef6ad142ad7654b2e8692dc304e6cf737769.jpg" alt="Sean Mill" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SM</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Sean Mill</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Vice Chair, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:SMill@Riversideca.gov" class="break-all">SMill@Riversideca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(951) 826-5328">(951) 826-5328</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.riversideca.gov/council/wards/ward-5" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/riverside/images/727cef093b04ddf510e229aa10bb5a1f53d19a969bae059da534e0ed45e9e693.jpg" alt="Jim Perry" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JP</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Jim Perry</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Vice Chair, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:SGarcia@RiversideCA.gov" class="break-all">SGarcia@RiversideCA.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(951) 826-5991">(951) 826-5991</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.riversideca.gov/council/wards/ward-6" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/riverside/images/8caf5391cc0f4b4b5809aba28bad8cbdd38dbc0cc58fa1b1062162dca7d1ea6a.jpg" alt="Steve Hemenway" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SH</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Steve Hemenway</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Vice Chair, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:lvega@riversideca.gov" class="break-all">lvega@riversideca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(951) 826-5024">(951) 826-5024</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.riversideca.gov/council/wards/ward-7" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

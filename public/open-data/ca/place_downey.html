@@ -1,193 +1,199 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/downey/images/10d7e7a7391a11e7628f568751794c01f423f8cfcf00b39c2ee013bcd4995e77.jpg" alt="Hector Sosa" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">HS</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Hector Sosa</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:hsosa@downeyca.org" class="break-all">hsosa@downeyca.org</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(562) 904-7274">(562) 904-7274</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_downey</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_downey</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.downeyca.org/our-city/mayor-city-council/hector-sosa-district-2" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:downey/government</td>
-            <td>Hector Sosa</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;District 2&quot;]</td>
-            <td>(562) 904-7274</td>
-            <td>hsosa@downeyca.org</td>
-            <td>https://www.downeyca.org/our-city/mayor-city-council/hector-sosa-district-2</td>
-            <td>2022-12</td>
-            <td>2026-12</td>
-            <td>https://www.downeyca.org/home/showpublishedimage/4813/638061981793070000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/downey/images/10d7e7a7391a11e7628f568751794c01f423f8cfcf00b39c2ee013bcd4995e77.jpg</td>
-            <td>[&quot;https://www.downeyca.org/our-city/mayor-city-council/mario-trujillo-district-5&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/timonthy-horn-district-1&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/hector-sosa-district-2&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/vacant-district-3&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/claudia-m-frometa-of-district-4&quot;]</td>
-            <td>2025-07-18T20:08:18+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:downey/government</td>
-            <td>Dorothy Pemberton</td>
-            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 3&quot;]</td>
-            <td>(562) 904-7274</td>
-            <td>dpemberton@downeyca.org</td>
-            <td>https://www.downeyca.org/our-city/mayor-city-council/vacant-district-3</td>
-            <td>2023-12</td>
-            <td>2028-12</td>
-            <td>https://www.downeyca.org/home/showpublishedimage/5640/638380511133300000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/downey/images/13a680e8106b123781ffde8ae867e9d76c720aa7e3c17b711491d207388347f0.jpg</td>
-            <td>[&quot;https://www.downeyca.org/our-city/mayor-city-council/mario-trujillo-district-5&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/timonthy-horn-district-1&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/hector-sosa-district-2&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/vacant-district-3&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/claudia-m-frometa-of-district-4&quot;]</td>
-            <td>2025-07-18T20:08:18+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:downey/government</td>
-            <td>Horacio Ortiz</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 1&quot;]</td>
-            <td>(562) 904-7274</td>
-            <td>hortizjr@downeyca.org</td>
-            <td>https://www.downeyca.org/our-city/mayor-city-council/timonthy-horn-district-1</td>
-            <td>2023-12</td>
-            <td>2028-12</td>
-            <td>https://www.downeyca.org/home/showpublishedimage/5638/638380508594870000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/downey/images/22e60b823ca2dacccef65e26e573a17adceb9ac430bd2951300e3392cf7097a9.png</td>
-            <td>[&quot;https://www.downeyca.org/our-city/mayor-city-council/mario-trujillo-district-5&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/timonthy-horn-district-1&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/hector-sosa-district-2&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/vacant-district-3&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/claudia-m-frometa-of-district-4&quot;]</td>
-            <td>2025-07-18T20:08:18+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:downey/government</td>
-            <td>Claudia M. Frometa</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 4&quot;]</td>
-            <td>(562) 904-7274</td>
-            <td>cfrometa@downeyca.org</td>
-            <td>https://www.downeyca.org/our-city/mayor-city-council/claudia-m-frometa-of-district-4</td>
-            <td>2022-11</td>
-            <td>2026-12</td>
-            <td>https://www.downeyca.org/home/showpublishedimage/4158/637751583218800000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/downey/images/5cd7570d72f506bb375a7ffc02690aea444d7e930873638999883c632e6fa649.png</td>
-            <td>[&quot;https://www.downeyca.org/our-city/mayor-city-council/mario-trujillo-district-5&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/timonthy-horn-district-1&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/hector-sosa-district-2&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/vacant-district-3&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/claudia-m-frometa-of-district-4&quot;]</td>
-            <td>2025-07-18T20:08:18+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:downey/government</td>
-            <td>Mario Trujillo</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 5&quot;]</td>
-            <td>(562) 904-7274</td>
-            <td>mtrujillo@downeyca.org</td>
-            <td>https://www.downeyca.org/our-city/mayor-city-council/mario-trujillo-district-5</td>
-            <td>2020-12</td>
-            <td>2028-12</td>
-            <td>https://www.downeyca.org/home/showpublishedimage/3653/637442330735330000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/downey/images/96902f30e8293ce9692cd12cd1ccbfb43aa62e00aec675cbc261b68fe260f80f.jpg</td>
-            <td>[&quot;https://www.downeyca.org/our-city/mayor-city-council/mario-trujillo-district-5&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/timonthy-horn-district-1&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/hector-sosa-district-2&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/vacant-district-3&quot;, &quot;https://www.downeyca.org/our-city/mayor-city-council/claudia-m-frometa-of-district-4&quot;]</td>
-            <td>2025-07-18T20:08:18+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/downey/images/13a680e8106b123781ffde8ae867e9d76c720aa7e3c17b711491d207388347f0.jpg" alt="Dorothy Pemberton" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DP</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Dorothy Pemberton</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:dpemberton@downeyca.org" class="break-all">dpemberton@downeyca.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(562) 904-7274">(562) 904-7274</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.downeyca.org/our-city/mayor-city-council/vacant-district-3" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/downey/images/22e60b823ca2dacccef65e26e573a17adceb9ac430bd2951300e3392cf7097a9.png" alt="Horacio Ortiz" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">HO</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Horacio Ortiz</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:hortizjr@downeyca.org" class="break-all">hortizjr@downeyca.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(562) 904-7274">(562) 904-7274</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.downeyca.org/our-city/mayor-city-council/timonthy-horn-district-1" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/downey/images/5cd7570d72f506bb375a7ffc02690aea444d7e930873638999883c632e6fa649.png" alt="Claudia M. Frometa" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">CF</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Claudia M. Frometa</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:cfrometa@downeyca.org" class="break-all">cfrometa@downeyca.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(562) 904-7274">(562) 904-7274</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.downeyca.org/our-city/mayor-city-council/claudia-m-frometa-of-district-4" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/downey/images/96902f30e8293ce9692cd12cd1ccbfb43aa62e00aec675cbc261b68fe260f80f.jpg" alt="Mario Trujillo" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MT</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Mario Trujillo</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:mtrujillo@downeyca.org" class="break-all">mtrujillo@downeyca.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(562) 904-7274">(562) 904-7274</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.downeyca.org/our-city/mayor-city-council/mario-trujillo-district-5" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

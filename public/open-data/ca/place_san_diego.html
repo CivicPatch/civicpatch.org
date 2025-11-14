@@ -1,268 +1,381 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/san_diego/images/bb2e5a5b785ca5d75b149e6789c11200c60701deed993420a2d714e2d95b879b.png" alt="Todd Gloria" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">TG</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Todd Gloria</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(619) 236-6330">(619) 236-6330</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_san_diego</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_san_diego</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.sandiego.gov/mayor" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:san_diego/government</td>
-            <td>Todd Gloria</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(619) 236-6330</td>
-            <td></td>
-            <td>https://www.sandiego.gov/mayor</td>
-            <td></td>
-            <td></td>
-            <td>https://www.sandiego.gov/sites/default/files/mayor-todd-gloria-logo.png</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/san_diego/images/bb2e5a5b785ca5d75b149e6789c11200c60701deed993420a2d714e2d95b879b.png</td>
-            <td>[&quot;https://www.sandiego.gov/mayor&quot;, &quot;https://www.sandiego.gov/citycouncil/cd1&quot;, &quot;https://www.sandiego.gov/citycouncil/cd2&quot;, &quot;https://www.sandiego.gov/citycouncil/cd3&quot;, &quot;https://www.sandiego.gov/citycouncil/cd4&quot;, &quot;https://www.sandiego.gov/citycouncil/cd5&quot;, &quot;https://www.sandiego.gov/citycouncil/cd6&quot;, &quot;https://www.sandiego.gov/citycouncil/cd7&quot;, &quot;https://www.sandiego.gov/citycouncil/cd8&quot;, &quot;https://www.sandiego.gov/citycouncil/cd9&quot;]</td>
-            <td>2025-07-17T03:15:38+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:san_diego/government</td>
-            <td>Jennifer Campbell</td>
-            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Board Member&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 2&quot;]</td>
-            <td>(619) 236-6622</td>
-            <td></td>
-            <td>https://www.sandiego.gov/citycouncil/cd2</td>
-            <td></td>
-            <td></td>
-            <td>https://www.sandiego.gov/sites/default/files/2024-01/cd2-feature-v4.png</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/san_diego/images/3b5bc8d7cf4f064fa1bbfcfc9b82739b6edc761cc9841656e363cbcd5ad238ce.png</td>
-            <td>[&quot;https://www.sandiego.gov/mayor&quot;, &quot;https://www.sandiego.gov/citycouncil/cd1&quot;, &quot;https://www.sandiego.gov/citycouncil/cd2&quot;, &quot;https://www.sandiego.gov/citycouncil/cd3&quot;, &quot;https://www.sandiego.gov/citycouncil/cd4&quot;, &quot;https://www.sandiego.gov/citycouncil/cd5&quot;, &quot;https://www.sandiego.gov/citycouncil/cd6&quot;, &quot;https://www.sandiego.gov/citycouncil/cd7&quot;, &quot;https://www.sandiego.gov/citycouncil/cd8&quot;, &quot;https://www.sandiego.gov/citycouncil/cd9&quot;]</td>
-            <td>2025-07-17T03:15:38+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:san_diego/government</td>
-            <td>Henry Foster III</td>
-            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 4&quot;]</td>
-            <td>(619) 236-6644</td>
-            <td>HenryFoster@sandiego.gov</td>
-            <td>https://www.sandiego.gov/citycouncil/cd4</td>
-            <td></td>
-            <td></td>
-            <td>https://www.sandiego.gov/sites/default/files/2024-12/d4-homepage-card.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/san_diego/images/5d1526ca83e47f010b0cbe700071c063d9b2cdb1f4d0cdc9e3d884230cef8086.jpg</td>
-            <td>[&quot;https://www.sandiego.gov/mayor&quot;, &quot;https://www.sandiego.gov/citycouncil/cd1&quot;, &quot;https://www.sandiego.gov/citycouncil/cd2&quot;, &quot;https://www.sandiego.gov/citycouncil/cd3&quot;, &quot;https://www.sandiego.gov/citycouncil/cd4&quot;, &quot;https://www.sandiego.gov/citycouncil/cd5&quot;, &quot;https://www.sandiego.gov/citycouncil/cd6&quot;, &quot;https://www.sandiego.gov/citycouncil/cd7&quot;, &quot;https://www.sandiego.gov/citycouncil/cd8&quot;, &quot;https://www.sandiego.gov/citycouncil/cd9&quot;]</td>
-            <td>2025-07-17T03:15:38+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:san_diego/government</td>
-            <td>Marni von Wilpert</td>
-            <td>[&quot;Chair&quot;, &quot;Board Member&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 5&quot;]</td>
-            <td>(619) 236-6655</td>
-            <td>marnivonwilpert@sandiego.gov</td>
-            <td>https://www.sandiego.gov/citycouncil/cd5</td>
-            <td></td>
-            <td></td>
-            <td>https://www.sandiego.gov/sites/default/files/2024-10/cd5-feature-marni-von-wilpert-v2.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/san_diego/images/87182e451b87fabf8ab9c6aff205a622fe2e9cfb3ef6741fd6e3e925793ae07d.jpg</td>
-            <td>[&quot;https://www.sandiego.gov/mayor&quot;, &quot;https://www.sandiego.gov/citycouncil/cd1&quot;, &quot;https://www.sandiego.gov/citycouncil/cd2&quot;, &quot;https://www.sandiego.gov/citycouncil/cd3&quot;, &quot;https://www.sandiego.gov/citycouncil/cd4&quot;, &quot;https://www.sandiego.gov/citycouncil/cd5&quot;, &quot;https://www.sandiego.gov/citycouncil/cd6&quot;, &quot;https://www.sandiego.gov/citycouncil/cd7&quot;, &quot;https://www.sandiego.gov/citycouncil/cd8&quot;, &quot;https://www.sandiego.gov/citycouncil/cd9&quot;]</td>
-            <td>2025-07-17T03:15:38+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:san_diego/government</td>
-            <td>Vivian Moreno</td>
-            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 8&quot;]</td>
-            <td>(619) 236-6688</td>
-            <td>vivianmoreno@sandiego.gov</td>
-            <td>https://www.sandiego.gov/citycouncil/cd8</td>
-            <td></td>
-            <td></td>
-            <td>https://www.sandiego.gov/sites/default/files/2025-04/vm-new-web-pic.png</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/san_diego/images/02917d7fefc0f0d649485c65badfac1b605f1319c9a54e93ab874297b31c4fdb.png</td>
-            <td>[&quot;https://www.sandiego.gov/mayor&quot;, &quot;https://www.sandiego.gov/citycouncil/cd1&quot;, &quot;https://www.sandiego.gov/citycouncil/cd2&quot;, &quot;https://www.sandiego.gov/citycouncil/cd3&quot;, &quot;https://www.sandiego.gov/citycouncil/cd4&quot;, &quot;https://www.sandiego.gov/citycouncil/cd5&quot;, &quot;https://www.sandiego.gov/citycouncil/cd6&quot;, &quot;https://www.sandiego.gov/citycouncil/cd7&quot;, &quot;https://www.sandiego.gov/citycouncil/cd8&quot;, &quot;https://www.sandiego.gov/citycouncil/cd9&quot;]</td>
-            <td>2025-07-17T03:15:38+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:san_diego/government</td>
-            <td>Joe LaCava</td>
-            <td>[&quot;Council President&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 1&quot;]</td>
-            <td>(619) 236-6611</td>
-            <td></td>
-            <td>https://www.sandiego.gov/citycouncil/cd1</td>
-            <td></td>
-            <td></td>
-            <td>https://www.sandiego.gov/sites/default/files/cd1-feature-joe-lacava.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/san_diego/images/e22f973dac80c675e3d158c1268701baabe07f79fb56e87ad9ec9aeba1879498.jpg</td>
-            <td>[&quot;https://www.sandiego.gov/mayor&quot;, &quot;https://www.sandiego.gov/citycouncil/cd1&quot;, &quot;https://www.sandiego.gov/citycouncil/cd2&quot;, &quot;https://www.sandiego.gov/citycouncil/cd3&quot;, &quot;https://www.sandiego.gov/citycouncil/cd4&quot;, &quot;https://www.sandiego.gov/citycouncil/cd5&quot;, &quot;https://www.sandiego.gov/citycouncil/cd6&quot;, &quot;https://www.sandiego.gov/citycouncil/cd7&quot;, &quot;https://www.sandiego.gov/citycouncil/cd8&quot;, &quot;https://www.sandiego.gov/citycouncil/cd9&quot;]</td>
-            <td>2025-07-17T03:15:38+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:san_diego/government</td>
-            <td>Kent Lee</td>
-            <td>[&quot;Council President Pro Tem&quot;]</td>
-            <td>[&quot;District 6&quot;]</td>
-            <td>(619) 236-6616</td>
-            <td>KentLee@sandiego.gov</td>
-            <td>https://www.sandiego.gov/citycouncil/cd6</td>
-            <td></td>
-            <td></td>
-            <td>https://www.sandiego.gov/sites/default/files/cd6-kent-lee-home-banner.png</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/san_diego/images/503fb5b63af21d38e40729e2ba4ef73c392b5e640c95ff43a1e1f5f4d7a0350d.png</td>
-            <td>[&quot;https://www.sandiego.gov/mayor&quot;, &quot;https://www.sandiego.gov/citycouncil/cd1&quot;, &quot;https://www.sandiego.gov/citycouncil/cd2&quot;, &quot;https://www.sandiego.gov/citycouncil/cd3&quot;, &quot;https://www.sandiego.gov/citycouncil/cd4&quot;, &quot;https://www.sandiego.gov/citycouncil/cd5&quot;, &quot;https://www.sandiego.gov/citycouncil/cd6&quot;, &quot;https://www.sandiego.gov/citycouncil/cd7&quot;, &quot;https://www.sandiego.gov/citycouncil/cd8&quot;, &quot;https://www.sandiego.gov/citycouncil/cd9&quot;]</td>
-            <td>2025-07-17T03:15:38+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:san_diego/government</td>
-            <td>Stephen Whitburn</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 3&quot;]</td>
-            <td>(619) 236-6633</td>
-            <td></td>
-            <td>https://www.sandiego.gov/citycouncil/cd3</td>
-            <td></td>
-            <td></td>
-            <td>https://www.sandiego.gov/sites/default/files/2025-01/stephen-whitburn-cd3-feature.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/san_diego/images/2e275ca19554f18c5a218f7c406b4f9573801759c2722840d0e4d2fe19ff491e.jpg</td>
-            <td>[&quot;https://www.sandiego.gov/mayor&quot;, &quot;https://www.sandiego.gov/citycouncil/cd1&quot;, &quot;https://www.sandiego.gov/citycouncil/cd2&quot;, &quot;https://www.sandiego.gov/citycouncil/cd3&quot;, &quot;https://www.sandiego.gov/citycouncil/cd4&quot;, &quot;https://www.sandiego.gov/citycouncil/cd5&quot;, &quot;https://www.sandiego.gov/citycouncil/cd6&quot;, &quot;https://www.sandiego.gov/citycouncil/cd7&quot;, &quot;https://www.sandiego.gov/citycouncil/cd8&quot;, &quot;https://www.sandiego.gov/citycouncil/cd9&quot;]</td>
-            <td>2025-07-17T03:15:38+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:san_diego/government</td>
-            <td>Raul Campillo</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 7&quot;]</td>
-            <td>(619) 236-6677</td>
-            <td></td>
-            <td>https://www.sandiego.gov/citycouncil/cd7</td>
-            <td>2020-11-03</td>
-            <td></td>
-            <td>https://www.sandiego.gov/sites/default/files/styles/large/public/2024-04/cd7-campillo-logo.png?itok=7teFujKm</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/san_diego/images/fc16654bbbdefb20aeb0ef55c721a16f3fb33e3d73f0c2f92f842a6374152a6f.png</td>
-            <td>[&quot;https://www.sandiego.gov/mayor&quot;, &quot;https://www.sandiego.gov/citycouncil/cd1&quot;, &quot;https://www.sandiego.gov/citycouncil/cd2&quot;, &quot;https://www.sandiego.gov/citycouncil/cd3&quot;, &quot;https://www.sandiego.gov/citycouncil/cd4&quot;, &quot;https://www.sandiego.gov/citycouncil/cd5&quot;, &quot;https://www.sandiego.gov/citycouncil/cd6&quot;, &quot;https://www.sandiego.gov/citycouncil/cd7&quot;, &quot;https://www.sandiego.gov/citycouncil/cd8&quot;, &quot;https://www.sandiego.gov/citycouncil/cd9&quot;, &quot;https://www.sandiego.gov/citycouncil/cd7/rcampillo&quot;]</td>
-            <td>2025-07-17T03:15:38+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:san_diego/government</td>
-            <td>Sean Elo-Rivera</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 9&quot;]</td>
-            <td>(619) 236-6699</td>
-            <td></td>
-            <td>https://www.sandiego.gov/citycouncil/cd9</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>[&quot;https://www.sandiego.gov/mayor&quot;, &quot;https://www.sandiego.gov/citycouncil/cd1&quot;, &quot;https://www.sandiego.gov/citycouncil/cd2&quot;, &quot;https://www.sandiego.gov/citycouncil/cd3&quot;, &quot;https://www.sandiego.gov/citycouncil/cd4&quot;, &quot;https://www.sandiego.gov/citycouncil/cd5&quot;, &quot;https://www.sandiego.gov/citycouncil/cd6&quot;, &quot;https://www.sandiego.gov/citycouncil/cd7&quot;, &quot;https://www.sandiego.gov/citycouncil/cd8&quot;, &quot;https://www.sandiego.gov/citycouncil/cd9&quot;]</td>
-            <td>2025-07-17T03:15:38+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/san_diego/images/3b5bc8d7cf4f064fa1bbfcfc9b82739b6edc761cc9841656e363cbcd5ad238ce.png" alt="Jennifer Campbell" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JC</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Jennifer Campbell</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Vice Chair, Board Member, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(619) 236-6622">(619) 236-6622</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.sandiego.gov/citycouncil/cd2" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/san_diego/images/5d1526ca83e47f010b0cbe700071c063d9b2cdb1f4d0cdc9e3d884230cef8086.jpg" alt="Henry Foster III" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">HI</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Henry Foster III</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Vice Chair, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:HenryFoster@sandiego.gov" class="break-all">HenryFoster@sandiego.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(619) 236-6644">(619) 236-6644</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.sandiego.gov/citycouncil/cd4" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/san_diego/images/87182e451b87fabf8ab9c6aff205a622fe2e9cfb3ef6741fd6e3e925793ae07d.jpg" alt="Marni von Wilpert" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MW</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Marni von Wilpert</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Board Member, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:marnivonwilpert@sandiego.gov" class="break-all">marnivonwilpert@sandiego.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(619) 236-6655">(619) 236-6655</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.sandiego.gov/citycouncil/cd5" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/san_diego/images/02917d7fefc0f0d649485c65badfac1b605f1319c9a54e93ab874297b31c4fdb.png" alt="Vivian Moreno" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">VM</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Vivian Moreno</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Vice Chair, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:vivianmoreno@sandiego.gov" class="break-all">vivianmoreno@sandiego.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(619) 236-6688">(619) 236-6688</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.sandiego.gov/citycouncil/cd8" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/san_diego/images/e22f973dac80c675e3d158c1268701baabe07f79fb56e87ad9ec9aeba1879498.jpg" alt="Joe LaCava" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JL</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Joe LaCava</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council President, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(619) 236-6611">(619) 236-6611</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.sandiego.gov/citycouncil/cd1" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/san_diego/images/503fb5b63af21d38e40729e2ba4ef73c392b5e640c95ff43a1e1f5f4d7a0350d.png" alt="Kent Lee" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">KL</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Kent Lee</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council President Pro Tem</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:KentLee@sandiego.gov" class="break-all">KentLee@sandiego.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(619) 236-6616">(619) 236-6616</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.sandiego.gov/citycouncil/cd6" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/san_diego/images/2e275ca19554f18c5a218f7c406b4f9573801759c2722840d0e4d2fe19ff491e.jpg" alt="Stephen Whitburn" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SW</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Stephen Whitburn</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(619) 236-6633">(619) 236-6633</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.sandiego.gov/citycouncil/cd3" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/san_diego/images/fc16654bbbdefb20aeb0ef55c721a16f3fb33e3d73f0c2f92f842a6374152a6f.png" alt="Raul Campillo" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RC</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Raul Campillo</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(619) 236-6677">(619) 236-6677</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.sandiego.gov/citycouncil/cd7" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2"><div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm">SE</div></div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Sean Elo-Rivera</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(619) 236-6699">(619) 236-6699</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.sandiego.gov/citycouncil/cd9" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/mercer_island/images/a540b8949b6023d3ba115ec4da3de2460a130e230a7673bc016db572233c4fea.jpg" alt="Salim Nice" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SN</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Salim Nice</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:salim.nice@mercerisland.gov" class="break-all">salim.nice@mercerisland.gov</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 275-7997">(206) 275-7997</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_mercer_island</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_mercer_island</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.mercerisland.gov/citycouncil/page/mayor-salim-nice" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:mercer_island/government</td>
-            <td>Salim Nice</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;Position 2&quot;]</td>
-            <td>(206) 275-7997</td>
-            <td>salim.nice@mercerisland.gov</td>
-            <td>https://www.mercerisland.gov/citycouncil/page/mayor-salim-nice</td>
-            <td>2022-01-01</td>
-            <td>2025-12-31</td>
-            <td>https://www.mercerisland.gov/sites/default/files/styles/full_node_primary/public/imageattachments/citycouncil/page/13121/nice_2018.jpg?itok=RJqV7N2Y</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/mercer_island/images/a540b8949b6023d3ba115ec4da3de2460a130e230a7673bc016db572233c4fea.jpg</td>
-            <td>[&quot;https://www.mercerisland.gov/citycouncil/page/mayor-salim-nice&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/deputy-mayor-david-rosenbaum&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-lisa-anderl&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-craig-reynolds&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-wendy-weiker&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-ted-weinberg&quot;]</td>
-            <td>2025-06-05T00:00:00+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:mercer_island/government</td>
-            <td>David Rosenbaum</td>
-            <td>[&quot;Deputy Mayor&quot;]</td>
-            <td>[&quot;Position 1&quot;]</td>
-            <td>(206) 275-7996</td>
-            <td>david.rosenbaum@mercerisland.gov</td>
-            <td>https://www.mercerisland.gov/citycouncil/page/deputy-mayor-david-rosenbaum</td>
-            <td>2024-01-01</td>
-            <td>2027-12-31</td>
-            <td>https://www.mercerisland.gov/sites/default/files/styles/full_node_primary/public/imageattachments/citycouncil/page/29041/rosenbaum_2020.jpg?itok=QYpMkX2S</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/mercer_island/images/cac16fd1ae5e58d06c17b079d61ae071501c41063fed5eb10c7f1fb4e1156871.jpg</td>
-            <td>[&quot;https://www.mercerisland.gov/citycouncil/page/mayor-salim-nice&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/deputy-mayor-david-rosenbaum&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-lisa-anderl&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-craig-reynolds&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-wendy-weiker&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-ted-weinberg&quot;]</td>
-            <td>2025-06-05T00:00:00+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:mercer_island/government</td>
-            <td>Daniel Becker</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(206) 275-7995</td>
-            <td>daniel.becker@mercerisland.gov</td>
-            <td>https://www.mercerisland.gov/citycouncil/page/councilmember-daniel-becker</td>
-            <td>2025-06-04</td>
-            <td>2025-11</td>
-            <td>https://www.mercerisland.gov/sites/default/files/styles/full_node_primary/public/imageattachments/citycouncil/page/32216/becker_2025.jpg?itok=XOnWFJM8</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/mercer_island/images/d8228e74fdd2f01eb3e0825b9d2cb87937fd5fe185c7355e9bf9e268b535e8b6.jpg</td>
-            <td>[&quot;https://www.mercerisland.gov/citycouncil/page/mayor-salim-nice&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/deputy-mayor-david-rosenbaum&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-lisa-anderl&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-craig-reynolds&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-wendy-weiker&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-ted-weinberg&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-daniel-becker&quot;]</td>
-            <td>2025-06-05T00:00:00+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:mercer_island/government</td>
-            <td>Wendy Weiker</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 3&quot;]</td>
-            <td>(206) 275-7992</td>
-            <td>wendy.weiker@mercerisland.gov</td>
-            <td>https://www.mercerisland.gov/citycouncil/page/councilmember-wendy-weiker</td>
-            <td>2024-01-01</td>
-            <td>2027-12-31</td>
-            <td>https://www.mercerisland.gov/sites/default/files/styles/full_node_primary/public/imageattachments/citycouncil/page/29031/weiker_headshot_2016.jpg?itok=HiItke3w</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/mercer_island/images/72b5a56c92c2c4ee4d95c5e1d382d005ec4a5c2bf4355f7cb6e79bc6909e6be9.jpg</td>
-            <td>[&quot;https://www.mercerisland.gov/citycouncil/page/mayor-salim-nice&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/deputy-mayor-david-rosenbaum&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-lisa-anderl&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-craig-reynolds&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-wendy-weiker&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-ted-weinberg&quot;]</td>
-            <td>2025-06-05T00:00:00+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:mercer_island/government</td>
-            <td>Ted Weinberg</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 4&quot;]</td>
-            <td>(206) 275-7993</td>
-            <td>ted.weinberg@mercerisland.gov</td>
-            <td>https://www.mercerisland.gov/citycouncil/page/councilmember-ted-weinberg</td>
-            <td>2022-01-01</td>
-            <td>2025-12-31</td>
-            <td>https://www.mercerisland.gov/sites/default/files/styles/full_node_primary/public/imageattachments/citycouncil/page/30374/ted_weinberg.png?itok=sTnkOagM</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/mercer_island/images/8f2e33ccd3efff49ea3657b177087dbec3f667c6cf66f513dcb3672c42eb3d9b.png</td>
-            <td>[&quot;https://www.mercerisland.gov/citycouncil/page/mayor-salim-nice&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/deputy-mayor-david-rosenbaum&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-lisa-anderl&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-craig-reynolds&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-wendy-weiker&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-ted-weinberg&quot;]</td>
-            <td>2025-06-05T00:00:00+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:mercer_island/government</td>
-            <td>Craig Reynolds</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 5&quot;]</td>
-            <td>(206) 275-7991</td>
-            <td>craig.reynolds@mercerisland.gov</td>
-            <td>https://www.mercerisland.gov/citycouncil/page/councilmember-craig-reynolds</td>
-            <td>2024-01-01</td>
-            <td>2027-12-31</td>
-            <td>https://www.mercerisland.gov/sites/default/files/styles/full_node_primary/public/imageattachments/citycouncil/page/29031/reynolds_2019.jpg?itok=jeo_T1dZ</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/mercer_island/images/420080ce127aeab5a81e34cc9ba27871f1efb21c391b7614c2dcbdb6f6b45393.jpg</td>
-            <td>[&quot;https://www.mercerisland.gov/citycouncil/page/mayor-salim-nice&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/deputy-mayor-david-rosenbaum&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-lisa-anderl&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-craig-reynolds&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-wendy-weiker&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-ted-weinberg&quot;]</td>
-            <td>2025-06-05T00:00:00+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:mercer_island/government</td>
-            <td>Lisa Anderl</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 6&quot;]</td>
-            <td>(206) 275-7994</td>
-            <td>lisa.anderl@mercerisland.gov</td>
-            <td>https://www.mercerisland.gov/citycouncil/page/councilmember-lisa-anderl</td>
-            <td>2022-01-01</td>
-            <td>2025-12-31</td>
-            <td>https://www.mercerisland.gov/sites/default/files/styles/full_node_primary/public/imageattachments/citycouncil/page/13131/anderl_2019.jpg?itok=-_kJI85E</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/mercer_island/images/5ac85fef66a7be1d704daaa669875b8e0b9f213f48937383e1f25bf23baed5e8.jpg</td>
-            <td>[&quot;https://www.mercerisland.gov/citycouncil/page/mayor-salim-nice&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/deputy-mayor-david-rosenbaum&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-lisa-anderl&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-craig-reynolds&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-wendy-weiker&quot;, &quot;https://www.mercerisland.gov/citycouncil/page/councilmember-ted-weinberg&quot;]</td>
-            <td>2025-06-05T00:00:00+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/mercer_island/images/cac16fd1ae5e58d06c17b079d61ae071501c41063fed5eb10c7f1fb4e1156871.jpg" alt="David Rosenbaum" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DR</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">David Rosenbaum</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Deputy Mayor</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:david.rosenbaum@mercerisland.gov" class="break-all">david.rosenbaum@mercerisland.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 275-7996">(206) 275-7996</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.mercerisland.gov/citycouncil/page/deputy-mayor-david-rosenbaum" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/mercer_island/images/d8228e74fdd2f01eb3e0825b9d2cb87937fd5fe185c7355e9bf9e268b535e8b6.jpg" alt="Daniel Becker" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DB</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Daniel Becker</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:daniel.becker@mercerisland.gov" class="break-all">daniel.becker@mercerisland.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 275-7995">(206) 275-7995</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.mercerisland.gov/citycouncil/page/councilmember-daniel-becker" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/mercer_island/images/72b5a56c92c2c4ee4d95c5e1d382d005ec4a5c2bf4355f7cb6e79bc6909e6be9.jpg" alt="Wendy Weiker" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">WW</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Wendy Weiker</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:wendy.weiker@mercerisland.gov" class="break-all">wendy.weiker@mercerisland.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 275-7992">(206) 275-7992</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.mercerisland.gov/citycouncil/page/councilmember-wendy-weiker" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/mercer_island/images/8f2e33ccd3efff49ea3657b177087dbec3f667c6cf66f513dcb3672c42eb3d9b.png" alt="Ted Weinberg" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">TW</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Ted Weinberg</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:ted.weinberg@mercerisland.gov" class="break-all">ted.weinberg@mercerisland.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 275-7993">(206) 275-7993</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.mercerisland.gov/citycouncil/page/councilmember-ted-weinberg" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/mercer_island/images/420080ce127aeab5a81e34cc9ba27871f1efb21c391b7614c2dcbdb6f6b45393.jpg" alt="Craig Reynolds" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">CR</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Craig Reynolds</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:craig.reynolds@mercerisland.gov" class="break-all">craig.reynolds@mercerisland.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 275-7991">(206) 275-7991</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.mercerisland.gov/citycouncil/page/councilmember-craig-reynolds" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/mercer_island/images/5ac85fef66a7be1d704daaa669875b8e0b9f213f48937383e1f25bf23baed5e8.jpg" alt="Lisa Anderl" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">LA</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Lisa Anderl</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:lisa.anderl@mercerisland.gov" class="break-all">lisa.anderl@mercerisland.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 275-7994">(206) 275-7994</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.mercerisland.gov/citycouncil/page/councilmember-lisa-anderl" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

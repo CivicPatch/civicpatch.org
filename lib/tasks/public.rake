@@ -61,7 +61,7 @@ namespace :public do
         output_file_path = state_output_dir.join("#{locality_slug}.html")
 
         html = ApplicationController.renderer.render(
-          template: "static-open-data/show",
+          partial: "static-open-data/show",
           locals: { city_name: locality_name, people: locality_data }
         )
 

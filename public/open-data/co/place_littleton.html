@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/littleton/images/c261f4a4c6ce8c5039fff340386e8a5f417dc6e25b4657099712eb3870dd4ebb.png" alt="Kyle Schlachter" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">KS</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Kyle Schlachter</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:lccks@littletonco.gov" class="break-all">lccks@littletonco.gov</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(720) 773-0401">(720) 773-0401</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_littleton</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_littleton</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Mayor-Kyle-Schlachter" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:littleton/government</td>
-            <td>Kyle Schlachter</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(720) 773-0401</td>
-            <td>lccks@littletonco.gov</td>
-            <td>https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Mayor-Kyle-Schlachter</td>
-            <td>2021</td>
-            <td>2025</td>
-            <td>https://www.littletonco.gov/files/sharedassets/public/v/4/city-council/images-council/current-members/schlachter-600sq.jpg?dimension=pageimage&amp;w=480</td>
-            <td>https://cdn.civicpatch.org/open-data/co/littleton/images/c261f4a4c6ce8c5039fff340386e8a5f417dc6e25b4657099712eb3870dd4ebb.png</td>
-            <td>[&quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Mayor-Kyle-Schlachter&quot;, &quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members&quot;]</td>
-            <td>2025-06-27T20:55:05+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:littleton/government</td>
-            <td>Stephen Barr</td>
-            <td>[&quot;Mayor Pro Tempore&quot;]</td>
-            <td>[&quot;District 3&quot;]</td>
-            <td>(720) 443-0465</td>
-            <td>lccsb@littletonco.gov</td>
-            <td>https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Stephen-Barr</td>
-            <td></td>
-            <td>2025</td>
-            <td>https://www.littletonco.gov/files/sharedassets/public/v/7/city-council/images-council/current-members/barr-600sq.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/littleton/images/24c6b2b92288a03c944f50a3f5c8269138a3890598b1b8432f3e46097ccc3a43.jpg</td>
-            <td>[&quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members&quot;, &quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Stephen-Barr&quot;]</td>
-            <td>2025-06-27T20:55:05+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:littleton/government</td>
-            <td>Joel Zink</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;At-large&quot;]</td>
-            <td>(720) 507-4646</td>
-            <td>lccjz@littletonco.gov</td>
-            <td>https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Joel-Zink</td>
-            <td>2025-01</td>
-            <td>2025</td>
-            <td>https://www.littletonco.gov/files/sharedassets/public/v/3/city-council/images-council/current-members/zink-600sq.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/littleton/images/c18ca2277b501da6b0972b4dc260fe81747693fbca8780b1971e735f91d68671.jpg</td>
-            <td>[&quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members&quot;, &quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Joel-Zink&quot;]</td>
-            <td>2025-06-27T20:55:05+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:littleton/government</td>
-            <td>Pam Grove</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;At-large&quot;]</td>
-            <td>(303) 263-1152</td>
-            <td>lccpg@littletonco.gov</td>
-            <td>https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Pam-Grove</td>
-            <td>2023</td>
-            <td>2027</td>
-            <td>https://www.littletonco.gov/files/sharedassets/public/v/6/city-council/images-council/current-members/grove-600sq.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/littleton/images/a8aa17b500f1123c2fd28547b3ac21a0ac5425cd210d5a32cf5e74927228f21b.jpg</td>
-            <td>[&quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members&quot;, &quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Pam-Grove&quot;]</td>
-            <td>2025-06-27T20:55:05+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:littleton/government</td>
-            <td>Patrick Driscoll</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 1&quot;]</td>
-            <td>(303) 668-7877</td>
-            <td>lccpd@littletonco.gov</td>
-            <td>https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Patrick-Driscoll</td>
-            <td>2017-11</td>
-            <td>2025</td>
-            <td>https://www.littletonco.gov/files/sharedassets/public/v/4/city-council/images-council/current-members/driscoll-600sq.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/littleton/images/ca9bb5e9b15ea55bbb14365163af332ff5ed16cc5be22aa358718c83e56537e7.jpg</td>
-            <td>[&quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members&quot;, &quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Patrick-Driscoll&quot;]</td>
-            <td>2025-06-27T20:55:05+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:littleton/government</td>
-            <td>Robert Reichardt</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 2&quot;]</td>
-            <td>(720) 819-5431</td>
-            <td>lccrr@littletonco.gov</td>
-            <td>https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Robert-Reichardt</td>
-            <td>2023</td>
-            <td>2027</td>
-            <td>https://www.littletonco.gov/files/sharedassets/public/v/4/city-council/images-council/current-members/reichardt-600sq.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/littleton/images/b89833d809128cd4efddde87c6639a3d63a7acb264e938519187c9527969fdcd.jpg</td>
-            <td>[&quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members&quot;, &quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Robert-Reichardt&quot;]</td>
-            <td>2025-06-27T20:55:05+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:littleton/government</td>
-            <td>Andrea Peters</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 4&quot;]</td>
-            <td>(720) 935-1958</td>
-            <td>lccap@littletonco.gov</td>
-            <td>https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Andrea-Peters</td>
-            <td></td>
-            <td>2027</td>
-            <td>https://www.littletonco.gov/files/sharedassets/public/v/4/city-council/images-council/current-members/peters-600sq.jpg?dimension=userprofile&amp;w=150&amp;h=150</td>
-            <td>https://cdn.civicpatch.org/open-data/co/littleton/images/dc5b35eebce39cb6bf73dc1bc08bc034f56fab56484b45d5ffb86bf7df0d3b96.png</td>
-            <td>[&quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members&quot;, &quot;https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Andrea-Peters&quot;]</td>
-            <td>2025-06-27T20:55:05+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/littleton/images/24c6b2b92288a03c944f50a3f5c8269138a3890598b1b8432f3e46097ccc3a43.jpg" alt="Stephen Barr" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SB</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Stephen Barr</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:lccsb@littletonco.gov" class="break-all">lccsb@littletonco.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(720) 443-0465">(720) 443-0465</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Stephen-Barr" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/littleton/images/c18ca2277b501da6b0972b4dc260fe81747693fbca8780b1971e735f91d68671.jpg" alt="Joel Zink" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JZ</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Joel Zink</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:lccjz@littletonco.gov" class="break-all">lccjz@littletonco.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(720) 507-4646">(720) 507-4646</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Joel-Zink" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/littleton/images/a8aa17b500f1123c2fd28547b3ac21a0ac5425cd210d5a32cf5e74927228f21b.jpg" alt="Pam Grove" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">PG</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Pam Grove</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:lccpg@littletonco.gov" class="break-all">lccpg@littletonco.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 263-1152">(303) 263-1152</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Pam-Grove" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/littleton/images/ca9bb5e9b15ea55bbb14365163af332ff5ed16cc5be22aa358718c83e56537e7.jpg" alt="Patrick Driscoll" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">PD</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Patrick Driscoll</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:lccpd@littletonco.gov" class="break-all">lccpd@littletonco.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(303) 668-7877">(303) 668-7877</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Patrick-Driscoll" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/littleton/images/b89833d809128cd4efddde87c6639a3d63a7acb264e938519187c9527969fdcd.jpg" alt="Robert Reichardt" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RR</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Robert Reichardt</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:lccrr@littletonco.gov" class="break-all">lccrr@littletonco.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(720) 819-5431">(720) 819-5431</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Robert-Reichardt" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/littleton/images/dc5b35eebce39cb6bf73dc1bc08bc034f56fab56484b45d5ffb86bf7df0d3b96.png" alt="Andrea Peters" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">AP</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Andrea Peters</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:lccap@littletonco.gov" class="break-all">lccap@littletonco.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(720) 935-1958">(720) 935-1958</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.littletonco.gov/Government/Littleton-Leadership/City-Council-Members/Andrea-Peters" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

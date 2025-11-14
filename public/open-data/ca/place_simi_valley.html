@@ -1,193 +1,199 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/simi_valley/images/390626c886732e3d47607ddea54d7c06147723ea067d3b47e9626db5daba2c11.jpg" alt="Dee Dee Cavanaugh" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DC</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Dee Dee Cavanaugh</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor, Council Member</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:dcavanaugh@simivalley.org" class="break-all">dcavanaugh@simivalley.org</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(805) 583-6700">(805) 583-6700</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_simi_valley</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_simi_valley</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.simivalley.org/government/city-council/mayor-dee-dee-cavanaugh" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:simi_valley/government</td>
-            <td>Dee Dee Cavanaugh</td>
-            <td>[&quot;Mayor&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;At-large&quot;]</td>
-            <td>(805) 583-6700</td>
-            <td>dcavanaugh@simivalley.org</td>
-            <td>https://www.simivalley.org/government/city-council/mayor-dee-dee-cavanaugh</td>
-            <td>2025-01-27</td>
-            <td></td>
-            <td>https://www.simivalley.org/home/showpublishedimage/4607/638067077311330000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/simi_valley/images/390626c886732e3d47607ddea54d7c06147723ea067d3b47e9626db5daba2c11.jpg</td>
-            <td>[&quot;https://www.simivalley.org/government/city-council&quot;, &quot;https://www.simivalley.org/government/city-council/mayor-dee-dee-cavanaugh&quot;, &quot;https://www.simivalley.org/government/city-council/mayor-pro-tem-mike-judge&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-elaine-p-litster&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-rocky-rhodes&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-joseph-d-ayala&quot;]</td>
-            <td>2025-07-17T19:27:57+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:simi_valley/government</td>
-            <td>Mike Judge</td>
-            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 2&quot;]</td>
-            <td>(805) 583-6700</td>
-            <td>mjudge@simivalley.org</td>
-            <td>https://www.simivalley.org/government/city-council/mayor-pro-tem-mike-judge</td>
-            <td>2010-11</td>
-            <td>2026-02-10</td>
-            <td>https://www.simivalley.org/home/showpublishedimage/5183/638772139386100000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/simi_valley/images/ec0881c272f8175a696f9338633c65b86280be22c0744fe2750b18f720bb7815.jpg</td>
-            <td>[&quot;https://www.simivalley.org/government/city-council&quot;, &quot;https://www.simivalley.org/government/city-council/mayor-dee-dee-cavanaugh&quot;, &quot;https://www.simivalley.org/government/city-council/mayor-pro-tem-mike-judge&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-elaine-p-litster&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-rocky-rhodes&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-joseph-d-ayala&quot;]</td>
-            <td>2025-07-17T19:27:57+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:simi_valley/government</td>
-            <td>Elaine Litster</td>
-            <td>[&quot;Chair&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 3&quot;]</td>
-            <td>(805) 583-6700</td>
-            <td>elitster@simivalley.org</td>
-            <td>https://www.simivalley.org/government/city-council/council-member-elaine-p-litster</td>
-            <td>2020</td>
-            <td></td>
-            <td>https://www.simivalley.org/home/showpublishedimage/5181/638772128928600000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/simi_valley/images/9c06b4203bca39635641313c04ff8ce6ecaa32d3c7b773847592c48f51e084ad.jpg</td>
-            <td>[&quot;https://www.simivalley.org/government/city-council&quot;, &quot;https://www.simivalley.org/government/city-council/mayor-dee-dee-cavanaugh&quot;, &quot;https://www.simivalley.org/government/city-council/mayor-pro-tem-mike-judge&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-elaine-p-litster&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-rocky-rhodes&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-joseph-d-ayala&quot;]</td>
-            <td>2025-07-17T19:27:57+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:simi_valley/government</td>
-            <td>Joseph D. Ayala</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 1&quot;]</td>
-            <td>(805) 583-6700</td>
-            <td>jayala@simivalley.org</td>
-            <td>https://www.simivalley.org/government/city-council/council-member-joseph-d-ayala</td>
-            <td>2025-02</td>
-            <td></td>
-            <td>https://www.simivalley.org/home/showpublishedimage/5179/638772124726930000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/simi_valley/images/7e6aa4f5932fc101e1d587ca3694b5bff2ce169e68e8b1f4192deb6dfbe436d2.jpg</td>
-            <td>[&quot;https://www.simivalley.org/government/city-council&quot;, &quot;https://www.simivalley.org/government/city-council/mayor-dee-dee-cavanaugh&quot;, &quot;https://www.simivalley.org/government/city-council/mayor-pro-tem-mike-judge&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-elaine-p-litster&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-rocky-rhodes&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-joseph-d-ayala&quot;]</td>
-            <td>2025-07-17T19:27:57+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:simi_valley/government</td>
-            <td>Rocky Rhodes</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 4&quot;]</td>
-            <td>(805) 583-6700</td>
-            <td>rrhodes@simivalley.org</td>
-            <td>https://www.simivalley.org/government/city-council/council-member-rocky-rhodes</td>
-            <td>2022-11</td>
-            <td></td>
-            <td>https://www.simivalley.org/home/showpublishedimage/4609/638772149354930000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/simi_valley/images/ec23faffb2050b466b0228777fa4670c509b5c919ad4988c6f2932fd6f2a5ee8.png</td>
-            <td>[&quot;https://www.simivalley.org/government/city-council&quot;, &quot;https://www.simivalley.org/government/city-council/mayor-dee-dee-cavanaugh&quot;, &quot;https://www.simivalley.org/government/city-council/mayor-pro-tem-mike-judge&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-elaine-p-litster&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-rocky-rhodes&quot;, &quot;https://www.simivalley.org/government/city-council/council-member-joseph-d-ayala&quot;]</td>
-            <td>2025-07-17T19:27:57+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/simi_valley/images/ec0881c272f8175a696f9338633c65b86280be22c0744fe2750b18f720bb7815.jpg" alt="Mike Judge" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MJ</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Mike Judge</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:mjudge@simivalley.org" class="break-all">mjudge@simivalley.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(805) 583-6700">(805) 583-6700</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.simivalley.org/government/city-council/mayor-pro-tem-mike-judge" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/simi_valley/images/9c06b4203bca39635641313c04ff8ce6ecaa32d3c7b773847592c48f51e084ad.jpg" alt="Elaine Litster" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">EL</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Elaine Litster</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:elitster@simivalley.org" class="break-all">elitster@simivalley.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(805) 583-6700">(805) 583-6700</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.simivalley.org/government/city-council/council-member-elaine-p-litster" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/simi_valley/images/7e6aa4f5932fc101e1d587ca3694b5bff2ce169e68e8b1f4192deb6dfbe436d2.jpg" alt="Joseph D. Ayala" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JA</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Joseph D. Ayala</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:jayala@simivalley.org" class="break-all">jayala@simivalley.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(805) 583-6700">(805) 583-6700</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.simivalley.org/government/city-council/council-member-joseph-d-ayala" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/simi_valley/images/ec23faffb2050b466b0228777fa4670c509b5c919ad4988c6f2932fd6f2a5ee8.png" alt="Rocky Rhodes" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RR</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Rocky Rhodes</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:rrhodes@simivalley.org" class="break-all">rrhodes@simivalley.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(805) 583-6700">(805) 583-6700</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.simivalley.org/government/city-council/council-member-rocky-rhodes" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

@@ -1,238 +1,310 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/spokane/images/d6d8047b3a43bfaef58284ef68e341fa57ee173df0b1a82215f2876284a4fe2f.jpg" alt="Lisa Brown" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">LB</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Lisa Brown</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:mayor@spokanecity.org" class="break-all">mayor@spokanecity.org</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(509) 625-6250">(509) 625-6250</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_spokane</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_spokane</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://my.spokanecity.org/mayor" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:spokane/government</td>
-            <td>Lisa Brown</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(509) 625-6250</td>
-            <td>mayor@spokanecity.org</td>
-            <td>https://my.spokanecity.org/mayor</td>
-            <td>2024</td>
-            <td>2027</td>
-            <td>https://static.spokanecity.org/photos/2023/01/13/lisa-brown/3x4/medium/lisa-brown.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/spokane/images/d6d8047b3a43bfaef58284ef68e341fa57ee173df0b1a82215f2876284a4fe2f.jpg</td>
-            <td>[&quot;https://my.spokanecity.org/mayor/about&quot;, &quot;https://my.spokanecity.org/mayor&quot;, &quot;https://my.spokanecity.org/citycouncil/members&quot;, &quot;https://my.spokanecity.org/citycouncil/members/betsy-wilkerson&quot;, &quot;https://my.spokanecity.org/citycouncil/members/jonathan-bingle&quot;, &quot;https://my.spokanecity.org/citycouncil/members/michael-cathcart&quot;, &quot;https://my.spokanecity.org/citycouncil/members/paul-dillon&quot;, &quot;https://my.spokanecity.org/citycouncil/members/lili-navarrete&quot;, &quot;https://my.spokanecity.org/citycouncil/members/Kitty%20Klitzke&quot;]</td>
-            <td>2025-06-16T20:32:17+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:spokane/government</td>
-            <td>Betsy Wilkerson</td>
-            <td>[&quot;Council President&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(509) 625-6255</td>
-            <td>bwilkerson@spokanecity.org</td>
-            <td>https://my.spokanecity.org/citycouncil/members/betsy-wilkerson</td>
-            <td>2024</td>
-            <td>2027</td>
-            <td>https://static.spokanecity.org/photos/2024/12/05/betsy-wilkerson/chips/medium/betsy-wilkerson.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/spokane/images/24c203dc1c4c7dc448d0307c7152e1ac08d2e7f921982399c400e69f6f2f7659.jpg</td>
-            <td>[&quot;https://my.spokanecity.org/citycouncil/members&quot;, &quot;https://my.spokanecity.org/citycouncil/members/betsy-wilkerson&quot;, &quot;https://my.spokanecity.org/citycouncil/members/jonathan-bingle&quot;, &quot;https://my.spokanecity.org/citycouncil/members/michael-cathcart&quot;, &quot;https://my.spokanecity.org/citycouncil/members/lili-navarrete&quot;, &quot;https://my.spokanecity.org/citycouncil/members/Kitty%20Klitzke&quot;]</td>
-            <td>2025-06-16T20:32:17+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:spokane/government</td>
-            <td>Jonathan Bingle</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 1&quot;]</td>
-            <td>(509) 625-6255</td>
-            <td>jbingle@spokanecity.org</td>
-            <td>https://my.spokanecity.org/citycouncil/members/jonathan-bingle</td>
-            <td>2022</td>
-            <td>2025</td>
-            <td>https://static.spokanecity.org/photos/2024/12/05/jonathan-bingle/chips/medium/jonathan-bingle.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/spokane/images/67c15042f302102156a2070c1e43c5a6dc1d7084dc7db45e84800b0c2819351e.jpg</td>
-            <td>[&quot;https://my.spokanecity.org/citycouncil/members&quot;, &quot;https://my.spokanecity.org/citycouncil/members/betsy-wilkerson&quot;, &quot;https://my.spokanecity.org/citycouncil/members/jonathan-bingle&quot;, &quot;https://my.spokanecity.org/citycouncil/members/michael-cathcart&quot;, &quot;https://my.spokanecity.org/citycouncil/members/lili-navarrete&quot;, &quot;https://my.spokanecity.org/citycouncil/members/Kitty%20Klitzke&quot;]</td>
-            <td>2025-06-16T20:32:17+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:spokane/government</td>
-            <td>Michael Cathcart</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 1&quot;]</td>
-            <td>(509) 625-6255</td>
-            <td>mcathcart@spokanecity.org</td>
-            <td>https://my.spokanecity.org/citycouncil/members/michael-cathcart</td>
-            <td>2024</td>
-            <td>2027</td>
-            <td>https://static.spokanecity.org/photos/2024/12/05/michael-cathcart/chips/large/michael-cathcart.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/spokane/images/cc2b3b016cd0685a60f25f91542f65dafcf5c8a79dc4b4c5167dd24d198fc837.jpg</td>
-            <td>[&quot;https://my.spokanecity.org/citycouncil/members&quot;, &quot;https://my.spokanecity.org/citycouncil/members/betsy-wilkerson&quot;, &quot;https://my.spokanecity.org/citycouncil/members/jonathan-bingle&quot;, &quot;https://my.spokanecity.org/citycouncil/members/michael-cathcart&quot;, &quot;https://my.spokanecity.org/citycouncil/members/lili-navarrete&quot;, &quot;https://my.spokanecity.org/citycouncil/members/Kitty%20Klitzke&quot;]</td>
-            <td>2025-06-16T20:32:17+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:spokane/government</td>
-            <td>Lili Navarrete</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 2&quot;]</td>
-            <td>(509) 625-6255</td>
-            <td>lnavarrete@spokanecity.org</td>
-            <td>https://my.spokanecity.org/citycouncil/members/lili-navarrete</td>
-            <td>2024</td>
-            <td>2025</td>
-            <td>https://static.spokanecity.org/photos/2024/12/05/lili-navarrete/chips/medium/lili-navarrete.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/spokane/images/796cdf49f4ba640e2c9dcae73b577de393c38d895ecd7ba24b1c4d17960ecad2.jpg</td>
-            <td>[&quot;https://my.spokanecity.org/citycouncil/members&quot;, &quot;https://my.spokanecity.org/citycouncil/members/betsy-wilkerson&quot;, &quot;https://my.spokanecity.org/citycouncil/members/jonathan-bingle&quot;, &quot;https://my.spokanecity.org/citycouncil/members/michael-cathcart&quot;, &quot;https://my.spokanecity.org/citycouncil/members/lili-navarrete&quot;, &quot;https://my.spokanecity.org/citycouncil/members/Kitty%20Klitzke&quot;]</td>
-            <td>2025-06-16T20:32:17+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:spokane/government</td>
-            <td>Paul Dillon</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 2&quot;]</td>
-            <td>(509) 564-4569</td>
-            <td>pdillon@spokanecity.org</td>
-            <td>https://my.spokanecity.org/citycouncil/members/paul-dillon</td>
-            <td>2024</td>
-            <td>2027</td>
-            <td>https://static.spokanecity.org/photos/2024/12/05/paul-dillon/chips/medium/paul-dillon.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/spokane/images/c9fecd4ee7da661fd7207ef2d8c4efc840fbf9789e702424d5f811507a598d5b.jpg</td>
-            <td>[&quot;https://my.spokanecity.org/citycouncil/members&quot;, &quot;https://my.spokanecity.org/citycouncil/members/betsy-wilkerson&quot;, &quot;https://my.spokanecity.org/citycouncil/members/jonathan-bingle&quot;, &quot;https://my.spokanecity.org/citycouncil/members/michael-cathcart&quot;, &quot;https://my.spokanecity.org/citycouncil/members/paul-dillon&quot;, &quot;https://my.spokanecity.org/citycouncil/members/lili-navarrete&quot;, &quot;https://my.spokanecity.org/citycouncil/members/Kitty%20Klitzke&quot;]</td>
-            <td>2025-06-16T20:32:17+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:spokane/government</td>
-            <td>Kitty Klitzke</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 3&quot;]</td>
-            <td>(509) 625-6255</td>
-            <td>kklitzke@spokanecity.org</td>
-            <td>https://my.spokanecity.org/citycouncil/members/kitty-klitzke</td>
-            <td>2024</td>
-            <td>2027</td>
-            <td>https://static.spokanecity.org/photos/2024/12/05/kitty-klitzke/chips/large/kitty-klitzke.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/spokane/images/dde1cb229ad09e507e9f759a4e5988a539a28a2cd4e4657ca0af7348c2bdb4e6.jpg</td>
-            <td>[&quot;https://my.spokanecity.org/citycouncil/members&quot;, &quot;https://my.spokanecity.org/citycouncil/members/betsy-wilkerson&quot;, &quot;https://my.spokanecity.org/citycouncil/members/jonathan-bingle&quot;, &quot;https://my.spokanecity.org/citycouncil/members/michael-cathcart&quot;, &quot;https://my.spokanecity.org/citycouncil/members/lili-navarrete&quot;, &quot;https://my.spokanecity.org/citycouncil/members/Kitty%20Klitzke&quot;, &quot;https://my.spokanecity.org/citycouncil/members/kitty-klitzke&quot;]</td>
-            <td>2025-06-16T20:32:17+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:spokane/government</td>
-            <td>Zack Zappone</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 3&quot;]</td>
-            <td>(509) 625-6255</td>
-            <td>zzappone@spokanecity.org</td>
-            <td>https://my.spokanecity.org/citycouncil/members/zack-zappone</td>
-            <td>2022</td>
-            <td>2025</td>
-            <td>https://static.spokanecity.org/photos/2024/12/05/zack-zappone/chips/medium/zack-zappone.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/spokane/images/cfb24442127e0f43a7a6e55b3c4ac6f07800a232c362fab3da4135ffe81f0517.jpg</td>
-            <td>[&quot;https://my.spokanecity.org/citycouncil/members&quot;, &quot;https://my.spokanecity.org/citycouncil/members/betsy-wilkerson&quot;, &quot;https://my.spokanecity.org/citycouncil/members/jonathan-bingle&quot;, &quot;https://my.spokanecity.org/citycouncil/members/michael-cathcart&quot;, &quot;https://my.spokanecity.org/citycouncil/members/lili-navarrete&quot;, &quot;https://my.spokanecity.org/citycouncil/members/zack-zappone&quot;, &quot;https://my.spokanecity.org/citycouncil/members/Kitty%20Klitzke&quot;]</td>
-            <td>2025-06-16T20:32:17+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/spokane/images/24c203dc1c4c7dc448d0307c7152e1ac08d2e7f921982399c400e69f6f2f7659.jpg" alt="Betsy Wilkerson" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">BW</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Betsy Wilkerson</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council President</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:bwilkerson@spokanecity.org" class="break-all">bwilkerson@spokanecity.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(509) 625-6255">(509) 625-6255</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://my.spokanecity.org/citycouncil/members/betsy-wilkerson" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/spokane/images/67c15042f302102156a2070c1e43c5a6dc1d7084dc7db45e84800b0c2819351e.jpg" alt="Jonathan Bingle" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JB</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Jonathan Bingle</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:jbingle@spokanecity.org" class="break-all">jbingle@spokanecity.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(509) 625-6255">(509) 625-6255</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://my.spokanecity.org/citycouncil/members/jonathan-bingle" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/spokane/images/cc2b3b016cd0685a60f25f91542f65dafcf5c8a79dc4b4c5167dd24d198fc837.jpg" alt="Michael Cathcart" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MC</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Michael Cathcart</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:mcathcart@spokanecity.org" class="break-all">mcathcart@spokanecity.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(509) 625-6255">(509) 625-6255</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://my.spokanecity.org/citycouncil/members/michael-cathcart" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/spokane/images/796cdf49f4ba640e2c9dcae73b577de393c38d895ecd7ba24b1c4d17960ecad2.jpg" alt="Lili Navarrete" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">LN</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Lili Navarrete</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:lnavarrete@spokanecity.org" class="break-all">lnavarrete@spokanecity.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(509) 625-6255">(509) 625-6255</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://my.spokanecity.org/citycouncil/members/lili-navarrete" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/spokane/images/c9fecd4ee7da661fd7207ef2d8c4efc840fbf9789e702424d5f811507a598d5b.jpg" alt="Paul Dillon" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">PD</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Paul Dillon</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:pdillon@spokanecity.org" class="break-all">pdillon@spokanecity.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(509) 564-4569">(509) 564-4569</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://my.spokanecity.org/citycouncil/members/paul-dillon" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/spokane/images/dde1cb229ad09e507e9f759a4e5988a539a28a2cd4e4657ca0af7348c2bdb4e6.jpg" alt="Kitty Klitzke" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">KK</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Kitty Klitzke</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:kklitzke@spokanecity.org" class="break-all">kklitzke@spokanecity.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(509) 625-6255">(509) 625-6255</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://my.spokanecity.org/citycouncil/members/kitty-klitzke" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/spokane/images/cfb24442127e0f43a7a6e55b3c4ac6f07800a232c362fab3da4135ffe81f0517.jpg" alt="Zack Zappone" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">ZZ</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Zack Zappone</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:zzappone@spokanecity.org" class="break-all">zzappone@spokanecity.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(509) 625-6255">(509) 625-6255</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://my.spokanecity.org/citycouncil/members/zack-zappone" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

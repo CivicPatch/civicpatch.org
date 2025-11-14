@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/battle_ground/images/911311e61fa97082ed66986fd37f4350cb8404edbcc475b6179a831a00e0fdf0.jpg" alt="Troy McCoy" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">TM</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Troy McCoy</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor, Council Member</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:troy.mccoy@cityofbg.org" class="break-all">troy.mccoy@cityofbg.org</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 600-5468">(360) 600-5468</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_battle_ground</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_battle_ground</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofbg.org/378/Mayor-McCoy" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:battle_ground/government</td>
-            <td>Troy McCoy</td>
-            <td>[&quot;Mayor&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Position 1&quot;]</td>
-            <td>(360) 600-5468</td>
-            <td>troy.mccoy@cityofbg.org</td>
-            <td>https://www.cityofbg.org/378/Mayor-McCoy</td>
-            <td>2022-01</td>
-            <td>2025-12</td>
-            <td>https://www.cityofbg.org/ImageRepository/Document?documentID=8384</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/battle_ground/images/911311e61fa97082ed66986fd37f4350cb8404edbcc475b6179a831a00e0fdf0.jpg</td>
-            <td>[&quot;https://www.cityofbg.org/522/Meet-your-City-Council&quot;, &quot;https://www.cityofbg.org/378&quot;, &quot;https://www.cityofbg.org/379/Councilmember-Ferrer&quot;, &quot;https://www.cityofbg.org/376/Councilmember-Kuypers&quot;, &quot;https://www.cityofbg.org/472&quot;, &quot;https://www.cityofbg.org/382/Councilmember-Overholser&quot;, &quot;https://www.cityofbg.org/378/Mayor-McCoy&quot;]</td>
-            <td>2025-06-22T02:08:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:battle_ground/government</td>
-            <td>Shane Bowman</td>
-            <td>[&quot;Deputy Mayor&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;Position 2&quot;]</td>
-            <td>(360) 787-3266</td>
-            <td>shane.bowman@cityofbg.org</td>
-            <td>https://www.cityofbg.org/377/Deputy-Mayor-Bowman</td>
-            <td>2024-01</td>
-            <td>2027-12</td>
-            <td>https://www.cityofbg.org/ImageRepository/Document?documentID=4866</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/battle_ground/images/ccc6695f0188022c97948f5538ec69f79999315c03e36648469a83c1929f46ad.jpg</td>
-            <td>[&quot;https://www.cityofbg.org/522/Meet-your-City-Council&quot;, &quot;https://www.cityofbg.org/index.aspx?NID=377&quot;, &quot;https://www.cityofbg.org/379/Councilmember-Ferrer&quot;, &quot;https://www.cityofbg.org/376/Councilmember-Kuypers&quot;, &quot;https://www.cityofbg.org/472&quot;, &quot;https://www.cityofbg.org/382/Councilmember-Overholser&quot;, &quot;https://www.cityofbg.org/377/Deputy-Mayor-Bowman&quot;]</td>
-            <td>2025-06-22T02:08:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:battle_ground/government</td>
-            <td>Victoria Ferrer</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 3&quot;]</td>
-            <td>(360) 601-9994</td>
-            <td>victoria.ferrer@cityofbg.org</td>
-            <td>https://www.cityofbg.org/379/Councilmember-Ferrer</td>
-            <td>2023-11</td>
-            <td>2027-12</td>
-            <td>https://www.cityofbg.org/ImageRepository/Document?documentID=11804</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/battle_ground/images/d450ba40bd8c0e58ca5ddeaf4a4117a5afad82a420e4b60a90da22c917dcafe3.jpg</td>
-            <td>[&quot;https://www.cityofbg.org/522/Meet-your-City-Council&quot;, &quot;https://www.cityofbg.org/379/Councilmember-Ferrer&quot;, &quot;https://www.cityofbg.org/376/Councilmember-Kuypers&quot;, &quot;https://www.cityofbg.org/472&quot;, &quot;https://www.cityofbg.org/382/Councilmember-Overholser&quot;]</td>
-            <td>2025-06-22T02:08:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:battle_ground/government</td>
-            <td>Jeanie Kuypers</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 4&quot;]</td>
-            <td>(360) 839-6641</td>
-            <td>Jeanie.Kuypers@cityofbg.org</td>
-            <td>https://www.cityofbg.org/376/Councilmember-Kuypers</td>
-            <td>2025-02-03</td>
-            <td>2025-11-25</td>
-            <td>https://www.cityofbg.org/ImageRepository/Document?documentID=13614</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/battle_ground/images/ba7b74572a35c5fefe1e1e30d1b629fd69357466242840ab96fe6654aed7d551.jpg</td>
-            <td>[&quot;https://www.cityofbg.org/522/Meet-your-City-Council&quot;, &quot;https://www.cityofbg.org/379/Councilmember-Ferrer&quot;, &quot;https://www.cityofbg.org/376/Councilmember-Kuypers&quot;, &quot;https://www.cityofbg.org/472&quot;, &quot;https://www.cityofbg.org/382/Councilmember-Overholser&quot;]</td>
-            <td>2025-06-22T02:08:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:battle_ground/government</td>
-            <td>Tricia Davis</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 5&quot;]</td>
-            <td>(360) 798-3979</td>
-            <td>tricia.davis@cityofbg.org</td>
-            <td>https://www.cityofbg.org/380/Councilmember-Davis</td>
-            <td>2021-11</td>
-            <td>2025-12</td>
-            <td>https://www.cityofbg.org/ImageRepository/Document?documentID=8061</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/battle_ground/images/a73ca4fe5a11c7cf5522eb8db8f2a2f4b953e5e7efc22d814d5c3e5db2aba83a.jpg</td>
-            <td>[&quot;https://www.cityofbg.org/522/Meet-your-City-Council&quot;, &quot;https://www.cityofbg.org/379/Councilmember-Ferrer&quot;, &quot;https://www.cityofbg.org/376/Councilmember-Kuypers&quot;, &quot;https://www.cityofbg.org/380/Councilmember-Davis&quot;, &quot;https://www.cityofbg.org/472&quot;, &quot;https://www.cityofbg.org/382/Councilmember-Overholser&quot;]</td>
-            <td>2025-06-22T02:08:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:battle_ground/government</td>
-            <td>Cherish DesRochers</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 6&quot;]</td>
-            <td>(360) 798-3245</td>
-            <td>cherish.desrochers@cityofbg.org</td>
-            <td>https://www.cityofbg.org/472/Councilmember-DesRochers</td>
-            <td>2022-01</td>
-            <td>2025-12</td>
-            <td>https://www.cityofbg.org/ImageRepository/Document?documentID=5422</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/battle_ground/images/480fdacd8dbc67caa520984ec52ed79d012e3e52b6611468b07e936b13c89b78.jpg</td>
-            <td>[&quot;https://www.cityofbg.org/522/Meet-your-City-Council&quot;, &quot;https://www.cityofbg.org/379/Councilmember-Ferrer&quot;, &quot;https://www.cityofbg.org/376/Councilmember-Kuypers&quot;, &quot;https://www.cityofbg.org/472&quot;, &quot;https://www.cityofbg.org/382/Councilmember-Overholser&quot;, &quot;https://www.cityofbg.org/472/Councilmember-DesRochers&quot;]</td>
-            <td>2025-06-22T02:08:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:battle_ground/government</td>
-            <td>Eric Overholser</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Position 7&quot;]</td>
-            <td>(360) 798-1198</td>
-            <td>eric.overholser@cityofbg.org</td>
-            <td>https://www.cityofbg.org/382/Councilmember-Overholser</td>
-            <td>2023-11</td>
-            <td>2027-12</td>
-            <td>https://www.cityofbg.org/ImageRepository/Document?documentID=11931</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/battle_ground/images/4baf2171bfd3195b817f118faf2544ea3ecc2da08ea111d0e87a1eb9bf48a71a.jpg</td>
-            <td>[&quot;https://www.cityofbg.org/522/Meet-your-City-Council&quot;, &quot;https://www.cityofbg.org/379/Councilmember-Ferrer&quot;, &quot;https://www.cityofbg.org/376/Councilmember-Kuypers&quot;, &quot;https://www.cityofbg.org/472&quot;, &quot;https://www.cityofbg.org/382/Councilmember-Overholser&quot;]</td>
-            <td>2025-06-22T02:08:03+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/battle_ground/images/ccc6695f0188022c97948f5538ec69f79999315c03e36648469a83c1929f46ad.jpg" alt="Shane Bowman" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SB</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Shane Bowman</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Deputy Mayor, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:shane.bowman@cityofbg.org" class="break-all">shane.bowman@cityofbg.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 787-3266">(360) 787-3266</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofbg.org/377/Deputy-Mayor-Bowman" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/battle_ground/images/d450ba40bd8c0e58ca5ddeaf4a4117a5afad82a420e4b60a90da22c917dcafe3.jpg" alt="Victoria Ferrer" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">VF</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Victoria Ferrer</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:victoria.ferrer@cityofbg.org" class="break-all">victoria.ferrer@cityofbg.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 601-9994">(360) 601-9994</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofbg.org/379/Councilmember-Ferrer" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/battle_ground/images/ba7b74572a35c5fefe1e1e30d1b629fd69357466242840ab96fe6654aed7d551.jpg" alt="Jeanie Kuypers" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JK</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Jeanie Kuypers</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Jeanie.Kuypers@cityofbg.org" class="break-all">Jeanie.Kuypers@cityofbg.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 839-6641">(360) 839-6641</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofbg.org/376/Councilmember-Kuypers" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/battle_ground/images/a73ca4fe5a11c7cf5522eb8db8f2a2f4b953e5e7efc22d814d5c3e5db2aba83a.jpg" alt="Tricia Davis" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">TD</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Tricia Davis</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:tricia.davis@cityofbg.org" class="break-all">tricia.davis@cityofbg.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 798-3979">(360) 798-3979</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofbg.org/380/Councilmember-Davis" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/battle_ground/images/480fdacd8dbc67caa520984ec52ed79d012e3e52b6611468b07e936b13c89b78.jpg" alt="Cherish DesRochers" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">CD</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Cherish DesRochers</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:cherish.desrochers@cityofbg.org" class="break-all">cherish.desrochers@cityofbg.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 798-3245">(360) 798-3245</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofbg.org/472/Councilmember-DesRochers" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/battle_ground/images/4baf2171bfd3195b817f118faf2544ea3ecc2da08ea111d0e87a1eb9bf48a71a.jpg" alt="Eric Overholser" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">EO</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Eric Overholser</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:eric.overholser@cityofbg.org" class="break-all">eric.overholser@cityofbg.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(360) 798-1198">(360) 798-1198</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofbg.org/382/Councilmember-Overholser" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

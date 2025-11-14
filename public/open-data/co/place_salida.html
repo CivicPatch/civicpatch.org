@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/salida/images/d9c044eaee98c3b9e3972c399f04791c8c6bb2cf778e368451f15e055c8769b0.jpg" alt="Dan Shore" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DS</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Dan Shore</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(719) 221-6384">(719) 221-6384</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_salida</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_salida</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofsalida.com/elected-citycouncil/directory-listing/dan-shore" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:salida/government</td>
-            <td>Dan Shore</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;At-large&quot;]</td>
-            <td>(719) 221-6384</td>
-            <td></td>
-            <td>https://www.cityofsalida.com/elected-citycouncil/directory-listing/dan-shore</td>
-            <td></td>
-            <td>2027</td>
-            <td>https://www.cityofsalida.com/sites/g/files/vyhlif12621/files/styles/directory_listings_body_4_column/public/media/elected-citycouncil/image/66/dan-shore.jpg?itok=b8p7XpYC</td>
-            <td>https://cdn.civicpatch.org/open-data/co/salida/images/d9c044eaee98c3b9e3972c399f04791c8c6bb2cf778e368451f15e055c8769b0.jpg</td>
-            <td>[&quot;https://www.cityofsalida.com/elected-citycouncil/page/city-council&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dan-shore&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dominique-naccarato&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/suzanne-fontana-0&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/justin-critelli&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/aaron-stephens&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/wayles-martin&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/alisa-pappenfort&quot;]</td>
-            <td>2025-06-30T21:21:49+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:salida/government</td>
-            <td>Dominique Naccarato</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 1&quot;]</td>
-            <td>(719) 221-4711</td>
-            <td></td>
-            <td>https://www.cityofsalida.com/elected-citycouncil/directory-listing/dominique-naccarato</td>
-            <td>2025</td>
-            <td>2025</td>
-            <td>https://www.cityofsalida.com/sites/g/files/vyhlif12621/files/styles/directory_listings_body_4_column/public/media/elected-citycouncil/image/21/dom_headshot.jpg?itok=U5kyLfLA</td>
-            <td>https://cdn.civicpatch.org/open-data/co/salida/images/839da6bcb8351e67e1b679523af231cd49dea29ebf169d20698bf9b57cce91e7.jpg</td>
-            <td>[&quot;https://www.cityofsalida.com/elected-citycouncil/page/city-council&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dan-shore&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dominique-naccarato&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/suzanne-fontana-0&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/justin-critelli&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/aaron-stephens&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/wayles-martin&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/alisa-pappenfort&quot;]</td>
-            <td>2025-06-30T21:21:49+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:salida/government</td>
-            <td>Suzanne Fontana</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 1&quot;]</td>
-            <td>(719) 966-2079</td>
-            <td></td>
-            <td>https://www.cityofsalida.com/elected-citycouncil/directory-listing/suzanne-fontana-0</td>
-            <td></td>
-            <td>2027</td>
-            <td>https://www.cityofsalida.com/sites/g/files/vyhlif12621/files/styles/directory_listings_body_4_column/public/media/elected-citycouncil/image/41/suzanne_fontana_head_shot.jpeg?itok=EF3hu6Bh</td>
-            <td>https://cdn.civicpatch.org/open-data/co/salida/images/e460a8f9d04c0133dd402e2db8d84eced3a6af1d3e50347616841571c35640c3.jpg</td>
-            <td>[&quot;https://www.cityofsalida.com/elected-citycouncil/page/city-council&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dan-shore&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dominique-naccarato&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/suzanne-fontana-0&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/justin-critelli&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/aaron-stephens&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/wayles-martin&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/alisa-pappenfort&quot;]</td>
-            <td>2025-06-30T21:21:49+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:salida/government</td>
-            <td>Aaron Stephens</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 2&quot;]</td>
-            <td>(601) 467-0809</td>
-            <td></td>
-            <td>https://www.cityofsalida.com/elected-citycouncil/directory-listing/aaron-stephens</td>
-            <td></td>
-            <td>2027</td>
-            <td>https://www.cityofsalida.com/sites/g/files/vyhlif12621/files/styles/directory_listings_body_4_column/public/media/elected-citycouncil/image/36/aaron_stephens_head_shot.jpg?itok=MufDYV1d</td>
-            <td>https://cdn.civicpatch.org/open-data/co/salida/images/d63c39391dde8700fa5e1236b52aaaeed6538e02fa5e9ca527c09bb0345fc28b.jpg</td>
-            <td>[&quot;https://www.cityofsalida.com/elected-citycouncil/page/city-council&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dan-shore&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dominique-naccarato&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/suzanne-fontana-0&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/justin-critelli&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/aaron-stephens&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/wayles-martin&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/alisa-pappenfort&quot;]</td>
-            <td>2025-06-30T21:21:49+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:salida/government</td>
-            <td>Justin Critelli</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 2&quot;]</td>
-            <td>(914) 466-9779</td>
-            <td></td>
-            <td>https://www.cityofsalida.com/elected-citycouncil/directory-listing/justin-critelli</td>
-            <td></td>
-            <td>2025</td>
-            <td>https://www.cityofsalida.com/sites/g/files/vyhlif12621/files/styles/directory_listings_body_4_column/public/media/elected-citycouncil/image/46/critelli.jpg?itok=YMJjtEin</td>
-            <td>https://cdn.civicpatch.org/open-data/co/salida/images/83ae4561eda50afdaa535e0be301ca26e68642b8e81a5fb9ddb55352b375bcd6.jpg</td>
-            <td>[&quot;https://www.cityofsalida.com/elected-citycouncil/page/city-council&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dan-shore&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dominique-naccarato&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/suzanne-fontana-0&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/justin-critelli&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/aaron-stephens&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/wayles-martin&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/alisa-pappenfort&quot;]</td>
-            <td>2025-06-30T21:21:49+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:salida/government</td>
-            <td>Alisa Pappenfort</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 3&quot;]</td>
-            <td>(719) 221-2911</td>
-            <td></td>
-            <td>https://www.cityofsalida.com/elected-citycouncil/directory-listing/alisa-pappenfort</td>
-            <td></td>
-            <td>2027</td>
-            <td>https://www.cityofsalida.com/sites/g/files/vyhlif12621/files/styles/directory_listings_body_4_column/public/media/elected-citycouncil/image/61/klwldvh5.jpeg?itok=8NN7aq2o</td>
-            <td>https://cdn.civicpatch.org/open-data/co/salida/images/3031853b70b42e14582a5ee92393903e8e9891ccd72f951c8ed76d092f68ba97.jpg</td>
-            <td>[&quot;https://www.cityofsalida.com/elected-citycouncil/page/city-council&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dan-shore&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dominique-naccarato&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/suzanne-fontana-0&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/justin-critelli&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/aaron-stephens&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/wayles-martin&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/alisa-pappenfort&quot;]</td>
-            <td>2025-06-30T21:21:49+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:salida/government</td>
-            <td>Wayles Martin</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 3&quot;]</td>
-            <td>(239) 898-5149</td>
-            <td></td>
-            <td>https://www.cityofsalida.com/elected-citycouncil/directory-listing/wayles-martin</td>
-            <td></td>
-            <td>2025</td>
-            <td>https://www.cityofsalida.com/sites/g/files/vyhlif12621/files/styles/directory_listings_body_4_column/public/media/elected-citycouncil/image/56/image0.jpeg?itok=CK9O_OT9</td>
-            <td>https://cdn.civicpatch.org/open-data/co/salida/images/0a3e4bf96905cfb0ad7c23f258288984a60112ee1046ab39dee75197606894d6.jpg</td>
-            <td>[&quot;https://www.cityofsalida.com/elected-citycouncil/page/city-council&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dan-shore&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/dominique-naccarato&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/suzanne-fontana-0&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/justin-critelli&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/aaron-stephens&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/wayles-martin&quot;, &quot;https://www.cityofsalida.com/elected-citycouncil/directory-listing/alisa-pappenfort&quot;]</td>
-            <td>2025-06-30T21:21:49+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/salida/images/839da6bcb8351e67e1b679523af231cd49dea29ebf169d20698bf9b57cce91e7.jpg" alt="Dominique Naccarato" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DN</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Dominique Naccarato</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(719) 221-4711">(719) 221-4711</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofsalida.com/elected-citycouncil/directory-listing/dominique-naccarato" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/salida/images/e460a8f9d04c0133dd402e2db8d84eced3a6af1d3e50347616841571c35640c3.jpg" alt="Suzanne Fontana" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SF</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Suzanne Fontana</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(719) 966-2079">(719) 966-2079</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofsalida.com/elected-citycouncil/directory-listing/suzanne-fontana-0" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/salida/images/d63c39391dde8700fa5e1236b52aaaeed6538e02fa5e9ca527c09bb0345fc28b.jpg" alt="Aaron Stephens" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">AS</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Aaron Stephens</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(601) 467-0809">(601) 467-0809</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofsalida.com/elected-citycouncil/directory-listing/aaron-stephens" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/salida/images/83ae4561eda50afdaa535e0be301ca26e68642b8e81a5fb9ddb55352b375bcd6.jpg" alt="Justin Critelli" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JC</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Justin Critelli</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(914) 466-9779">(914) 466-9779</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofsalida.com/elected-citycouncil/directory-listing/justin-critelli" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/salida/images/3031853b70b42e14582a5ee92393903e8e9891ccd72f951c8ed76d092f68ba97.jpg" alt="Alisa Pappenfort" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">AP</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Alisa Pappenfort</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(719) 221-2911">(719) 221-2911</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofsalida.com/elected-citycouncil/directory-listing/alisa-pappenfort" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/salida/images/0a3e4bf96905cfb0ad7c23f258288984a60112ee1046ab39dee75197606894d6.jpg" alt="Wayles Martin" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">WM</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Wayles Martin</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(239) 898-5149">(239) 898-5149</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityofsalida.com/elected-citycouncil/directory-listing/wayles-martin" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

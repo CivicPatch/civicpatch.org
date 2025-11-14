@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/hayward/images/e1365777f23cd3e9267f9b44559b51a05d6ea7847a888b7a1f30aea228261612.png" alt="Mark Salinas" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MS</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Mark Salinas</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Mark.Salinas@hayward-ca.gov" class="break-all">Mark.Salinas@hayward-ca.gov</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(510) 583-4340">(510) 583-4340</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_hayward</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_hayward</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.hayward-ca.gov/your-government/city-council/council-member-mark-salinas" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:hayward/government</td>
-            <td>Mark Salinas</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(510) 583-4340</td>
-            <td>Mark.Salinas@hayward-ca.gov</td>
-            <td>https://www.hayward-ca.gov/your-government/city-council/council-member-mark-salinas</td>
-            <td>2022-11</td>
-            <td></td>
-            <td>https://www.hayward-ca.gov/sites/default/files/pictures/MCC-Staff-Mayor-Salinas-Mark-2025.png</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/hayward/images/e1365777f23cd3e9267f9b44559b51a05d6ea7847a888b7a1f30aea228261612.png</td>
-            <td>[&quot;https://www.hayward-ca.gov/your-government/city-council/council-member-mark-salinas&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-julie-roche&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-angela-andrews&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-ray-bonilla-jr&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/dan-goldstein&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-george-syrop&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-francisco-zermeno&quot;]</td>
-            <td>2025-07-17T18:51:53+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:hayward/government</td>
-            <td>Julie Roche</td>
-            <td>[&quot;Mayor Pro Tempore&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(510) 583-4355</td>
-            <td>Julie.Roche@hayward-ca.gov</td>
-            <td>https://www.hayward-ca.gov/your-government/city-council/council-member-julie-roche</td>
-            <td>2022-11</td>
-            <td></td>
-            <td>https://www.hayward-ca.gov/sites/default/files/pictures/MCC-Staff-Councilmember-Roche-Julie-2025.png</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/hayward/images/fc9ab6345449a544a0c5fb357ff9039bd01434512a27e37cef66d554bda2e1bf.png</td>
-            <td>[&quot;https://www.hayward-ca.gov/your-government/city-council/council-member-mark-salinas&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-julie-roche&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-angela-andrews&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-ray-bonilla-jr&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/dan-goldstein&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-george-syrop&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-francisco-zermeno&quot;]</td>
-            <td>2025-07-17T18:51:53+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:hayward/government</td>
-            <td>Angela Andrews</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(510) 583-4353</td>
-            <td>Angela.Andrews@hayward-ca.gov</td>
-            <td>https://www.hayward-ca.gov/your-government/city-council/council-member-angela-andrews</td>
-            <td>2024</td>
-            <td></td>
-            <td>https://www.hayward-ca.gov/sites/default/files/pictures/MMC-Staff-Councilmember-Andrews-Angela-2025.png</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/hayward/images/674b5797dc6dc8c03302f01f28ddafc5205c3cf665e18174af74f8fd21c688e4.png</td>
-            <td>[&quot;https://www.hayward-ca.gov/your-government/city-council/council-member-mark-salinas&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-julie-roche&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-angela-andrews&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-ray-bonilla-jr&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/dan-goldstein&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-george-syrop&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-francisco-zermeno&quot;]</td>
-            <td>2025-07-17T18:51:53+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:hayward/government</td>
-            <td>Dan Goldstein</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(510) 583-4356</td>
-            <td>Daniel.Goldstein@hayward-ca.gov</td>
-            <td>https://www.hayward-ca.gov/your-government/city-council/dan-goldstein</td>
-            <td>2024-11</td>
-            <td></td>
-            <td>https://www.hayward-ca.gov/sites/default/files/pictures/MCC-Staff-Councilmember-Goldstein-Dan-2025.png</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/hayward/images/525d55fc713be10da90729dccc3aa1697dd9d7f34a533ecd56e534047e57cf26.png</td>
-            <td>[&quot;https://www.hayward-ca.gov/your-government/city-council/council-member-mark-salinas&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-julie-roche&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-angela-andrews&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-ray-bonilla-jr&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/dan-goldstein&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-george-syrop&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-francisco-zermeno&quot;]</td>
-            <td>2025-07-17T18:51:53+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:hayward/government</td>
-            <td>Francisco Zermeño</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(510) 583-4352</td>
-            <td>Francisco.Zermeno@hayward-ca.gov</td>
-            <td>https://www.hayward-ca.gov/your-government/city-council/council-member-francisco-zermeno</td>
-            <td>2024</td>
-            <td></td>
-            <td>https://www.hayward-ca.gov/sites/default/files/pictures/MCC-Staff-Councilmember-Zermeno-Francisco-2025.png</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/hayward/images/7b554c6db95ece46f97020352791cbd29b60c2bd0573f7e7b8790b26268a9a7d.png</td>
-            <td>[&quot;https://www.hayward-ca.gov/your-government/city-council/council-member-mark-salinas&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-julie-roche&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-angela-andrews&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-ray-bonilla-jr&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/dan-goldstein&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-george-syrop&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-francisco-zermeno&quot;]</td>
-            <td>2025-07-17T18:51:53+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:hayward/government</td>
-            <td>George Syrop</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(510) 583-4358</td>
-            <td>George.Syrop@hayward-ca.gov</td>
-            <td>https://www.hayward-ca.gov/your-government/city-council/council-member-george-syrop</td>
-            <td>2022-11</td>
-            <td></td>
-            <td>https://www.hayward-ca.gov/sites/default/files/pictures/MCC-Staff-Councilmember-Syrop-George.png</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/hayward/images/309ca475076016cb1401e46f0fc56979f6267fc9d4ba28c6c400c81a48529127.png</td>
-            <td>[&quot;https://www.hayward-ca.gov/your-government/city-council/council-member-mark-salinas&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-julie-roche&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-angela-andrews&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-ray-bonilla-jr&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/dan-goldstein&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-george-syrop&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-francisco-zermeno&quot;]</td>
-            <td>2025-07-17T18:51:53+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:hayward/government</td>
-            <td>Ray Bonilla Jr.</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(510) 583-4357</td>
-            <td>Ray.Bonilla@hayward-ca.gov</td>
-            <td>https://www.hayward-ca.gov/your-government/city-council/council-member-ray-bonilla-jr</td>
-            <td>2024-11</td>
-            <td></td>
-            <td>https://www.hayward-ca.gov/sites/default/files/pictures/MCC-Staff-Councilmember-Bonilla-Ray-2025.png</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/hayward/images/4db4126a42b39adc27505d2cd7c8f1bbd3650d96748fe7389932c1eaca54a143.png</td>
-            <td>[&quot;https://www.hayward-ca.gov/your-government/city-council/council-member-mark-salinas&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-julie-roche&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-angela-andrews&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-ray-bonilla-jr&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/dan-goldstein&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-george-syrop&quot;, &quot;https://www.hayward-ca.gov/your-government/city-council/council-member-francisco-zermeno&quot;]</td>
-            <td>2025-07-17T18:51:53+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/hayward/images/fc9ab6345449a544a0c5fb357ff9039bd01434512a27e37cef66d554bda2e1bf.png" alt="Julie Roche" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JR</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Julie Roche</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Julie.Roche@hayward-ca.gov" class="break-all">Julie.Roche@hayward-ca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(510) 583-4355">(510) 583-4355</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.hayward-ca.gov/your-government/city-council/council-member-julie-roche" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/hayward/images/674b5797dc6dc8c03302f01f28ddafc5205c3cf665e18174af74f8fd21c688e4.png" alt="Angela Andrews" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">AA</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Angela Andrews</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Angela.Andrews@hayward-ca.gov" class="break-all">Angela.Andrews@hayward-ca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(510) 583-4353">(510) 583-4353</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.hayward-ca.gov/your-government/city-council/council-member-angela-andrews" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/hayward/images/525d55fc713be10da90729dccc3aa1697dd9d7f34a533ecd56e534047e57cf26.png" alt="Dan Goldstein" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DG</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Dan Goldstein</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Daniel.Goldstein@hayward-ca.gov" class="break-all">Daniel.Goldstein@hayward-ca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(510) 583-4356">(510) 583-4356</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.hayward-ca.gov/your-government/city-council/dan-goldstein" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/hayward/images/7b554c6db95ece46f97020352791cbd29b60c2bd0573f7e7b8790b26268a9a7d.png" alt="Francisco Zermeño" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">FZ</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Francisco Zermeño</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Francisco.Zermeno@hayward-ca.gov" class="break-all">Francisco.Zermeno@hayward-ca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(510) 583-4352">(510) 583-4352</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.hayward-ca.gov/your-government/city-council/council-member-francisco-zermeno" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/hayward/images/309ca475076016cb1401e46f0fc56979f6267fc9d4ba28c6c400c81a48529127.png" alt="George Syrop" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">GS</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">George Syrop</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:George.Syrop@hayward-ca.gov" class="break-all">George.Syrop@hayward-ca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(510) 583-4358">(510) 583-4358</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.hayward-ca.gov/your-government/city-council/council-member-george-syrop" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/hayward/images/4db4126a42b39adc27505d2cd7c8f1bbd3650d96748fe7389932c1eaca54a143.png" alt="Ray Bonilla Jr." class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RJ</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Ray Bonilla Jr.</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Ray.Bonilla@hayward-ca.gov" class="break-all">Ray.Bonilla@hayward-ca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(510) 583-4357">(510) 583-4357</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.hayward-ca.gov/your-government/city-council/council-member-ray-bonilla-jr" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

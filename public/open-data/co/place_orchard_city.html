@@ -1,223 +1,270 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/orchard_city/images/9e13f1308569f079439c8a8a51c6ad65bf3dca14ce46bbbc60eda1f2a9409b26.jpg" alt="Dick Kirkpatrick" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DK</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Dick Kirkpatrick</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:volgamoreken@gmail.com" class="break-all">volgamoreken@gmail.com</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(970) 835-3030">(970) 835-3030</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_orchard_city</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_orchard_city</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.orchardcityco.org/98/Mayor-Dick-Kirkpatrick" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:orchard_city/government</td>
-            <td>Dick Kirkpatrick</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(970) 835-3030</td>
-            <td>volgamoreken@gmail.com</td>
-            <td>https://www.orchardcityco.org/98/Mayor-Dick-Kirkpatrick</td>
-            <td>2024</td>
-            <td>2028</td>
-            <td>https://www.orchardcityco.org/ImageRepository/Document?documentID=3056</td>
-            <td>https://cdn.civicpatch.org/open-data/co/orchard_city/images/9e13f1308569f079439c8a8a51c6ad65bf3dca14ce46bbbc60eda1f2a9409b26.jpg</td>
-            <td>[&quot;https://www.orchardcityco.org/222/Mayor-Pro-Tem-Wade-Kasman&quot;, &quot;https://www.orchardcityco.org/2/Government&quot;, &quot;https://www.orchardcityco.org/98/Mayor-Dick-Kirkpatrick&quot;, &quot;https://www.orchardcityco.org/101/Trustee-Holly-Mautz&quot;, &quot;https://www.orchardcityco.org/226/Trustee-Mel-Cook&quot;, &quot;https://www.orchardcityco.org/221/Trustee-Will-Punkoney&quot;, &quot;https://www.orchardcityco.org/96/Trustee-David-Murphy&quot;, &quot;https://www.orchardcityco.org/99/Trustee-Mike-Hansen&quot;]</td>
-            <td>2025-07-02T18:05:28+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:orchard_city/government</td>
-            <td>Wade Kasman</td>
-            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Trustee&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(720) 468-3112</td>
-            <td>wadekasman@gmail.com</td>
-            <td>https://www.orchardcityco.org/222/Mayor-Pro-Tem-Wade-Kasman</td>
-            <td>2024-04</td>
-            <td>2026-04</td>
-            <td>https://www.orchardcityco.org/ImageRepository/Document?documentID=3058</td>
-            <td>https://cdn.civicpatch.org/open-data/co/orchard_city/images/66ed5c1a6aba53079bd388ecf44ea9953af98a9c087e60df69ff826e420387b5.jpg</td>
-            <td>[&quot;https://www.orchardcityco.org/222/Mayor-Pro-Tem-Wade-Kasman&quot;, &quot;https://www.orchardcityco.org/2/Government&quot;, &quot;https://www.orchardcityco.org/101/Trustee-Holly-Mautz&quot;, &quot;https://www.orchardcityco.org/226/Trustee-Mel-Cook&quot;, &quot;https://www.orchardcityco.org/221/Trustee-Will-Punkoney&quot;, &quot;https://www.orchardcityco.org/96/Trustee-David-Murphy&quot;, &quot;https://www.orchardcityco.org/99/Trustee-Mike-Hansen&quot;]</td>
-            <td>2025-07-02T18:05:28+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:orchard_city/government</td>
-            <td>David Murphy</td>
-            <td>[&quot;Trustee&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(970) 757-2122</td>
-            <td>trusteemurphy524@gmail.com</td>
-            <td>https://www.orchardcityco.org/96/Trustee-David-Murphy</td>
-            <td>2024-04</td>
-            <td>2028-04</td>
-            <td>https://www.orchardcityco.org/ImageRepository/Document?documentID=3061</td>
-            <td>https://cdn.civicpatch.org/open-data/co/orchard_city/images/82e3a501ebc2dcee4a0e7b39f4829bd75e54ffc12e05dff0be1cd1dd29222e8f.jpg</td>
-            <td>[&quot;https://www.orchardcityco.org/222/Mayor-Pro-Tem-Wade-Kasman&quot;, &quot;https://www.orchardcityco.org/2/Government&quot;, &quot;https://www.orchardcityco.org/101/Trustee-Holly-Mautz&quot;, &quot;https://www.orchardcityco.org/226/Trustee-Mel-Cook&quot;, &quot;https://www.orchardcityco.org/221/Trustee-Will-Punkoney&quot;, &quot;https://www.orchardcityco.org/96/Trustee-David-Murphy&quot;, &quot;https://www.orchardcityco.org/99/Trustee-Mike-Hansen&quot;]</td>
-            <td>2025-07-02T18:05:28+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:orchard_city/government</td>
-            <td>Holly Mautz</td>
-            <td>[&quot;Trustee&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(970) 250-3660</td>
-            <td>hmautz@gmail.com</td>
-            <td>https://www.orchardcityco.org/101/Trustee-Holly-Mautz</td>
-            <td>2022</td>
-            <td>2026</td>
-            <td>https://www.orchardcityco.org/ImageRepository/Document?documentID=3057</td>
-            <td>https://cdn.civicpatch.org/open-data/co/orchard_city/images/8386a312394795bb866daa44fe0e73a1addb31d57d16c2aefdcebfd73f059cea.jpg</td>
-            <td>[&quot;https://www.orchardcityco.org/222/Mayor-Pro-Tem-Wade-Kasman&quot;, &quot;https://www.orchardcityco.org/2/Government&quot;, &quot;https://www.orchardcityco.org/101/Trustee-Holly-Mautz&quot;, &quot;https://www.orchardcityco.org/226/Trustee-Mel-Cook&quot;, &quot;https://www.orchardcityco.org/221/Trustee-Will-Punkoney&quot;, &quot;https://www.orchardcityco.org/96/Trustee-David-Murphy&quot;, &quot;https://www.orchardcityco.org/99/Trustee-Mike-Hansen&quot;]</td>
-            <td>2025-07-02T18:05:28+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:orchard_city/government</td>
-            <td>Mel Cook</td>
-            <td>[&quot;Trustee&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(970) 210-7607</td>
-            <td>mels_auto@outlook.com</td>
-            <td>https://www.orchardcityco.org/226/Trustee-Mel-Cook</td>
-            <td></td>
-            <td></td>
-            <td>https://www.orchardcityco.org/ImageRepository/Document?documentID=3059</td>
-            <td>https://cdn.civicpatch.org/open-data/co/orchard_city/images/a2d0fa858c8fff0849fe0fd18eceb49a5a4148f999a58b01b2948a3eb8aa2655.jpg</td>
-            <td>[&quot;https://www.orchardcityco.org/222/Mayor-Pro-Tem-Wade-Kasman&quot;, &quot;https://www.orchardcityco.org/2/Government&quot;, &quot;https://www.orchardcityco.org/101/Trustee-Holly-Mautz&quot;, &quot;https://www.orchardcityco.org/226/Trustee-Mel-Cook&quot;, &quot;https://www.orchardcityco.org/221/Trustee-Will-Punkoney&quot;, &quot;https://www.orchardcityco.org/96/Trustee-David-Murphy&quot;, &quot;https://www.orchardcityco.org/99/Trustee-Mike-Hansen&quot;]</td>
-            <td>2025-07-02T18:05:28+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:orchard_city/government</td>
-            <td>Mike Hansen</td>
-            <td>[&quot;Trustee&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(970) 985-8571</td>
-            <td>hansen.mike60@gmail.com</td>
-            <td>https://www.orchardcityco.org/99/Trustee-Mike-Hansen</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>[&quot;https://www.orchardcityco.org/222/Mayor-Pro-Tem-Wade-Kasman&quot;, &quot;https://www.orchardcityco.org/2/Government&quot;, &quot;https://www.orchardcityco.org/101/Trustee-Holly-Mautz&quot;, &quot;https://www.orchardcityco.org/226/Trustee-Mel-Cook&quot;, &quot;https://www.orchardcityco.org/221/Trustee-Will-Punkoney&quot;, &quot;https://www.orchardcityco.org/96/Trustee-David-Murphy&quot;, &quot;https://www.orchardcityco.org/99/Trustee-Mike-Hansen&quot;]</td>
-            <td>2025-07-02T18:05:28+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:co/place:orchard_city/government</td>
-            <td>Will Punkoney</td>
-            <td>[&quot;Trustee&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(970) 275-3981</td>
-            <td>wpunkoney@gmail.com</td>
-            <td>https://www.orchardcityco.org/221/Trustee-Will-Punkoney</td>
-            <td>2024-04</td>
-            <td>2028-04</td>
-            <td>https://www.orchardcityco.org/ImageRepository/Document?documentID=3060</td>
-            <td>https://cdn.civicpatch.org/open-data/co/orchard_city/images/c81009a0ed32e042e35b3f040d8d00e91edc46987b47f829214809272b51a7f5.jpg</td>
-            <td>[&quot;https://www.orchardcityco.org/222/Mayor-Pro-Tem-Wade-Kasman&quot;, &quot;https://www.orchardcityco.org/2/Government&quot;, &quot;https://www.orchardcityco.org/101/Trustee-Holly-Mautz&quot;, &quot;https://www.orchardcityco.org/226/Trustee-Mel-Cook&quot;, &quot;https://www.orchardcityco.org/221/Trustee-Will-Punkoney&quot;, &quot;https://www.orchardcityco.org/96/Trustee-David-Murphy&quot;, &quot;https://www.orchardcityco.org/99/Trustee-Mike-Hansen&quot;]</td>
-            <td>2025-07-02T18:05:28+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/orchard_city/images/66ed5c1a6aba53079bd388ecf44ea9953af98a9c087e60df69ff826e420387b5.jpg" alt="Wade Kasman" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">WK</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Wade Kasman</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore, Trustee</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:wadekasman@gmail.com" class="break-all">wadekasman@gmail.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(720) 468-3112">(720) 468-3112</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.orchardcityco.org/222/Mayor-Pro-Tem-Wade-Kasman" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/orchard_city/images/82e3a501ebc2dcee4a0e7b39f4829bd75e54ffc12e05dff0be1cd1dd29222e8f.jpg" alt="David Murphy" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DM</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">David Murphy</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Trustee</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:trusteemurphy524@gmail.com" class="break-all">trusteemurphy524@gmail.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(970) 757-2122">(970) 757-2122</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.orchardcityco.org/96/Trustee-David-Murphy" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/orchard_city/images/8386a312394795bb866daa44fe0e73a1addb31d57d16c2aefdcebfd73f059cea.jpg" alt="Holly Mautz" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">HM</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Holly Mautz</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Trustee</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:hmautz@gmail.com" class="break-all">hmautz@gmail.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(970) 250-3660">(970) 250-3660</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.orchardcityco.org/101/Trustee-Holly-Mautz" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/orchard_city/images/a2d0fa858c8fff0849fe0fd18eceb49a5a4148f999a58b01b2948a3eb8aa2655.jpg" alt="Mel Cook" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MC</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Mel Cook</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Trustee</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:mels_auto@outlook.com" class="break-all">mels_auto@outlook.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(970) 210-7607">(970) 210-7607</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.orchardcityco.org/226/Trustee-Mel-Cook" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2"><div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm">MH</div></div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Mike Hansen</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Trustee</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:hansen.mike60@gmail.com" class="break-all">hansen.mike60@gmail.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(970) 985-8571">(970) 985-8571</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.orchardcityco.org/99/Trustee-Mike-Hansen" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/co/orchard_city/images/c81009a0ed32e042e35b3f040d8d00e91edc46987b47f829214809272b51a7f5.jpg" alt="Will Punkoney" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">WP</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Will Punkoney</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Trustee</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:wpunkoney@gmail.com" class="break-all">wpunkoney@gmail.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(970) 275-3981">(970) 275-3981</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.orchardcityco.org/221/Trustee-Will-Punkoney" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

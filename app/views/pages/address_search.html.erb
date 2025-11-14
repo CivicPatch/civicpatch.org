@@ -27,6 +27,16 @@
                     <div id="address-content" class="tab-content">
                         <div class="space-y-4">
                             <div class="relative">
+                                <div data-controller="address-search--address-input"
+                                     class="relative">
+                                  <input data-address-search--address-input-target="input"
+                                         name="address"
+                                         placeholder="Enter your address (e.g., 123 Main St, City, State)"
+                                         class="w-full py-3 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                         autocomplete="off" />
+                                  <div data-address-search--address-input-target="loader" class="hidden">…</div>
+                                  <div data-address-search--address-input-target="suggestions" class="absolute z-50 w-full mt-1 bg-white border rounded-md hidden max-h-60 overflow-y-auto"></div>
+                                </div>
                                 <h3><input
                                     type="text"
                                     id="address-input"

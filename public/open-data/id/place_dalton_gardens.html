@@ -1,193 +1,197 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/id/dalton_gardens/images/be979b2585d43079fac25fe9e81da02b0c1d744c19efb41b3e9ba0c2664c2314.png" alt="Curt Jernigan" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">CJ</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Curt Jernigan</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:mayor@daltongardens.com" class="break-all">mayor@daltongardens.com</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(208) 772-3698">(208) 772-3698</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_dalton_gardens</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_dalton_gardens</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:id/place:dalton_gardens/government</td>
-            <td>Curt Jernigan</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(208) 772-3698</td>
-            <td>mayor@daltongardens.com</td>
-            <td></td>
-            <td>2024</td>
-            <td>2027</td>
-            <td>https://daltongardens.govoffice.com/vertical/Sites/%7B2A1D181A-7B34-4883-A1BB-6811ACC2E6DF%7D/uploads/Curt_Jernigan_Headshot.png</td>
-            <td>https://cdn.civicpatch.org/open-data/id/dalton_gardens/images/be979b2585d43079fac25fe9e81da02b0c1d744c19efb41b3e9ba0c2664c2314.png</td>
-            <td>[&quot;https://daltongardens.govoffice.com/mayor&quot;]</td>
-            <td>2025-07-13T00:38:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:id/place:dalton_gardens/government</td>
-            <td>Tyler Drechsel</td>
-            <td>[&quot;Council President&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(208) 772-3698</td>
-            <td>tdrechsel@daltongardens.com</td>
-            <td>https://daltongardens.govoffice.com/index.asp?SEC=4A0E5E2F-F140-48BF-9EA0-7998917EE401&amp;DE=19D4D53B-63FA-480B-84AC-422650EB900D</td>
-            <td>2022</td>
-            <td>2025</td>
-            <td>https://daltongardens.govoffice.com/vertical/Sites/%7B2A1D181A-7B34-4883-A1BB-6811ACC2E6DF%7D/uploads/2022_Tyler%281%29_Web.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/id/dalton_gardens/images/bfc87f066c1948d19183c990ec93748d7907e385f706b936bc9a5c474dd42ed9.jpg</td>
-            <td>[&quot;https://daltongardens.govoffice.com/council&quot;, &quot;https://daltongardens.govoffice.com/index.asp?SEC=4A0E5E2F-F140-48BF-9EA0-7998917EE401&amp;DE=19D4D53B-63FA-480B-84AC-422650EB900D&quot;]</td>
-            <td>2025-07-13T00:38:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:id/place:dalton_gardens/government</td>
-            <td>Gary Sonnen</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(208) 772-3698</td>
-            <td>gsonnen@daltongardens.com</td>
-            <td>https://daltongardens.govoffice.com/index.asp?SEC=4A0E5E2F-F140-48BF-9EA0-7998917EE401&amp;DE=9B881263-DDE7-4874-8EF4-2D83CD65135B</td>
-            <td>2024</td>
-            <td>2027</td>
-            <td>https://daltongardens.govoffice.com/vertical/Sites/%7B2A1D181A-7B34-4883-A1BB-6811ACC2E6DF%7D/uploads/Gary_Sonnen_Photo01_Web.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/id/dalton_gardens/images/e8a44dfc77bdca4751ab2d046ffa1ec8833cba1c31e2e09c700f3aedc02a12d1.jpg</td>
-            <td>[&quot;https://daltongardens.govoffice.com/council&quot;, &quot;https://daltongardens.govoffice.com/index.asp?SEC=4A0E5E2F-F140-48BF-9EA0-7998917EE401&amp;DE=9B881263-DDE7-4874-8EF4-2D83CD65135B&quot;]</td>
-            <td>2025-07-13T00:38:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:id/place:dalton_gardens/government</td>
-            <td>Scott Jordan</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(208) 772-3698</td>
-            <td>sjordan@daltongardens.com</td>
-            <td>https://daltongardens.govoffice.com/index.asp?SEC=4A0E5E2F-F140-48BF-9EA0-7998917EE401&amp;DE=EEDB09A3-2FB4-40F2-881F-331817BA209E</td>
-            <td>2022</td>
-            <td>2025</td>
-            <td>https://daltongardens.govoffice.com/vertical/Sites/%7B2A1D181A-7B34-4883-A1BB-6811ACC2E6DF%7D/uploads/2022_Scott_Jordan_Web.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/id/dalton_gardens/images/d4543d4aff36c6d80f6c894df934dedd6e10af26b937640e16ea53cc650c4abc.jpg</td>
-            <td>[&quot;https://daltongardens.govoffice.com/council&quot;, &quot;https://daltongardens.govoffice.com/index.asp?SEC=4A0E5E2F-F140-48BF-9EA0-7998917EE401&amp;DE=EEDB09A3-2FB4-40F2-881F-331817BA209E&quot;]</td>
-            <td>2025-07-13T00:38:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:id/place:dalton_gardens/government</td>
-            <td>Susan Supp</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(208) 772-3698</td>
-            <td>ssupp@daltongardens.com</td>
-            <td>https://daltongardens.govoffice.com/index.asp?SEC=4A0E5E2F-F140-48BF-9EA0-7998917EE401&amp;DE=907C0AEE-37F0-460D-9C04-343220371F90</td>
-            <td>2024</td>
-            <td>2027</td>
-            <td>https://daltongardens.govoffice.com/vertical/Sites/%7B2A1D181A-7B34-4883-A1BB-6811ACC2E6DF%7D/uploads/Susan_Supp_Web.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/id/dalton_gardens/images/c76b5d605982d95efc4fcf5fe1b1a190261243e490c1bde928a236aa399661a5.jpg</td>
-            <td>[&quot;https://daltongardens.govoffice.com/council&quot;, &quot;https://daltongardens.govoffice.com/index.asp?SEC=4A0E5E2F-F140-48BF-9EA0-7998917EE401&amp;DE=907C0AEE-37F0-460D-9C04-343220371F90&quot;]</td>
-            <td>2025-07-13T00:38:34+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/id/dalton_gardens/images/bfc87f066c1948d19183c990ec93748d7907e385f706b936bc9a5c474dd42ed9.jpg" alt="Tyler Drechsel" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">TD</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Tyler Drechsel</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council President</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:tdrechsel@daltongardens.com" class="break-all">tdrechsel@daltongardens.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(208) 772-3698">(208) 772-3698</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://daltongardens.govoffice.com/index.asp?SEC=4A0E5E2F-F140-48BF-9EA0-7998917EE401&amp;DE=19D4D53B-63FA-480B-84AC-422650EB900D" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/id/dalton_gardens/images/e8a44dfc77bdca4751ab2d046ffa1ec8833cba1c31e2e09c700f3aedc02a12d1.jpg" alt="Gary Sonnen" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">GS</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Gary Sonnen</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:gsonnen@daltongardens.com" class="break-all">gsonnen@daltongardens.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(208) 772-3698">(208) 772-3698</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://daltongardens.govoffice.com/index.asp?SEC=4A0E5E2F-F140-48BF-9EA0-7998917EE401&amp;DE=9B881263-DDE7-4874-8EF4-2D83CD65135B" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/id/dalton_gardens/images/d4543d4aff36c6d80f6c894df934dedd6e10af26b937640e16ea53cc650c4abc.jpg" alt="Scott Jordan" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SJ</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Scott Jordan</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:sjordan@daltongardens.com" class="break-all">sjordan@daltongardens.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(208) 772-3698">(208) 772-3698</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://daltongardens.govoffice.com/index.asp?SEC=4A0E5E2F-F140-48BF-9EA0-7998917EE401&amp;DE=EEDB09A3-2FB4-40F2-881F-331817BA209E" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/id/dalton_gardens/images/c76b5d605982d95efc4fcf5fe1b1a190261243e490c1bde928a236aa399661a5.jpg" alt="Susan Supp" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SS</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Susan Supp</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:ssupp@daltongardens.com" class="break-all">ssupp@daltongardens.com</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(208) 772-3698">(208) 772-3698</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://daltongardens.govoffice.com/index.asp?SEC=4A0E5E2F-F140-48BF-9EA0-7998917EE401&amp;DE=907C0AEE-37F0-460D-9C04-343220371F90" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

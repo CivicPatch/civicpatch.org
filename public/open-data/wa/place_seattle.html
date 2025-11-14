@@ -1,268 +1,384 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/seattle/images/076894b214bb793dd71e4f78e1305a309d345db8a31a070a61984f98ac945d28.jpg" alt="Bruce Harrell" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">BH</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Bruce Harrell</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:bruce.harrell@seattle.gov" class="break-all">bruce.harrell@seattle.gov</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 684-4000">(206) 684-4000</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_seattle</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_seattle</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.seattle.gov/mayor" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:seattle/government</td>
-            <td>Bruce Harrell</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(206) 684-4000</td>
-            <td>bruce.harrell@seattle.gov</td>
-            <td>https://www.seattle.gov/mayor</td>
-            <td></td>
-            <td></td>
-            <td>https://www.seattle.gov/images/MayorHarrell/Home/headshotwebcrop.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/seattle/images/076894b214bb793dd71e4f78e1305a309d345db8a31a070a61984f98ac945d28.jpg</td>
-            <td>[&quot;https://www.seattle.gov/mayor&quot;, &quot;https://seattle.gov/council/strauss&quot;, &quot;https://seattle.gov/mayor&quot;]</td>
-            <td>2025-06-22T01:04:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:seattle/government</td>
-            <td>Sara Nelson</td>
-            <td>[&quot;Council President&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;At-large&quot;, &quot;Position 9&quot;]</td>
-            <td>(206) 684-8809</td>
-            <td>Sara.Nelson@seattle.gov</td>
-            <td>https://seattle.gov/council/meet-the-council/sara-nelson</td>
-            <td></td>
-            <td></td>
-            <td>https://seattle.gov/images/Council/Members/Nelson/nelson_300x300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/seattle/images/3d45ebecc1545388803afec7dcd259bf3e31c7f87f9945ada3faec53ddeed62a.jpg</td>
-            <td>[&quot;https://seattle.gov/council/meet-the-council&quot;, &quot;https://seattle.gov/council/saka&quot;, &quot;https://seattle.gov/council/hollingsworth&quot;, &quot;https://seattle.gov/council/rivera&quot;, &quot;https://seattle.gov/council/moore&quot;, &quot;https://seattle.gov/council/strauss&quot;, &quot;https://seattle.gov/council/kettle&quot;, &quot;https://seattle.gov/council/meet-the-council/sara-nelson&quot;]</td>
-            <td>2025-06-22T01:04:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:seattle/government</td>
-            <td>Alexis Mercedes Rinck</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;At-large&quot;, &quot;Position 8&quot;]</td>
-            <td>(206) 684-8808</td>
-            <td>AlexisMercedes.Rinck@seattle.gov</td>
-            <td>https://seattle.gov/council/rinck</td>
-            <td>2024-12-03</td>
-            <td></td>
-            <td>https://seattle.gov/images/Council/Members/SquareHeadshots/rinck_300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/seattle/images/7eb9fb28062d84d67ac7937b4a2067ccc66696d0f3043d542fff1d8834941150.jpg</td>
-            <td>[&quot;https://seattle.gov/council/meet-the-council&quot;, &quot;https://seattle.gov/council/saka&quot;, &quot;https://seattle.gov/council/hollingsworth&quot;, &quot;https://seattle.gov/council/rivera&quot;, &quot;https://seattle.gov/council/moore&quot;, &quot;https://seattle.gov/council/strauss&quot;, &quot;https://seattle.gov/council/kettle&quot;, &quot;https://seattle.gov/council/rinck&quot;, &quot;https://seattle.gov/council/meet-the-council/sara-nelson&quot;, &quot;https://council.seattle.gov/rinck&quot;]</td>
-            <td>2025-06-22T01:04:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:seattle/government</td>
-            <td>Rob Saka</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 1&quot;]</td>
-            <td>(206) 684-8801</td>
-            <td>Rob.Saka@seattle.gov</td>
-            <td>https://seattle.gov/council/saka</td>
-            <td></td>
-            <td></td>
-            <td>https://seattle.gov/images/Council/Members/SquareHeadshots/saka_300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/seattle/images/2ad67dfc12988e26ee821c260f0e4b57948aa567b46750dc4df50fd75169ecc3.jpg</td>
-            <td>[&quot;https://seattle.gov/council/meet-the-council&quot;, &quot;https://seattle.gov/council/saka&quot;, &quot;https://seattle.gov/council/hollingsworth&quot;, &quot;https://seattle.gov/council/rivera&quot;, &quot;https://seattle.gov/council/moore&quot;, &quot;https://seattle.gov/council/strauss&quot;, &quot;https://seattle.gov/council/kettle&quot;, &quot;https://seattle.gov/council/meet-the-council/sara-nelson&quot;]</td>
-            <td>2025-06-22T01:04:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:seattle/government</td>
-            <td>Mark Solomon</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 2&quot;]</td>
-            <td>(206) 684-8802</td>
-            <td>mark.solomon2@seattle.gov</td>
-            <td>https://seattle.gov/council/solomon</td>
-            <td>2025-01-27</td>
-            <td></td>
-            <td>https://seattle.gov/images/Council/Members/Solomon/mark-solomon.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/seattle/images/94f084cde85e524a30c334b24dcadb72c5174946c95be86d3c788822fab84521.jpg</td>
-            <td>[&quot;https://seattle.gov/council/meet-the-council&quot;, &quot;https://seattle.gov/council/saka&quot;, &quot;https://seattle.gov/council/solomon&quot;, &quot;https://seattle.gov/council/hollingsworth&quot;, &quot;https://seattle.gov/council/rivera&quot;, &quot;https://seattle.gov/council/moore&quot;, &quot;https://seattle.gov/council/strauss&quot;, &quot;https://seattle.gov/council/kettle&quot;, &quot;https://seattle.gov/council/meet-the-council/sara-nelson&quot;, &quot;https://council.seattle.gov/solomon&quot;]</td>
-            <td>2025-06-22T01:04:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:seattle/government</td>
-            <td>Joy Hollingsworth</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 3&quot;]</td>
-            <td>(206) 684-8803</td>
-            <td>Joy.Hollingsworth@seattle.gov</td>
-            <td>https://seattle.gov/council/hollingsworth</td>
-            <td></td>
-            <td></td>
-            <td>https://seattle.gov/images/Council/Members/SquareHeadshots/hollingsworth_300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/seattle/images/2890e576a35420a6c03257eedf7c6f5575155f741de92e7c1beadba8cc4fb3b2.jpg</td>
-            <td>[&quot;https://seattle.gov/council/meet-the-council&quot;, &quot;https://seattle.gov/council/saka&quot;, &quot;https://seattle.gov/council/hollingsworth&quot;, &quot;https://seattle.gov/council/rivera&quot;, &quot;https://seattle.gov/council/moore&quot;, &quot;https://seattle.gov/council/strauss&quot;, &quot;https://seattle.gov/council/kettle&quot;, &quot;https://seattle.gov/council/meet-the-council/sara-nelson&quot;]</td>
-            <td>2025-06-22T01:04:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:seattle/government</td>
-            <td>Maritza Rivera</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 4&quot;]</td>
-            <td>(206) 684-8804</td>
-            <td>Maritza.Rivera@seattle.gov</td>
-            <td>https://seattle.gov/council/rivera</td>
-            <td></td>
-            <td></td>
-            <td>https://seattle.gov/images/Council/Members/SquareHeadshots/rivera_300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/seattle/images/a9791e22ece7c7348d0f6a26512d655413f5f06f474ac805a3a720a8f7ba495c.jpg</td>
-            <td>[&quot;https://seattle.gov/council/meet-the-council&quot;, &quot;https://seattle.gov/council/saka&quot;, &quot;https://seattle.gov/council/hollingsworth&quot;, &quot;https://seattle.gov/council/rivera&quot;, &quot;https://seattle.gov/council/moore&quot;, &quot;https://seattle.gov/council/strauss&quot;, &quot;https://seattle.gov/council/kettle&quot;, &quot;https://seattle.gov/council/meet-the-council/sara-nelson&quot;]</td>
-            <td>2025-06-22T01:04:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:seattle/government</td>
-            <td>Cathy Moore</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 5&quot;]</td>
-            <td>(206) 684-8805</td>
-            <td>Cathy.Moore@seattle.gov</td>
-            <td>https://seattle.gov/council/moore</td>
-            <td>2025</td>
-            <td></td>
-            <td>https://seattle.gov/images/Council/Members/SquareHeadshots/moore_300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/seattle/images/bd9de566519f157a5ec5077eb045e907fe730ca42298ad947f734a2e20e4af31.jpg</td>
-            <td>[&quot;https://seattle.gov/council/meet-the-council&quot;, &quot;https://seattle.gov/council/saka&quot;, &quot;https://seattle.gov/council/hollingsworth&quot;, &quot;https://seattle.gov/council/rivera&quot;, &quot;https://seattle.gov/council/moore&quot;, &quot;https://seattle.gov/council/strauss&quot;, &quot;https://seattle.gov/council/kettle&quot;, &quot;https://seattle.gov/council/meet-the-council/sara-nelson&quot;]</td>
-            <td>2025-06-22T01:04:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:seattle/government</td>
-            <td>Dan Strauss</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 6&quot;]</td>
-            <td>(206) 684-8806</td>
-            <td>Dan.Strauss@seattle.gov</td>
-            <td>https://seattle.gov/council/strauss</td>
-            <td></td>
-            <td></td>
-            <td>https://seattle.gov/images/Council/Members/Strauss/Struass-2022-headshot_square.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/seattle/images/010ebab91772811b230af48933a32fda79f23b9b4ec132cabd6f906f28a5669e.jpg</td>
-            <td>[&quot;https://seattle.gov/council/meet-the-council&quot;, &quot;https://seattle.gov/council/saka&quot;, &quot;https://seattle.gov/council/hollingsworth&quot;, &quot;https://seattle.gov/council/rivera&quot;, &quot;https://seattle.gov/council/moore&quot;, &quot;https://seattle.gov/council/strauss&quot;, &quot;https://seattle.gov/council/kettle&quot;, &quot;https://seattle.gov/council/meet-the-council/sara-nelson&quot;]</td>
-            <td>2025-06-22T01:04:03+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:wa/place:seattle/government</td>
-            <td>Robert Kettle</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 7&quot;]</td>
-            <td>(206) 684-8807</td>
-            <td>Robert.Kettle@seattle.gov</td>
-            <td>https://seattle.gov/council/kettle</td>
-            <td></td>
-            <td></td>
-            <td>https://seattle.gov/images/Council/Members/SquareHeadshots/kettle_300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/wa/seattle/images/06f4f0ac03a7cda3755817cc149eaff666ee27714da0fb869bdc5b0c95671ad4.jpg</td>
-            <td>[&quot;https://seattle.gov/council/meet-the-council&quot;, &quot;https://seattle.gov/council/saka&quot;, &quot;https://seattle.gov/council/hollingsworth&quot;, &quot;https://seattle.gov/council/rivera&quot;, &quot;https://seattle.gov/council/moore&quot;, &quot;https://seattle.gov/council/strauss&quot;, &quot;https://seattle.gov/council/kettle&quot;, &quot;https://seattle.gov/council/meet-the-council/sara-nelson&quot;]</td>
-            <td>2025-06-22T01:04:03+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/seattle/images/3d45ebecc1545388803afec7dcd259bf3e31c7f87f9945ada3faec53ddeed62a.jpg" alt="Sara Nelson" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">SN</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Sara Nelson</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council President, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Sara.Nelson@seattle.gov" class="break-all">Sara.Nelson@seattle.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 684-8809">(206) 684-8809</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://seattle.gov/council/meet-the-council/sara-nelson" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/seattle/images/7eb9fb28062d84d67ac7937b4a2067ccc66696d0f3043d542fff1d8834941150.jpg" alt="Alexis Mercedes Rinck" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">AR</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Alexis Mercedes Rinck</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:AlexisMercedes.Rinck@seattle.gov" class="break-all">AlexisMercedes.Rinck@seattle.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 684-8808">(206) 684-8808</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://seattle.gov/council/rinck" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/seattle/images/2ad67dfc12988e26ee821c260f0e4b57948aa567b46750dc4df50fd75169ecc3.jpg" alt="Rob Saka" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RS</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Rob Saka</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Rob.Saka@seattle.gov" class="break-all">Rob.Saka@seattle.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 684-8801">(206) 684-8801</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://seattle.gov/council/saka" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/seattle/images/94f084cde85e524a30c334b24dcadb72c5174946c95be86d3c788822fab84521.jpg" alt="Mark Solomon" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MS</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Mark Solomon</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:mark.solomon2@seattle.gov" class="break-all">mark.solomon2@seattle.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 684-8802">(206) 684-8802</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://seattle.gov/council/solomon" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/seattle/images/2890e576a35420a6c03257eedf7c6f5575155f741de92e7c1beadba8cc4fb3b2.jpg" alt="Joy Hollingsworth" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JH</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Joy Hollingsworth</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Joy.Hollingsworth@seattle.gov" class="break-all">Joy.Hollingsworth@seattle.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 684-8803">(206) 684-8803</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://seattle.gov/council/hollingsworth" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/seattle/images/a9791e22ece7c7348d0f6a26512d655413f5f06f474ac805a3a720a8f7ba495c.jpg" alt="Maritza Rivera" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MR</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Maritza Rivera</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Maritza.Rivera@seattle.gov" class="break-all">Maritza.Rivera@seattle.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 684-8804">(206) 684-8804</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://seattle.gov/council/rivera" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/seattle/images/bd9de566519f157a5ec5077eb045e907fe730ca42298ad947f734a2e20e4af31.jpg" alt="Cathy Moore" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">CM</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Cathy Moore</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Cathy.Moore@seattle.gov" class="break-all">Cathy.Moore@seattle.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 684-8805">(206) 684-8805</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://seattle.gov/council/moore" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/seattle/images/010ebab91772811b230af48933a32fda79f23b9b4ec132cabd6f906f28a5669e.jpg" alt="Dan Strauss" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DS</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Dan Strauss</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Dan.Strauss@seattle.gov" class="break-all">Dan.Strauss@seattle.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 684-8806">(206) 684-8806</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://seattle.gov/council/strauss" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/wa/seattle/images/06f4f0ac03a7cda3755817cc149eaff666ee27714da0fb869bdc5b0c95671ad4.jpg" alt="Robert Kettle" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RK</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Robert Kettle</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Robert.Kettle@seattle.gov" class="break-all">Robert.Kettle@seattle.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(206) 684-8807">(206) 684-8807</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://seattle.gov/council/kettle" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

@@ -1,193 +1,199 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/lancaster/images/350943f2985cc538ccb883fc6ba5e28e729be4094f4071c5f507bffd1a256861.jpg" alt="R. Rex Parris" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RP</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">R. Rex Parris</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:rrparris@cityoflancasterca.gov" class="break-all">rrparris@cityoflancasterca.gov</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(661) 723-6019">(661) 723-6019</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_lancaster</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_lancaster</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityoflancasterca.org/government/city-officials/city-council/mayor-r-rex-parris" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:lancaster/government</td>
-            <td>R. Rex Parris</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(661) 723-6019</td>
-            <td>rrparris@cityoflancasterca.gov</td>
-            <td>https://www.cityoflancasterca.org/government/city-officials/city-council/mayor-r-rex-parris</td>
-            <td>2024-04</td>
-            <td>2028-04</td>
-            <td>https://www.cityoflancasterca.org/home/showpublishedimage/14148/638224468584700000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/lancaster/images/350943f2985cc538ccb883fc6ba5e28e729be4094f4071c5f507bffd1a256861.jpg</td>
-            <td>[&quot;https://www.cityoflancasterca.org/government/city-officials/city-council/mayor-r-rex-parris&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council-copy&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council/council-member-mann/-fsiteid-1&quot;, &quot;https://www.cityoflancasterca.org/government/commissions-appointments/deputy-mayor-lauren-hughes-leslie&quot;]</td>
-            <td>2025-07-17T18:49:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:lancaster/government</td>
-            <td>Ken Mann</td>
-            <td>[&quot;Chair&quot;, &quot;Board Member&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(661) 723-6019</td>
-            <td>kmann@cityoflancasterca.gov</td>
-            <td>https://www.cityoflancasterca.org/government/city-officials/city-council/council-member-mann</td>
-            <td>2024-04</td>
-            <td>2028-04</td>
-            <td>https://www.cityoflancasterca.org/home/showpublishedimage/14676/638418605141600000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/lancaster/images/a32e5dd4544017740b9184666c79a280e44810968681f3b8397ba29c2d60084c.jpg</td>
-            <td>[&quot;https://www.cityoflancasterca.org/government/city-officials/city-council/mayor-r-rex-parris&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council-copy&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council/council-member-mann/-fsiteid-1&quot;, &quot;https://www.cityoflancasterca.org/government/commissions-appointments/deputy-mayor-lauren-hughes-leslie&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council/council-member-mann&quot;]</td>
-            <td>2025-07-17T18:49:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:lancaster/government</td>
-            <td>Marvin Crist</td>
-            <td>[&quot;Chair&quot;, &quot;Chair Pro Tem&quot;, &quot;Vice Mayor&quot;, &quot;Council President&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(661) 723-6019</td>
-            <td>mcrist@cityoflancasterca.gov</td>
-            <td>https://www.cityoflancasterca.org/government/city-officials/city-council/vice-mayor-crist</td>
-            <td>2022-04</td>
-            <td>2026-04</td>
-            <td>https://www.cityoflancasterca.org/home/showpublishedimage/9426/636852388706430000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/lancaster/images/f3650609853a3fcfb3af0c846c39e00f5fd63e6626d2db5dd5fa36f4b594fa06.jpg</td>
-            <td>[&quot;https://www.cityoflancasterca.org/government/city-officials/city-council/mayor-r-rex-parris&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council-copy&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council/vice-mayor-crist/-fsiteid-1&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council/council-member-mann/-fsiteid-1&quot;, &quot;https://www.cityoflancasterca.org/government/commissions-appointments/deputy-mayor-lauren-hughes-leslie&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council/vice-mayor-crist&quot;]</td>
-            <td>2025-07-17T18:49:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:lancaster/government</td>
-            <td>Lauren Hughes-Leslie</td>
-            <td>[&quot;Deputy Mayor&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(661) 723-6019</td>
-            <td>lhughes-leslie@cityoflancasterca.gov</td>
-            <td>https://www.cityoflancasterca.org/government/commissions-appointments/deputy-mayor-lauren-hughes-leslie</td>
-            <td>2024-04</td>
-            <td>2028-04</td>
-            <td>https://www.cityoflancasterca.org/home/showpublishedimage/15650/638600085000570000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/lancaster/images/49bd583a4563750e4938fda322ed14aa87999e6d3f5e3c609f1b590ab8c845e6.jpg</td>
-            <td>[&quot;https://www.cityoflancasterca.org/government/city-officials/city-council/mayor-r-rex-parris&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council-copy&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council/council-member-mann/-fsiteid-1&quot;, &quot;https://www.cityoflancasterca.org/government/commissions-appointments/deputy-mayor-lauren-hughes-leslie&quot;]</td>
-            <td>2025-07-17T18:49:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:lancaster/government</td>
-            <td>Raj Malhi</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(661) 723-6019</td>
-            <td>rmalhi@cityoflancasterca.gov</td>
-            <td>https://www.cityoflancasterca.org/government/city-officials/city-council/council-member-malhi</td>
-            <td>2022-04</td>
-            <td>2026-04</td>
-            <td>https://www.cityoflancasterca.org/home/showpublishedimage/9428/636852390368800000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/lancaster/images/834093afd6c8204fbae94a3b54e6f093aa85bcb57f4f1aa06072be2df944ebda.jpg</td>
-            <td>[&quot;https://www.cityoflancasterca.org/government/city-officials/city-council/mayor-r-rex-parris&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council-copy&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council/council-member-mann/-fsiteid-1&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council/council-member-malhi/-fsiteid-1&quot;, &quot;https://www.cityoflancasterca.org/government/commissions-appointments/deputy-mayor-lauren-hughes-leslie&quot;, &quot;https://www.cityoflancasterca.org/government/city-officials/city-council/council-member-malhi&quot;]</td>
-            <td>2025-07-17T18:49:34+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/lancaster/images/a32e5dd4544017740b9184666c79a280e44810968681f3b8397ba29c2d60084c.jpg" alt="Ken Mann" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">KM</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Ken Mann</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Board Member, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:kmann@cityoflancasterca.gov" class="break-all">kmann@cityoflancasterca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(661) 723-6019">(661) 723-6019</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityoflancasterca.org/government/city-officials/city-council/council-member-mann" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/lancaster/images/f3650609853a3fcfb3af0c846c39e00f5fd63e6626d2db5dd5fa36f4b594fa06.jpg" alt="Marvin Crist" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MC</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Marvin Crist</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Chair, Chair Pro Tem, Vice Mayor, Council President, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:mcrist@cityoflancasterca.gov" class="break-all">mcrist@cityoflancasterca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(661) 723-6019">(661) 723-6019</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityoflancasterca.org/government/city-officials/city-council/vice-mayor-crist" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/lancaster/images/49bd583a4563750e4938fda322ed14aa87999e6d3f5e3c609f1b590ab8c845e6.jpg" alt="Lauren Hughes-Leslie" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">LH</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Lauren Hughes-Leslie</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Deputy Mayor, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:lhughes-leslie@cityoflancasterca.gov" class="break-all">lhughes-leslie@cityoflancasterca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(661) 723-6019">(661) 723-6019</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityoflancasterca.org/government/commissions-appointments/deputy-mayor-lauren-hughes-leslie" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/lancaster/images/834093afd6c8204fbae94a3b54e6f093aa85bcb57f4f1aa06072be2df944ebda.jpg" alt="Raj Malhi" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">RM</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Raj Malhi</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:rmalhi@cityoflancasterca.gov" class="break-all">rmalhi@cityoflancasterca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(661) 723-6019">(661) 723-6019</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.cityoflancasterca.org/government/city-officials/city-council/council-member-malhi" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

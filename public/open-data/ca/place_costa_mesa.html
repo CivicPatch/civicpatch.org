@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/5b0f97faf98e29a39d20d97cefe1937bae816a09b1eacd51bd725b39fb580a90.jpg" alt="John Stephens" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JS</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">John Stephens</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:John.Stephens@costamesaca.gov" class="break-all">John.Stephens@costamesaca.gov</a></div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 337-1872">(714) 337-1872</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_costa_mesa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_costa_mesa</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.costamesaca.gov/government/mayor-city-council/mayor-john-stephens" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:costa_mesa/government</td>
-            <td>John Stephens</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(714) 337-1872</td>
-            <td>John.Stephens@costamesaca.gov</td>
-            <td>https://www.costamesaca.gov/government/mayor-city-council/mayor-john-stephens</td>
-            <td>2024-11</td>
-            <td>2028-11</td>
-            <td>https://www.costamesaca.gov/home/showpublishedimage/18192/637789805555630000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/5b0f97faf98e29a39d20d97cefe1937bae816a09b1eacd51bd725b39fb580a90.jpg</td>
-            <td>[&quot;https://www.costamesaca.gov/government/mayor-city-council/mayor-john-stephens&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-jeff-pettis&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-andrea-marr&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-loren-gameros&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-mike-buley&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-arlis-reynolds&quot;]</td>
-            <td>2025-07-18T20:09:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:costa_mesa/government</td>
-            <td>Manuel Chavez</td>
-            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
-            <td>[&quot;District 4&quot;]</td>
-            <td>(949) 274-2305</td>
-            <td>Manuel.Chavez@costamesaca.gov</td>
-            <td>https://www.costamesaca.gov/government/mayor-city-council/mayor-pro-tem-manuel-chavez</td>
-            <td>2022-11</td>
-            <td>2026-11</td>
-            <td>https://www.costamesaca.gov/home/showpublishedimage/24111/638732302613630000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/6e3853aa8feecaaac5f40311bf57d4cd25ebafb3dbf6bf85311fce80c372353c.jpg</td>
-            <td>[&quot;https://www.costamesaca.gov/government/mayor-city-council/mayor-john-stephens&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/mayor-pro-tem-manuel-chavez&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-jeff-pettis&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-andrea-marr&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-loren-gameros&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-mike-buley&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-arlis-reynolds&quot;]</td>
-            <td>2025-07-18T20:09:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:costa_mesa/government</td>
-            <td>Mike Buley</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 1&quot;]</td>
-            <td>(714) 754-5107</td>
-            <td>mike.buley@costamesaca.gov</td>
-            <td>https://www.costamesaca.gov/government/mayor-city-council/council-member-mike-buley</td>
-            <td>2024-11</td>
-            <td>2028-11</td>
-            <td>https://www.costamesaca.gov/home/showpublishedimage/24115/638732319597200000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/a00086e11b22f47f184500136612bce90b0eb35a9fa1eefb79c08ccdf744c656.jpg</td>
-            <td>[&quot;https://www.costamesaca.gov/government/mayor-city-council/mayor-john-stephens&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-jeff-pettis&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-andrea-marr&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-loren-gameros&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-mike-buley&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-arlis-reynolds&quot;]</td>
-            <td>2025-07-18T20:09:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:costa_mesa/government</td>
-            <td>Loren Gameros</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 2&quot;]</td>
-            <td>(714) 754-5107</td>
-            <td>LGameros@costamesaca.gov</td>
-            <td>https://www.costamesaca.gov/government/mayor-city-council/council-member-loren-gameros</td>
-            <td>2020-11</td>
-            <td>2024-11</td>
-            <td>https://www.costamesaca.gov/home/showpublishedimage/15977/637460647316500000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/90c333e27ce8002f7576752fd3d345b17fe08d7a0d4c5836c687d75fd33fe0d7.jpg</td>
-            <td>[&quot;https://www.costamesaca.gov/government/mayor-city-council/mayor-john-stephens&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-jeff-pettis&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-andrea-marr&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-loren-gameros&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-mike-buley&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-arlis-reynolds&quot;]</td>
-            <td>2025-07-18T20:09:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:costa_mesa/government</td>
-            <td>Andrea Marr</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 3&quot;]</td>
-            <td>(714) 754-5107</td>
-            <td>Andrea.Marr@costamesaca.gov</td>
-            <td>https://www.costamesaca.gov/government/mayor-city-council/council-member-andrea-marr</td>
-            <td>2022-11</td>
-            <td>2026-11</td>
-            <td>https://www.costamesaca.gov/home/showpublishedimage/18194/637789805565630000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/bd35e4d7a7dee376f2772912b3d78ed72e00963182f590e7e6bcfe983236276c.jpg</td>
-            <td>[&quot;https://www.costamesaca.gov/government/mayor-city-council/mayor-john-stephens&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-jeff-pettis&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-andrea-marr&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-loren-gameros&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-mike-buley&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-arlis-reynolds&quot;]</td>
-            <td>2025-07-18T20:09:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:costa_mesa/government</td>
-            <td>Arlis Reynolds</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 5&quot;]</td>
-            <td>(714) 754-5107</td>
-            <td>Arlis.Reynolds@costamesaca.gov</td>
-            <td>https://www.costamesaca.gov/government/mayor-city-council/council-member-arlis-reynolds</td>
-            <td>2022-11</td>
-            <td>2026-11</td>
-            <td>https://www.costamesaca.gov/home/showpublishedimage/15983/637460647341370000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/aba40fec28f9eab5eab040b864490c5ebec9624687e1e2da7b47ecf668f5537d.jpg</td>
-            <td>[&quot;https://www.costamesaca.gov/government/mayor-city-council/mayor-john-stephens&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-jeff-pettis&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-andrea-marr&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-loren-gameros&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-mike-buley&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-arlis-reynolds&quot;]</td>
-            <td>2025-07-18T20:09:34+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:costa_mesa/government</td>
-            <td>Jeff Pettis</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;District 6&quot;]</td>
-            <td>(714) 754-5107</td>
-            <td>jeff.pettis@costamesaca.gov</td>
-            <td>https://www.costamesaca.gov/government/mayor-city-council/council-member-jeff-pettis</td>
-            <td>2024-11</td>
-            <td>2028-11</td>
-            <td>https://www.costamesaca.gov/home/showpublishedimage/24138/638748836709970000</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/ca1ac13ca621950fdbe5074085c7d50d05af83807a9deca716e4a40ab5f96b61.jpg</td>
-            <td>[&quot;https://www.costamesaca.gov/government/mayor-city-council/mayor-john-stephens&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-jeff-pettis&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-andrea-marr&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-loren-gameros&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-mike-buley&quot;, &quot;https://www.costamesaca.gov/government/mayor-city-council/council-member-arlis-reynolds&quot;]</td>
-            <td>2025-07-18T20:09:34+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/6e3853aa8feecaaac5f40311bf57d4cd25ebafb3dbf6bf85311fce80c372353c.jpg" alt="Manuel Chavez" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MC</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Manuel Chavez</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore, Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Manuel.Chavez@costamesaca.gov" class="break-all">Manuel.Chavez@costamesaca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(949) 274-2305">(949) 274-2305</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.costamesaca.gov/government/mayor-city-council/mayor-pro-tem-manuel-chavez" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/a00086e11b22f47f184500136612bce90b0eb35a9fa1eefb79c08ccdf744c656.jpg" alt="Mike Buley" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">MB</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Mike Buley</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:mike.buley@costamesaca.gov" class="break-all">mike.buley@costamesaca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 754-5107">(714) 754-5107</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.costamesaca.gov/government/mayor-city-council/council-member-mike-buley" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/90c333e27ce8002f7576752fd3d345b17fe08d7a0d4c5836c687d75fd33fe0d7.jpg" alt="Loren Gameros" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">LG</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Loren Gameros</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:LGameros@costamesaca.gov" class="break-all">LGameros@costamesaca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 754-5107">(714) 754-5107</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.costamesaca.gov/government/mayor-city-council/council-member-loren-gameros" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/bd35e4d7a7dee376f2772912b3d78ed72e00963182f590e7e6bcfe983236276c.jpg" alt="Andrea Marr" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">AM</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Andrea Marr</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Andrea.Marr@costamesaca.gov" class="break-all">Andrea.Marr@costamesaca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 754-5107">(714) 754-5107</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.costamesaca.gov/government/mayor-city-council/council-member-andrea-marr" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/aba40fec28f9eab5eab040b864490c5ebec9624687e1e2da7b47ecf668f5537d.jpg" alt="Arlis Reynolds" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">AR</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Arlis Reynolds</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:Arlis.Reynolds@costamesaca.gov" class="break-all">Arlis.Reynolds@costamesaca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 754-5107">(714) 754-5107</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.costamesaca.gov/government/mayor-city-council/council-member-arlis-reynolds" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/costa_mesa/images/ca1ac13ca621950fdbe5074085c7d50d05af83807a9deca716e4a40ab5f96b61.jpg" alt="Jeff Pettis" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JP</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Jeff Pettis</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:jeff.pettis@costamesaca.gov" class="break-all">jeff.pettis@costamesaca.gov</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 754-5107">(714) 754-5107</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.costamesaca.gov/government/mayor-city-council/council-member-jeff-pettis" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->

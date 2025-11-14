@@ -1,223 +1,273 @@
-<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
-<html>
-  <head>
-    <title>Civic Patch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+<!-- BEGIN app/views/static-open-data/_show.html.erb --><table class="w-full">
+  <thead>
+    <tr class="bg-gray-50 border-b border-gray-200">
+      <th class="w-30 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Image</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Name</th>
+      <th class="w-40 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Office</th>
+      <th class="w-48 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Email</th>
+      <th class="w-36 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Contact Phone</th>
+      <th class="w-32 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-40 border-b-2 border-gray-200">Links</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/santa_ana/images/d177fcce8b5ab869dbde24c4515caa3f4bd43af81465a97d3fa20a827707c7dd.jpg" alt="Valerie Amezcua" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">VA</div>
+            </div>
+        </td>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-  
-    
-    
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Valerie Amezcua</div>
+        </td>
 
-    
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor</div>
+        </td>
 
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 647-5400">(714) 647-5400</a></div>
+        </td>
 
-    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
-<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
-    
-    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "/assets/application-e5beb9b7.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "leaflet": "/assets/leaflet-c86caae1.js",
-    "address_search": "/assets/address_search-5a037393.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
-    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
-  }
-}</script>
-<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
-<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
-<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
-<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
-<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
-<link rel="modulepreload" href="/assets/address_search-5a037393.js">
-<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
-<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
-<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
-<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
-<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
-<script type="module">import "application"</script> 
-  </head>
-
-  <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
-        <div class="nav-links left-0 md:w-auto w-full flex items-center">
-          <a class="text-lg font-semibold text-gray-900" href="/">
-            CivicPatch
-</a>        </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
-            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>place_santa_ana</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-  </style>
-</head>
-<body>
-  <h1>place_santa_ana</h1>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Jurisdiction_id</th>
-          <th>Name</th>
-          <th>Roles</th>
-          <th>Divisions</th>
-          <th>Phone_number</th>
-          <th>Email</th>
-          <th>Website</th>
-          <th>Start_date</th>
-          <th>End_date</th>
-          <th>Image</th>
-          <th>Cdn_image</th>
-          <th>Sources</th>
-          <th>Updated_at</th>
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.santa-ana.org/valerie-amezcua" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:santa_ana/government</td>
-            <td>Valerie Amezcua</td>
-            <td>[&quot;Mayor&quot;]</td>
-            <td>[&quot;City&quot;]</td>
-            <td>(714) 647-5400</td>
-            <td></td>
-            <td>https://www.santa-ana.org/valerie-amezcua</td>
-            <td>2022</td>
-            <td></td>
-            <td>https://storage.googleapis.com/proudcity/santaanaca/uploads/2023/02/Valerie-Amezcua-2022-Portrait-Compressed.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/santa_ana/images/d177fcce8b5ab869dbde24c4515caa3f4bd43af81465a97d3fa20a827707c7dd.jpg</td>
-            <td>[&quot;https://www.santa-ana.org/valerie-amezcua&quot;, &quot;https://www.santa-ana.org/departments/city-council&quot;, &quot;https://www.santa-ana.org/benjamin-vazquez&quot;, &quot;https://www.santa-ana.org/thai-phan&quot;, &quot;https://www.santa-ana.org/jessie-lopez&quot;, &quot;https://www.santa-ana.org/phil-bacerra&quot;, &quot;https://www.santa-ana.org/johnathan-hernandez&quot;, &quot;https://www.santa-ana.org/david-penaloza&quot;]</td>
-            <td>2025-07-17T03:26:32+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:santa_ana/government</td>
-            <td>Benjamin Vazquez</td>
-            <td>[&quot;Mayor Pro Tempore&quot;]</td>
-            <td>[&quot;Ward 2&quot;]</td>
-            <td>(714) 647-6900</td>
-            <td></td>
-            <td>https://www.santa-ana.org/benjamin-vazquez</td>
-            <td>2025-01-21</td>
-            <td>2026-01-20</td>
-            <td>https://storage.googleapis.com/proudcity/santaanaca/2025/05/Benjamin-Vazquez-2025-Portrait-240x300-1.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/santa_ana/images/946f4d28cfdbe51b4bf57b6b5c0b170c7a5371dd6f7afad97c8c7d86b22a58b7.jpg</td>
-            <td>[&quot;https://www.santa-ana.org/valerie-amezcua&quot;, &quot;https://www.santa-ana.org/departments/city-council&quot;, &quot;https://www.santa-ana.org/benjamin-vazquez&quot;, &quot;https://www.santa-ana.org/thai-phan&quot;, &quot;https://www.santa-ana.org/jessie-lopez&quot;, &quot;https://www.santa-ana.org/phil-bacerra&quot;, &quot;https://www.santa-ana.org/johnathan-hernandez&quot;, &quot;https://www.santa-ana.org/david-penaloza&quot;]</td>
-            <td>2025-07-17T03:26:32+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:santa_ana/government</td>
-            <td>Thai Viet Phan</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 1&quot;]</td>
-            <td>(714) 647-6900</td>
-            <td></td>
-            <td>https://www.santa-ana.org/thai-phan</td>
-            <td>2024</td>
-            <td></td>
-            <td>https://storage.googleapis.com/proudcity/santaanaca/2025/05/Thai-Viet-Phan-2025-Portrait-240x300-1.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/santa_ana/images/8b539833daa0dd025595e40c1a93742fe30591f9db556e96bbd45a635561a75f.jpg</td>
-            <td>[&quot;https://www.santa-ana.org/valerie-amezcua&quot;, &quot;https://www.santa-ana.org/departments/city-council&quot;, &quot;https://www.santa-ana.org/benjamin-vazquez&quot;, &quot;https://www.santa-ana.org/thai-phan&quot;, &quot;https://www.santa-ana.org/jessie-lopez&quot;, &quot;https://www.santa-ana.org/phil-bacerra&quot;, &quot;https://www.santa-ana.org/johnathan-hernandez&quot;, &quot;https://www.santa-ana.org/david-penaloza&quot;]</td>
-            <td>2025-07-17T03:26:32+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:santa_ana/government</td>
-            <td>Jessie Lopez</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 3&quot;]</td>
-            <td>(714) 647-6900</td>
-            <td></td>
-            <td>https://www.santa-ana.org/jessie-lopez</td>
-            <td>2023</td>
-            <td></td>
-            <td>https://storage.googleapis.com/proudcity/santaanaca/uploads/2020/12/Jessie-Lopez-Headshot-240x300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/santa_ana/images/f04122812d01502276f45f831e5984025af644cbfca9d6194d349b77a3baa22b.jpg</td>
-            <td>[&quot;https://www.santa-ana.org/valerie-amezcua&quot;, &quot;https://www.santa-ana.org/departments/city-council&quot;, &quot;https://www.santa-ana.org/benjamin-vazquez&quot;, &quot;https://www.santa-ana.org/thai-phan&quot;, &quot;https://www.santa-ana.org/jessie-lopez&quot;, &quot;https://www.santa-ana.org/phil-bacerra&quot;, &quot;https://www.santa-ana.org/johnathan-hernandez&quot;, &quot;https://www.santa-ana.org/david-penaloza&quot;]</td>
-            <td>2025-07-17T03:26:32+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:santa_ana/government</td>
-            <td>Phil Bacerra</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 4&quot;]</td>
-            <td>(714) 647-6900</td>
-            <td>pbacerra@santa-ana.org</td>
-            <td>https://www.santa-ana.org/phil-bacerra</td>
-            <td>2022</td>
-            <td></td>
-            <td>https://storage.googleapis.com/proudcity/santaanaca/2025/05/Phil-Bacerra-2025-Portrait-240x300-1.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/santa_ana/images/f27bb7d60c97f7ba076fe258330c548ddcee900c7463e51edcbdf2a3d0903a1b.jpg</td>
-            <td>[&quot;https://www.santa-ana.org/valerie-amezcua&quot;, &quot;https://www.santa-ana.org/departments/city-council&quot;, &quot;https://www.santa-ana.org/benjamin-vazquez&quot;, &quot;https://www.santa-ana.org/thai-phan&quot;, &quot;https://www.santa-ana.org/jessie-lopez&quot;, &quot;https://www.santa-ana.org/phil-bacerra&quot;, &quot;https://www.santa-ana.org/johnathan-hernandez&quot;, &quot;https://www.santa-ana.org/david-penaloza&quot;]</td>
-            <td>2025-07-17T03:26:32+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:santa_ana/government</td>
-            <td>Johnathan Ryan Hernandez</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 5&quot;]</td>
-            <td>(714) 647-6900</td>
-            <td></td>
-            <td>https://www.santa-ana.org/johnathan-hernandez</td>
-            <td></td>
-            <td></td>
-            <td>https://storage.googleapis.com/proudcity/santaanaca/uploads/2020/12/Johnathan-Ryan-Hernandez-240x300.png</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/santa_ana/images/e84afb8b4e326d2e6abdd5fea4a4c63f09817df46bc7415c050d41143c496b45.png</td>
-            <td>[&quot;https://www.santa-ana.org/valerie-amezcua&quot;, &quot;https://www.santa-ana.org/departments/city-council&quot;, &quot;https://www.santa-ana.org/benjamin-vazquez&quot;, &quot;https://www.santa-ana.org/thai-phan&quot;, &quot;https://www.santa-ana.org/jessie-lopez&quot;, &quot;https://www.santa-ana.org/phil-bacerra&quot;, &quot;https://www.santa-ana.org/johnathan-hernandez&quot;, &quot;https://www.santa-ana.org/david-penaloza&quot;]</td>
-            <td>2025-07-17T03:26:32+00:00</td>
-        </tr>
-        <tr>
-            <td>ocd-jurisdiction/country:us/state:ca/place:santa_ana/government</td>
-            <td>David Penaloza</td>
-            <td>[&quot;Council Member&quot;]</td>
-            <td>[&quot;Ward 6&quot;]</td>
-            <td>(714) 647-6900</td>
-            <td></td>
-            <td>https://www.santa-ana.org/david-penaloza</td>
-            <td>2022-11</td>
-            <td></td>
-            <td>https://storage.googleapis.com/proudcity/santaanaca/uploads/2020/07/David-Penaloza-200x300.jpg</td>
-            <td>https://cdn.civicpatch.org/open-data/ca/santa_ana/images/8922b066d2886835f5f86b9baa87c8b37b5f287e32ebebc5f9748c2bf9009c80.jpg</td>
-            <td>[&quot;https://www.santa-ana.org/valerie-amezcua&quot;, &quot;https://www.santa-ana.org/departments/city-council&quot;, &quot;https://www.santa-ana.org/benjamin-vazquez&quot;, &quot;https://www.santa-ana.org/thai-phan&quot;, &quot;https://www.santa-ana.org/jessie-lopez&quot;, &quot;https://www.santa-ana.org/phil-bacerra&quot;, &quot;https://www.santa-ana.org/johnathan-hernandez&quot;, &quot;https://www.santa-ana.org/david-penaloza&quot;]</td>
-            <td>2025-07-17T03:26:32+00:00</td>
-        </tr>
-    </tbody>
-  </table>
-</body>
-</html>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/santa_ana/images/946f4d28cfdbe51b4bf57b6b5c0b170c7a5371dd6f7afad97c8c7d86b22a58b7.jpg" alt="Benjamin Vazquez" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">BV</div>
+            </div>
+        </td>
 
-    </main>
-  </body>
-</html> 
-<!-- END app/views/layouts/application.html.erb -->
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Benjamin Vazquez</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Mayor Pro Tempore</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 647-6900">(714) 647-6900</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.santa-ana.org/benjamin-vazquez" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/santa_ana/images/8b539833daa0dd025595e40c1a93742fe30591f9db556e96bbd45a635561a75f.jpg" alt="Thai Viet Phan" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">TP</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Thai Viet Phan</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 647-6900">(714) 647-6900</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.santa-ana.org/thai-phan" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/santa_ana/images/f04122812d01502276f45f831e5984025af644cbfca9d6194d349b77a3baa22b.jpg" alt="Jessie Lopez" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JL</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Jessie Lopez</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 647-6900">(714) 647-6900</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.santa-ana.org/jessie-lopez" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/santa_ana/images/f27bb7d60c97f7ba076fe258330c548ddcee900c7463e51edcbdf2a3d0903a1b.jpg" alt="Phil Bacerra" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">PB</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Phil Bacerra</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="mailto:pbacerra@santa-ana.org" class="break-all">pbacerra@santa-ana.org</a></div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 647-6900">(714) 647-6900</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.santa-ana.org/phil-bacerra" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/santa_ana/images/e84afb8b4e326d2e6abdd5fea4a4c63f09817df46bc7415c050d41143c496b45.png" alt="Johnathan Ryan Hernandez" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">JH</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">Johnathan Ryan Hernandez</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 647-6900">(714) 647-6900</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.santa-ana.org/johnathan-hernandez" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+      <tr class="block md:table-row border-b-2 border-gray-200 mb-4 md:mb-0 hover:bg-gray-50">
+        
+        <!-- Image -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="flex justify-center p-2">
+              <img src="https://cdn.civicpatch.org/open-data/ca/santa_ana/images/8922b066d2886835f5f86b9baa87c8b37b5f287e32ebebc5f9748c2bf9009c80.jpg" alt="David Penaloza" class="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover" onerror="handleImageError(this)">
+              <div class="h-40 w-40 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-lg md:text-sm" style="display:none;">DP</div>
+            </div>
+        </td>
+
+        <!-- Name -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <div class="text-center font-medium text-gray-900">David Penaloza</div>
+        </td>
+
+        <!-- Office -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">Council Member</div>
+        </td>
+
+        <!-- Email -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center">-</div>
+        </td>
+
+        <!-- Phone -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center"><a href="tel:(714) 647-6900">(714) 647-6900</a></div>
+        </td>
+
+        <!-- Links -->
+        <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+            <div class="text-center space-y-1">
+                <a href="https://www.santa-ana.org/david-penaloza" target="_blank" rel="noopener noreferrer" class="block text-blue-600 hover:text-blue-800">Website</a>
+            </div>
+        </td>
+      </tr>
+  </tbody>
+</table><!-- END app/views/static-open-data/_show.html.erb -->
