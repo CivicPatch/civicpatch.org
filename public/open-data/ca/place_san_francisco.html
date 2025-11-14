@@ -1,0 +1,298 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_san_francisco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_san_francisco</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:san_francisco/government</td>
+            <td>Daniel Lurie</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>daniel.lurie@sfgov.org</td>
+            <td>https://www.sf.gov/profile--daniel-lurie</td>
+            <td></td>
+            <td></td>
+            <td>https://media.api.sf.gov/original_images/daniel_lurie_KeVK6TD.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/san_francisco/images/9c0467aa779f8146860885ab1a796bca38f8cc437729a6f5fdd47620fbcdee2f.jpg</td>
+            <td>[&quot;https://www.sf.gov/profile--daniel-lurie&quot;, &quot;https://www.sf.gov&quot;, &quot;https://www.sf.gov/profile--rafael-mandelman&quot;]</td>
+            <td>2025-07-17T03:13:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:san_francisco/government</td>
+            <td>Connie Chan</td>
+            <td>[&quot;Chair&quot;, &quot;Board Member&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 1&quot;]</td>
+            <td>(415) 554-7410</td>
+            <td>ChanStaff@sfgov.org</td>
+            <td>https://www.sf.gov/profile--connie-chan</td>
+            <td>2025-01-08</td>
+            <td>2029-01-08</td>
+            <td>https://media.api.sf.gov/original_images/2025-Chan-HighRes46.jpg.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/san_francisco/images/3f95996ca49c9d3df0b3c83591faf91a6815e54368b308fa49bb23b5a0e3d6b9.jpg</td>
+            <td>[&quot;https://www.sf.gov&quot;, &quot;https://www.sf.gov/profile--connie-chan&quot;]</td>
+            <td>2025-07-17T03:13:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:san_francisco/government</td>
+            <td>Shamann Walton</td>
+            <td>[&quot;Chair&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 10&quot;]</td>
+            <td>(415) 554-7670</td>
+            <td>waltonstaff@sfgov.org</td>
+            <td>https://www.sf.gov/profile--shamann-walton</td>
+            <td>2023-01-08</td>
+            <td>2027-01-08</td>
+            <td>https://media.api.sf.gov/original_images/Shamann_Walton_-_cropped.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/san_francisco/images/2923ad7df50780788b5d9875428535354f7572b2310fb8dcd99a3695125b7acb.jpg</td>
+            <td>[&quot;https://www.sf.gov&quot;, &quot;https://www.sf.gov/profile--shamann-walton&quot;]</td>
+            <td>2025-07-17T03:13:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:san_francisco/government</td>
+            <td>Matt Dorsey</td>
+            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Board Member&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 6&quot;]</td>
+            <td>(415) 554-7970</td>
+            <td>DorseyStaff@sfgov.org</td>
+            <td>https://www.sf.gov/profile--matt-dorsey</td>
+            <td>2023-01-08</td>
+            <td>2027-01-08</td>
+            <td>https://media.api.sf.gov/original_images/Matt_Dorsey_-_cropped.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/san_francisco/images/43ee3468a35e3f3fec9b7013265ddec0ed702f22c0c6f8cf4ebbcc3353379e0d.jpg</td>
+            <td>[&quot;https://www.sf.gov&quot;, &quot;https://www.sf.gov/profile--matt-dorsey&quot;]</td>
+            <td>2025-07-17T03:13:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:san_francisco/government</td>
+            <td>Myrna Melgar</td>
+            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Board Member&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 7&quot;]</td>
+            <td>(415) 554-6516</td>
+            <td>MelgarStaff@sfgov.org</td>
+            <td>https://www.sf.gov/profile--myrna-melgar</td>
+            <td>2025-01-08</td>
+            <td>2029-01-08</td>
+            <td>https://media.api.sf.gov/original_images/Myrna_Melgar_-_cropped.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/san_francisco/images/1579a617edf9de56514e303bdd968dda2e60aa90845e3535a5d41e19d71368f7.jpg</td>
+            <td>[&quot;https://www.sf.gov&quot;, &quot;https://www.sf.gov/profile--myrna-melgar&quot;]</td>
+            <td>2025-07-17T03:13:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:san_francisco/government</td>
+            <td>Rafael Mandelman</td>
+            <td>[&quot;Chair&quot;, &quot;Vice Chair&quot;, &quot;Council President&quot;, &quot;Board Member&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 8&quot;]</td>
+            <td>(415) 554-6968</td>
+            <td>mandelmanstaff@sfgov.org</td>
+            <td>https://www.sf.gov/profile--rafael-mandelman</td>
+            <td>2023-01-08</td>
+            <td>2027-01-08</td>
+            <td>https://media.api.sf.gov/original_images/2025-MandelmanHighRes93.jpg_WIpkUfK.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/san_francisco/images/9d334437eca727dee516b9b221851bc16fdefef0fdd24e331eb2ed5ed6ca8914.jpg</td>
+            <td>[&quot;https://www.sf.gov&quot;, &quot;https://www.sf.gov/profile--rafael-mandelman&quot;]</td>
+            <td>2025-07-17T03:13:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:san_francisco/government</td>
+            <td>Jackie Fielder</td>
+            <td>[&quot;Chair&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 9&quot;]</td>
+            <td>(415) 554-5144</td>
+            <td>FielderStaff@sfgov.org</td>
+            <td>https://www.sf.gov/profile--jackie-fielder</td>
+            <td>2025-01-08</td>
+            <td>2029-01-08</td>
+            <td>https://media.api.sf.gov/original_images/2025-Fielder-HighRes3.jpg_W7IbBwj.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/san_francisco/images/aa7563ae2ab372aa61e0527cc51bf59d905db8a9a14d96d24b2a3effe6797470.jpg</td>
+            <td>[&quot;https://www.sf.gov&quot;, &quot;https://www.sf.gov/profile--jackie-fielder&quot;]</td>
+            <td>2025-07-17T03:13:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:san_francisco/government</td>
+            <td>Chyanne Chen</td>
+            <td>[&quot;Vice Chair&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 11&quot;]</td>
+            <td>(415) 554-6975</td>
+            <td>ChenStaff@sfgov.org</td>
+            <td>https://www.sf.gov/profile--chyanne-chen</td>
+            <td>2025-01-08</td>
+            <td>2029-01-08</td>
+            <td>https://media.api.sf.gov/original_images/2025-Chen-HighRes67.jpg_No55aKI.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/san_francisco/images/aaedd1081df637227872a80aff32cd736233f911ce4c080d60ef61c7dcff47a5.jpg</td>
+            <td>[&quot;https://www.sf.gov&quot;, &quot;https://www.sf.gov/profile--chyanne-chen&quot;, &quot;https://sfgov.legistar.com/PersonDetail.aspx?ID=312512&amp;GUID=840FF1E4-3D2D-4888-AD2A-DC88B251BB00&amp;Search=&quot;]</td>
+            <td>2025-07-17T03:13:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:san_francisco/government</td>
+            <td>Stephen Sherrill</td>
+            <td>[&quot;Vice Chair&quot;, &quot;Board Member&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 2&quot;]</td>
+            <td>(415) 554-7752</td>
+            <td>SherrillStaff@sfgov.org</td>
+            <td>https://www.sf.gov/profile--stephen-sherrill</td>
+            <td>2024-12-18</td>
+            <td>2027-01-08</td>
+            <td>https://media.api.sf.gov/original_images/Stephen_Sherrill_-_cropped.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/san_francisco/images/1c0abcd72208c22efc84cabdd3442b25dd06f8465828be0af651ebff63d55a5b.jpg</td>
+            <td>[&quot;https://www.sf.gov&quot;, &quot;https://www.sf.gov/profile--stephen-sherrill&quot;]</td>
+            <td>2025-07-17T03:13:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:san_francisco/government</td>
+            <td>Danny Sauter</td>
+            <td>[&quot;Vice Chair&quot;, &quot;Board Member&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 3&quot;]</td>
+            <td>(415) 554-7450</td>
+            <td>SauterStaff@sfgov.org</td>
+            <td>https://www.sf.gov/profile--danny-sauter</td>
+            <td>2025-01-08</td>
+            <td>2029-01-08</td>
+            <td>https://media.api.sf.gov/original_images/Danny_Sauter_-_cropped_5zXrdoQ.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/san_francisco/images/71f78ac27a18bd8734fa4f4270b82c3adcfc6326cad454da272afc44ed5d0320.jpg</td>
+            <td>[&quot;https://www.sf.gov&quot;, &quot;https://www.sf.gov/profile--danny-sauter&quot;]</td>
+            <td>2025-07-17T03:13:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:san_francisco/government</td>
+            <td>Bilal Mahmood</td>
+            <td>[&quot;Vice Chair&quot;, &quot;Board Member&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 5&quot;]</td>
+            <td>(415) 554-7630</td>
+            <td>MahmoodStaff@sfgov.org</td>
+            <td>https://www.sf.gov/profile--bilal-mahmood</td>
+            <td>2025-01-08</td>
+            <td>2029-01-08</td>
+            <td>https://media.api.sf.gov/original_images/2025-Mahmood-HighRes96.jpg.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/san_francisco/images/ca9826dd2917618814450388ab28eb21580e73bea28803a9638cb7e3db4be896.jpg</td>
+            <td>[&quot;https://www.sf.gov&quot;, &quot;https://www.sf.gov/profile--bilal-mahmood&quot;]</td>
+            <td>2025-07-17T03:13:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:san_francisco/government</td>
+            <td>Joel Engardio</td>
+            <td>[&quot;Board Member&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 4&quot;]</td>
+            <td>(415) 554-7460</td>
+            <td>Board.of.Supervisors@sfgov.org</td>
+            <td>https://www.sf.gov/profile--joel-engardio</td>
+            <td>2023-01-08</td>
+            <td>2027-01-08</td>
+            <td>https://media.api.sf.gov/original_images/Joel_Engardio_-_cropped_WwytUJE.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/san_francisco/images/406b10fe845bda7ed118832934ecdd697124148b868094b5f6f485ce06115011.jpg</td>
+            <td>[&quot;https://www.sf.gov&quot;, &quot;https://www.sf.gov/profile--joel-engardio&quot;]</td>
+            <td>2025-07-17T03:13:30+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

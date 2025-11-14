@@ -1,0 +1,193 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_star</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_star</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:star/government</td>
+            <td>Trevor A. Chadwick</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(208) 286-7247</td>
+            <td>tchadwick@staridaho.org</td>
+            <td>https://www.staridaho.org/directory-listing/trevor-chadwick</td>
+            <td></td>
+            <td></td>
+            <td>https://www.staridaho.org/sites/default/files/styles/full_node_primary/public/imageattachments/directory/2443/_dj03626_chadwick_mayor_large.jpg?itok=O12SUUdN</td>
+            <td>https://cdn.civicpatch.org/open-data/id/star/images/c0be970ed4cf7cd9476f0813c0f1b43c3480ab07ec2869eb91d88a84475c84a4.jpg</td>
+            <td>[&quot;https://www.staridaho.org/directory-listing/trevor-chadwick&quot;, &quot;https://www.staridaho.org/council&quot;]</td>
+            <td>2025-07-12T20:49:53+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:star/government</td>
+            <td>David Hershey</td>
+            <td>[&quot;Council President&quot;]</td>
+            <td>[&quot;Seat 4&quot;]</td>
+            <td>(208) 286-7247</td>
+            <td>dhershey@staridaho.org</td>
+            <td>https://www.staridaho.org/directory-listing/david-hershey</td>
+            <td></td>
+            <td></td>
+            <td>https://www.staridaho.org/sites/default/files/styles/directory_listings_-_body__with_photo/public/imageattachments/directory/2448/hershey_1-16_color.jpg?itok=jBjcXyPR</td>
+            <td>https://cdn.civicpatch.org/open-data/id/star/images/e95d38c2e704f020e6839c7b36e542b802eaf96f19d0fc5ba6cbafbedfb834c5.jpg</td>
+            <td>[&quot;https://www.staridaho.org/council&quot;, &quot;https://www.staridaho.org/directory-listing/kevin-nielsen&quot;, &quot;https://www.staridaho.org/directory-listing/jennifer-salmonsen&quot;, &quot;https://www.staridaho.org/directory-listing/kevan-wheelock&quot;, &quot;https://www.staridaho.org/directory-listing/david-hershey&quot;]</td>
+            <td>2025-07-12T20:49:53+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:star/government</td>
+            <td>Kevin Nielsen</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Seat 1&quot;]</td>
+            <td>(208) 286-7247</td>
+            <td>knielsen@staridaho.org</td>
+            <td>https://www.staridaho.org/directory-listing/kevin-nielsen</td>
+            <td></td>
+            <td></td>
+            <td>https://www.staridaho.org/sites/default/files/styles/directory_listings_-_body__with_photo/public/imageattachments/directory/2463/_dj03589_nielsen_large.jpg?itok=VSqdBGfO</td>
+            <td>https://cdn.civicpatch.org/open-data/id/star/images/d0d047cee3a7982c6b15067e4220467d813b51baebf695323b36da9bfb45b907.jpg</td>
+            <td>[&quot;https://www.staridaho.org/council&quot;, &quot;https://www.staridaho.org/directory-listing/kevin-nielsen&quot;, &quot;https://www.staridaho.org/directory-listing/jennifer-salmonsen&quot;, &quot;https://www.staridaho.org/directory-listing/kevan-wheelock&quot;, &quot;https://www.staridaho.org/directory-listing/david-hershey&quot;]</td>
+            <td>2025-07-12T20:49:53+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:star/government</td>
+            <td>Jennifer Salmonsen</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Seat 2&quot;]</td>
+            <td>(208) 286-7247</td>
+            <td>jsalmonsen@staridaho.org</td>
+            <td>https://www.staridaho.org/directory-listing/jennifer-salmonsen</td>
+            <td></td>
+            <td></td>
+            <td>https://www.staridaho.org/sites/default/files/styles/directory_listings_-_body__with_photo/public/imageattachments/directory/2458/_dj03605_salmonsen_large.jpg?itok=8A376IbN</td>
+            <td>https://cdn.civicpatch.org/open-data/id/star/images/e31742f3e1a9415dd627b5f2cc28f903c0f04572516cc59a7e98d16814cdb72a.jpg</td>
+            <td>[&quot;https://www.staridaho.org/council&quot;, &quot;https://www.staridaho.org/directory-listing/kevin-nielsen&quot;, &quot;https://www.staridaho.org/directory-listing/jennifer-salmonsen&quot;, &quot;https://www.staridaho.org/directory-listing/kevan-wheelock&quot;, &quot;https://www.staridaho.org/directory-listing/david-hershey&quot;]</td>
+            <td>2025-07-12T20:49:53+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:star/government</td>
+            <td>Kevan Wheelock</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Seat 3&quot;]</td>
+            <td>(208) 286-7247</td>
+            <td>kwheelock@staridaho.org</td>
+            <td>https://www.staridaho.org/directory-listing/kevan-wheelock</td>
+            <td></td>
+            <td></td>
+            <td>https://www.staridaho.org/sites/default/files/styles/directory_listings_-_body__with_photo/public/imageattachments/directory/2453/_dj06376_web_small.jpg?itok=KMUQv9pP</td>
+            <td>https://cdn.civicpatch.org/open-data/id/star/images/31e52f4a57803c89a17c8fcb25260bb83563af34d8c43a8b188145f1d4af547a.jpg</td>
+            <td>[&quot;https://www.staridaho.org/council&quot;, &quot;https://www.staridaho.org/directory-listing/kevin-nielsen&quot;, &quot;https://www.staridaho.org/directory-listing/jennifer-salmonsen&quot;, &quot;https://www.staridaho.org/directory-listing/kevan-wheelock&quot;, &quot;https://www.staridaho.org/directory-listing/david-hershey&quot;]</td>
+            <td>2025-07-12T20:49:53+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

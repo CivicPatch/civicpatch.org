@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_omak</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_omak</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:omak/government</td>
+            <td>Cindy Gagné</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(509) 826-1170</td>
+            <td>mayor@omakcity.com</td>
+            <td>https://www.omakcity.com/bc-mayor</td>
+            <td>2009-05</td>
+            <td></td>
+            <td>https://www.omakcity.com/sites/default/files/styles/full_node_primary/public/imageattachments/bc-mayor/page/1451/cindy_gagne-mayor.jpg?itok=2l_L3M38</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/omak/images/54f3de8b1f0f74bff94630f9d912342c2d9cc00f316e77e6f3e111453dc106d1.jpg</td>
+            <td>[&quot;https://www.omakcity.com/bc-mayor&quot;]</td>
+            <td>2025-06-25T02:26:39+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:omak/government</td>
+            <td>Michael Foth</td>
+            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td></td>
+            <td>mikef@omakcity.com</td>
+            <td>https://www.omakcity.com/directory-listing/michael-foth</td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.omakcity.com/sites/default/files/styles/directory_listings_-_body__4-column/public/imageattachments/directory/2776/405a2297.png?itok=DO5AaFDH</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/omak/images/eb55b2ed740d22fc2605ab2f645dfc81b7c180eef64d38db648e986830e9a45e.png</td>
+            <td>[&quot;https://www.omakcity.com/citycouncil&quot;, &quot;https://www.omakcity.com/directory-listing/michael-foth&quot;, &quot;https://www.omakcity.com/directory-listing/michelle-gaines&quot;, &quot;https://www.omakcity.com/directory-listing/nattalie-cariker&quot;, &quot;https://www.omakcity.com/directory-listing/dave-womack&quot;, &quot;https://www.omakcity.com/directory-listing/barry-freel&quot;, &quot;https://www.omakcity.com/directory-listing/steve-clark&quot;, &quot;https://www.omakcity.com/directory-listing/maria-lassila&quot;]</td>
+            <td>2025-06-25T02:26:39+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:omak/government</td>
+            <td>Michelle Gaines</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td></td>
+            <td>michelleg@omakcity.com</td>
+            <td>https://www.omakcity.com/directory-listing/michelle-gaines</td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.omakcity.com/sites/default/files/styles/directory_listings_-_body__4-column/public/imageattachments/directory/2777/michele_gaines.jpg?itok=fe4jg2o3</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/omak/images/b1d489dbe213be835776e3fd4fd9f65e8a31de85b8b0a0c9d39c210d365f647a.jpg</td>
+            <td>[&quot;https://www.omakcity.com/citycouncil&quot;, &quot;https://www.omakcity.com/directory-listing/michael-foth&quot;, &quot;https://www.omakcity.com/directory-listing/michelle-gaines&quot;, &quot;https://www.omakcity.com/directory-listing/nattalie-cariker&quot;, &quot;https://www.omakcity.com/directory-listing/dave-womack&quot;, &quot;https://www.omakcity.com/directory-listing/barry-freel&quot;, &quot;https://www.omakcity.com/directory-listing/steve-clark&quot;, &quot;https://www.omakcity.com/directory-listing/maria-lassila&quot;]</td>
+            <td>2025-06-25T02:26:39+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:omak/government</td>
+            <td>Nattalie Cariker</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td></td>
+            <td>nattaliec@omakcity.com</td>
+            <td>https://www.omakcity.com/directory-listing/nattalie-cariker</td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.omakcity.com/sites/default/files/styles/directory_listings_-_body__4-column/public/imageattachments/directory/2778/nattalie_cariker.jpg?itok=QQTqmiPt</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/omak/images/13d8eb0147c6d282ab16029c2f426619920dca806258afbd495a6b83e38a8c3f.jpg</td>
+            <td>[&quot;https://www.omakcity.com/citycouncil&quot;, &quot;https://www.omakcity.com/directory-listing/michael-foth&quot;, &quot;https://www.omakcity.com/directory-listing/michelle-gaines&quot;, &quot;https://www.omakcity.com/directory-listing/nattalie-cariker&quot;, &quot;https://www.omakcity.com/directory-listing/dave-womack&quot;, &quot;https://www.omakcity.com/directory-listing/barry-freel&quot;, &quot;https://www.omakcity.com/directory-listing/steve-clark&quot;, &quot;https://www.omakcity.com/directory-listing/maria-lassila&quot;]</td>
+            <td>2025-06-25T02:26:39+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:omak/government</td>
+            <td>Dave Womack</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td></td>
+            <td>davew@omakcity.com</td>
+            <td>https://www.omakcity.com/directory-listing/dave-womack</td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.omakcity.com/sites/default/files/styles/directory_listings_-_body__4-column/public/imageattachments/directory/2779/dave_womack.jpg?itok=CEpByoQD</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/omak/images/373230f86216f8ae98578e973fae2ae7b9f9b500e6ec9ceb95b96e846b138552.jpg</td>
+            <td>[&quot;https://www.omakcity.com/citycouncil&quot;, &quot;https://www.omakcity.com/directory-listing/michael-foth&quot;, &quot;https://www.omakcity.com/directory-listing/michelle-gaines&quot;, &quot;https://www.omakcity.com/directory-listing/nattalie-cariker&quot;, &quot;https://www.omakcity.com/directory-listing/dave-womack&quot;, &quot;https://www.omakcity.com/directory-listing/barry-freel&quot;, &quot;https://www.omakcity.com/directory-listing/steve-clark&quot;, &quot;https://www.omakcity.com/directory-listing/maria-lassila&quot;]</td>
+            <td>2025-06-25T02:26:39+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:omak/government</td>
+            <td>Barry Freel</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td></td>
+            <td>barryf@omakcity.com</td>
+            <td>https://www.omakcity.com/directory-listing/barry-freel</td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.omakcity.com/sites/default/files/styles/directory_listings_-_body__4-column/public/imageattachments/directory/2780/barry_freel.jpg?itok=3bUIqVnK</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/omak/images/8d59c454802392953c8c6b1ef1015359e9cf7cf1b55a8786051fa13e3b9977d5.jpg</td>
+            <td>[&quot;https://www.omakcity.com/citycouncil&quot;, &quot;https://www.omakcity.com/directory-listing/michael-foth&quot;, &quot;https://www.omakcity.com/directory-listing/michelle-gaines&quot;, &quot;https://www.omakcity.com/directory-listing/nattalie-cariker&quot;, &quot;https://www.omakcity.com/directory-listing/dave-womack&quot;, &quot;https://www.omakcity.com/directory-listing/barry-freel&quot;, &quot;https://www.omakcity.com/directory-listing/steve-clark&quot;, &quot;https://www.omakcity.com/directory-listing/maria-lassila&quot;]</td>
+            <td>2025-06-25T02:26:39+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:omak/government</td>
+            <td>Steve Clark</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td></td>
+            <td>stevec@omakcity.com</td>
+            <td>https://www.omakcity.com/directory-listing/steve-clark</td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.omakcity.com/sites/default/files/styles/directory_listings_-_body__4-column/public/imageattachments/directory/2781/405a2333.jpg?itok=1xei5rAJ</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/omak/images/14713d2e72922d8dd0cc08019a39b883fb0e3b5c4475bb03686640b3a20e6f7b.jpg</td>
+            <td>[&quot;https://www.omakcity.com/citycouncil&quot;, &quot;https://www.omakcity.com/directory-listing/michael-foth&quot;, &quot;https://www.omakcity.com/directory-listing/michelle-gaines&quot;, &quot;https://www.omakcity.com/directory-listing/nattalie-cariker&quot;, &quot;https://www.omakcity.com/directory-listing/dave-womack&quot;, &quot;https://www.omakcity.com/directory-listing/barry-freel&quot;, &quot;https://www.omakcity.com/directory-listing/steve-clark&quot;, &quot;https://www.omakcity.com/directory-listing/maria-lassila&quot;]</td>
+            <td>2025-06-25T02:26:39+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:omak/government</td>
+            <td>Maria Lassila</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td></td>
+            <td>mlassila@omakcity.com</td>
+            <td>https://www.omakcity.com/directory-listing/maria-lassila</td>
+            <td></td>
+            <td>2025-11-25</td>
+            <td>https://www.omakcity.com/sites/default/files/styles/directory_listings_-_body__4-column/public/default_images/profile-photo-placeholder.jpg?itok=zDK2E3zK</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/omak/images/82f09dfd294c57dfe46e2d71faf0c0ad5feebd2ac0b0dacc1a378da7af853f4a.jpg</td>
+            <td>[&quot;https://www.omakcity.com/citycouncil&quot;, &quot;https://www.omakcity.com/directory-listing/michael-foth&quot;, &quot;https://www.omakcity.com/directory-listing/michelle-gaines&quot;, &quot;https://www.omakcity.com/directory-listing/nattalie-cariker&quot;, &quot;https://www.omakcity.com/directory-listing/dave-womack&quot;, &quot;https://www.omakcity.com/directory-listing/barry-freel&quot;, &quot;https://www.omakcity.com/directory-listing/steve-clark&quot;, &quot;https://www.omakcity.com/directory-listing/maria-lassila&quot;]</td>
+            <td>2025-06-25T02:26:39+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

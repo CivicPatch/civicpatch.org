@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_evans</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_evans</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:evans/government</td>
+            <td>Mark Clark</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(970) 475-2220</td>
+            <td>mclark@evanscolorado.gov</td>
+            <td>https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/mayor-mark-clark</td>
+            <td></td>
+            <td>2026-11</td>
+            <td>https://www.evanscolorado.gov/media/u3ahgapn/mark_clark_mayor.jpg?rxy=0.49424720806245076%2C0.33690575106780357&amp;width=400&amp;height=400&amp;v=1db2bb97a83e550&amp;format=webp</td>
+            <td>https://cdn.civicpatch.org/open-data/co/evans/images/e2524e6a1a9c475d90276a919f8468274d4f5f88080696d72e7bf7fb5a9d594c.webp</td>
+            <td>[&quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/mayor-mark-clark&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-2-tammy-pletka&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-3-alicia-johnson&quot;]</td>
+            <td>2025-06-28T18:45:27+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:evans/government</td>
+            <td>Tammy Pletka</td>
+            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 2&quot;]</td>
+            <td>(970) 475-2222</td>
+            <td>tpletka@evanscolorado.gov</td>
+            <td>https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-2-tammy-pletka</td>
+            <td></td>
+            <td>2026-11</td>
+            <td>https://www.evanscolorado.gov/media/llbluuwg/tammy_mortenson.jpg?rxy=0.5156794425087108%2C0.3233449477351916&amp;width=400&amp;height=300&amp;v=1db26f3a1408470&amp;format=webp</td>
+            <td>https://cdn.civicpatch.org/open-data/co/evans/images/618eb2c6b8ef57f6f5bfcf224caefbe180f0fa523c05c910c9d75dc9d1add610.webp</td>
+            <td>[&quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/mayor-mark-clark&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-2-tammy-pletka&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-3-alicia-johnson&quot;]</td>
+            <td>2025-06-28T18:45:27+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:evans/government</td>
+            <td>Fred Neal</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 1&quot;]</td>
+            <td>(970) 475-2222</td>
+            <td>fneal@evanscolorado.gov</td>
+            <td>https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-1-fred-neal</td>
+            <td></td>
+            <td>2026-11</td>
+            <td>https://www.evanscolorado.gov/media/lmqgc5if/fred_neal.jpg?rxy=0.49424720806245076%2C0.34699275144606606&amp;width=400&amp;height=400&amp;v=1db2bb9990446a0&amp;format=webp</td>
+            <td>https://cdn.civicpatch.org/open-data/co/evans/images/5d4004598ec09300d9462b7cc6fa4a7bb7490482224f0dfb2b1e8b2776775057.webp</td>
+            <td>[&quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/mayor-mark-clark&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-1-fred-neal&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-2-tammy-pletka&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-3-alicia-johnson&quot;]</td>
+            <td>2025-06-28T18:45:27+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:evans/government</td>
+            <td>Kyle Fehr</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 1&quot;]</td>
+            <td>(970) 475-2222</td>
+            <td>kfehr_cc@evanscolorado.gov</td>
+            <td>https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-1-kyle-fehr</td>
+            <td></td>
+            <td>2028-11</td>
+            <td>https://www.evanscolorado.gov/media/3fvpybon/kyle-fehr1.jpg?width=378&amp;height=419&amp;format=webp</td>
+            <td>https://cdn.civicpatch.org/open-data/co/evans/images/eba1a9dde2f4283543ba73ea890bcdc19af38cc90535f72902f58af3582aad77.webp</td>
+            <td>[&quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/mayor-mark-clark&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-1-kyle-fehr&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-2-tammy-pletka&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-3-alicia-johnson&quot;]</td>
+            <td>2025-06-28T18:45:27+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:evans/government</td>
+            <td>Jeff Crabtree</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 2&quot;]</td>
+            <td>(970) 475-2222</td>
+            <td>jcrabtree@evanscolorado.gov</td>
+            <td>https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-2-jeff-crabtree</td>
+            <td></td>
+            <td>2028-11</td>
+            <td>https://www.evanscolorado.gov/media/jtpl2wyk/jeff-crabtree_square_225.jpg?rxy=0.5375586854460094%2C0.2996870109546166&amp;width=400&amp;height=300&amp;v=1db26f3c36de830&amp;format=webp</td>
+            <td>https://cdn.civicpatch.org/open-data/co/evans/images/7d44ea2280884a3922f331a04302a287910d41309566ae9cd154b571f98c4a5e.webp</td>
+            <td>[&quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/mayor-mark-clark&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-2-jeff-crabtree&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-2-tammy-pletka&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-3-alicia-johnson&quot;]</td>
+            <td>2025-06-28T18:45:27+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:evans/government</td>
+            <td>Alicia Johnson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 3&quot;]</td>
+            <td>(970) 475-2222</td>
+            <td>ajohnson@evanscolorado.gov</td>
+            <td>https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-3-alicia-johnson</td>
+            <td></td>
+            <td>2026-11</td>
+            <td>https://www.evanscolorado.gov/media/byrdoc3x/alicia_johnson.jpg?rxy=0.5207970383275261%2C0.44726592834187545&amp;width=400&amp;height=300&amp;v=1db26f4631c33f0&amp;format=webp</td>
+            <td>https://cdn.civicpatch.org/open-data/co/evans/images/6cf997895854b01b391753e2e9f0130f522f660dae1f045e499da91a072a76c2.webp</td>
+            <td>[&quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/mayor-mark-clark&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-2-tammy-pletka&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-3-alicia-johnson&quot;]</td>
+            <td>2025-06-28T18:45:27+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:evans/government</td>
+            <td>Christopher Delaney</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 3&quot;]</td>
+            <td>(970) 475-2222</td>
+            <td>cdelaney@evanscolorado.gov</td>
+            <td>https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-3-christopher-delaney</td>
+            <td></td>
+            <td>2028-11</td>
+            <td>https://www.evanscolorado.gov/media/t4zo24if/chris-delaney_square_225.jpg?rxy=0.4757186411149826%2C0.4363906516767065&amp;width=400&amp;height=300&amp;v=1db26f4a082e450&amp;format=webp</td>
+            <td>https://cdn.civicpatch.org/open-data/co/evans/images/2c681127557302971faa0365f4c7f0b1ee764f4ae4544e49d428b88deb4390e1.webp</td>
+            <td>[&quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/mayor-mark-clark&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-2-tammy-pletka&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-3-alicia-johnson&quot;, &quot;https://www.evanscolorado.gov/your-government/city-council/mayor-and-council/ward-3-christopher-delaney&quot;]</td>
+            <td>2025-06-28T18:45:27+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

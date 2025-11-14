@@ -1,0 +1,193 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_hillsboro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_hillsboro</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:hillsboro/government</td>
+            <td>Levi Reese</td>
+            <td>[&quot;Commissioner President&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 636-4620</td>
+            <td>levi.reese@hillsboro-nd.us</td>
+            <td>https://hillsboro-nd.com/index.asp?SEC=F0672B65-AA3C-44DF-B028-F6082646B171&amp;DE=BD216FA0-8FD3-4B93-AA7C-33A593B3945A</td>
+            <td>2018</td>
+            <td></td>
+            <td>https://hillsboro-nd.com/vertical/Sites/%7B7383026E-3DE1-4DA9-9A29-A3887DB2DE61%7D/uploads/levi_reese_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/hillsboro/images/060542470e0393ef35c52948092a20a6c249555fa0fbc69960599f7bd04c826b.jpg</td>
+            <td>[&quot;https://hillsboro-nd.com/commission&quot;, &quot;https://hillsboro-nd.com/index.asp?SEC=F0672B65-AA3C-44DF-B028-F6082646B171&amp;DE=BD216FA0-8FD3-4B93-AA7C-33A593B3945A&quot;]</td>
+            <td>2025-07-03T23:44:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:hillsboro/government</td>
+            <td>Paul Geray</td>
+            <td>[&quot;Commissioner Vice President&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>paul.geray@hillsboro-nd.us</td>
+            <td>https://hillsboro-nd.com/index.asp?SEC=F0672B65-AA3C-44DF-B028-F6082646B171&amp;DE=910C033C-B12F-4246-880C-A0B7E84EB894</td>
+            <td>2021</td>
+            <td></td>
+            <td>https://hillsboro-nd.com/vertical/Sites/%7B7383026E-3DE1-4DA9-9A29-A3887DB2DE61%7D/uploads/Paul-_headshot_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/hillsboro/images/f3c28d721741c953737c3f38b939e801ed9a2785f0c65918daaaf75fcfc42a09.jpg</td>
+            <td>[&quot;https://hillsboro-nd.com/commission&quot;, &quot;https://hillsboro-nd.com/index.asp?SEC=F0672B65-AA3C-44DF-B028-F6082646B171&amp;DE=910C033C-B12F-4246-880C-A0B7E84EB894&quot;]</td>
+            <td>2025-07-03T23:44:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:hillsboro/government</td>
+            <td>Jason Pohlkamp</td>
+            <td>[&quot;Commissioner&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>jason.pohlkamp@hillsboro-nd.us</td>
+            <td>https://hillsboro-nd.com/index.asp?SEC=F0672B65-AA3C-44DF-B028-F6082646B171&amp;DE=E91589B5-0C6E-42AA-A63B-1EE1A3F620D0</td>
+            <td></td>
+            <td></td>
+            <td>https://hillsboro-nd.com/vertical/Sites/%7B7383026E-3DE1-4DA9-9A29-A3887DB2DE61%7D/uploads/jason_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/hillsboro/images/0998b0683aa492cf1654cf36e231c1c69e2ef3d47f7f4b7d00a3cabf011e54ab.jpg</td>
+            <td>[&quot;https://hillsboro-nd.com/commission&quot;, &quot;https://hillsboro-nd.com/index.asp?SEC=F0672B65-AA3C-44DF-B028-F6082646B171&amp;DE=E91589B5-0C6E-42AA-A63B-1EE1A3F620D0&quot;]</td>
+            <td>2025-07-03T23:44:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:hillsboro/government</td>
+            <td>Jon Myers</td>
+            <td>[&quot;Commissioner&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(701) 636-4620</td>
+            <td>jon.myers@hillsboro-nd.us</td>
+            <td>https://hillsboro-nd.com/index.asp?SEC=F0672B65-AA3C-44DF-B028-F6082646B171&amp;DE=22A9A233-9842-417A-84A1-7174C3B30E4C</td>
+            <td></td>
+            <td></td>
+            <td>https://hillsboro-nd.com/vertical/Sites/%7B7383026E-3DE1-4DA9-9A29-A3887DB2DE61%7D/uploads/Myers_Jon_2023_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/hillsboro/images/6c139d732719951defe4fd95903cd06134647e022f71d9ab8c8ffa6dc2901833.jpg</td>
+            <td>[&quot;https://hillsboro-nd.com/commission&quot;, &quot;https://hillsboro-nd.com/index.asp?SEC=F0672B65-AA3C-44DF-B028-F6082646B171&amp;DE=22A9A233-9842-417A-84A1-7174C3B30E4C&quot;]</td>
+            <td>2025-07-03T23:44:43+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:nd/place:hillsboro/government</td>
+            <td>Nicole Evans</td>
+            <td>[&quot;Commissioner&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>nicole.evans@hillsboro-nd.us</td>
+            <td>https://hillsboro-nd.com/index.asp?SEC=F0672B65-AA3C-44DF-B028-F6082646B171&amp;DE=4B852E8A-5C31-4B2D-B0F3-8E329C44E252</td>
+            <td></td>
+            <td></td>
+            <td>https://hillsboro-nd.com/vertical/Sites/%7B7383026E-3DE1-4DA9-9A29-A3887DB2DE61%7D/uploads/nicole_Web.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/nd/hillsboro/images/b7146465ec19d3a1814eaf97abb13e8bf0d251f7260d160a245eea7113362fe5.jpg</td>
+            <td>[&quot;https://hillsboro-nd.com/commission&quot;, &quot;https://hillsboro-nd.com/index.asp?SEC=F0672B65-AA3C-44DF-B028-F6082646B171&amp;DE=4B852E8A-5C31-4B2D-B0F3-8E329C44E252&quot;]</td>
+            <td>2025-07-03T23:44:43+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

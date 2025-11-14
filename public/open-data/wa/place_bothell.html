@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_bothell</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_bothell</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bothell/government</td>
+            <td>Mason Thompson</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td>(425) 471-8723</td>
+            <td>mason.thompson@bothellwa.gov</td>
+            <td>https://www.bothellwa.gov/directory.aspx?EID=302</td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.bothellwa.gov/ImageRepository/Document?documentID=18828</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bothell/images/8989b80427dd7d401a744d841024fc22f15fe9768e976c999625cca9d9bbf8d6.jpg</td>
+            <td>[&quot;https://www.bothellwa.gov/directory.aspx?EID=302&quot;, &quot;https://www.bothellwa.gov/Directory.aspx?DID=25&quot;, &quot;https://www.bothellwa.gov/261/City-Council&quot;]</td>
+            <td>2025-06-21T03:05:03+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bothell/government</td>
+            <td>Rami Al-Kabra</td>
+            <td>[&quot;Deputy Mayor&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td>(425) 471-8513</td>
+            <td>Rami.Al-Kabra@bothellwa.gov</td>
+            <td>https://www.bothellwa.gov/directory.aspx?EID=327</td>
+            <td>2021</td>
+            <td>2025-12-31</td>
+            <td>https://www.bothellwa.gov/ImageRepository/Document?documentID=18824</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bothell/images/e069100d60b84309abc88cac69a7e8e0d4b0a0e06c65de20b6eff96958769a4e.jpg</td>
+            <td>[&quot;https://www.bothellwa.gov/Directory.aspx?DID=25&quot;, &quot;https://www.bothellwa.gov/261/City-Council&quot;, &quot;https://www.bothellwa.gov/Directory.aspx?EID=327&quot;, &quot;https://www.bothellwa.gov/directory.aspx?EID=327&quot;]</td>
+            <td>2025-06-21T03:05:03+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bothell/government</td>
+            <td>Jeanne Zornes</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td>(425) 471-8376</td>
+            <td>Jeannezornes@bothellwa.gov</td>
+            <td>https://www.bothellwa.gov/directory.aspx?EID=250</td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.bothellwa.gov/ImageRepository/Document?documentID=18823</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bothell/images/0521c39e5a3cb07ef5fb21c2d2fe0182a5f5c8b8a564581678518496f219fd8b.jpg</td>
+            <td>[&quot;https://www.bothellwa.gov/Directory.aspx?DID=25&quot;, &quot;https://www.bothellwa.gov/261/City-Council&quot;, &quot;https://www.bothellwa.gov/directory.aspx?EID=250&quot;]</td>
+            <td>2025-06-21T03:05:03+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bothell/government</td>
+            <td>Jenne Alderks</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td>(425) 471-8034</td>
+            <td>Jenne.Alderks@bothellwa.gov</td>
+            <td>https://www.bothellwa.gov/directory.aspx?EID=326</td>
+            <td>2025-06-21</td>
+            <td>2025-12-31</td>
+            <td>https://www.bothellwa.gov/ImageRepository/Document?documentID=18826</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bothell/images/a3ac89eea4cf044fcd00ebaf6d30add5f4289b976fbb4a36a220a60a1c5af07d.jpg</td>
+            <td>[&quot;https://www.bothellwa.gov/Directory.aspx?DID=25&quot;, &quot;https://www.bothellwa.gov/261/City-Council&quot;, &quot;https://www.bothellwa.gov/Directory.aspx?EID=326&quot;, &quot;https://www.bothellwa.gov/directory.aspx?EID=326&quot;]</td>
+            <td>2025-06-21T03:05:03+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bothell/government</td>
+            <td>Carston Curd</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td>(425) 476-5711</td>
+            <td>carston.curd@bothellwa.gov</td>
+            <td>https://www.bothellwa.gov/directory.aspx?EID=379</td>
+            <td>2023</td>
+            <td>2027-12</td>
+            <td>https://www.bothellwa.gov/ImageRepository/Document?documentID=19551</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bothell/images/8ffc840bc0ca370374c2f3e3a6b1dfb0ddf9cfaf75c579b9329c76b6eeba6b51.jpg</td>
+            <td>[&quot;https://www.bothellwa.gov/Directory.aspx?DID=25&quot;, &quot;https://www.bothellwa.gov/261/City-Council&quot;, &quot;https://www.bothellwa.gov/Directory.aspx?EID=379&quot;, &quot;https://www.bothellwa.gov/directory.aspx?EID=379&quot;]</td>
+            <td>2025-06-21T03:05:03+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bothell/government</td>
+            <td>Benjamin Mahnkey</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td>(425) 471-8417</td>
+            <td>Benjamin.Mahnkey@bothellwa.gov</td>
+            <td>https://www.bothellwa.gov/directory.aspx?EID=328</td>
+            <td>2021</td>
+            <td>2025-12-31</td>
+            <td>https://www.bothellwa.gov/ImageRepository/Document?documentID=18825</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bothell/images/a83a0758c53403cc895681f21106fbff9bb0155deea1f3af4556e4af664040b9.jpg</td>
+            <td>[&quot;https://www.bothellwa.gov/Directory.aspx?DID=25&quot;, &quot;https://www.bothellwa.gov/261/City-Council&quot;, &quot;https://www.bothellwa.gov/directory.aspx?EID=328&quot;, &quot;https://www.bothellwa.gov/Directory.aspx?EID=328&quot;]</td>
+            <td>2025-06-21T03:05:03+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:bothell/government</td>
+            <td>Amanda Dodd</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td>(425) 806-6100</td>
+            <td>amanda.dodd@bothellwa.gov</td>
+            <td>https://www.bothellwa.gov/directory.aspx?EID=350</td>
+            <td>2024-01-01</td>
+            <td>2037-12-31</td>
+            <td>https://www.bothellwa.gov/ImageRepository/Document?documentID=18827</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/bothell/images/14fb7f3f4ce081fcb82ea948b3727ab4aff7f0782261b6a9d00d80b5d206f456.jpg</td>
+            <td>[&quot;https://www.bothellwa.gov/Directory.aspx?DID=25&quot;, &quot;https://www.bothellwa.gov/261/City-Council&quot;, &quot;https://www.bothellwa.gov/Directory.aspx?EID=350&quot;, &quot;https://www.bothellwa.gov/directory.aspx?EID=350&quot;]</td>
+            <td>2025-06-21T03:05:03+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

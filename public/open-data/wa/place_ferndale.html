@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_ferndale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_ferndale</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:ferndale/government</td>
+            <td>Greg Hansen</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(360) 685-2350</td>
+            <td>greghansen@cityofferndale.org</td>
+            <td>https://www.cityofferndale.org/169/Mayor</td>
+            <td>2019</td>
+            <td>2023-12</td>
+            <td>https://www.cityofferndale.org/ImageRepository/Document?documentId=1052</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/ferndale/images/0448c0d1429477acf9dc808005a78b5665686208abe7dfb03ee97a8d0e4c7763.jpg</td>
+            <td>[&quot;https://www.cityofferndale.org/169/Mayor&quot;]</td>
+            <td>2025-06-22T04:55:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:ferndale/government</td>
+            <td>Herb Porter</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td>(360) 820-2547</td>
+            <td>herbporter@cityofferndale.org</td>
+            <td></td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.cityofferndale.org/ImageRepository/Document?documentID=1025</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/ferndale/images/eaeb9df0dfe819eb1ac5a2495432ed89a49f5b069b506d3be68d66874459e305.jpg</td>
+            <td>[&quot;https://www.cityofferndale.org/171/City-Council&quot;]</td>
+            <td>2025-06-22T04:55:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:ferndale/government</td>
+            <td>Ali Hawkinson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td>(360) 223-0044</td>
+            <td>alihawkinson@cityofferndale.org</td>
+            <td></td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.cityofferndale.org/ImageRepository/Document?documentID=1027</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/ferndale/images/028a08d83765c3d6a44d75b21680e287e6eb51b0d6f4f3608cc1b4a112f83e4f.jpg</td>
+            <td>[&quot;https://www.cityofferndale.org/171/City-Council&quot;]</td>
+            <td>2025-06-22T04:55:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:ferndale/government</td>
+            <td>Erin Gunter</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td>(360) 325-1261</td>
+            <td>eringunter@cityofferndale.org</td>
+            <td></td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.cityofferndale.org/ImageRepository/Document?documentID=1026</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/ferndale/images/7ae98c7b80e082d6fe73a854f3b2f9c92ba46b76fe780423f05a5dddd543bc00.jpg</td>
+            <td>[&quot;https://www.cityofferndale.org/171/City-Council&quot;]</td>
+            <td>2025-06-22T04:55:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:ferndale/government</td>
+            <td>McKenna Pinto-Gonzalez</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td>(360) 510-2549</td>
+            <td>mckennapintogonzalez@cityofferndale.org</td>
+            <td></td>
+            <td></td>
+            <td>2027-12-31</td>
+            <td>https://www.cityofferndale.org/ImageRepository/Document?documentID=1028</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/ferndale/images/545b2fbe4db63c5ffd6a14c9d5ad56e84665902da5288a0e89d7eb929919a9b5.jpg</td>
+            <td>[&quot;https://www.cityofferndale.org/171/City-Council&quot;]</td>
+            <td>2025-06-22T04:55:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:ferndale/government</td>
+            <td>Ryan O&#39;Larey</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td>(219) 512-0952</td>
+            <td>ryanolarey@cityofferndale.org</td>
+            <td></td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.cityofferndale.org/ImageRepository/Document?documentID=1031</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/ferndale/images/c1ed078d69a53e0c3410fe8603e65a16492de4a555a703d83c567c4b1f2c16e8.jpg</td>
+            <td>[&quot;https://www.cityofferndale.org/171/City-Council&quot;]</td>
+            <td>2025-06-22T04:55:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:ferndale/government</td>
+            <td>Robert Pinkley</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td>(206) 391-3360</td>
+            <td>RobertPinkley@cityofferndale.org</td>
+            <td></td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.cityofferndale.org/ImageRepository/Document?documentID=1030</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/ferndale/images/39b1fa85f39e22d763dfbf0a8cabbcf41d8f1bc1eb2801affd5580c1f0018b60.jpg</td>
+            <td>[&quot;https://www.cityofferndale.org/171/City-Council&quot;]</td>
+            <td>2025-06-22T04:55:56+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:ferndale/government</td>
+            <td>Jon Mutchler</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td>(360) 927-1881</td>
+            <td>JonMutchler@cityofferndale.org</td>
+            <td></td>
+            <td></td>
+            <td>2025-12-31</td>
+            <td>https://www.cityofferndale.org/ImageRepository/Document?documentID=1029</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/ferndale/images/c6ede3ca9d67d8bf531ff71a3cf6a3583cbc6575c73fd51d67fca27a55ad57a0.jpg</td>
+            <td>[&quot;https://www.cityofferndale.org/171/City-Council&quot;]</td>
+            <td>2025-06-22T04:55:56+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

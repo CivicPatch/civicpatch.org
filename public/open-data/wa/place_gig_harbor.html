@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_gig_harbor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_gig_harbor</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:gig_harbor/government</td>
+            <td>Mary Barber</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(253) 853-7611</td>
+            <td>mbarber@gigharborwa.gov</td>
+            <td>https://www.cityofgigharbor.net/directory.aspx?eid=201</td>
+            <td>2022</td>
+            <td></td>
+            <td>https://www.cityofgigharbor.net/ImageRepository/Document?documentID=6223</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/gig_harbor/images/1cfe916ab8a2b3d572122aed53d9f530f831dca6e145765cb15c3c1d18cc7b85.jpg</td>
+            <td>[&quot;https://www.cityofgigharbor.net/884/Mayor&quot;, &quot;https://www.cityofgigharbor.net/425/City-Council&quot;, &quot;https://www.cityofgigharbor.net/directory.aspx?eid=201&quot;]</td>
+            <td>2025-06-22T06:21:35+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:gig_harbor/government</td>
+            <td>Le Rodenberg</td>
+            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td></td>
+            <td>lrodenberg@gigharborwa.gov</td>
+            <td>https://www.cityofgigharbor.net/directory.aspx?eid=169</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofgigharbor.net/ImageRepository/Document?documentID=3662</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/gig_harbor/images/5b77e4cc26980787189e9b963c32f4fec19d6564419d83f3ff672e4c3612b01d.jpg</td>
+            <td>[&quot;https://www.cityofgigharbor.net/425/City-Council&quot;, &quot;https://www.cityofgigharbor.net/directory.aspx?eid=169&quot;]</td>
+            <td>2025-06-22T06:21:35+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:gig_harbor/government</td>
+            <td>Jeni Woock</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td></td>
+            <td>jwoock@gigharborwa.gov</td>
+            <td>https://www.cityofgigharbor.net/directory.aspx?eid=132</td>
+            <td>2018</td>
+            <td></td>
+            <td>https://www.cityofgigharbor.net/ImageRepository/Document?documentID=3664</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/gig_harbor/images/056ac9b833d6154c5c6b7193245ab6b8f511951d702b97a6b6cfac3e96dc980d.jpg</td>
+            <td>[&quot;https://www.cityofgigharbor.net/425/City-Council&quot;, &quot;https://www.cityofgigharbor.net/directory.aspx?eid=132&quot;]</td>
+            <td>2025-06-22T06:21:35+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:gig_harbor/government</td>
+            <td>Roger Henderson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td></td>
+            <td>rhenderson@gigharborwa.gov</td>
+            <td>https://www.cityofgigharbor.net/directory.aspx?eid=134</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofgigharbor.net/ImageRepository/Document?documentID=3660</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/gig_harbor/images/1834f301bb62a6445603a777ffb38897273e8e0676ef4ece2a5412f74e7518f5.jpg</td>
+            <td>[&quot;https://www.cityofgigharbor.net/425/City-Council&quot;, &quot;https://www.cityofgigharbor.net/directory.aspx?eid=134&quot;]</td>
+            <td>2025-06-22T06:21:35+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:gig_harbor/government</td>
+            <td>Em Stone</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td></td>
+            <td>estone@gigharborwa.gov</td>
+            <td>https://www.cityofgigharbor.net/directory.aspx?eid=135</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofgigharbor.net/ImageRepository/Document?documentID=6447</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/gig_harbor/images/8a4845b68be49626badaf76601d35d029c70b11a007a3515f1f613b0719a3bc5.jpg</td>
+            <td>[&quot;https://www.cityofgigharbor.net/425/City-Council&quot;, &quot;https://www.cityofgigharbor.net/directory.aspx?eid=135&quot;]</td>
+            <td>2025-06-22T06:21:35+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:gig_harbor/government</td>
+            <td>Reid Ekberg</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td></td>
+            <td>rekberg@gigharborwa.gov</td>
+            <td>https://www.cityofgigharbor.net/directory.aspx?eid=168</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofgigharbor.net/ImageRepository/Document?documentID=6433</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/gig_harbor/images/b1e19d55fc5d885ae3c1e63b489d7e67855e1c22e909e3c322e3c1a12501d0ad.jpg</td>
+            <td>[&quot;https://www.cityofgigharbor.net/425/City-Council&quot;, &quot;https://www.cityofgigharbor.net/directory.aspx?eid=168&quot;]</td>
+            <td>2025-06-22T06:21:35+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:gig_harbor/government</td>
+            <td>Ben Coronado</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td>(253) 530-7071</td>
+            <td>bcoronado@gigharborwa.gov</td>
+            <td>https://www.cityofgigharbor.net/directory.aspx?eid=170</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofgigharbor.net/ImageRepository/Document?documentID=5700</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/gig_harbor/images/0bad3f62b6373baf428cc5075e9e823d5c799a9f44955b757ce4111f10d8b5db.jpg</td>
+            <td>[&quot;https://www.cityofgigharbor.net/425/City-Council&quot;, &quot;https://www.cityofgigharbor.net/directory.aspx?eid=170&quot;]</td>
+            <td>2025-06-22T06:21:35+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:gig_harbor/government</td>
+            <td>Seth Storset</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td></td>
+            <td>sstorset@gigharborwa.gov</td>
+            <td>https://www.cityofgigharbor.net/directory.aspx?eid=133</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cityofgigharbor.net/ImageRepository/Document?documentID=4436</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/gig_harbor/images/239a91673feb7f15c4e1f41979056a0889f281e79346ae67d3c7b12e00a29ccc.jpg</td>
+            <td>[&quot;https://www.cityofgigharbor.net/425/City-Council&quot;, &quot;https://www.cityofgigharbor.net/directory.aspx?eid=133&quot;]</td>
+            <td>2025-06-22T06:21:35+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

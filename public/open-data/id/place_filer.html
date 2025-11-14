@@ -1,0 +1,208 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_filer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_filer</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:filer/government</td>
+            <td>Robert E. Templeman</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://static.wixstatic.com/media/e09eae_1202eb2bc03445b5af7495b787d65195~mv2.jpg/v1/fill/w_211,h_331,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/City%20of%20Filer%20City%20Council%202024-2.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/filer/images/dbc50733b1f176ac728100a91956fd0e4d1b69a7e4dc9caadd55028f050a2ed3.jpg</td>
+            <td>[&quot;https://www.cityoffiler.us/team-3&quot;, &quot;https://www.cityoffiler.us/copy-of-city-counsel&quot;]</td>
+            <td>2025-07-13T02:09:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:filer/government</td>
+            <td>Desiree Romano</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://static.wixstatic.com/media/e09eae_1a107115b1fc402bab68fba61a54c03b~mv2.webp/v1/fill/w_211,h_331,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Filer%20City%20Council-5_jpg.webp</td>
+            <td>https://cdn.civicpatch.org/open-data/id/filer/images/57b89c5212eec648418109d9788e2fcd50c720cb43e658e451515a616963d6b8.webp</td>
+            <td>[&quot;https://www.cityoffiler.us/copy-of-city-counsel&quot;]</td>
+            <td>2025-07-13T02:09:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:filer/government</td>
+            <td>Joe Durham</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://static.wixstatic.com/media/e09eae_73c26544b42e403a8347a60c24836e5c~mv2.jpg/v1/fill/w_211,h_331,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/City%20of%20Filer%20City%20Council%202024-1.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/filer/images/66abcc1ba135b157ffa4dbdadf7158a057eb5650b5d1214f4670462b6c435847.jpg</td>
+            <td>[&quot;https://www.cityoffiler.us/team-3&quot;, &quot;https://www.cityoffiler.us/copy-of-city-counsel&quot;]</td>
+            <td>2025-07-13T02:09:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:filer/government</td>
+            <td>Rick Boepple</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://static.wixstatic.com/media/e09eae_de827a4b62444f94997afe9ef1fa9bbc~mv2.jpg/v1/fill/w_211,h_331,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/City%20of%20Filer%20City%20Council%202024-4.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/filer/images/7e6cb2d3eadc0b004e0833e13c42b1dd0990b1de27d9f6ef49d508d54f17806a.jpg</td>
+            <td>[&quot;https://www.cityoffiler.us/team-3&quot;]</td>
+            <td>2025-07-13T02:09:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:filer/government</td>
+            <td>Sam Callen</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://static.wixstatic.com/media/e09eae_04c889bb3dae4f9ab49d6247d6f9df7d~mv2.jpg/v1/fill/w_211,h_331,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/City%20of%20Filer%20City%20Council%202024-3.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/filer/images/b6c554aa00b2a86ba54b4749dc781222c420f3be7f3bfa511d6794f2d346be8d.jpg</td>
+            <td>[&quot;https://www.cityoffiler.us/team-3&quot;, &quot;https://www.cityoffiler.us/copy-of-city-counsel&quot;]</td>
+            <td>2025-07-13T02:09:42+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:filer/government</td>
+            <td>Tracey Daluiso</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://static.wixstatic.com/media/e09eae_3a24b4fccca046a0a5fbf8dc295f38d7~mv2.jpg/v1/fill/w_211,h_331,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/City%20of%20Filer%20City%20Council%202024-5.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/filer/images/104d1f1797508db08303fa7c4ef8b3ece5949e396cb9286e845bb76f36ee32a4.jpg</td>
+            <td>[&quot;https://www.cityoffiler.us/team-3&quot;, &quot;https://www.cityoffiler.us/copy-of-city-counsel&quot;]</td>
+            <td>2025-07-13T02:09:42+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

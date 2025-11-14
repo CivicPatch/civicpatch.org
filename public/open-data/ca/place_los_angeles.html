@@ -1,0 +1,358 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_los_angeles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_los_angeles</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Karen Bass</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(213) 473-3231</td>
+            <td></td>
+            <td>https://mayor.lacity.gov/about-mayor-karen-bass</td>
+            <td>2022</td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/Karen_Bass.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/044f0e766b2311517d99e5e1eb364fe03769622692978c660b21a5a6589bdb78.jpg</td>
+            <td>[&quot;https://mayor.lacity.gov&quot;, &quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;, &quot;https://mayor.lacity.gov/about-mayor-karen-bass&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Eunisses Hernandez</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 1&quot;]</td>
+            <td></td>
+            <td>councilmember.hernandez@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/Eunisses_Hernandez.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/0ea931aeb294c99afc69fcabb3edeba32618f6b6c07d72fa75abccc8cd7b56a1.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Heather Hutt</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 10&quot;]</td>
+            <td></td>
+            <td>cd10@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/Hutt.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/a5f25f5c554c2c2285ab86a50956dd3eebd2ecb6ed96ba1c922eb7d08505f2e4.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Traci Park</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 11&quot;]</td>
+            <td></td>
+            <td>councilmember.park@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/Traci_Park.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/beb88110854747d26714f58da71a4a468bb8a9a834f71f00ce8bcb4d1b3acb3c.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>John Lee</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 12&quot;]</td>
+            <td></td>
+            <td>councilmember.Lee@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/John_Lee.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/74a96b8aba5340d7319cbbbd92d57751747cbb9aa5ead72e3f60a706f7f9036b.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Hugo Soto-Martinez</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 13&quot;]</td>
+            <td></td>
+            <td>councilmember.soto-martinez@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/Hugo_Soto-Martinez.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/029b42072740a2e1266fff4d169f3f0a170181c7773f68a4e0f01b96516dc2c2.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Ysabel Jurado</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 14&quot;]</td>
+            <td></td>
+            <td>Councilmember.Jurado@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2022-07/LACitySeal_Profile.png</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/d2441688d2c8d2daed0a5e13f86a3f588cb07ef47e63b3955560d6a47d84e254.png</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Tim McOsker</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 15&quot;]</td>
+            <td></td>
+            <td>councilmember.mcosker@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/Tim_McOsker.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/b7847de364957eb5718730a4e33feeb4ab07eaff9d5fee90bf6d3833dcafe1ea.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Adrin Nazarian</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 2&quot;]</td>
+            <td></td>
+            <td>Councilmember.Nazarian@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2022-07/LACitySeal_Profile.png</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/d2441688d2c8d2daed0a5e13f86a3f588cb07ef47e63b3955560d6a47d84e254.png</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Bob Blumenfield</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 3&quot;]</td>
+            <td></td>
+            <td>councilmember.blumenfield@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/bob_blumenfield.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/96777bcfe2f8d663b6e49e84d5fa1575668452c08f0263f53d88717ac57acbaf.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Nithya Raman</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 4&quot;]</td>
+            <td></td>
+            <td>contactCD4@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/Nithya_Raman.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/34e4f5ffaafbe162860798b2e43ea7d1186ba3dbf1588f70dd2404d70e55c02e.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Katy Yaroslavsky</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 5&quot;]</td>
+            <td></td>
+            <td>councilmember.yaroslavsky@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/Katy_Yaroslavsky.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/434781ae3ab40e68f21705db19955eba3eee26575aead183add367fe411fd81e.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Imelda Padilla</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 6&quot;]</td>
+            <td></td>
+            <td>councilmember.padilla@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-03/Imelda_Padilla.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/bf5f13f460ffa04626e2227d0a97cc36ecfa93677c23aa24c2c1fea514b46088.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Monica Rodriguez</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 7&quot;]</td>
+            <td></td>
+            <td>councilmember.rodriguez@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/Monica_Rodriguez.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/64811de91025d89d4a769bef529bc869baa63dab7328d6066975894870c59842.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Marqueece Harris-Dawson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 8&quot;]</td>
+            <td></td>
+            <td>councilmember.harris-dawson@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/MHD.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/405d138a1edd8f17f9e283f80521a29b6ebbc81b3c129f21945c4a550eb2027c.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:los_angeles/government</td>
+            <td>Curren D. Price, Jr.</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 9&quot;]</td>
+            <td></td>
+            <td>councilmember.price@lacity.org</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>https://lacity.gov/sites/g/files/wph2281/files/2024-01/Price.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/los_angeles/images/c68d7bbf1fd7eee71b564788045702d482e0ff57a5acd5627a2cf54e5d75a719.jpg</td>
+            <td>[&quot;https://lacity.gov/government&quot;, &quot;https://lacity.gov/directory&quot;]</td>
+            <td>2025-07-17T03:10:23+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

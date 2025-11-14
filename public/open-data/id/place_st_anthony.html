@@ -1,0 +1,208 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_st_anthony</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_st_anthony</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:st_anthony/government</td>
+            <td>Audra VanderLinden</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>avanderlinden@cityofstanthony.org</td>
+            <td></td>
+            <td></td>
+            <td>2024</td>
+            <td>https://cmsv2-assets.apptegy.net/uploads/18702/file/2246607/e81210d6-fd6d-423c-a7ad-be3835bb4eb5.png</td>
+            <td>https://cdn.civicpatch.org/open-data/id/st_anthony/images/63c417b0020c66753521431eeda6f68e088dfa0012127ee7ebd698ccf16a1226.png</td>
+            <td>[&quot;https://www.cityofstanthony.org/page/city-council&quot;]</td>
+            <td>2025-07-12T23:58:52+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:st_anthony/government</td>
+            <td>Chad Quayle</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>cquayle@cityofstanthony.org</td>
+            <td></td>
+            <td></td>
+            <td>2026</td>
+            <td>https://cmsv2-assets.apptegy.net/uploads/18702/file/2246637/944a6ae7-78b4-4ab1-b9e5-cfb1808e4717.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/st_anthony/images/1b6eda81d9f4f895b8205dee69acf0eb80d4fbfd691e6204aad0bc1579f872c9.jpg</td>
+            <td>[&quot;https://www.cityofstanthony.org/page/city-council&quot;]</td>
+            <td>2025-07-12T23:58:52+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:st_anthony/government</td>
+            <td>Rod Nichols</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>rnichols@cityofstanthony.org</td>
+            <td></td>
+            <td></td>
+            <td>2026</td>
+            <td>https://cmsv2-assets.apptegy.net/uploads/18702/file/2246638/a521dd46-6a56-4d16-a36e-e565b726e813.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/st_anthony/images/98c8d3860d25a177134804e1d035d73bf9d3d79b3bae32ee21196df2f8cfd6be.jpg</td>
+            <td>[&quot;https://www.cityofstanthony.org/page/city-council&quot;]</td>
+            <td>2025-07-12T23:58:52+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:st_anthony/government</td>
+            <td>Rod Willmore</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>rwillmore@cityofstanthony.org</td>
+            <td></td>
+            <td></td>
+            <td>2026</td>
+            <td>https://cmsv2-assets.apptegy.net/uploads/18702/file/2246593/84a715f0-19bd-4ad3-83b6-652cb216595d.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/st_anthony/images/23aafb0fbc9dd14f1a1f4a83b9ec9e54415a79e927794f0416e6427a3744151c.jpg</td>
+            <td>[&quot;https://www.cityofstanthony.org/page/city-council&quot;]</td>
+            <td>2025-07-12T23:58:52+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:st_anthony/government</td>
+            <td>Russ Rubert</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>rrubert@cityofstanthony.org</td>
+            <td></td>
+            <td></td>
+            <td>2024</td>
+            <td>https://cmsv2-assets.apptegy.net/uploads/18702/file/2246550/d9b7d16a-f8e6-4167-8172-09f7590b29d9.png</td>
+            <td>https://cdn.civicpatch.org/open-data/id/st_anthony/images/6a25cb0ddfccc7c1c40476b3d2277d4178a9132a3f62b59b780ad58ff3a2ae96.png</td>
+            <td>[&quot;https://www.cityofstanthony.org/page/city-council&quot;]</td>
+            <td>2025-07-12T23:58:52+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:id/place:st_anthony/government</td>
+            <td>Tessa Schuldies</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>tschuldies@cityofstanthony.org</td>
+            <td></td>
+            <td></td>
+            <td>2024</td>
+            <td>https://cmsv2-assets.apptegy.net/uploads/18702/file/2246634/94473715-811a-40fe-a053-fc52d1707878.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/id/st_anthony/images/b04cc36683f5087bd98e455ebeba6e1ba442ab4533ab08ec1710972f3ea39b27.jpg</td>
+            <td>[&quot;https://www.cityofstanthony.org/page/city-council&quot;]</td>
+            <td>2025-07-12T23:58:52+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

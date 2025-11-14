@@ -1,0 +1,193 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_carnation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_carnation</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:carnation/government</td>
+            <td>Adair Hawkins</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td>(425) 765-3358</td>
+            <td>adair.hawkins@carnationwa.gov</td>
+            <td>https://www.carnationwa.gov/contacts/adair-hawkins</td>
+            <td>2024-01</td>
+            <td>2028-12</td>
+            <td>https://storage.googleapis.com/proudcity/carnationwa/2019/08/Mayor-Hawkins-e1739318073335-300x170.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/carnation/images/c3f9fa59bee6e26db84d3e3937f53d10412fd625158234b14059b21a7663ebb9.jpg</td>
+            <td>[&quot;https://www.carnationwa.gov/departments/city-council&quot;, &quot;https://www.carnationwa.gov/contacts/adair-hawkins&quot;]</td>
+            <td>2025-06-25T22:12:03+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:carnation/government</td>
+            <td>Jim Ribail</td>
+            <td>[&quot;Deputy Mayor&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td>(425) 786-4389</td>
+            <td>jim.ribail@carnationwa.gov</td>
+            <td>https://www.carnationwa.gov/contacts/jim-ribail</td>
+            <td>2021-01</td>
+            <td>2025-12</td>
+            <td>https://storage.googleapis.com/proudcity/carnationwa/2019/08/Deputy-Mayor-Ribail-e1739571929857-300x170.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/carnation/images/02d282cbd3cefd1ee4294b49094e5a2348a4465fd46be1586a27dfbb9a2af79b.jpg</td>
+            <td>[&quot;https://www.carnationwa.gov/departments/city-council&quot;, &quot;https://www.carnationwa.gov/contacts/jim-ribail&quot;]</td>
+            <td>2025-06-25T22:12:03+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:carnation/government</td>
+            <td>Brodie Nelson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td>(425) 786-4256</td>
+            <td>brodie.nelson@carnationwa.gov</td>
+            <td>https://www.carnationwa.gov/contacts/brodie-nelson</td>
+            <td>2024-01</td>
+            <td>2028-12</td>
+            <td>https://storage.googleapis.com/proudcity/carnationwa/2019/08/Councilmember-Nelson-e1739571989612-300x170.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/carnation/images/7715febd776811bf8f4693966d3d3b11bca8e80d0673b32c253e350bf885e461.jpg</td>
+            <td>[&quot;https://www.carnationwa.gov/departments/city-council&quot;, &quot;https://www.carnationwa.gov/contacts/brodie-nelson&quot;]</td>
+            <td>2025-06-25T22:12:03+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:carnation/government</td>
+            <td>Ryan Burrell</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td>(425) 786-4468</td>
+            <td>ryan.burrell@carnationwa.gov</td>
+            <td>https://www.carnationwa.gov/contacts/councilmember-ryan-burrell</td>
+            <td>2024-01</td>
+            <td>2025-12</td>
+            <td>https://storage.googleapis.com/proudcity/carnationwa/2019/08/Councilmember-Burrell-e1739318356916-300x170.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/carnation/images/f2ef145918d1182bd93ae49201a468ea6582e787c415308ce739712541b1856b.jpg</td>
+            <td>[&quot;https://www.carnationwa.gov/departments/city-council&quot;, &quot;https://www.carnationwa.gov/contacts/councilmember-ryan-burrell&quot;]</td>
+            <td>2025-06-25T22:12:03+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:carnation/government</td>
+            <td>Jessica Merizan</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td>(425) 786-4197</td>
+            <td>jessica.merizan@carnationwa.gov</td>
+            <td>https://www.carnationwa.gov/contacts/jessica-merizan-2</td>
+            <td>2024-01</td>
+            <td>2028-12</td>
+            <td>https://storage.googleapis.com/proudcity/carnationwa/2023/04/Councilmember-Merizan-scaled-e1739571871852-300x170.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/carnation/images/a691cb4fdc83d83ceb4793e1b6fde41ea8c9a27842e80550b276a732d69720ba.jpg</td>
+            <td>[&quot;https://www.carnationwa.gov/departments/city-council&quot;, &quot;https://www.carnationwa.gov/contacts/jessica-merizan-2&quot;]</td>
+            <td>2025-06-25T22:12:03+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

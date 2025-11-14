@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_cortez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_cortez</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:cortez/government</td>
+            <td>Rachel Medina</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>rmedina@cortezco.gov</td>
+            <td>https://www.cortezco.gov/810/Mayor-Rachel-Medina</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cortezco.gov/ImageRepository/Document?documentID=2821</td>
+            <td>https://cdn.civicpatch.org/open-data/co/cortez/images/0ceadd43e106a2f2f50d15dc37629e4f4e027560d2b0d9c4ec4cce8841294b3f.jpg</td>
+            <td>[&quot;https://www.cortezco.gov/810/Mayor-Rachel-Medina&quot;, &quot;https://www.cortezco.gov/111/City-Council&quot;, &quot;https://www.cortezco.gov/816/Councilmember-Dennis-Spruell&quot;, &quot;https://www.cortezco.gov/915/Mayor-Pro-Tem-Lydia-DeHaven&quot;, &quot;https://www.cortezco.gov/812/Councilmember-Robert-Dobry&quot;, &quot;https://www.cortezco.gov/815/Councilmember-Matthew-Keefauver&quot;, &quot;https://www.cortezco.gov/917/Councilmember-April-Randle&quot;, &quot;https://www.cortezco.gov/916/Councilmember-Bill-Lewis&quot;]</td>
+            <td>2025-06-30T16:58:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:cortez/government</td>
+            <td>Lydia DeHaven</td>
+            <td>[&quot;Mayor Pro Tempore&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>ldehaven@cortezco.gov</td>
+            <td>https://www.cortezco.gov/915/Mayor-Pro-Tem-Lydia-DeHaven</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cortezco.gov/ImageRepository/Document?documentID=2826</td>
+            <td>https://cdn.civicpatch.org/open-data/co/cortez/images/84b13dfe15f119198b6968e4cd6923279d2d12333b1201b7e0bad30b625ce50f.jpg</td>
+            <td>[&quot;https://www.cortezco.gov/810/Mayor-Rachel-Medina&quot;, &quot;https://www.cortezco.gov/111/City-Council&quot;, &quot;https://www.cortezco.gov/816/Councilmember-Dennis-Spruell&quot;, &quot;https://www.cortezco.gov/915/Mayor-Pro-Tem-Lydia-DeHaven&quot;, &quot;https://www.cortezco.gov/812/Councilmember-Robert-Dobry&quot;, &quot;https://www.cortezco.gov/815/Councilmember-Matthew-Keefauver&quot;, &quot;https://www.cortezco.gov/917/Councilmember-April-Randle&quot;, &quot;https://www.cortezco.gov/916/Councilmember-Bill-Lewis&quot;]</td>
+            <td>2025-06-30T16:58:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:cortez/government</td>
+            <td>April Randle</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>arandle@cortezco.gov</td>
+            <td>https://www.cortezco.gov/917/Councilmember-April-Randle</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cortezco.gov/ImageRepository/Document?documentID=4594</td>
+            <td>https://cdn.civicpatch.org/open-data/co/cortez/images/c23cb49ad649e3b1f8f131c986c8c46eaa6ba15d888d251ef95b68cbbf88fdf7.jpg</td>
+            <td>[&quot;https://www.cortezco.gov/810/Mayor-Rachel-Medina&quot;, &quot;https://www.cortezco.gov/111/City-Council&quot;, &quot;https://www.cortezco.gov/816/Councilmember-Dennis-Spruell&quot;, &quot;https://www.cortezco.gov/915/Mayor-Pro-Tem-Lydia-DeHaven&quot;, &quot;https://www.cortezco.gov/812/Councilmember-Robert-Dobry&quot;, &quot;https://www.cortezco.gov/815/Councilmember-Matthew-Keefauver&quot;, &quot;https://www.cortezco.gov/917/Councilmember-April-Randle&quot;, &quot;https://www.cortezco.gov/916/Councilmember-Bill-Lewis&quot;]</td>
+            <td>2025-06-30T16:58:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:cortez/government</td>
+            <td>Bill Lewis</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>blewis@cortezco.gov</td>
+            <td>https://www.cortezco.gov/916/Councilmember-Bill-Lewis</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cortezco.gov/ImageRepository/Document?documentID=4609</td>
+            <td>https://cdn.civicpatch.org/open-data/co/cortez/images/75905efe4859f244693b0b1f2cf983dd1465e0a2709eb88a3b6b1c4b6cccf3df.jpg</td>
+            <td>[&quot;https://www.cortezco.gov/810/Mayor-Rachel-Medina&quot;, &quot;https://www.cortezco.gov/111/City-Council&quot;, &quot;https://www.cortezco.gov/816/Councilmember-Dennis-Spruell&quot;, &quot;https://www.cortezco.gov/915/Mayor-Pro-Tem-Lydia-DeHaven&quot;, &quot;https://www.cortezco.gov/812/Councilmember-Robert-Dobry&quot;, &quot;https://www.cortezco.gov/815/Councilmember-Matthew-Keefauver&quot;, &quot;https://www.cortezco.gov/917/Councilmember-April-Randle&quot;, &quot;https://www.cortezco.gov/916/Councilmember-Bill-Lewis&quot;]</td>
+            <td>2025-06-30T16:58:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:cortez/government</td>
+            <td>Dennis Spruell</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>dspruell@cortezco.gov</td>
+            <td>https://www.cortezco.gov/816/Councilmember-Dennis-Spruell</td>
+            <td></td>
+            <td></td>
+            <td>https://www.cortezco.gov/ImageRepository/Document?documentID=2824</td>
+            <td>https://cdn.civicpatch.org/open-data/co/cortez/images/20dae8927d83ba278a355f0c034e982b2bb8c61b5b8d64ff70bffe48e172f10b.jpg</td>
+            <td>[&quot;https://www.cortezco.gov/810/Mayor-Rachel-Medina&quot;, &quot;https://www.cortezco.gov/111/City-Council&quot;, &quot;https://www.cortezco.gov/816/Councilmember-Dennis-Spruell&quot;, &quot;https://www.cortezco.gov/915/Mayor-Pro-Tem-Lydia-DeHaven&quot;, &quot;https://www.cortezco.gov/812/Councilmember-Robert-Dobry&quot;, &quot;https://www.cortezco.gov/815/Councilmember-Matthew-Keefauver&quot;, &quot;https://www.cortezco.gov/917/Councilmember-April-Randle&quot;, &quot;https://www.cortezco.gov/916/Councilmember-Bill-Lewis&quot;]</td>
+            <td>2025-06-30T16:58:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:cortez/government</td>
+            <td>Matthew Keefauver</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>mkeefauver@cortezco.gov</td>
+            <td>https://www.cortezco.gov/815/Councilmember-Matthew-Keefauver</td>
+            <td>2022</td>
+            <td>2026</td>
+            <td>https://www.cortezco.gov/ImageRepository/Document?documentID=2822</td>
+            <td>https://cdn.civicpatch.org/open-data/co/cortez/images/753f30cf737871d34b2a71c406519df8b29abf4ffcea152b2c9a6744d31ac09e.jpg</td>
+            <td>[&quot;https://www.cortezco.gov/810/Mayor-Rachel-Medina&quot;, &quot;https://www.cortezco.gov/111/City-Council&quot;, &quot;https://www.cortezco.gov/816/Councilmember-Dennis-Spruell&quot;, &quot;https://www.cortezco.gov/915/Mayor-Pro-Tem-Lydia-DeHaven&quot;, &quot;https://www.cortezco.gov/812/Councilmember-Robert-Dobry&quot;, &quot;https://www.cortezco.gov/815/Councilmember-Matthew-Keefauver&quot;, &quot;https://www.cortezco.gov/917/Councilmember-April-Randle&quot;, &quot;https://www.cortezco.gov/916/Councilmember-Bill-Lewis&quot;]</td>
+            <td>2025-06-30T16:58:07+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:cortez/government</td>
+            <td>Robert Dobry</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td></td>
+            <td>rdobry@cortezco.gov</td>
+            <td>https://www.cortezco.gov/812/Councilmember-Robert-Dobry</td>
+            <td>2022</td>
+            <td></td>
+            <td>https://www.cortezco.gov/ImageRepository/Document?documentID=4614</td>
+            <td>https://cdn.civicpatch.org/open-data/co/cortez/images/8ce20642e73398cc188992e7f87581f2bec5f4b80271cec696648cd0a92b1869.jpg</td>
+            <td>[&quot;https://www.cortezco.gov/810/Mayor-Rachel-Medina&quot;, &quot;https://www.cortezco.gov/111/City-Council&quot;, &quot;https://www.cortezco.gov/816/Councilmember-Dennis-Spruell&quot;, &quot;https://www.cortezco.gov/915/Mayor-Pro-Tem-Lydia-DeHaven&quot;, &quot;https://www.cortezco.gov/812/Councilmember-Robert-Dobry&quot;, &quot;https://www.cortezco.gov/815/Councilmember-Matthew-Keefauver&quot;, &quot;https://www.cortezco.gov/917/Councilmember-April-Randle&quot;, &quot;https://www.cortezco.gov/916/Councilmember-Bill-Lewis&quot;]</td>
+            <td>2025-06-30T16:58:07+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

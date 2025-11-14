@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_shoreline</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_shoreline</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:shoreline/government</td>
+            <td>Chris Roberts</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td>(206) 391-2733</td>
+            <td>croberts@shorelinewa.gov</td>
+            <td>https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/roberts</td>
+            <td>2024</td>
+            <td>2025-12-31</td>
+            <td>https://www.shorelinewa.gov/home/showpublishedimage/914/638457619211730000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/shoreline/images/edb0d2acc5f177e07a57bc2d465183c545f486a5c2b542b4e1fa1385af3e0669.jpg</td>
+            <td>[&quot;https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/roberts&quot;, &quot;https://www.shorelinewa.gov/government/city-council&quot;]</td>
+            <td>2025-06-21T02:59:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:shoreline/government</td>
+            <td>Laura Mork</td>
+            <td>[&quot;Deputy Mayor&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td>(206) 801-2207</td>
+            <td>lmork@shorelinewa.gov</td>
+            <td>https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/mork</td>
+            <td>2021</td>
+            <td>2025-12-31</td>
+            <td>https://www.shorelinewa.gov/home/showpublishedimage/13935/638457617779800000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/shoreline/images/40745ef44879f713bed706714588fa35d5cbef76306328019501b717165cfa6f.jpg</td>
+            <td>[&quot;https://www.shorelinewa.gov/government/city-council&quot;, &quot;https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/mork&quot;]</td>
+            <td>2025-06-21T02:59:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:shoreline/government</td>
+            <td>Annette Ademasu</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;, &quot;Position 4&quot;]</td>
+            <td>(206) 801-2204</td>
+            <td>aademasu@shorelinewa.gov</td>
+            <td>https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/ademasu</td>
+            <td>2023</td>
+            <td>2027-12-31</td>
+            <td>https://www.shorelinewa.gov/home/showpublishedimage/15041/638457652138530000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/shoreline/images/800ec57b8806781278bfb998e9611bd24618c0130f74f74c131d9d52fae6efb5.png</td>
+            <td>[&quot;https://www.shorelinewa.gov/government/city-council&quot;, &quot;https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/ademasu&quot;]</td>
+            <td>2025-06-21T02:59:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:shoreline/government</td>
+            <td>Betsy Robertson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;, &quot;Position 6&quot;]</td>
+            <td>(206) 801-2206</td>
+            <td>brobertson@shorelinewa.gov</td>
+            <td>https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/robertson</td>
+            <td>2023</td>
+            <td>2027-12-31</td>
+            <td>https://www.shorelinewa.gov/home/showpublishedimage/11359/638457621187370000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/shoreline/images/973edb77252a2a290fd554729d981c57cb8f7648d860bd4d0814b56c67347c07.jpg</td>
+            <td>[&quot;https://www.shorelinewa.gov/government/city-council&quot;, &quot;https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/robertson&quot;]</td>
+            <td>2025-06-21T02:59:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:shoreline/government</td>
+            <td>Eben Pobee</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;, &quot;Position 5&quot;]</td>
+            <td>(206) 801-2201</td>
+            <td>epobee@shorelinewa.gov</td>
+            <td>https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/pobee</td>
+            <td>2021</td>
+            <td>2025-12-31</td>
+            <td>https://www.shorelinewa.gov/home/showpublishedimage/13937/638106890076170000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/shoreline/images/ee98a62c7b3824914506010c004b5b40040e2c9ce1d683715e2d1f5ddcb7a518.png</td>
+            <td>[&quot;https://www.shorelinewa.gov/government/city-council&quot;, &quot;https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/pobee&quot;]</td>
+            <td>2025-06-21T02:59:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:shoreline/government</td>
+            <td>John Ramsdell</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;, &quot;Position 1&quot;]</td>
+            <td>(206) 801-2205</td>
+            <td>jramsdell@shorelinewa.gov</td>
+            <td>https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/ramsdell</td>
+            <td>2021</td>
+            <td>2025-12-31</td>
+            <td>https://www.shorelinewa.gov/home/showpublishedimage/13939/638457618588870000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/shoreline/images/e3cb487965e1410cbb4794410083dc8ed2ff7cdfea90b7b20baf014ce6341572.png</td>
+            <td>[&quot;https://www.shorelinewa.gov/government/city-council&quot;, &quot;https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/ramsdell&quot;]</td>
+            <td>2025-06-21T02:59:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:shoreline/government</td>
+            <td>Keith Scully</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;, &quot;Position 2&quot;]</td>
+            <td>(206) 801-2202</td>
+            <td>kscully@shorelinewa.gov</td>
+            <td>https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/scully</td>
+            <td>2023</td>
+            <td>2027-12-31</td>
+            <td>https://www.shorelinewa.gov/home/showpublishedimage/7294/638457618252930000</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/shoreline/images/8394c8fd2f96db1787022ab81c00087eb06323784aac583d5d7b29c586de44f2.jpg</td>
+            <td>[&quot;https://www.shorelinewa.gov/government/city-council&quot;, &quot;https://www.shorelinewa.gov/government/elected-and-appointed-officials/shoreline-city-council/scully&quot;]</td>
+            <td>2025-06-21T02:59:58+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

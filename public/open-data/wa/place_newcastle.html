@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_newcastle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_newcastle</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:newcastle/government</td>
+            <td>Robert Clark</td>
+            <td>[&quot;Mayor&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td></td>
+            <td>robertc@newcastlewa.gov</td>
+            <td>https://www.newcastlewa.gov/city_hall/city_council/councilmembers/robert_clark</td>
+            <td>2022-01-01</td>
+            <td>2025-12-31</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_4026035/Image/City%20Hall/City%20Officials/City%20Council/2023/Clark%20resize.png</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/newcastle/images/62a5b0dff1c1a79067cf0dfa583b4657f91a0d7785c6e5256c0c48316ec7dfbd.png</td>
+            <td>[&quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/ariana_sherlock&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/tom_griffin&quot;, &quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers/jim_quigg&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/pratima_lakhotia&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/robert_clark&quot;, &quot;https://newcastlewa.gov/cms/One.aspx?portalId=4026119&amp;pageId=12074413&quot;, &quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers/robert_clark&quot;]</td>
+            <td>2025-06-22T06:14:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:newcastle/government</td>
+            <td>Pratima Lakhotia</td>
+            <td>[&quot;Deputy Mayor&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td></td>
+            <td>pratimal@newcastlewa.gov</td>
+            <td>https://www.newcastlewa.gov/city_hall/city_council/councilmembers/pratima_lakhotia</td>
+            <td>2022</td>
+            <td>2025-12-31</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_4026035/Image/City%20Hall/City%20Officials/City%20Council/2023/Lakhotia%20resize.png</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/newcastle/images/0c13b8813cca0c28d6c0f10f25a9afb154adae4bd80ebaf3db33ded8628fe613.png</td>
+            <td>[&quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/ariana_sherlock&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/tom_griffin&quot;, &quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers/jim_quigg&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/pratima_lakhotia&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/robert_clark&quot;, &quot;https://newcastlewa.gov/cms/One.aspx?portalId=4026119&amp;pageId=12074377&quot;, &quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers/pratima_lakhotia&quot;]</td>
+            <td>2025-06-22T06:14:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:newcastle/government</td>
+            <td>Sun Burford</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td></td>
+            <td>sunb@newcastlewa.gov</td>
+            <td>https://www.newcastlewa.gov/city_hall/city_council/councilmembers/sun_burford</td>
+            <td>2024-01-01</td>
+            <td>2027-12-31</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_4026035/Image/City%20Hall/City%20Officials/2024%20Council%20Photos/Council%20Member%20Sun%202.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/newcastle/images/64fb26b571024a4f2f8d8256d18c020f811f60de31fa52e4eaf196762ea9ad85.jpg</td>
+            <td>[&quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers&quot;, &quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers/sun_burford&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/ariana_sherlock&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/tom_griffin&quot;, &quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers/jim_quigg&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/pratima_lakhotia&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/robert_clark&quot;, &quot;https://www.newcastlewa.gov/cms/One.aspx?portalId=4026119&amp;pageId=20098329&quot;]</td>
+            <td>2025-06-22T06:14:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:newcastle/government</td>
+            <td>Ariana Sherlock</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td></td>
+            <td>arianas@newcastlewa.gov</td>
+            <td>https://www.newcastlewa.gov/city_hall/city_council/councilmembers/ariana_sherlock</td>
+            <td>2024-01</td>
+            <td>2028</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_4026035/Image/City%20Hall/City%20Officials/2024%20Council%20Photos/Council%20Member%20Ariana%20!.jpeg</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/newcastle/images/6faec9f8942ec550e8ff1c357fa776eff571a019af9a2c19cbbb388cce8bd281.jpg</td>
+            <td>[&quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/ariana_sherlock&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/tom_griffin&quot;, &quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers/jim_quigg&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/pratima_lakhotia&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/robert_clark&quot;, &quot;https://newcastlewa.gov/cms/One.aspx?portalId=4026119&amp;pageId=16361488&quot;, &quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers/ariana_sherlock&quot;]</td>
+            <td>2025-06-22T06:14:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:newcastle/government</td>
+            <td>Tom Griffin</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td></td>
+            <td>tomjg@newcastlewa.gov</td>
+            <td>https://www.newcastlewa.gov/city_hall/city_council/councilmembers/tom_griffin</td>
+            <td>2020</td>
+            <td>2027-12-31</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_4026035/Image/City%20Hall/City%20Officials/City%20Council/2023/Griffin%20resize.png</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/newcastle/images/01ac616a53aac6ef273a29386f44129ad045878b312f392a540e2bc167b75fec.png</td>
+            <td>[&quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/ariana_sherlock&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/tom_griffin&quot;, &quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers/jim_quigg&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/pratima_lakhotia&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/robert_clark&quot;, &quot;https://newcastlewa.gov/cms/One.aspx?portalId=4026119&amp;pageId=16361518&quot;]</td>
+            <td>2025-06-22T06:14:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:newcastle/government</td>
+            <td>Jim Quigg</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td></td>
+            <td>jimq@newcastlewa.gov</td>
+            <td>https://www.newcastlewa.gov/city_hall/city_council/councilmembers/jim_quigg</td>
+            <td>2025-01-07</td>
+            <td>2025-12-31</td>
+            <td></td>
+            <td></td>
+            <td>[&quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/ariana_sherlock&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/tom_griffin&quot;, &quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers/jim_quigg&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/pratima_lakhotia&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/robert_clark&quot;]</td>
+            <td>2025-06-22T06:14:30+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:newcastle/government</td>
+            <td>Paul Charbonneau</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td></td>
+            <td>paulc@newcastlewa.gov</td>
+            <td>https://www.newcastlewa.gov/city_hall/city_council/councilmembers/paul_charbonneau</td>
+            <td>2021</td>
+            <td>2025-12-31</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_4026035/Image/City%20Hall/City%20Officials/City%20Council/2023/Charbonneau%20resize.png</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/newcastle/images/a6be764528a27de6ca744fc605c201547aa3eea5e25b3a6d42b587e4e55c2c6d.png</td>
+            <td>[&quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/ariana_sherlock&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/tom_griffin&quot;, &quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers/jim_quigg&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/pratima_lakhotia&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/paul_charbonneau&quot;, &quot;https://newcastlewa.gov/city_hall/city_council/councilmembers/robert_clark&quot;, &quot;https://newcastlewa.gov/cms/One.aspx?portalId=4026119&amp;pageId=12074389&quot;, &quot;https://www.newcastlewa.gov/city_hall/city_council/councilmembers/paul_charbonneau&quot;]</td>
+            <td>2025-06-22T06:14:30+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

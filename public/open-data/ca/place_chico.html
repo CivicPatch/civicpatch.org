@@ -1,0 +1,223 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_chico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_chico</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:chico/government</td>
+            <td>Kasey Reynolds</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;District 2&quot;]</td>
+            <td>(530) 966-4447</td>
+            <td>kasey.reynolds@chicoca.gov</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/982951e4-0671-46dc-8888-ed0d51ff34f5/Kasey-Reynolds.pdf</td>
+            <td>2022</td>
+            <td>2026</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/276ec4db-456a-49cf-b071-c83bfe14b2ab.png</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/chico/images/78dcad045a81cf9436c654d90c34167c588b98490e649a602c56e4915e5ac50e.png</td>
+            <td>[&quot;https://chico.ca.us/Your-Government/Template-COUNCIL/City-Council-Directory/index.html&quot;]</td>
+            <td>2025-07-18T21:03:08+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:chico/government</td>
+            <td>Dale Bennett</td>
+            <td>[&quot;Vice Mayor&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;District 3&quot;]</td>
+            <td>(530) 680-3156</td>
+            <td>dale.bennett@chicoca.gov</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/c3dd40b4-5672-45f7-93e1-e4b7761f46cb/Dale-Bennett.pdf</td>
+            <td>2024</td>
+            <td>2028</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/5648703d-e452-4e87-842a-a6e9bcb4b1e0.png</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/chico/images/b8c49a4f24b931e549c226eb0f80e342986fc17a75c369ccd0c1eed5b5ef9e41.png</td>
+            <td>[&quot;https://chico.ca.us/Your-Government/Template-COUNCIL/City-Council-Directory/index.html&quot;]</td>
+            <td>2025-07-18T21:03:08+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:chico/government</td>
+            <td>Mike O&#39;Brien</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 1&quot;]</td>
+            <td>(530) 513-3085</td>
+            <td>mike.obrien@chicoca.gov</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/1e3ebea6-4f80-454a-a1d6-6685439bc829/Mike-O-Brien.pdf</td>
+            <td>2024</td>
+            <td>2028</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/1b96bc01-237a-4b50-a008-2d9b85625015.png</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/chico/images/498a31caf672598cc00fde0546ed24b6d9fa866bd64d146621d7d9d35221d0ad.png</td>
+            <td>[&quot;https://chico.ca.us/Your-Government/Template-COUNCIL/City-Council-Directory/index.html&quot;]</td>
+            <td>2025-07-18T21:03:08+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:chico/government</td>
+            <td>Addison Winslow</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 4&quot;]</td>
+            <td>(530) 433-4795</td>
+            <td>addison.winslow@chicoca.gov</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/54642b04-b400-4573-ab57-8b599d115819/Addison-Winslow.pdf</td>
+            <td>2022-11-08</td>
+            <td>2026</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/bacc6848-1261-4061-a00b-ae3f8106afce.png</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/chico/images/776bf57f381d9fff5377339aebd671f744258c307731e8f91be5d675b7a3557f.png</td>
+            <td>[&quot;https://chico.ca.us/Your-Government/Template-COUNCIL/City-Council-Directory/index.html&quot;]</td>
+            <td>2025-07-18T21:03:08+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:chico/government</td>
+            <td>Katie Hawley</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 5&quot;]</td>
+            <td>(530) 433-4377</td>
+            <td>katie.hawley@chicoca.gov</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/cc43f877-8fdd-463f-9806-31552f4d3ede/Katie-Hawley.pdf</td>
+            <td>2024</td>
+            <td>2028</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/5d7a6097-9717-41b0-99b2-92b05db46c0a.png</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/chico/images/5e7542193f96efc95f47b619776dd2999b792c799dc8f4726ec553013e6bb0c0.png</td>
+            <td>[&quot;https://chico.ca.us/Your-Government/Template-COUNCIL/City-Council-Directory/index.html&quot;]</td>
+            <td>2025-07-18T21:03:08+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:chico/government</td>
+            <td>Tom van Overbeek</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 6&quot;]</td>
+            <td>(425) 985-2139</td>
+            <td>tom.vanoverbeek@chicoca.gov</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/297124d4-1a53-48b2-bfba-31c9cba60648/Tom-van-Overbeek.pdf</td>
+            <td>2022-11-08</td>
+            <td>2026</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/bd33c3f4-423c-4529-a2ff-9fc19d986fd0.png</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/chico/images/b026ecfa616bd846abfaf07ee1c0813808184ef4a7ccd590cea92cbd668a5228.png</td>
+            <td>[&quot;https://chico.ca.us/Your-Government/Template-COUNCIL/City-Council-Directory/index.html&quot;]</td>
+            <td>2025-07-18T21:03:08+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:ca/place:chico/government</td>
+            <td>Bryce Goldstein</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;District 7&quot;]</td>
+            <td>(530) 433-0946</td>
+            <td>bryce.goldstein@chicoca.gov</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/3c9af793-f393-426c-9855-08ad235233aa/Bryce-Goldstein.pdf</td>
+            <td>2024</td>
+            <td>2028</td>
+            <td>https://d16k74nzx9emoe.cloudfront.net/5af5f270-c406-4b8b-acc0-643d5f25b87f.png</td>
+            <td>https://cdn.civicpatch.org/open-data/ca/chico/images/ddd38201e343807191d574644d30815cc3e0ae98bd500aeb9dd4716c0ee87107.png</td>
+            <td>[&quot;https://chico.ca.us/Your-Government/Template-COUNCIL/City-Council-Directory/index.html&quot;]</td>
+            <td>2025-07-18T21:03:08+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

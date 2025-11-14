@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_north_bend</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_north_bend</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:north_bend/government</td>
+            <td>Mary Miller</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(425) 888-7625</td>
+            <td>mayor@northbendwa.gov</td>
+            <td>https://northbendwa.gov/directory.aspx?eid=91</td>
+            <td>2024</td>
+            <td>2027-12-31</td>
+            <td>https://northbendwa.gov/ImageRepository/Document?documentID=9700</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/north_bend/images/1013ebcf0afe2331c76b192af728c2986173abc36ee1b863689da79b732c9ca2.jpg</td>
+            <td>[&quot;https://northbendwa.gov/73/Mayor&quot;, &quot;https://northbendwa.gov/directory.aspx?eid=91&quot;]</td>
+            <td>2025-06-23T05:06:45+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:north_bend/government</td>
+            <td>Mark Joselyn</td>
+            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td>(425) 331-0804</td>
+            <td>mjoselyn@northbendwa.gov</td>
+            <td>https://wa-northbend2.civicplus.com/Directory.aspx?EID=12</td>
+            <td>2022</td>
+            <td>2025-12-31</td>
+            <td>https://wa-northbend2.civicplus.com/ImageRepository/Document?documentID=9698</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/north_bend/images/e73d94439ebde6ba399de97529e1612f54635db53b2db6944ccc6a5d05f1241b.jpg</td>
+            <td>[&quot;https://northbendwa.gov/74/City-Council&quot;, &quot;https://wa-northbend2.civicplus.com/Directory.aspx?EID=12&quot;]</td>
+            <td>2025-06-23T05:06:45+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:north_bend/government</td>
+            <td>Alan Gothelf</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td>(206) 251-4556</td>
+            <td>agothelf@northbendwa.gov</td>
+            <td>https://wa-northbend.civicplus.com/Directory.aspx?EID=8</td>
+            <td>2008</td>
+            <td>2025-12-31</td>
+            <td>https://wa-northbend.civicplus.com/ImageRepository/Document?documentID=9694</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/north_bend/images/60e8748c54364203e49c63d796a2abfbdf12484a079b75c654bf6597fdb0c44e.jpg</td>
+            <td>[&quot;https://northbendwa.gov/74/City-Council&quot;, &quot;https://wa-northbend.civicplus.com/Directory.aspx?EID=8&quot;]</td>
+            <td>2025-06-23T05:06:45+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:north_bend/government</td>
+            <td>Christina Rustik</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td>(425) 998-3474</td>
+            <td>crustik@northbendwa.gov</td>
+            <td>https://northbendwa.gov/Directory.aspx?EID=2</td>
+            <td>2024</td>
+            <td>2027-12-31</td>
+            <td>https://northbendwa.gov/ImageRepository/Document?documentID=9693</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/north_bend/images/9c1e65f1a47c48827c969c1c75bf878ee024f6684d6eac6ba1f14ce3817440b6.jpg</td>
+            <td>[&quot;https://northbendwa.gov/74/City-Council&quot;, &quot;https://northbendwa.gov/Directory.aspx?EID=2&quot;]</td>
+            <td>2025-06-23T05:06:45+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:north_bend/government</td>
+            <td>Heather Koellen</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td>(425) 922-1071</td>
+            <td>hkoellen@northbendwa.gov</td>
+            <td>https://northbendwa.gov/directory.aspx?EID=9</td>
+            <td>2020</td>
+            <td>2027-12-31</td>
+            <td>https://northbendwa.gov/ImageRepository/Document?documentID=9695</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/north_bend/images/120e207b2e31ca8e81d603c9c9c8a114beef6d10366effdd19b388bfd8a6ac3a.jpg</td>
+            <td>[&quot;https://northbendwa.gov/74/City-Council&quot;, &quot;https://northbendwa.gov/directory.aspx?EID=9&quot;]</td>
+            <td>2025-06-23T05:06:45+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:north_bend/government</td>
+            <td>Errol Tremolada</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td>(425) 998-3533</td>
+            <td>etremolada@northbendwa.gov</td>
+            <td>https://northbendwa.gov/Directory.aspx?EID=10</td>
+            <td>2023</td>
+            <td>2025-11</td>
+            <td>https://northbendwa.gov/ImageRepository/Document?documentID=9696</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/north_bend/images/1b9b1333fa3c1eae0466aaecbaebec6c807e2816ed5c1e2f9832684477e9a8ec.jpg</td>
+            <td>[&quot;https://northbendwa.gov/74/City-Council&quot;, &quot;https://northbendwa.gov/Directory.aspx?EID=10&quot;]</td>
+            <td>2025-06-23T05:06:45+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:north_bend/government</td>
+            <td>Brenden Elwood</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td>(253) 271-8628</td>
+            <td>belwood@northbendwa.gov</td>
+            <td>https://wa-northbend2.civicplus.com/Directory.aspx?EID=11</td>
+            <td>2016</td>
+            <td>2027-12-31</td>
+            <td>https://wa-northbend2.civicplus.com/ImageRepository/Document?documentID=9697</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/north_bend/images/d2ab74d14c43e2a83e73daee62cc39c18e42659f0df035626601e3d41d2e5279.jpg</td>
+            <td>[&quot;https://northbendwa.gov/74/City-Council&quot;, &quot;https://wa-northbend2.civicplus.com/Directory.aspx?EID=11&quot;]</td>
+            <td>2025-06-23T05:06:45+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:north_bend/government</td>
+            <td>Suzan Torguson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td>(425) 998-3413</td>
+            <td>storguson@northbendwa.gov</td>
+            <td>https://northbendwa.gov/Directory.aspx?EID=13</td>
+            <td>2024</td>
+            <td>2027-12-31</td>
+            <td>https://northbendwa.gov/ImageRepository/Document?documentID=9699</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/north_bend/images/67c13de3ea46b8c6462a26269b69c65b27a4f939dd04e81f032227ed7d39a4d7.jpg</td>
+            <td>[&quot;https://northbendwa.gov/74/City-Council&quot;, &quot;https://northbendwa.gov/Directory.aspx?EID=13&quot;]</td>
+            <td>2025-06-23T05:06:45+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

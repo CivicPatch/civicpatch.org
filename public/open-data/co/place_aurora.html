@@ -1,0 +1,283 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_aurora</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_aurora</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:aurora/government</td>
+            <td>Mike Coffman</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(303) 739-7015</td>
+            <td>mcoffman@auroragov.org</td>
+            <td>https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=16448210</td>
+            <td>2023</td>
+            <td>2027-11</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_1881137/Image/City%20Hall/Mayor%20&amp;%20City%20Council/Mayor%20and%20Council%20Member/Mike-Coffman.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/co/aurora/images/6abc8513e059194c487bdfad72d7bbbb70b32060e00abc5785f07261b443d840.jpg</td>
+            <td>[&quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members&quot;, &quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members/mike_coffman&quot;, &quot;https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=16448210&quot;]</td>
+            <td>2025-06-27T19:42:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:aurora/government</td>
+            <td>Steve Sundberg</td>
+            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 2&quot;]</td>
+            <td>(303) 525-6659</td>
+            <td>Steve.Sundberg@auroragov.org</td>
+            <td>https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=18174017</td>
+            <td></td>
+            <td>2025-11</td>
+            <td></td>
+            <td></td>
+            <td>[&quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members&quot;, &quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members/steve_sundberg&quot;, &quot;https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=18174017&quot;]</td>
+            <td>2025-06-27T19:42:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:aurora/government</td>
+            <td>Alison Coombs</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(720) 505-3332</td>
+            <td>acoombs@auroragov.org</td>
+            <td>https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=16448307</td>
+            <td></td>
+            <td>2027-11</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_1881137/Templates/images/City-of-Aurora-Logo.png</td>
+            <td>https://cdn.civicpatch.org/open-data/co/aurora/images/55c96044e887ddd473062b142f085bc1a121e71ae6ad1eded19201eebb6fde21.png</td>
+            <td>[&quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members&quot;, &quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members/alison_coombs&quot;, &quot;https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=16448307&quot;]</td>
+            <td>2025-06-27T19:42:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:aurora/government</td>
+            <td>Amsalu Kassaw</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(303) 739-7015</td>
+            <td>akassaw@auroragov.org</td>
+            <td>https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=20651707</td>
+            <td></td>
+            <td>2025-11</td>
+            <td></td>
+            <td></td>
+            <td>[&quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members&quot;, &quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members/amsalu_kassaw&quot;, &quot;https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=20651707&quot;]</td>
+            <td>2025-06-27T19:42:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:aurora/government</td>
+            <td>Curtis Gardner</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(303) 739-7015</td>
+            <td>cgardner@auroragov.org</td>
+            <td>https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=16448377</td>
+            <td></td>
+            <td>2027-11</td>
+            <td></td>
+            <td></td>
+            <td>[&quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members&quot;, &quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members/curtis_gardner&quot;, &quot;https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=16448377&quot;]</td>
+            <td>2025-06-27T19:42:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:aurora/government</td>
+            <td>Danielle Jurinsky</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;At-large&quot;]</td>
+            <td>(303) 739-7015</td>
+            <td>djurinsk@auroragov.org</td>
+            <td>https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=18174231</td>
+            <td></td>
+            <td>2025-11</td>
+            <td></td>
+            <td></td>
+            <td>[&quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members&quot;, &quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members/danielle_jurinsky&quot;, &quot;https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=18174231&quot;]</td>
+            <td>2025-06-27T19:42:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:aurora/government</td>
+            <td>Crystal Murillo</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 1&quot;]</td>
+            <td>(303) 739-7502</td>
+            <td>cmurillo@auroragov.org</td>
+            <td>https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=16448231</td>
+            <td></td>
+            <td>2025-11</td>
+            <td></td>
+            <td></td>
+            <td>[&quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members&quot;, &quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members/crystal_murillo&quot;, &quot;https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=16448231&quot;]</td>
+            <td>2025-06-27T19:42:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:aurora/government</td>
+            <td>Ruben Medina</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 3&quot;]</td>
+            <td>(303) 739-7015</td>
+            <td>rlmedina@auroragov.org</td>
+            <td>https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=18174140</td>
+            <td></td>
+            <td>2025-11</td>
+            <td></td>
+            <td></td>
+            <td>[&quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members&quot;, &quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members/ruben_medina&quot;, &quot;https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=18174140&quot;]</td>
+            <td>2025-06-27T19:42:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:aurora/government</td>
+            <td>Stephanie Hancock</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 4&quot;]</td>
+            <td>(303) 739-7015</td>
+            <td>shancock@auroragov.org</td>
+            <td>https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members/stephanie_hancock</td>
+            <td></td>
+            <td>2027-11</td>
+            <td>https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_1881137/Image/City%20Hall/Mayor%20&amp;%20City%20Council/Mayor%20and%20Council%20Member/2024/Stephanie-Hancock_2024.jpg</td>
+            <td>https://cdn.civicpatch.org/open-data/co/aurora/images/54059d65ae8281541957bec88110a5a23404e64532b7f4ed08439f32a2cf319e.png</td>
+            <td>[&quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members&quot;, &quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members/stephanie_hancock&quot;]</td>
+            <td>2025-06-27T19:42:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:aurora/government</td>
+            <td>Angela Lawson</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 5&quot;]</td>
+            <td>(303) 739-7518</td>
+            <td>alawson@auroragov.org</td>
+            <td>https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=16448434</td>
+            <td></td>
+            <td>2027-11</td>
+            <td></td>
+            <td></td>
+            <td>[&quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members&quot;, &quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members/angela_lawson&quot;, &quot;https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=16448434&quot;]</td>
+            <td>2025-06-27T19:42:58+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:co/place:aurora/government</td>
+            <td>Françoise Bergan</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 6&quot;]</td>
+            <td>(303) 739-7015</td>
+            <td>fbergan@auroragov.org</td>
+            <td>https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=16448317</td>
+            <td></td>
+            <td>2027-11</td>
+            <td></td>
+            <td></td>
+            <td>[&quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members&quot;, &quot;https://www.auroragov.org/city_hall/mayor___city_council/mayor___council_members/francoise_bergan&quot;, &quot;https://www.auroragov.org/cms/One.aspx?portalId=16242704&amp;pageId=16448317&quot;]</td>
+            <td>2025-06-27T19:42:58+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_lake_forest_park</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_lake_forest_park</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:lake_forest_park/government</td>
+            <td>Tom French</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(206) 368-5440</td>
+            <td>tfrench@cityoflfp.gov</td>
+            <td>https://www.cityoflfp.gov/115/Mayor</td>
+            <td>2024-01</td>
+            <td>2027-12</td>
+            <td>https://www.cityoflfp.gov/ImageRepository/Document?documentID=9204</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/lake_forest_park/images/7128090b82e3493c1979ceecd27dc65c0f9a5662b22b7a71195b6b9fcb71a524.jpg</td>
+            <td>[&quot;https://www.cityoflfp.gov/115/Mayor&quot;]</td>
+            <td>2025-06-22T05:47:54+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:lake_forest_park/government</td>
+            <td>Tracy Furutani</td>
+            <td>[&quot;Deputy Mayor&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td>(206) 368-5440 ext. 252</td>
+            <td>tfurutani@cityoflfp.gov</td>
+            <td>https://www.cityoflfp.gov/445/Councilmember-Tracy-Furutani</td>
+            <td>2022-01</td>
+            <td>2025-12</td>
+            <td>https://www.cityoflfp.gov/ImageRepository/Document?documentID=10190</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/lake_forest_park/images/438176685ff00073f9b4e7fb29f38a576a9a0208bd1bc46fef64838a5c6514d9.jpg</td>
+            <td>[&quot;https://www.cityoflfp.gov/115/Mayor&quot;, &quot;https://www.cityoflfp.gov/444/Councilmember-Semra-Riddle&quot;, &quot;https://www.cityoflfp.gov/708/Councilmember-Ashton-McCartney&quot;, &quot;https://www.cityoflfp.gov/455/Councilmember-Jon-Lebo&quot;, &quot;https://www.cityoflfp.gov/445/Councilmember-Tracy-Furutani&quot;, &quot;https://www.cityoflfp.gov/461/Councilmember-Larry-Goldman&quot;]</td>
+            <td>2025-06-22T05:47:54+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:lake_forest_park/government</td>
+            <td>Semra Riddle</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 1&quot;]</td>
+            <td>(206) 368-5440 ext. 250</td>
+            <td>sriddle@cityoflfp.gov</td>
+            <td>https://www.cityoflfp.gov/444/Councilmember-Semra-Riddle</td>
+            <td>2022-01</td>
+            <td>2025-12</td>
+            <td>https://www.cityoflfp.gov/ImageRepository/Document?documentID=9200</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/lake_forest_park/images/4bf7d5ec749307e1c597be30a5372c284c7487171f17d11a924a2f609af03e7e.jpg</td>
+            <td>[&quot;https://www.cityoflfp.gov/115/Mayor&quot;, &quot;https://www.cityoflfp.gov/444/Councilmember-Semra-Riddle&quot;, &quot;https://www.cityoflfp.gov/708/Councilmember-Ashton-McCartney&quot;, &quot;https://www.cityoflfp.gov/455/Councilmember-Jon-Lebo&quot;, &quot;https://www.cityoflfp.gov/461/Councilmember-Larry-Goldman&quot;]</td>
+            <td>2025-06-22T05:47:54+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:lake_forest_park/government</td>
+            <td>Ashton McCartney</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 2&quot;]</td>
+            <td>(206) 368-5440 ext. 251</td>
+            <td>amccartney@cityoflfp.gov</td>
+            <td>https://www.cityoflfp.gov/708/Councilmember-Ashton-McCartney</td>
+            <td>2025-06</td>
+            <td>2025-11</td>
+            <td>https://www.cityoflfp.gov/ImageRepository/Document?documentID=12436</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/lake_forest_park/images/062f4d0f5348119a71ddbb99e98fd49b60866ece2e20388b2f58d8a7e4afc1e4.jpg</td>
+            <td>[&quot;https://www.cityoflfp.gov/115/Mayor&quot;, &quot;https://www.cityoflfp.gov/444/Councilmember-Semra-Riddle&quot;, &quot;https://www.cityoflfp.gov/708/Councilmember-Ashton-McCartney&quot;]</td>
+            <td>2025-06-22T05:47:54+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:lake_forest_park/government</td>
+            <td>Jon Lebo</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 3&quot;]</td>
+            <td>(206) 368-5440 ext. 254</td>
+            <td>jlebo@cityoflfp.gov</td>
+            <td>https://www.cityoflfp.gov/455/Councilmember-Jon-Lebo</td>
+            <td>2022-01</td>
+            <td>2025-12</td>
+            <td>https://www.cityoflfp.gov/ImageRepository/Document?documentID=10189</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/lake_forest_park/images/4ba78e0f3dbae4e129ec2ec1f5ab4bc58d3ab4ebf62502cefb2adae00f31d47e.jpg</td>
+            <td>[&quot;https://www.cityoflfp.gov/115/Mayor&quot;, &quot;https://www.cityoflfp.gov/444/Councilmember-Semra-Riddle&quot;, &quot;https://www.cityoflfp.gov/708/Councilmember-Ashton-McCartney&quot;, &quot;https://www.cityoflfp.gov/455/Councilmember-Jon-Lebo&quot;, &quot;https://www.cityoflfp.gov/461/Councilmember-Larry-Goldman&quot;]</td>
+            <td>2025-06-22T05:47:54+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:lake_forest_park/government</td>
+            <td>Ellyn Saunders</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td>(206) 368-5440 ext. 257</td>
+            <td>esaunders@cityoflfp.gov</td>
+            <td>https://www.cityoflfp.gov/456/Councilmember-Ellyn-Saunders</td>
+            <td>2024-01</td>
+            <td>2027-12</td>
+            <td>https://www.cityoflfp.gov/ImageRepository/Document?documentID=11490</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/lake_forest_park/images/3c5c36cbb94c8588181cee02e2d376da1beeb01e8b91fb57125244806b07cd3f.jpg</td>
+            <td>[&quot;https://www.cityoflfp.gov/115/Mayor&quot;, &quot;https://www.cityoflfp.gov/444/Councilmember-Semra-Riddle&quot;, &quot;https://www.cityoflfp.gov/708/Councilmember-Ashton-McCartney&quot;, &quot;https://www.cityoflfp.gov/455/Councilmember-Jon-Lebo&quot;, &quot;https://www.cityoflfp.gov/456/Councilmember-Ellyn-Saunders&quot;, &quot;https://www.cityoflfp.gov/461/Councilmember-Larry-Goldman&quot;]</td>
+            <td>2025-06-22T05:47:54+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:lake_forest_park/government</td>
+            <td>Paula Goode</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td>(206) 368-5440 ext. 258</td>
+            <td>pgoode@cityoflfp.gov</td>
+            <td>https://www.cityoflfp.gov/459/Councilmember-Paula-Goode</td>
+            <td>2024-01</td>
+            <td>2027-12</td>
+            <td>https://www.cityoflfp.gov/ImageRepository/Document?documentID=11491</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/lake_forest_park/images/ecea1a2ea42f26b20de4e2832ce8c643735240b4b5bed620933f82be81d74ba3.jpg</td>
+            <td>[&quot;https://www.cityoflfp.gov/115/Mayor&quot;, &quot;https://www.cityoflfp.gov/444/Councilmember-Semra-Riddle&quot;, &quot;https://www.cityoflfp.gov/708/Councilmember-Ashton-McCartney&quot;, &quot;https://www.cityoflfp.gov/455/Councilmember-Jon-Lebo&quot;, &quot;https://www.cityoflfp.gov/459/Councilmember-Paula-Goode&quot;, &quot;https://www.cityoflfp.gov/461/Councilmember-Larry-Goldman&quot;]</td>
+            <td>2025-06-22T05:47:54+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:lake_forest_park/government</td>
+            <td>Larry Goldman</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td>(206) 368-5440 ext. 256</td>
+            <td>lgoldman@cityoflfp.gov</td>
+            <td>https://www.cityoflfp.gov/461/Councilmember-Larry-Goldman</td>
+            <td>2022-01</td>
+            <td>2025-12</td>
+            <td>https://www.cityoflfp.gov/ImageRepository/Document?documentID=10191</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/lake_forest_park/images/8c1f59e636c966adcb8cebf9a87fd24174bce36f8deda842447800ff9a6c760c.jpg</td>
+            <td>[&quot;https://www.cityoflfp.gov/115/Mayor&quot;, &quot;https://www.cityoflfp.gov/444/Councilmember-Semra-Riddle&quot;, &quot;https://www.cityoflfp.gov/708/Councilmember-Ashton-McCartney&quot;, &quot;https://www.cityoflfp.gov/455/Councilmember-Jon-Lebo&quot;, &quot;https://www.cityoflfp.gov/461/Councilmember-Larry-Goldman&quot;]</td>
+            <td>2025-06-22T05:47:54+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->

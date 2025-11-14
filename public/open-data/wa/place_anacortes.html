@@ -1,0 +1,238 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <title>Civic Patch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+  
+    
+    
+
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/application-596100fe.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/representatives-ebcbe605.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="/assets/tailwind-1a5fbda1.css" data-turbo-track="reload" />
+    
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e5beb9b7.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-c1e82531.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "leaflet": "/assets/leaflet-c86caae1.js",
+    "address_search": "/assets/address_search-5a037393.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/map_controller": "/assets/controllers/map_controller-5b7a0722.js",
+    "controllers/representatives_controller": "/assets/controllers/representatives_controller-54b68819.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-e5beb9b7.js">
+<link rel="modulepreload" href="/assets/turbo.min-c1e82531.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/leaflet-c86caae1.js">
+<link rel="modulepreload" href="/assets/address_search-5a037393.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/map_controller-5b7a0722.js">
+<link rel="modulepreload" href="/assets/controllers/representatives_controller-54b68819.js">
+<script type="module">import "application"</script> 
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <header>
+      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+        <div class="nav-links left-0 md:w-auto w-full flex items-center">
+          <a class="text-lg font-semibold text-gray-900" href="/">
+            CivicPatch
+</a>        </div>
+        <div class="flex md:flex-row flex-col md:items-center p-3">
+          <ul class="flex space-x-8">
+            <li><a class="text-gray-600 hover:text-gray-90 px-4 py-1" href="/">Home</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/progress">Progress</a></li>
+            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/address_search">Search</a></li>
+            <li><a class="text-gray-600 hover:text-gray-900 px-4 py-1" href="/map%23index">Map</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>place_anacortes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>place_anacortes</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Jurisdiction_id</th>
+          <th>Name</th>
+          <th>Roles</th>
+          <th>Divisions</th>
+          <th>Phone_number</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Image</th>
+          <th>Cdn_image</th>
+          <th>Sources</th>
+          <th>Updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:anacortes/government</td>
+            <td>Matt Miller</td>
+            <td>[&quot;Mayor&quot;]</td>
+            <td>[&quot;City&quot;]</td>
+            <td>(360) 293-1900</td>
+            <td>mattm@cityofanacortes.org</td>
+            <td>https://cityofanacortes.org/directory.aspx?eid=214</td>
+            <td>2012</td>
+            <td></td>
+            <td>https://cityofanacortes.org/ImageRepository/Document?documentID=5067</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/anacortes/images/78e2d6a9088e02ae8ce23fcccb5ef1aaad1ae2214dc604b86451451a4f26c927.png</td>
+            <td>[&quot;https://cityofanacortes.org/760/Mayor-Matt-Miller&quot;]</td>
+            <td>2025-06-22T04:37:33+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:anacortes/government</td>
+            <td>Carolyn Moulton</td>
+            <td>[&quot;Mayor Pro Tempore&quot;, &quot;Council Member&quot;]</td>
+            <td>[&quot;Position 6&quot;]</td>
+            <td>(360) 472-0335</td>
+            <td>carolynm@anacorteswa.gov</td>
+            <td></td>
+            <td>2019</td>
+            <td>2025-12-31</td>
+            <td>https://www.cityofanacortes.org/ImageRepository/Document?documentID=14711</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/anacortes/images/d35cd9bc67f951c816114fab349be4679880a03f399e4bbef2e3963f672f7a45.png</td>
+            <td>[&quot;https://www.cityofanacortes.org/818/City-Council-Members&quot;]</td>
+            <td>2025-06-22T04:37:33+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:anacortes/government</td>
+            <td>Amanda Hubik</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 4&quot;]</td>
+            <td>(360) 499-3856</td>
+            <td>amandah@anacorteswa.gov</td>
+            <td></td>
+            <td>2022</td>
+            <td>2025-12-31</td>
+            <td>https://www.cityofanacortes.org/ImageRepository/Document?documentID=21590</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/anacortes/images/0df6eaa81c3f085668adc716070265d3b1dad3cf631a3009657d7b7293211419.png</td>
+            <td>[&quot;https://www.cityofanacortes.org/818/City-Council-Members&quot;]</td>
+            <td>2025-06-22T04:37:33+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:anacortes/government</td>
+            <td>Bruce McDougall</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 5&quot;]</td>
+            <td>(303) 551-5554</td>
+            <td>brucem@anacorteswa.gov</td>
+            <td></td>
+            <td>2017</td>
+            <td>2025-12-31</td>
+            <td>https://www.cityofanacortes.org/ImageRepository/Document?documentID=5058</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/anacortes/images/17a849ec9e0e3ed178c6627b9c85237708a67a7874319e874fd5165d763d4be8.png</td>
+            <td>[&quot;https://www.cityofanacortes.org/818/City-Council-Members&quot;]</td>
+            <td>2025-06-22T04:37:33+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:anacortes/government</td>
+            <td>Anthony Young</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Position 7&quot;]</td>
+            <td>(360) 873-8407</td>
+            <td>anthony@anacorteswa.gov</td>
+            <td></td>
+            <td>2018</td>
+            <td>2025-12-31</td>
+            <td>https://www.cityofanacortes.org/ImageRepository/Document?documentID=6526</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/anacortes/images/90b754d3cb9512068cd537b2a5baa6e23475c964deecc186c28da57f37544673.png</td>
+            <td>[&quot;https://www.cityofanacortes.org/818/City-Council-Members&quot;]</td>
+            <td>2025-06-22T04:37:33+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:anacortes/government</td>
+            <td>Ryan Walters</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 1&quot;]</td>
+            <td>(360) 610-7770</td>
+            <td>ryanw@anacorteswa.gov</td>
+            <td></td>
+            <td>2012</td>
+            <td>2027-12-31</td>
+            <td>https://www.cityofanacortes.org/ImageRepository/Document?documentID=5063</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/anacortes/images/636f58e1b6319925415916c8607d6e5c5873086708d15c725b895f6d54d79703.png</td>
+            <td>[&quot;https://www.cityofanacortes.org/818/City-Council-Members&quot;]</td>
+            <td>2025-06-22T04:37:33+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:anacortes/government</td>
+            <td>Christine Cleland-McGrath</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 2&quot;]</td>
+            <td>(360) 708-0267</td>
+            <td>christinec@anacorteswa.gov</td>
+            <td></td>
+            <td>2020</td>
+            <td>2027-12-31</td>
+            <td>https://www.cityofanacortes.org/ImageRepository/Document?documentID=17856</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/anacortes/images/a50bdf50fb68cedfdf908625d84a0279bbc3ca02fab218f7d7a4057d09638af6.png</td>
+            <td>[&quot;https://www.cityofanacortes.org/818/City-Council-Members&quot;]</td>
+            <td>2025-06-22T04:37:33+00:00</td>
+        </tr>
+        <tr>
+            <td>ocd-jurisdiction/country:us/state:wa/place:anacortes/government</td>
+            <td>TJ Fantini</td>
+            <td>[&quot;Council Member&quot;]</td>
+            <td>[&quot;Ward 3&quot;]</td>
+            <td>(818) 259-3613</td>
+            <td>thomasf@anacorteswa.gov</td>
+            <td></td>
+            <td>2024</td>
+            <td>2027-12-31</td>
+            <td>https://www.cityofanacortes.org/ImageRepository/Document?documentID=25673</td>
+            <td>https://cdn.civicpatch.org/open-data/wa/anacortes/images/99553394bc069e4826ecf3d439b3fc2c1c4c52be738304d56a0f4ff857d8cccd.png</td>
+            <td>[&quot;https://www.cityofanacortes.org/818/City-Council-Members&quot;]</td>
+            <td>2025-06-22T04:37:33+00:00</td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+    </main>
+  </body>
+</html> 
+<!-- END app/views/layouts/application.html.erb -->
