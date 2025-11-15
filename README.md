@@ -9,7 +9,7 @@
 
 ### Setup
 
-- Tested with: Mac OSX, Windows & WSL2 (Ubuntu)
+- Tested with: Mac OSX
 - Create `.env` file with command: `./script/setup-env.sh`
 - Run commands:
 

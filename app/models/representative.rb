@@ -1,19 +1,6 @@
 class Representative < ApplicationRecord
   belongs_to :municipality
 
-  def self.get_representatives_by_ocd_id(ocd_id)
-    state, county, place = get_ocd_id_parts(ocd_id)
-    state_code = state_to_state_code(state)
-
-    puts "State code: #{state_code}"
-    puts "Municipality: #{place}"
-
-    municipality = Municipality.find_by_state_and_geoid(state, place)
-
-    # TODO: Handle county
-    Representative.where(municipality: municipality).map(&:data)
-  end
-
   def self.get_representatives_by_state_geoid(state, geoid)
     puts "State: #{state}, Geoid: #{geoid}"
     municipality = Municipality.find_by_state_and_geoid(state, geoid)
@@ -26,14 +13,19 @@ class Representative < ApplicationRecord
   def self.get_representatives_by_lat_long(lat, long)
     lat_float = lat.to_f
     long_float = long.to_f
-    municipalities = Municipality.find_by_lat_lon(lat_float, long_float)
+    
+    request_uri = URI("#{ENV['API_CIVICPATCH_ORG_URL']}/api/people/geo?lat=#{lat}&long=#{long}")
+    data = Net::HTTP.get(
+      request_uri
+    )
+    json_data = JSON.parse(data)
+    people = json_data["data"]["people"]
 
-    if municipalities.empty?
+    if people.empty?
       return []
     end
 
-    # Get all representatives for all municipalities in one query
-    Representative.where(municipality_id: municipalities.pluck(:geoid)).map(&:data)
+    return people
   end
 
   def self.get_ocd_id_parts(ocd_id)

@@ -2,14 +2,9 @@ class Api::RepresentativesController < ApplicationController
   protect_from_forgery with: :null_session
 
   def index
-    ocd_id = params[:ocd_id]
     representatives = []
 
-    if ocd_id.present?
-      validate_ocd_id
-
-      representatives = Representative.get_representatives_by_ocd_id(ocd_id)
-    elsif params[:lat].present? && params[:long].present?
+    if params[:lat].present? && params[:long].present?
       representatives = Representative.get_representatives_by_lat_long(params[:lat], params[:long])
     end
 

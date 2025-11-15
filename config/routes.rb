@@ -26,4 +26,8 @@ Rails.application.routes.draw do
   get "progress" => "map#progress", as: :progress
   get "address_search" => "pages#address_search", as: :address_search
   root "pages#home"
+
+  # Proxy endpoint for frontend calls
+  # Ex: shared components
+  match'/api/api_proxy/*path', to: 'api_proxy#proxy', via: [:get, :post, :put, :delete, :patch]
 end
