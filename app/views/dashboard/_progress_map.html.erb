@@ -1,8 +1,4 @@
 <div class="max-w-7xl mx-auto">
-  <div class="mb-8">
-    <h1 class="text-4xl font-bold text-gray-900 mb-4">📊 CivicPatch Progress Dashboard</h1>
-    <p class="text-lg text-gray-600">Municipal data collection progress across participating states</p>
-  </div>
 
   <div id="progress-map-container" style="background-color: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px;">
     <h2 style="color: #333; margin-bottom: 20px;">CivicPatch Municipal Data Collection Progress</h2>
@@ -44,87 +40,6 @@
       <div id="map-tooltip" style="position: absolute; padding: 8px 12px; background: rgba(0,0,0,0.8); color: white; border-radius: 4px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity 0.2s;"></div>
     </div>
     
-    <!-- Progress Bars (detailed view) -->
-    <div id="static-progress">
-      <h3 style="margin-bottom: 15px; color: #555;">Detailed Progress by State</h3>
-      
-      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
-        <div style="display: flex; align-items: center; margin-bottom: 5px;">
-          <strong style="width: 60px;">WA</strong>
-          <span style="flex: 1; color: #666;">176 of 219 municipalities</span>
-          <span style="font-weight: bold;">80.4%</span>
-        </div>
-        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
-          <div style="background: #28a745; height: 100%; width: 80.4%; transition: width 0.3s ease;"></div>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
-        <div style="display: flex; align-items: center; margin-bottom: 5px;">
-          <strong style="width: 60px;">ID</strong>
-          <span style="flex: 1; color: #666;">95 of 132 municipalities</span>
-          <span style="font-weight: bold;">72.0%</span>
-        </div>
-        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
-          <div style="background: #28a745; height: 100%; width: 72%; transition: width 0.3s ease;"></div>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
-        <div style="display: flex; align-items: center; margin-bottom: 5px;">
-          <strong style="width: 60px;">CO</strong>
-          <span style="flex: 1; color: #666;">117 of 216 municipalities</span>
-          <span style="font-weight: bold;">54.2%</span>
-        </div>
-        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
-          <div style="background: #ffc107; height: 100%; width: 54.2%; transition: width 0.3s ease;"></div>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
-        <div style="display: flex; align-items: center; margin-bottom: 5px;">
-          <strong style="width: 60px;">OR</strong>
-          <span style="flex: 1; color: #666;">103 of 222 municipalities</span>
-          <span style="font-weight: bold;">46.4%</span>
-        </div>
-        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
-          <div style="background: #ffc107; height: 100%; width: 46.4%; transition: width 0.3s ease;"></div>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
-        <div style="display: flex; align-items: center; margin-bottom: 5px;">
-          <strong style="width: 60px;">NH</strong>
-          <span style="flex: 1; color: #666;">100 of 229 municipalities</span>
-          <span style="font-weight: bold;">43.7%</span>
-        </div>
-        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
-          <div style="background: #ffc107; height: 100%; width: 43.7%; transition: width 0.3s ease;"></div>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
-        <div style="display: flex; align-items: center; margin-bottom: 5px;">
-          <strong style="width: 60px;">ND</strong>
-          <span style="flex: 1; color: #666;">38 of 139 municipalities</span>
-          <span style="font-weight: bold;">27.3%</span>
-        </div>
-        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
-          <div style="background: #dc3545; height: 100%; width: 27.3%; transition: width 0.3s ease;"></div>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
-        <div style="display: flex; align-items: center; margin-bottom: 5px;">
-          <strong style="width: 60px;">CA</strong>
-          <span style="flex: 1; color: #666;">73 of 482 municipalities</span>
-          <span style="font-weight: bold;">15.2%</span>
-        </div>
-        <div style="background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden;">
-          <div style="background: #dc3545; height: 100%; width: 15.2%; transition: width 0.3s ease;"></div>
-        </div>
-      </div>
-    </div>
     
     <div style="margin-top: 20px; padding: 15px; background: #d1ecf1; border-radius: 6px; color: #0c5460;">
       <strong>Summary:</strong> 7 states tracked • 702 of 1,639 municipalities scraped • 42.8% average completion

@@ -30,25 +30,16 @@
   </head>
 
   <body class="min-h-screen bg-gray-50">
-    <header>
-      <nav class="flex justify-between items-center bg-white border-b border-gray-200 px-4 py-3">
+    <header class="bg-white border-b border-gray-200">
+      <nav class="container max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
         <div class="nav-links left-0 md:w-auto w-full flex items-center">
           <%= link_to root_path, class: "text-lg font-semibold text-gray-900" do %>
             CivicPatch
           <% end %>
         </div>
-        <div class="flex md:flex-row flex-col md:items-center p-3">
-          <ul class="flex space-x-8">
-            <li><%= link_to "Home", root_path, class: "text-gray-600 hover:text-gray-90 px-4 py-1" %></li>
-            <li><%= link_to "Progress", progress_path, class: "text-gray-600 hover:text-gray-900 px-4 py-1" %></li>
-            <li><a href="https://github.com/orgs/CivicPatch/projects/3/views/1" class="text-gray-600 hover:text-gray-900 px-4 py-1" target="_blank" rel="noopener">Roadmap</a></li>
-            <li><%= link_to "Search", address_search_path, class: "text-gray-600 hover:text-gray-900 px-4 py-1" %></li>
-            <li><%= link_to "Map", map_index_path, class: "text-gray-600 hover:text-gray-900 px-4 py-1" %>
-          </ul>
-        </div>
       </nav>
     </header>
-    <main class="min-h-[600px] container mx-auto mt-28 px-5 flex">
+    <main class="container max-w-6xl mx-auto min-h-[600px] mt-28 px-5 flex">
       <%= yield %>
     </main>
   </body>
