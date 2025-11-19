@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "dashboard/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -26,4 +27,8 @@ Rails.application.routes.draw do
   get "progress" => "map#progress", as: :progress
   get "address_search" => "pages#address_search", as: :address_search
   post "address_search" => "pages#address_search"
+  root "dashboard#index"
+
+  get '/dashboard', to: 'dashboard#index'
+  match '/dashboard/:panel', to: 'dashboard#panel', as: :dashboard_panel, via: [ :get, :post ]
 end
