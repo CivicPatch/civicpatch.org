@@ -5,7 +5,6 @@ require 'json'
 
 
 class GeocodingService
-
     # Geocode an address string to a latitude/longitude hash or nil if not found.
     # @param [String] address The address to geocode.
     # @return [Hash{Symbol => Float}, nil] Returns a hash with keys :lat and :lng as floats, or nil if not found.
@@ -53,5 +52,4 @@ class GeocodingService
         end
         nil
     end
-
 end
