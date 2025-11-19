@@ -25,5 +25,5 @@ Rails.application.routes.draw do
   get "map/municipality_boundaries" => "map#municipality_boundaries"
   get "progress" => "map#progress", as: :progress
   get "address_search" => "pages#address_search", as: :address_search
-  root "pages#home"
+  post "address_search" => "pages#address_search"
 end

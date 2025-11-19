@@ -44,6 +44,51 @@ class Api::RepresentativesController < ApplicationController
     end
   end
 
+    def address_search
+    @address = params[:address]
+    @representatives = []
+    @searched = false
+
+    if request.post?
+      @searched = true
+      if @address.blank?
+        flash[:alert] = 'Address is required.'
+        redirect_to address_search_path and return
+      else
+        begin
+          Rails.logger.info "Searching for address: #{@address}"
+          coordinates = GeocodingService.geocode_address(@address)
+          if coordinates
+            @representatives = Representative.get_representatives_by_lat_long(coordinates[:lat], coordinates[:lng])
+            Rails.logger.info "Found #{@representatives.length} representatives"
+            print("this is the data:", @representatives)
+            redirect_to address_search_path(address: @address, searched: true, lat: coordinates[:lat], lng: coordinates[:lng]) and return
+          else
+            Rails.logger.error "Unable to geocode address: #{@address}"
+            flash[:alert] = 'Unable to geocode address.'
+            redirect_to address_search_path(address: @address, searched: true) and return
+          end
+        rescue => e
+          Rails.logger.error "Geocoding error: #{e.message}"
+          flash[:alert] = "An error occurred while geocoding: #{e.message}"
+          redirect_to address_search_path(address: @address, searched: true) and return
+        end
+      end
+    elsif params[:searched]
+      @searched = true
+      if @address.present?
+        if params[:lat].present? && params[:lng].present?
+          coordinates = { lat: params[:lat], lng: params[:lng] }
+        else
+          coordinates = GeocodingService.geocode_address(@address)
+        end
+        if coordinates
+          @representatives = Representative.get_representatives_by_lat_long(coordinates[:lat], coordinates[:lng])
+        end
+      end
+    end
+  end
+
   private
 
   def validate_ocd_id
