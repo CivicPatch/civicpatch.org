@@ -16,20 +16,16 @@ development:
   database: civicpatch_development
   username: civicpatch
   password: development-password
-  schema_search_path: public,postgis
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  host: postgis
+  host: civicpatch_test_db
   adapter: postgis
-  database: civicpatch_test
+  database: civicpatch_test_db
   username: civicpatch
   password: test-password
-  port: 5432
-
 
 # Store production database in the storage/ directory, which by default
 # is mounted as a persistent Docker volume in config/deploy.yml.

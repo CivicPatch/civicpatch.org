@@ -2,7 +2,6 @@
 ARG RUBY_VERSION=3.4.2
 FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 
-ENV RAILS_ENV="development"
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install base packages
@@ -29,8 +28,6 @@ RUN rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set the working directory
 WORKDIR /rails
-
-COPY . .
 
 COPY Gemfile Gemfile.lock ./
 
