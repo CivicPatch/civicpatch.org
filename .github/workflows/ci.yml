@@ -52,54 +52,13 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    # services:
-    #  redis:
-    #    image: redis
-    #    ports:
-    #      - 6379:6379
-    #    options: --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
-    services:
-      postgis:
-        image: postgis/postgis:17-3.5
-        ports: ['5432:5432']
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: test-password
-          POSTGRES_DB: civicpatch_test_db
     steps:
-      - name: Install packages
-        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config google-chrome-stable
-
       - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-
-      - name: Wait for PostGIS to be ready
-        run: |
-          for i in {1..30}; do
-            pg_isready -h postgis -p 5432 -U postgres && exit 0
-            sleep 1
-          done
-          exit 1
-
-      - name: Prepare test database
-        env:
-          RAILS_ENV: test
-        run: bin/rails db:test:prepare
-
+        uses: actions/checkout@v5
+      
       - name: Run tests
-        env:
-          RAILS_ENV: test
-        run: bin/rails test
-
-      - name: Run system tests
-        env:
-          RAILS_ENV: test
-        run: bin/rails test:system
+        run: |
+          docker compose --profile test up civicpatch_test --abort-on-container-exit
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4

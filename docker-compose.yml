@@ -14,11 +14,14 @@ services:
     depends_on:
       - civicpatch_db
     environment:
+      RAILS_ENV: development
       POSTGRES_HOST: civicpatch_db
       POSTGRES_USER: civicpatch
       POSTGRES_PASSWORD: development-password
       POSTGRES_DB: civicpatch_development
     restart: on-failure
+    #entrypoint: []
+    #command: ["sleep", "infinity"]
 
   civicpatch_tailwind:
     build:
@@ -33,6 +36,32 @@ services:
     depends_on:
       - civicpatch_web
     tty: true
+
+  civicpatch_test:
+    profiles: ["test"] 
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: civicpatch_test
+    working_dir: /rails
+    volumes:
+      - .:/rails
+    depends_on:
+      civicpatch_test_db:
+        condition: service_healthy
+    environment:
+      RAILS_ENV: test
+      POSTGRES_HOST: civicpatch_test_db
+      POSTGRES_USER: civicpatch
+      POSTGRES_PASSWORD: test-password
+      POSTGRES_DB: civicpatch_test_db
+      PGPASSWORD: test-password
+    command: >
+      bash -c "
+        bin/rails db:test:prepare &&
+        bin/rails test &&
+        bin/rails test:system
+      "
 
   civicpatch_db:
     image: postgis/postgis:17-3.5
@@ -50,16 +79,19 @@ services:
   civicpatch_test_db:
     image: postgis/postgis:17-3.5
     container_name: civicpatch_test_db
-    restart: always
     environment:
       POSTGRES_USER: civicpatch
       POSTGRES_PASSWORD: test-password
-      POSTGRES_DB: civicpatch_test
-    volumes:
-      - testdata:/var/lib/postgresql/data
+      POSTGRES_DB: civicpatch_test_db
     ports:
       - "5433:5432"
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U civicpatch -d civicpatch_test_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
 volumes:
   pgdata:
-  testdata:
