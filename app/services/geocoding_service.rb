@@ -12,15 +12,22 @@ class GeocodingService
         encoded_address = URI.encode_www_form_component(address)
         census_geocoder_url = "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=#{encoded_address}&benchmark=4&format=json"
         uri = URI(census_geocoder_url)
-        response = Net::HTTP.get_response(uri)
-        result = JSON.parse(response.body)
-        matches = result.dig('result', 'addressMatches')
-        if matches && matches.any?
-            coords = matches.first['coordinates']
-            return {
-                lat: coords['y'].to_f,
-                lng: coords['x'].to_f
-            }
+        port = uri.scheme == "https" ? 443 : uri.port
+        http = Net::HTTP.new(uri.host, port)
+        http.use_ssl = (uri.scheme == "https")
+        request = Net::HTTP::Get.new(uri)
+        response = http.request(request)
+        if response.is_a?(Net::HTTPSuccess)
+            result = JSON.parse(response.body)
+            matches = result.dig('result', 'addressMatches')
+            if matches && matches.any?
+                coords = matches.first['coordinates']
+                return {
+                    lat: coords['y'].to_f,
+                    lng: coords['x'].to_f
+                }
+            end
+    # no extra end here
         end
         begin
             nominatim_url = "https://nominatim.openstreetmap.org/search"
@@ -31,8 +38,20 @@ class GeocodingService
                 countrycodes: 'us'
             }
             nominatim_uri = URI(nominatim_url)
+            if defined?(Rails) && Rails.logger
+                Rails.logger.info "Nominatim URI: #{nominatim_uri}"
+            else
+                puts "Nominatim URI: #{nominatim_uri}"
+            end
             nominatim_uri.query = URI.encode_www_form(nominatim_params)
-            nom_response = Net::HTTP.get_response(nominatim_uri)
+            headers = {
+                "User-Agent" => "civicpatch.org/1.0 (admin@civicpatch.org)",
+                "Accept-Language" => "en"
+            }
+            nom_request = Net::HTTP::Get.new(nominatim_uri, headers)
+            nom_response = Net::HTTP.start(nominatim_uri.host, nominatim_uri.port, use_ssl: nominatim_uri.scheme == "https") do |http|
+                http.request(nom_request)
+            end
             if nom_response.is_a?(Net::HTTPSuccess)
                 nom_data = JSON.parse(nom_response.body)
                 if nom_data.any?
