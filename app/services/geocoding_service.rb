@@ -5,6 +5,7 @@ require 'json'
 
 
 class GeocodingService
+    @@last_nominatim_request_time = nil
     # Geocode an address string to a latitude/longitude hash or nil if not found.
     # @param [String] address The address to geocode.
     # @return [Hash{Symbol => Float}, nil] Returns a hash with keys :lat and :lng as floats, or nil if not found.
@@ -27,7 +28,7 @@ class GeocodingService
                     lng: coords['x'].to_f
                 }
             end
-    # no extra end here
+          # no extra end here
         end
         begin
             nominatim_url = "https://nominatim.openstreetmap.org/search"
@@ -48,10 +49,16 @@ class GeocodingService
                 "User-Agent" => "civicpatch.org/1.0 (admin@civicpatch.org)",
                 "Accept-Language" => "en"
             }
+            # Simple rate limiting: 1 request per second
+            if @@last_nominatim_request_time
+                elapsed = Time.now - @@last_nominatim_request_time
+                sleep(1.0 - elapsed) if elapsed < 1.0
+            end
             nom_request = Net::HTTP::Get.new(nominatim_uri, headers)
             nom_response = Net::HTTP.start(nominatim_uri.host, nominatim_uri.port, use_ssl: nominatim_uri.scheme == "https") do |http|
                 http.request(nom_request)
             end
+            @@last_nominatim_request_time = Time.now
             if nom_response.is_a?(Net::HTTPSuccess)
                 nom_data = JSON.parse(nom_response.body)
                 if nom_data.any?
