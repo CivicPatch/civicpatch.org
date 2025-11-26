@@ -36,7 +36,8 @@ class GeocodingService
                 q: address,
                 format: 'json',
                 limit: 1,
-                countrycodes: 'us'
+                countrycodes: 'us',
+                email: 'admin@civicpatch.org'
             }
             nominatim_uri = URI(nominatim_url)
             if defined?(Rails) && Rails.logger
@@ -46,7 +47,7 @@ class GeocodingService
             end
             nominatim_uri.query = URI.encode_www_form(nominatim_params)
             headers = {
-                "User-Agent" => "civicpatch.org/1.0 (admin@civicpatch.org)",
+                "User-Agent" => "CivicPatchGeocoder (admin@civicpatch.org)",
                 "Accept-Language" => "en"
             }
             # Simple rate limiting: 1 request per second
