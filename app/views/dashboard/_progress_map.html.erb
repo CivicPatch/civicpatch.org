@@ -1,32 +1,32 @@
 <div class="max-w-7xl mx-auto">
 
-  <div id="progress-map-container" style="background-color: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px;">
-    <h2 style="color: #333; margin-bottom: 20px;">CivicPatch Municipal Data Collection Progress</h2>
+  <div id="progress-map-container" style="background-color:#f8f9fa;padding:12px 10px;margin:12px 0;border-radius:8px;">
+    <h2 style="color:#333;margin-bottom:12px;font-size:16px;font-weight:600;">CivicPatch Municipal Data Collection Progress</h2>
     
-    <!-- US Map Visualization -->
-    <div id="us-map-container" style="text-align: center; margin-bottom: 30px; max-width: 100%; overflow-x: auto;">
+  <!-- US Map Visualization -->
+  <div id="us-map-container" style="text-align:center;margin-bottom:20px;max-width:100%;overflow-x:auto;">
       <svg id="us-map" viewBox="0 0 960 500" width="100%" height="auto" style="max-width: 100%; height: auto; background-color: white; border-radius: 4px; border: 1px solid #ddd; display: block; margin: 0 auto;"></svg>
       
       <!-- Legend -->
-      <div id="map-legend" style="display: flex; justify-content: center; align-items: center; margin-top: 15px; gap: 15px;">
-        <span style="font-weight: bold; color: #333;">Completion Rate:</span>
-        <div style="display: flex; align-items: center; gap: 5px;">
+      <div id="map-legend" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:10px;gap:8px;font-size:11px;">
+        <span style="font-weight:bold;color:#333;flex-basis:100%;text-align:center;margin-bottom:2px;">Completion Rate:</span>
+        <div style="display:flex;align-items:center;gap:5px;">
           <div style="width: 20px; height: 15px; background: #2d5016; border-radius: 3px;"></div>
           <span style="font-size: 12px;">70%+</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 5px;">
+  <div style="display:flex;align-items:center;gap:5px;">
           <div style="width: 20px; height: 15px; background: #5a9216; border-radius: 3px;"></div>
           <span style="font-size: 12px;">50-69%</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 5px;">
+  <div style="display:flex;align-items:center;gap:5px;">
           <div style="width: 20px; height: 15px; background: #8eb021; border-radius: 3px;"></div>
           <span style="font-size: 12px;">30-49%</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 5px;">
+  <div style="display:flex;align-items:center;gap:5px;">
           <div style="width: 20px; height: 15px; background: #d4a574; border-radius: 3px;"></div>
           <span style="font-size: 12px;">10-29%</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 5px;">
+  <div style="display:flex;align-items:center;gap:5px;">
           <div style="width: 20px; height: 15px; background: #8b4513; border-radius: 3px;"></div>
           <span style="font-size: 12px;">0-9%</span>
         </div>
@@ -36,8 +36,8 @@
         </div>
       </div>
       
-      <!-- Tooltip -->
-      <div id="map-tooltip" style="position: absolute; padding: 8px 12px; background: rgba(0,0,0,0.8); color: white; border-radius: 4px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity 0.2s;"></div>
+  <!-- Tooltip -->
+  <div id="map-tooltip" style="position:absolute;padding:6px 10px;background:rgba(0,0,0,0.8);color:white;border-radius:4px;font-size:11px;pointer-events:none;opacity:0;transition:opacity 0.2s;"></div>
     </div>
     
     
@@ -69,10 +69,10 @@
       if (progress >= 10) return '#d4a574';
       if (progress > 0) return '#8b4513';
       return '#e5e5e5';
-    }
     
-    // Check if D3 is available
-    if (typeof d3 === 'undefined') {
+    
+    <div style="margin-top:12px;padding:10px;background:#d1ecf1;border-radius:6px;color:#0c5460;font-size:12px;line-height:1.4;">
+      <strong>Summary:</strong> 7 states tracked  702 of 1,639 municipalities scraped  42.8% average completion
       console.log('D3 not available, showing static visualization only');
       document.getElementById('us-map-container').innerHTML = 
         '<p style="text-align: center; padding: 40px; color: #666;">Interactive map requires D3.js. See detailed progress below.</p>';

@@ -1,14 +1,14 @@
-<div class="min-h-screen bg-gray-50 p-6 container max-w-6xl mx-auto">
-  <div class="flex flex-col md:flex-row gap-6 mb-8">
-    <div class="order-1 md:order-1 w-full md:w-1/3 bg-white rounded-lg shadow-sm p-6 flex flex-col justify-between">
+<div class="min-h-screen bg-gray-50 px-3 py-4 sm:p-6 container max-w-6xl mx-auto">
+  <div class="flex flex-col md:flex-row gap-4 sm:gap-6 mb-6 sm:mb-8 md:mx-4">
+    <div class="order-1 md:order-1 w-full md:w-1/3 bg-white rounded-lg shadow-sm p-4 sm:p-6 flex flex-col justify-between mb-6 md:mb-0">
       <%= render 'dashboard/home' %>
     </div>
-    <div class="order-3 md:order-2 w-full md:w-2/3 bg-white rounded-lg shadow-sm p-6">
+    <div class="order-3 md:order-2 w-full md:w-2/3 bg-white rounded-lg shadow-sm p-4 sm:p-6">
       <%= render 'dashboard/progress_map' %>
     </div>
   </div>
   <turbo-frame id="main-panel" class="order-2 md:order-3 w-full">
-    <div class="bg-white rounded-lg shadow-sm p-6">
+    <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6">
       <%= render 'dashboard/address_search' %>
     </div>
   </turbo-frame>

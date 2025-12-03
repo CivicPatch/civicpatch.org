@@ -48,3 +48,4 @@ node_modules
 !/app/assets/builds/.keep
 
 /vendor/bundle
+/data/*

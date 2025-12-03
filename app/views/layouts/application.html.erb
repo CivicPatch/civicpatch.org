@@ -14,19 +14,21 @@
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+    <%= tag.link rel: "manifest", href: "/manifest.json" %>
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    
-    <%= stylesheet_link_tag "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css", integrity: "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=", crossorigin: "" %>
-  <%= javascript_importmap_tags 'application' %> 
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= tag.link rel: "stylesheet", href: "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css", integrity: "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=", crossorigin: "anonymous" %>
+    <%= javascript_importmap_tags %>
+    <style>
+      @media (max-width: 767px) {
+        #nav-toggle:checked + label + #nav-menu {
+          display: flex !important;
+        }
+      }
+    </style>
   </head>
 
   <body class="min-h-screen bg-gray-50">
@@ -39,8 +41,9 @@
         </div>
       </nav>
     </header>
-    <main class="container max-w-6xl mx-auto min-h-[600px] mt-28 px-5 flex">
+    <main class="container max-w-6xl mx-auto min-h-[600px] px-5 flex">
       <%= yield %>
-    </main>
+    </main> 
   </body>
-</html> 
+</html>
+
