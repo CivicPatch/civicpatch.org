@@ -18,9 +18,12 @@ class GeocodingService
         http.use_ssl = (uri.scheme == "https")
         request = Net::HTTP::Get.new(uri)
         response = http.request(request)
+
+        Rails.logger.info "[GEOCODING] Response code from Census Geocoder: #{response.code}"
         if response.is_a?(Net::HTTPSuccess)
             result = JSON.parse(response.body)
             matches = result.dig('result', 'addressMatches')
+            Rails.logger.info "[GEOCODING] Address matches found: #{matches.size}"
             if matches && matches.any?
                 coords = matches.first['coordinates']
                 return {
@@ -59,6 +62,7 @@ class GeocodingService
                 http.request(nom_request)
             end
             @@last_nominatim_request_time = Time.now
+            Rails.logger.info "[GEOCODING] Nominatim response code: #{nom_response.code}"
             if nom_response.is_a?(Net::HTTPSuccess)
                 nom_data = JSON.parse(nom_response.body)
                 if nom_data.any?
