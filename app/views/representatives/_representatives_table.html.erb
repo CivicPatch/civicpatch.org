@@ -1,35 +1,35 @@
 <%# app/views/pages/_representatives_table.html.erb %>
 <% if representatives.present? %>
   <div class="overflow-x-auto md:overflow-visible border border-gray-200 rounded-lg shadow-sm mb-8">
-    <table class="w-full table-auto text-xs sm:text-sm">
+    <table id="reps-table" class="w-full table-auto text-xs sm:text-sm">
       <thead class="hidden md:table-header-group">
         <tr class="bg-gray-50 border-b border-gray-200">
           <th class="w-24 px-2 sm:px-4 py-2 sm:py-3 text-center text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wide border-b-2 border-gray-200 whitespace-normal break-words">Image</th>
           <th class="w-32 px-2 sm:px-4 py-2 sm:py-3 text-center text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wide border-b-2 border-gray-200 whitespace-normal break-words">Name</th>
           <th class="w-32 px-2 sm:px-4 py-2 sm:py-3 text-center text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wide border-b-2 border-gray-200 whitespace-normal break-words">Office</th>
-          <th class="w-40 px-2 sm:px-4 py-2 sm:py-3 text-center text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wide border-b-2 border-gray-200 whitespace-normal break-words">Contact Details</th>
-          <th class="w-28 px-2 sm:px-4 py-2 sm:py-3 text-center text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wide border-b-2 border-gray-200 whitespace-normal break-words">Links</th>
+          <th class="w-32 px-2 sm:px-4 py-2 sm:py-3 text-center text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wide border-b-2 border-gray-200 whitespace-normal break-words">Contact Details</th>
+          <th class="w-16 md:w-14 px-1 sm:px-3 py-2 sm:py-3 text-center text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wide border-b-2 border-gray-200 whitespace-normal break-words">Links</th>
         </tr>
       </thead>
       <tbody class="bg-white">
         <% representatives.each do |rep_obj| %>
           <% rep = rep_obj.is_a?(Hash) ? rep_obj : rep_obj.respond_to?(:data) ? rep_obj.data : {} %>
           <% initials = rep["name"].to_s.split.size >= 2 ? rep["name"].to_s.split.first[0] + rep["name"].to_s.split.last[0] : rep["name"].to_s[0,2] rescue '??' %>
-          <tr class="block md:table-row border-b-2 border-gray-200 mb-3 md:mb-0 hover:bg-gray-50">
-            <td class="text-center block md:table-cell px-3 py-2 md:px-6 md:py-4 whitespace-nowrap align-center">
+          <tr class="block md:table-row border-b-2 border-gray-200 mb-2 md:mb-0 hover:bg-gray-50">
+            <td class="text-center block md:table-cell px-3 py-2 md:pl-8 md:pr-5 md:py-3.5 whitespace-nowrap align-center">
               <% if rep["image"] %>
                 <div class="flex justify-center p-1 sm:p-2">
-                  <img src="<%= rep["image"] %>" alt="<%= rep["name"] || 'Representative' %>" class="h-28 w-28 sm:h-32 sm:w-32 md:h-24 md:w-24 rounded-lg object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                  <div class="h-28 w-28 sm:h-32 sm:w-32 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-base md:text-sm" style="display:none;"><%= initials %></div>
+                  <img src="<%= rep["image"] %>" alt="<%= rep["name"] || 'Representative' %>" class="h-32 w-32 sm:h-36 sm:w-36 md:h-36 md:w-36 rounded-lg object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <div class="h-32 w-32 sm:h-36 sm:w-36 md:h-36 md:w-36 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-base md:text-sm" style="display:none;"><%= initials %></div>
                 </div>
               <% else %>
-                <div class="flex justify-center p-1 sm:p-2"><div class="h-28 w-28 sm:h-32 sm:w-32 md:h-24 md:w-24 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-base md:text-sm"><%= initials %></div></div>
+                <div class="flex justify-center p-1 sm:p-2"><div class="h-32 w-32 sm:h-36 sm:w-36 md:h-36 md:w-36 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-white font-semibold text-base md:text-sm"><%= initials %></div></div>
               <% end %>
             </td>
-            <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 align-center whitespace-normal break-words">
+            <td class="text-center block md:table-cell px-3 py-2 md:px-5 md:py-3.5 align-center whitespace-normal break-words">
               <div class="text-center font-medium text-gray-900"><%= rep["name"].presence || '-' %></div>
             </td>
-            <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 align-center whitespace-normal break-words">
+            <td class="text-center block md:table-cell px-3 py-2 md:px-5 md:py-3.5 align-center whitespace-normal break-words">
               <% office_text = rep["office"].presence || rep["title"].presence || rep["level"].presence || rep["position"].presence || rep["role"].presence %>
               <% if rep["other_names"].present? && rep["other_names"].is_a?(Array) %>
                 <% names = rep["other_names"].map { |n| n.is_a?(Hash) ? n["name"] : n.to_s }.reject(&:blank?) %>
@@ -45,7 +45,7 @@
                 <div class="text-center text-[11px] sm:text-sm"><%= office_text %></div>
               <% end %>
             </td>
-            <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 align-center whitespace-normal break-words">
+            <td class="text-center block md:table-cell px-3 py-2 md:px-5 md:py-3.5 align-center whitespace-normal break-words">
               <% email = (rep["contact_details"]&.find { |c| c["type"] == 'email' }&.dig("value") rescue nil) || rep["email"] || rep["contact_email"] %>
               <% phone = (rep["contact_details"]&.find { |c| c["type"] == 'phone' }&.dig("value") rescue nil) || rep["phone"] || rep["contact_phone"] %>
               <% if email.present? || phone.present? %>
@@ -61,7 +61,7 @@
                 <div class="text-center">-</div>
               <% end %>
             </td>
-            <td class="text-center block md:table-cell px-4 py-2 md:px-6 md:py-4 align-center whitespace-normal break-words">
+            <td class="text-center block md:table-cell px-3 py-2 md:px-5 md:py-3.5 align-center whitespace-normal break-words">
               <% all_links = [] %>
               <% website = rep["website"] || rep["url"] || rep["official_website"] %>
               <% if website.present? %>
