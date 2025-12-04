@@ -69,10 +69,10 @@
       if (progress >= 10) return '#d4a574';
       if (progress > 0) return '#8b4513';
       return '#e5e5e5';
+    }
     
-    
-    <div style="margin-top:12px;padding:10px;background:#d1ecf1;border-radius:6px;color:#0c5460;font-size:12px;line-height:1.4;">
-      <strong>Summary:</strong> 7 states tracked  702 of 1,639 municipalities scraped  42.8% average completion
+    // Check if D3 is available
+    if (typeof d3 === 'undefined') { 
       console.log('D3 not available, showing static visualization only');
       document.getElementById('us-map-container').innerHTML = 
         '<p style="text-align: center; padding: 40px; color: #666;">Interactive map requires D3.js. See detailed progress below.</p>';
