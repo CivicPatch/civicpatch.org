@@ -15,9 +15,11 @@
             <% reps = (defined?(representatives) ? representatives : @representatives) %>
             <% did_search = (defined?(searched) ? searched : @searched) %>
             <% if did_search %>
-                <div class="mt-6 mb-2">
-                    <%= render partial: 'representatives_table', locals: { representatives: reps } %>
-                </div>
+                    <div class="mt-6 mb-2 w-full">
+                        <div class="w-full overflow-x-auto md:overflow-visible">
+                            <%= render partial: 'representatives_table', locals: { representatives: reps } %>
+                        </div>
+                    </div>
             <% end %>
         </div>
     </div>
