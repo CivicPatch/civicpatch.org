@@ -1,7 +1,7 @@
 <%# app/views/pages/_representatives_table.html.erb %>
 <% if representatives.present? %>
-  <div class="overflow-x-auto md:overflow-visible border border-gray-200 rounded-lg shadow-sm mb-8">
-    <table id="reps-table" class="w-full table-auto text-xs sm:text-sm">
+  <div class="overflow-x-auto border border-gray-200 rounded-lg shadow-sm mb-4 sm:mb-8">
+    <table id="reps-table" class="w-full table-auto text-xs sm:text-sm min-w-full">
       <thead class="hidden md:table-header-group">
         <tr class="bg-gray-50 border-b border-gray-200">
           <th class="w-24 px-2 sm:px-4 py-2 sm:py-3 text-center text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wide border-b-2 border-gray-200 whitespace-normal break-words">Image</th>
@@ -11,11 +11,11 @@
           <th class="w-16 md:w-14 px-1 sm:px-3 py-2 sm:py-3 text-center text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wide border-b-2 border-gray-200 whitespace-normal break-words">Links</th>
         </tr>
       </thead>
-      <tbody class="bg-white">
+      <tbody class="bg-white divide-y divide-gray-200">
         <% representatives.each do |rep_obj| %>
           <% rep = rep_obj.is_a?(Hash) ? rep_obj : rep_obj.respond_to?(:data) ? rep_obj.data : {} %>
           <% initials = rep["name"].to_s.split.size >= 2 ? rep["name"].to_s.split.first[0] + rep["name"].to_s.split.last[0] : rep["name"].to_s[0,2] rescue '??' %>
-          <tr class="block md:table-row border-b-2 border-gray-200 mb-2 md:mb-0 hover:bg-gray-50">
+          <tr class="block md:table-row border-b border-gray-200 py-4 md:py-0 hover:bg-gray-50">
             <td class="text-center block md:table-cell px-3 py-2 md:pl-8 md:pr-5 md:py-3.5 whitespace-nowrap align-center">
               <% if rep["image"] %>
                 <div class="flex justify-center p-1 sm:p-2">
@@ -102,9 +102,11 @@
       </tbody>
     </table>
   </div>
-  <div class="text-center py-3 sm:py-4 text-xs sm:text-sm text-gray-600 border-t border-gray-200 mt-3 sm:mt-4">
+  <div class="text-center py-3 sm:py-4 text-xs sm:text-sm text-gray-600">
     ↑ Scroll up to search for a different address
   </div>
 <% else %>
-  <p class="text-gray-500 text-center py-4">No representatives found.</p>
+  <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 sm:p-6 text-center">
+    <p class="text-gray-600 text-sm sm:text-base">No representatives found for this address. Please try a different address.</p>
+  </div>
 <% end %>
