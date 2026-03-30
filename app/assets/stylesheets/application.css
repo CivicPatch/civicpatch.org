@@ -9,6 +9,11 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+/* Ensure turbo-frame elements display as block */
+turbo-frame {
+  display: block;
+}
+
 #map {
   margin-bottom: 2rem;
   height: 40vh;
